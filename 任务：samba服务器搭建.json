@@ -1,0 +1,2770 @@
+{
+    "冯浩灿": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a32e26b9ff4fecd242715497ed5d5d87",
+                    "https://p.ananas.chaoxing.com/star3/origin/d03ded55f86b4c26f3ab0651c8367230",
+                    "https://p.ananas.chaoxing.com/star3/origin/7d54349bd0a415d93e5c190b44d26351"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir-p/abc/sales && touch/abc/sales/Fenghaocan.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "rpm-qa\\grep samba",
+                    "mount/dev/cdrom/media",
+                    "dnf info samba",
+                    "dnf claen all",
+                    "dnf install samba-y",
+                    "rpm-qa | grep samba",
+                    "systemctl start smb;systmctl enable smb",
+                    "groupadd seles",
+                    "useradd-m sale1",
+                    "usermod -aG sales sale1",
+                    "smbpasswd -a 123456",
+                    "useradd-m sale2",
+                    "usermod-aG sales sale2",
+                    "smbpasswd -a 123456"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim/etc/samba/smb.conf"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/companydata/sales-R",
+                    "chown :sales/companydata/sales-R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd--permanent--add-service=samba",
+                    "firewall-cmd--reload",
+                    "systemctl restart smbd"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "包振晟": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p /abc/sales",
+                    "touch /abc/sales/bzs.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "useradd test_user1",
+                    "passwd sale1",
+                    "passwd sale2",
+                    "passwd test_user1",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "[abc]",
+                    "comment = sales",
+                    "path =/copanyadta/sales",
+                    "writable=yes",
+                    "browseable = yes",
+                    "valid users = @asles"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /abc/sales -R",
+                    "chown :sales/abc/sales -R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "卢浩杰": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bd851892613a4f1f30bdf8096643035c",
+                    "https://p.ananas.chaoxing.com/star3/origin/44a76625b8f451bdd049fbee34731b4c",
+                    "https://p.ananas.chaoxing.com/star3/origin/00efa5c50146318c8d25c8519353d670"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p /abc/sales && touch /abc/sales/Luhaojie.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "rpm -qa \\grep samba",
+                    "mount /dev/cdrom /media",
+                    "dnf info samba",
+                    "dnf claen all",
+                    "dnf install samba -y",
+                    "rpm -qa | grep samba",
+                    "systemctl start smb ; systemctl enable smb",
+                    "groupadd seles",
+                    "useradd -m sale1",
+                    "usermod -aG sales sale1",
+                    "smbpasswd -a 123456",
+                    "useradd -m sale2",
+                    "usermod -aG sales sale2",
+                    "smbpasswd -a 123456"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim /etc/samba/smb.conf"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales -R",
+                    "chown :sales /companydata/sales -R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "systemctl restart smbd"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "卢炜": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b8bbbf50eb4c1a56c3a6994a3c4e0032",
+                    "https://p.ananas.chaoxing.com/star3/origin/828be92779d62dce295f8648416262ee",
+                    "https://p.ananas.chaoxing.com/star3/origin/f72ce4db41da33f5797606cb6b31a351"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir-p/abc/sales",
+                    "cd/abc/salvim/teces",
+                    "touch luwei.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "rpm-qa\\grep samba",
+                    "mount\\dev\\cdrom\\media",
+                    "dnf info samba",
+                    "dnf claen all",
+                    "dnf insyall samba-y",
+                    "rpm-qa| arep samba",
+                    "systemctk start smb;systmctl enable smb",
+                    "sudo groupadd seles",
+                    "sudo useradd -m sale 1",
+                    "sudo usermod -aG sales sale 1",
+                    "sudo smbpasswd-a sale 1",
+                    "sudo sueradd-m sale2",
+                    "sudo usermod-aG sales sale2",
+                    "sudo smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim/tec/samba/smb.conf"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/companydata/sales-R",
+                    "chown ;sales/companydata/sales-R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd--permanent-add-service=samba",
+                    "firewall-cmd--reload",
+                    "firewall-cmd-list-al l"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "厉豪": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/828be92779d62dce295f8648416262ee",
+                    "https://p.ananas.chaoxing.com/star3/origin/b8bbbf50eb4c1a56c3a6994a3c4e0032",
+                    "https://p.ananas.chaoxing.com/star3/origin/928897b58b2a740591b4dc474191b036"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir-p/abc/sales",
+                    "cd/abc/sa;es",
+                    "touch Lihao.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "rpm-qa\\grep samba",
+                    "mount\\dev\\cdrom\\media",
+                    "dnf info samba",
+                    "dnf claen all",
+                    "dnf insyall samba-y",
+                    "rom-| arep samba",
+                    "systemctk start smb;systmctl enable smb",
+                    "sudo groupadd seles",
+                    "sudo useradd -m sale 1",
+                    "sudo usermod -aG sales sale 1",
+                    "sudo smbpasswd-a sale 1",
+                    "sudo sueradd-m sale2",
+                    "sudo usermod-aG sales sale2",
+                    "sudo smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim/tec/samba/smb.conf"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/companydata/sales-R",
+                    "chown ;sales/companydata/sales-R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "孙夫圣": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fc7f686665eb35676795b5c94da526ce",
+                    "https://p.ananas.chaoxing.com/star3/origin/c8131555e253ceaca14706710cf7cab3",
+                    "https://p.ananas.chaoxing.com/star3/origin/7b6e105689f4c4586a7c234d87f7af2c"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p- /abc/sales",
+                    "touch /abc/sales/Sunfusheng.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "[sales]",
+                    "comment=sales",
+                    "path=abc/sales",
+                    "writable=yes",
+                    "browseable=yes",
+                    "valid users = @sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /abc/sales -R",
+                    "chown :sales /abc/sales -R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "张彧佳": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/70f35f047dae971c6121f95c67995fc0",
+                    "https://p.ananas.chaoxing.com/star3/origin/9620c3d0d8067a387a934b6c00819874",
+                    "https://p.ananas.chaoxing.com/star3/origin/4a5532560210acf3f09f08a9804cacde"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cbb70c800ac99585b1cf80a00d730030"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5f25d20cb69b49641919b87bd0ca15cb",
+                    "https://p.ananas.chaoxing.com/star3/origin/99e058c248512ba86eafbeb4b8cb2902"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/31d86b862f90696ff40272f3083bbf4f"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cd56649636707949e7cd3e3066534410"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2f2c524e35fa91a4eb864b14f9d4c5bf"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "徐仁劼": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1e84ecf96417212d58b041444419004e",
+                    "https://p.ananas.chaoxing.com/star3/origin/bd1396c5b6af8d0977b3e88be8950da3"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p /abc/sales",
+                    "echo /abc/sales/xrj.xtx"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "sudo useradd g sales sale1",
+                    "sudo useradd g sales sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim /etc/samba/smb.conf"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "setenfoce 0",
+                    "setenfoce 1"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd--list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "徐浙博": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ff8811c83b9c98dc1c59510331b6344a",
+                    "https://p.ananas.chaoxing.com/star3/origin/fbd4377db092fbe3e98dd5c849a2cff7",
+                    "https://p.ananas.chaoxing.com/star3/origin/307a7b23794590f0b38742a2accf5393"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p /abc/sales",
+                    "cd /abc/sales",
+                    "touch xuzhebo.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "writable= no",
+                    "public= no",
+                    "valid users=@sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales -R",
+                    "chown :sales /companydata/sales R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent -add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "systemctl restart smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "敖莹莹": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d92b58f6be996ec9d82792ec45f1b098",
+                    "https://p.ananas.chaoxing.com/star3/origin/43de0d9e839849ace32f2ac19cb72824",
+                    "https://p.ananas.chaoxing.com/star3/origin/c5579c3468b61fed4fbcfb7e44ba1f30"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p /abc/sales",
+                    "cd /abc/sales",
+                    "touch aoyingying.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "[sales]",
+                    "comment=sales",
+                    "path=/companydata/sales",
+                    "writable =yes",
+                    "browseable =yes",
+                    "valid users =@sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales -R",
+                    "chown : sales /companydata/sales -R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "朱瑞哲": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4d2004107ceab07a7bada45869027f55",
+                    "https://p.ananas.chaoxing.com/star3/origin/89b36e4dd7d6c902cd67aa40162585f4",
+                    "https://p.ananas.chaoxing.com/star3/origin/dddf980e15be14e595ea8af1772278aa"
+                ],
+                "text": [
+                    "1"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "sudo mkdir -p /abc/sales",
+                    "cd  /abc/sales",
+                    "touch zhuruizhe.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "sudo groupadd sales",
+                    "sudo useradd -m -G sales sale1",
+                    "sudo useradd -m -G sales sale2",
+                    "groups sale1",
+                    "groups sale2",
+                    "passwd sale1",
+                    "passwd sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "writable = no",
+                    "public =no",
+                    "valid users =@sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales -R",
+                    "chown :sales /companydata/sales -R",
+                    "getenforce",
+                    "setenforce Permissive"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent -add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "systemctl restart smb",
+                    "systemctl enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "朱瑞楠": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2d16e12eeb5713fa28241aa9a99d65f0",
+                    "https://p.ananas.chaoxing.com/star3/origin/7cb04a4f0b0b655afe5c35e75d0f84f3",
+                    "https://p.ananas.chaoxing.com/star3/origin/d875b6a2a874f4e1a824ac98ea7b2c38"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /abc",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/zhuruinan.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "[sales]",
+                    "comment=sales",
+                    "path=/abc/sales",
+                    "writable=yes",
+                    "browseable=yes",
+                    "valid users=@sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /abc/sales -R",
+                    "chown :sales /abc/sales -R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "systemctl restart smb",
+                    "systemctl enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "朱颖颖": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/115cdd3fe455c362fb9a7f1876fc2ee8",
+                    "https://p.ananas.chaoxing.com/star3/origin/9dbbab102ebc2ea5777996edd62d2372",
+                    "https://p.ananas.chaoxing.com/star3/origin/73d13b8c42a37708b15e220312a1b6e3"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir abc",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/zhuyingying.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8f8b18752dfa78af74692a0372971a68"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chomd 700 /abc/sales -R",
+                    "chown :sales /abc/sales -R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=sales",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "systemctl restart smb",
+                    "systemctl enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "李斌豪": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7f2931326c6e0d4373407c6ef7bb1130",
+                    "https://p.ananas.chaoxing.com/star3/origin/c316851886998f646df8e681b5705cc4",
+                    "https://p.ananas.chaoxing.com/star3/origin/bad9eefa24234422f9c0a47295de90bc"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /abc",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/libinhao.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sbles sale1",
+                    "useradd -a sbles sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales-R",
+                    "chown:sales/companydata/sales-R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --per,amemt --add -service=samba",
+                    "firewall-cmd--reload",
+                    "firewall-cmd--list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "林明烁": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3bba6d0fe83f1268885b91e24cb88def",
+                    "https://p.ananas.chaoxing.com/star3/origin/c54acece0e35297b2d85be5f78c19257",
+                    "https://p.ananas.chaoxing.com/star3/origin/759d4e69a6ed8d13cabfe04436374929"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /abc",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/linmingshuo.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "comment=sales",
+                    "path=/abc/sales",
+                    "weitable=yes",
+                    "browseable=yes",
+                    "valid users=@sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /abc/sales -R",
+                    "chown :sales /abc/sales -R",
+                    "getenforce",
+                    "setenforce Parmissive"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "程浩然": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c8a395f7034e7a7d8d5327b0eee724ec",
+                    "https://p.ananas.chaoxing.com/star3/origin/01390183e5214e331b580593e014820b",
+                    "https://p.ananas.chaoxing.com/star3/origin/208439153784142232bfa04643c61075"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir abc",
+                    "mkdir /abc/sales",
+                    "touch abc/sales/chenghaoran.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "[sales]",
+                    "comment=sales",
+                    "path=abc/sales",
+                    "writable=yes",
+                    "browseble=yes",
+                    "valid user=@sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/abc/sales/sales -R",
+                    "chomn :sales/abc/sales -R",
+                    "setenfoce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd--permanent --add service=samba",
+                    "firewall-cmd- reload",
+                    "firwall -cmd--list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "翁俊卓": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ff9c42a6044688af1228daf8ff8b70fc",
+                    "https://p.ananas.chaoxing.com/star3/origin/918cfdc3e09e8d9a08b7985730c8fccb",
+                    "https://p.ananas.chaoxing.com/star3/origin/2f118fb5bf4a93a788468db520f4dcce"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir-p/abc/sales",
+                    "touch /abc/sales/wjz.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd-g sales sale1",
+                    "useradd-g sales sale2",
+                    "useradd text_user 1",
+                    "passwd sale1",
+                    "passwd sale2",
+                    "passwd test_user1us",
+                    "smbpasswd-a sale1",
+                    "smbpasswd-a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "[abc]",
+                    "comment=sales",
+                    "path=/copanyadta/sales",
+                    "writable=yes",
+                    "browseable=yes",
+                    "valid users=@asles"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/abc/sales-R",
+                    "chown:sales /abc/sales-R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd--permanent --add-service=samba",
+                    "firewall-cmd--relod"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "翁赛特": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b5053c350c2f66f5348984415ab589bc",
+                    "https://p.ananas.chaoxing.com/star3/origin/4c629e676469cd2fe600e55507833f17",
+                    "https://p.ananas.chaoxing.com/star3/origin/bebec1f160e4966563afd3d5a656025a"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir/abc",
+                    "mkdir/abc/sales",
+                    "touch/abc/sales/wengsaite.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a2f5c662957e7e60c397836e386843b4"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /abc/sales -R",
+                    "chown :sales /abc/sale -R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "systemctl restart smb",
+                    "systemctl enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "胡峻宇": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c977cb4a7833ace40e5e3efdce227c92",
+                    "https://p.ananas.chaoxing.com/star3/origin/ff93084ce18cc2d1baf04518436d9b6c",
+                    "https://p.ananas.chaoxing.com/star3/origin/a021f7b558c24a493104dff60fafae3a"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /companydata/abc",
+                    "mkdir /companydata/abc/sales",
+                    "mkdir /companydata/abc/sales/hujunyu.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2",
+                    "sudo passwd sale1",
+                    "sudo passwd sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2979767c5f2f7c0371a5d87ca56b87b8"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/companydata/sales -R",
+                    "chown :sales /companydata/seles -R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "systemctl restart smb",
+                    "systemctl enable smb",
+                    "firewall -cmd --permanent -add-servie=samba",
+                    "firewall -cmd --reload",
+                    "firewall -cmd --list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "赵凯雯": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/38428b207cbc3480b14ce94335f7580e",
+                    "https://p.ananas.chaoxing.com/star3/origin/f2a22f112057773ed8d01317a5a8b05a",
+                    "https://p.ananas.chaoxing.com/star3/origin/e23ee5331b50f4c3bcb6efe309fdd9a4"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir  /abc",
+                    "mkdir /abc/sales",
+                    "mkdir /abc/sales/zhaokaiwen.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "passwd sale1",
+                    "passwd sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim  /etc/samba/abc/sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770  /abc/sales -R",
+                    "chown  :sales  /abc/sales -R",
+                    "chcon -t samba_share_t   /abc/sales  -R",
+                    "chcon -t samba_share_t  /home/sales1  -R",
+                    "chcon -t samba_share_t /home/sales2  -R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "systemctl restart smb",
+                    "systemctl enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "郑书畅": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "okok"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/afa0cdb8e2c5683bc7ef2796bdcc02cc",
+                    "https://p.ananas.chaoxing.com/star3/origin/3e1aede4c3f05bfd4cdb0a0f659bc968",
+                    "https://p.ananas.chaoxing.com/star3/origin/d36f0772d305f00abacd9cfcc81df954"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p ~p/abc/sales",
+                    "cd ~/abc/sales",
+                    "touch zhengshuchang.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim /etc"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales -R",
+                    "chown :sales /companydatd/sales R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "sudo systemctl restart smbd"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "郑俊乐": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5dd999fa71f082a433bf9c5c3d6e61cd",
+                    "https://p.ananas.chaoxing.com/star3/origin/9c1dba32533cb526a9f331bb09f193e6",
+                    "https://p.ananas.chaoxing.com/star3/origin/4db4571c9c3baaa0382d9247cb6a92e7"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p /abc/sales",
+                    "touch /abc/sales/zhengjunle.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "useradd test_user1",
+                    "passwd sale1",
+                    "passwd sale2",
+                    "passwd test_user1",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/76631d77fe2854f96424e97204857831"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /abc/sales -R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --lst-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "郑思雨": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/688df469cc105ddb84ed61623cdacb19",
+                    "https://p.ananas.chaoxing.com/star3/origin/a09eb6cf5014fdfabe892a8697a2f1a3"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/688df469cc105ddb84ed61623cdacb19",
+                    "https://p.ananas.chaoxing.com/star3/origin/146398dd91db4b05d3a4a574109a1c1e"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p /abc/sales",
+                    "cd /abc/sales",
+                    "touch zhengsiyu.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "sudo groupadd sales",
+                    "sudo useradd -g salese sale1",
+                    "sudo passwd sale1",
+                    "sudo useradd -g salese sale2",
+                    "sudo passwd sale2",
+                    "while read user; do",
+                    "sudo smbpasswd -a $sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "/etc/sales/abc.sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 755 file.txt",
+                    "chod -R 774 /data/sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd -list-all",
+                    "samba",
+                    "systemct1 restart amb",
+                    "systemct1 enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/eb57c69ae90ad4fc0813514de30448f9",
+                    "https://p.ananas.chaoxing.com/star3/origin/889ca872b05a05275d1111566188dc06"
+                ],
+                "text": []
+            }
+        }
+    ],
+    "郑捷": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir -p ~/abc/sales",
+                    "cd ~/abc/sales",
+                    "touch zhengjie.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "sudo groupadd sales",
+                    "sudo useradd -m sale1",
+                    "sudo useradd -aG sales sale1",
+                    "sudo useradd -m sale2",
+                    "sudo useradd -aG sales sale2",
+                    "sudo passwd sale1",
+                    "sudo passwd sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales -R",
+                    "chown :sales /companydata/sales R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent -add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "陈克": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /abc/sales",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/chenke.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "useradd text_user1",
+                    "passwd sale1",
+                    "passwd sale2",
+                    "passwd test_user1",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/abc/sales -R",
+                    "chown :sales /abc/sales -R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent -- add-service=sambe",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "samba",
+                    "systemcll restart smb",
+                    "systemcll enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "雷金龙": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fbc2d12aee23cd44ecae13a11418eb2f",
+                    "https://p.ananas.chaoxing.com/star3/origin/b5644a5c5361ce95d47f7c1efb3d3a2f",
+                    "https://p.ananas.chaoxing.com/star3/origin/531b22897f35bd199d777d884c906859"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /abc",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/leijinlong.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sales1",
+                    "useradd -g sales sales2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /companydata/sales -R",
+                    "chown :sales /companydata/sales -R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall -cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "高灿": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /abc/sales",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/gaocan.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2",
+                    "useradd text_user1",
+                    "passwd sale1",
+                    "passwd sale2",
+                    "passwd test_user1",
+                    "smbpasswd -a sale1",
+                    "smbpasswd -a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770 /abc/sales -R",
+                    "chown :sales /abc/sales -R"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent --add-service=samba",
+                    "firewall-cmd --reload",
+                    "firewall-cmd --list-all",
+                    "samba",
+                    "systemctl restart smb",
+                    "systemctl enable smb"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "黄凯迪": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/710e3c3ec8b8df2d9d80fbb1c9854872",
+                    "https://p.ananas.chaoxing.com/star3/origin/a26178432381d71e1b9504388e42a665",
+                    "https://p.ananas.chaoxing.com/star3/origin/a56c3ed1ead94a31ae1f0ae095beb772"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir abc",
+                    "mkdir /abc/sales",
+                    "touch abc/sales/huangkaidi.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd-g sales sale1",
+                    "useradd-g sales sale2",
+                    "smbpasswd-a sale1",
+                    "smbpasswd-a sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "[sales]",
+                    "comment=sales",
+                    "path=abc/sales",
+                    "wriable=yes",
+                    "browseble=yes",
+                    "vaid user=@sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chomod 770/abc/sales/sales -R",
+                    "chomn :sales/abc/sales -R",
+                    "setenfoce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd--permanent --add serviee=samba",
+                    "firewall-cmd--reload",
+                    "firwall-cmd-list-all"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "黄渝阁": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f7665acf99f693a9cff12423f2a09f50",
+                    "https://p.ananas.chaoxing.com/star3/origin/0eb7307af806eaf0a129704e187bb94c"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir /abc",
+                    "mkdir /abc/sales",
+                    "touch /abc/sales/huangyuge.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "groupadd sales",
+                    "useradd -g sales sale1",
+                    "useradd -g sales sale2"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "workgroup=Workgroup",
+                    "server string= File Server",
+                    "path=/companydata/sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    ":",
+                    "::"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ],
+    "黄滢冰": [
+        {
+            "correct_answer": "正确答案：",
+            "description": "背景：公司有多个部门，因为工作需要，将销售部的资料存放在samba服务器的/abc/sales/（给你们打简单点，不要打书上那个太长了）目录下几种管理，以便销售人员浏览，并且该目录只允许销售部员工访问。\n-------------------------------------------------------------------------------------------\n此题为背景介绍不用回答！！！！！！",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "配置Server01的ip为192.168.10.1/24（截图ip配置），windows电脑vmnet1网卡的ip设置为192.168.10.40/24（截图ip配置），虚拟机网络适配器选择仅主机（截图网络配置）。\n\n--------------------------------------------------------------------------------------\n提交：上述三张截图！",
+            "student_answer": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b72ec48e46aba953f3fad076bd45e953",
+                    "https://p.ananas.chaoxing.com/star3/origin/809c8d72c4daef00ec52cc5323b89437",
+                    "https://p.ananas.chaoxing.com/star3/origin/321120721d86b7e47ef24ea0df3d802a"
+                ],
+                "text": []
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "创建/abc/sales目录，并在sales目录下创建以你名字拼音命名的txt文件。（如张三，zhangsan.txt）\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "mkdir-p/abc/sales && touch/abc/sales/Huangyingbing.txt"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "添加sales组，并添加两个账户sale1和sale2到sales组里。并把销售部成员添加到相应的samba账号。\n--------------------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "rpm-qa\\grep samba",
+                    "mount/dew/cdrom/media",
+                    "dnf info samba",
+                    "dnf claen all",
+                    "dnf install samba-y",
+                    "rpm-qa | frep samba",
+                    "systemctl start smb;systmctl enable smb",
+                    "sudo groupadd seles",
+                    "sudo useradd-m.sale1",
+                    "sudo usermod -aG sales sale1",
+                    "sudo smbpasswd -a sale1",
+                    "sudo useradd -m sale2",
+                    "sudo usermod -aG sales sale2",
+                    "sudo smbpasswd -a sales"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "按照前面的要求修改主配置文件。\n-------------------------------------------------------------------------\n提交：主配置文件配置内容（只用写你加的那一段配置就行）",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "vim/etc/samba/smb.conf"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "设置本地权限和SELinux（SELinux配置三者选其一就行）\n-------------------------------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "chmod 770/companydata/sates-R",
+                    "chown;sales/companydata/sales-R",
+                    "setenforce 0"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "放行防火墙，并重启samba服务。\n---------------------------------------------------\n提交：在文本框中输入所有你用来创建上述内容所用到的命令。",
+            "student_answer": {
+                "images": [],
+                "text": [
+                    "firewall-cmd--permanent--addservice=samba",
+                    "firewall-cmd--reload",
+                    "systemctl restart smbd"
+                ]
+            }
+        },
+        {
+            "correct_answer": "正确答案：",
+            "description": "用windows客户端连接上samba服务器。（截图）\n-------------------------------------------\n提交两张截图：1.按照书本图10-6的样子截一张挂载成功的图\n2.打开你挂载的驱动器，看看里面你创建的文件（第三题里以你名字创建的文件）",
+            "student_answer": {
+                "images": [],
+                "text": []
+            }
+        }
+    ]
+}
