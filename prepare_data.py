@@ -76,7 +76,7 @@ def process_student(student, headers, session_cookies, driver_queue, task_list_l
                 question_data = {
                     "description": question_description,
                     "student_answer": student_answer,
-                    "correct_answer": correct_answer
+                    "correct_answer": correct_answer.replace("正确答案：", "", 1)
                 }
                 all_questions.append(question_data)
 
@@ -282,17 +282,20 @@ def chaoxing():
                     future.result()
 
             final_list = {}
+            final_list["题目"] = {}
+            final_list["学生回答"] = {}
             student_name_list = list(task_list.keys())
             len_task = len(task_list[student_name_list[0]])
             len_student = len(student_name_list)
+            for j in range(len_student):
+                final_list["学生回答"][student_name_list[j]] = {}
             for i in range(len_task):
-                final_list['题目' + str(i)] = {}
-                final_list['题目' + str(i)]["description"] = task_list[student_name_list[0]][i]["description"]
-                final_list['题目' + str(i)]["correct_answer"] = task_list[student_name_list[0]][i]["correct_answer"]
-                final_list['题目' + str(i)]["student_answer"] = {}
+                final_list["题目"]['题目' + str(i+1)] = {}
+                final_list["题目"]['题目' + str(i+1)]["题干"] = task_list[student_name_list[0]][i]["description"]
+                final_list["题目"]['题目' + str(i+1)]["正确答案"] = task_list[student_name_list[0]][i]["correct_answer"]
                 for j in range(len_student):
-                    final_list['题目' + str(i)]["student_answer"][student_name_list[j]] = \
-                        task_list[student_name_list[j]][i]["student_answer"]
+                    final_list["学生回答"][student_name_list[j]]['题目' + str(i+1)] = task_list[student_name_list[j]][i][
+                        "student_answer"]
             with open(file_name, 'w', encoding='utf-8') as json_file:
                 json.dump(final_list, json_file, indent=4, sort_keys=True, ensure_ascii=False)
 
