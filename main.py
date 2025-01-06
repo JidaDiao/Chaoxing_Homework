@@ -9,6 +9,83 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import re
+from concurrent.futures import ThreadPoolExecutor
+from queue import Queue
+import threading
+
+
+def process_student(student, headers, session_cookies, driver_queue, task_list_lock, task_list):
+    # 从队列中获取driver
+    driver = driver_queue.get()
+    try:
+        student_name = student['name']
+        student_url = student['review_link']
+        driver.get(student_url)
+        time.sleep(3)
+
+        logs = driver.get_log('performance')
+        target_url = None
+        for log in logs:
+            message = log['message']
+            if 'https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work' in message:
+                log_json = json.loads(message)['message']['params']
+                if 'request' in log_json and 'url' in log_json['request']:
+                    target_url = log_json['request']['url']
+                    break
+
+        if target_url:
+            response = requests.get(target_url, headers=headers, cookies=session_cookies)
+            soup = BeautifulSoup(response.content, 'html.parser')
+            all_questions = []
+            question_blocks = soup.find_all('div', class_='mark_item1')
+
+            for block in question_blocks:
+                # 提取题目描述
+                question_description_tag = block.find('div', class_='hiddenTitle')
+                if question_description_tag:
+                    question_description = question_description_tag.text.strip()
+                else:
+                    question_description = "未找到题目描述"
+
+                # 提取学生答案
+                student_answer_tag = block.find('dl', class_='mark_fill',
+                                                id=lambda x: x and x.startswith('stuanswer_'))
+                if student_answer_tag:
+                    # 查找文字答案
+                    text_answers = [p.text.strip() for p in student_answer_tag.find_all('p') if p.text.strip()]
+                    # 查找图片链接
+                    image_answers = [img['src'] for img in student_answer_tag.find_all('img') if
+                                     'src' in img.attrs]
+                    # 组合学生答案
+                    student_answer = {
+                        "text": text_answers,
+                        "images": image_answers
+                    }
+                else:
+                    student_answer = {"text": [], "images": []}
+
+                # 提取正确答案
+                correct_answer_tag = block.find('dl', class_='mark_fill',
+                                                id=lambda x: x and x.startswith('correctanswer_'))
+                if correct_answer_tag:
+                    correct_answer = correct_answer_tag.text.strip()
+                else:
+                    correct_answer = "未找到正确答案"
+
+                # 存储题目信息
+                question_data = {
+                    "description": question_description,
+                    "student_answer": student_answer,
+                    "correct_answer": correct_answer
+                }
+                all_questions.append(question_data)
+
+            # 使用锁来保护共享资源
+            with task_list_lock:
+                task_list[student_name] = all_questions
+    finally:
+        # 将driver放回队列
+        driver_queue.put(driver)
 
 
 # 学习通
@@ -106,13 +183,15 @@ def chaoxing():
 
             # 将任务信息添加到列表
             task_data.append(task_info)
+        driver_queue = Queue()
 
         for task in task_data:
             piyue_url = task['review_link']
             title = task['title']
             file_name = title + '.json'
+            print("当前批阅链接：" + piyue_url)
             driver.get(piyue_url)
-            time.sleep(3)  # 等待页面加载
+            time.sleep(5)  # 等待页面加载
 
             # 监听页面的网络请求
             logs = driver.get_log('performance')
@@ -128,7 +207,7 @@ def chaoxing():
             target_url = re.sub(r'pages=\d+', 'pages={}', target_url)
             student_data = []
             task_list = {}
-            for page in range(1, 11):  # 从 1 到 10
+            for page in range(1, 5):  # 从 1 到 10
                 target_url_modified = target_url.format(page)  # 替换 URL 中的 {} 为当前的页码
                 response = requests.get(target_url_modified, headers=headers, cookies=session_cookies)
 
@@ -171,76 +250,51 @@ def chaoxing():
                             'name': student_name,
                             'review_link': review_link
                         })
-            for student in student_data:
-                student_name = student['name']
-                student_url = student['review_link']
-                driver.get(student_url)
-                time.sleep(3)  # 等待页面加载
+            # 创建多个WebDriver实例
+            num_threads = 4  # 可以根据需要调整线程数
+            if driver_queue.empty():
+                for _ in range(num_threads):
+                    options = webdriver.ChromeOptions()
+                    # 设置ChromeOptions...
+                    driver_ = webdriver.Chrome(service=service, options=options)
+                    driver_queue.put(driver_)
 
-                # 监听页面的网络请求
-                logs = driver.get_log('performance')
-                for log in logs:
-                    message = log['message']
-                    if 'https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work' in message:  # 过滤目标请求
-                        log_json = json.loads(message)['message']['params']
-                        if 'request' in log_json and 'url' in log_json['request']:
-                            target_url = log_json['request']['url']
-                            print(f"捕获的目标批阅内容请求 URL: {target_url}")
-                            break
+            # 创建线程锁
+            task_list_lock = threading.Lock()
 
-                response = requests.get(target_url, headers=headers, cookies=session_cookies)
-                # 解析 HTML
-                soup = BeautifulSoup(response.content, 'html.parser')
+            # 使用线程池处理学生数据
+            with ThreadPoolExecutor(max_workers=num_threads) as executor:
+                futures = []
+                for student in student_data:
+                    future = executor.submit(
+                        process_student,
+                        student,
+                        headers,
+                        session_cookies,
+                        driver_queue,
+                        task_list_lock,
+                        task_list
+                    )
+                    futures.append(future)
 
-                # 存储所有题目的数据
-                all_questions = []
+                # 等待所有任务完成
+                for future in futures:
+                    future.result()
 
-                # 查找所有题目块
-                question_blocks = soup.find_all('div', class_='mark_item1')
-
-                for block in question_blocks:
-                    # 提取题目描述
-                    question_description_tag = block.find('div', class_='hiddenTitle')
-                    if question_description_tag:
-                        question_description = question_description_tag.text.strip()
-                    else:
-                        question_description = "未找到题目描述"
-
-                    # 提取学生答案
-                    student_answer_tag = block.find('dl', class_='mark_fill',
-                                                    id=lambda x: x and x.startswith('stuanswer_'))
-                    if student_answer_tag:
-                        # 查找文字答案
-                        text_answers = [p.text.strip() for p in student_answer_tag.find_all('p') if p.text.strip()]
-                        # 查找图片链接
-                        image_answers = [img['src'] for img in student_answer_tag.find_all('img') if
-                                         'src' in img.attrs]
-                        # 组合学生答案
-                        student_answer = {
-                            "text": text_answers,
-                            "images": image_answers
-                        }
-                    else:
-                        student_answer = {"text": [], "images": []}
-
-                    # 提取正确答案
-                    correct_answer_tag = block.find('dl', class_='mark_fill',
-                                                    id=lambda x: x and x.startswith('correctanswer_'))
-                    if correct_answer_tag:
-                        correct_answer = correct_answer_tag.text.strip()
-                    else:
-                        correct_answer = "未找到正确答案"
-
-                    # 存储题目信息
-                    question_data = {
-                        "description": question_description,
-                        "student_answer": student_answer,
-                        "correct_answer": correct_answer
-                    }
-                    all_questions.append(question_data)
-                task_list[student_name] = all_questions
+            final_list = {}
+            student_name_list = list(task_list.keys())
+            len_task = len(task_list[student_name_list[0]])
+            len_student = len(student_name_list)
+            for i in range(len_task):
+                final_list['题目' + str(i)] = {}
+                final_list['题目' + str(i)]["description"] = task_list[student_name_list[0]][i]["description"]
+                final_list['题目' + str(i)]["correct_answer"] = task_list[student_name_list[0]][i]["correct_answer"]
+                final_list['题目' + str(i)]["student_answer"] = {}
+                for j in range(len_student):
+                    final_list['题目' + str(i)]["student_answer"][student_name_list[j]] = \
+                        task_list[student_name_list[j]][i]["student_answer"]
             with open(file_name, 'w', encoding='utf-8') as json_file:
-                json.dump(task_list, json_file, indent=4, sort_keys=True, ensure_ascii=False)
+                json.dump(final_list, json_file, indent=4, sort_keys=True, ensure_ascii=False)
 
 
 
