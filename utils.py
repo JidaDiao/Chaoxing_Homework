@@ -5,6 +5,7 @@ from io import BytesIO
 import random
 import re
 
+
 def import_json_file(file_path):
     """
     导入JSON文件并返回其内容。
@@ -22,7 +23,8 @@ def import_json_file(file_path):
     except json.JSONDecodeError:
         print(f"JSON文件解析错误: {file_path}")
         return None
-    
+
+
 def download_image(url):
     """下载图片并转换为base64格式"""
     headers = {
@@ -45,31 +47,35 @@ def download_image(url):
 
 
 def randompop_uncorrected(student_answers_prompt_uncorrected, number):
-     # 随机选择 n 个键
+    # 随机选择 n 个键
     selected_keys = random.sample(list(student_answers_prompt_uncorrected.keys()), number)
     # 创建新字典并从原字典删除这些键
     selected_dict = {key: student_answers_prompt_uncorrected.pop(key) for key in selected_keys}
     return selected_dict
 
+
 def randompop_corrected(student_answers_prompt_corrected, number):
-     # 随机选择 n 个键
+    # 随机选择 n 个键
     selected_keys = random.sample(list(student_answers_prompt_corrected.keys()), number)
     # 创建新字典
     selected_dict = {key: student_answers_prompt_corrected[key] for key in selected_keys}
     return selected_dict
 
-def context_prepare_prompt(selected_dict, prepare_system_prompt):
+
+def context_prepare_prompt(selected_dict, prepare_system_prompt, number):
     context_prompt = prepare_system_prompt
     for index, (key, value) in enumerate(selected_dict.items(), start=1):
         context_prompt += value
-        if index <9 :
+        if index < number:
             context_prompt.append({
                 "role": "assistant",
-                "content": "第" + str(index + 1) + "轮：pass"
+                "content": "第" + str(index) + "轮：pass"
             })
     return context_prompt
 
-def context_few_shot_learning_prompt(selected_dict_uncorrected, selected_dict_corrected, few_shot_learning_system_prompt):
+
+def context_few_shot_learning_prompt(selected_dict_uncorrected, selected_dict_corrected,
+                                     few_shot_learning_system_prompt):
     context_prompt = few_shot_learning_system_prompt
     for index, (key, value) in enumerate(selected_dict_corrected.items(), start=1):
         context_prompt += value
@@ -77,13 +83,15 @@ def context_few_shot_learning_prompt(selected_dict_uncorrected, selected_dict_co
         context_prompt += value
     return context_prompt
 
+
 def parse_grading_response(response):
+    # 提取学生名字和成绩部分
     # 提取学生名字和成绩
-    grades = re.findall(r"(\S+?)：(\d+)分", response)
-    student_scores = {name: int(score) for name, score in grades}
-    
+    student_scores = re.findall(r"(\S+)：(\d+)分", response)
+    student_dict = {name: int(score) for name, score in student_scores}
+
     # 提取评分标准
-    standard_match = re.search(r"### 本作业评分标准：\n(.+)", response, re.S)
-    grading_standard = standard_match.group(1).strip() if standard_match else ""
-    
-    return student_scores, grading_standard
+    scoring_standard_match = re.search(r"### 本作业评分标准：\s*(.*)", response, re.DOTALL)
+    scoring_standard = scoring_standard_match.group(1).strip() if scoring_standard_match else ""
+
+    return student_dict, scoring_standard
