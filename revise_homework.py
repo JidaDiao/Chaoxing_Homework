@@ -243,8 +243,8 @@ def main():
             with open('student_answers_prompt.json', 'w', encoding='utf-8') as json_file:
                 json.dump(student_answers_prompt_uncorrected, json_file, indent=4, sort_keys=True,
                           ensure_ascii=False)
-        number_prepare = 10
-        number_gen = 5
+        number_prepare = 6
+        number_gen = 3
 
         if os.path.exists('original_student_score.json'):
             student_score_final = import_json_file('./original_student_score.json')
