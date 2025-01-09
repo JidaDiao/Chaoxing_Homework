@@ -249,8 +249,7 @@ def main():
 
         if os.path.exists('original_student_score.json'):
             student_score_final = import_json_file('./original_student_score.json')
-            if len(student_score_final) == len(student_answers_prompt_uncorrected) and len(student_score_final) < len(
-                    student_answers_prompt_uncorrected):
+            if len(student_score_final) >= len(student_answers_prompt_uncorrected):
                 continue
             else:
                 student_answers_prompt_corrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if
