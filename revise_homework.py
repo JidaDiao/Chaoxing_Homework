@@ -245,7 +245,7 @@ def main():
         number_prepare = 10
         number_gen = 5
 
-        if os.path.exists('normalized_student_score.json'):
+        if os.path.exists('original_student_score.json'):
             student_score_final = import_json_file('./original_student_score.json')
             if len(student_score_final) == len(student_answers_prompt_uncorrected):
                 continue
