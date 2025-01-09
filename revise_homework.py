@@ -83,6 +83,7 @@ def gen_prepare_system_prompt(homework_data, number):
         请**严格按照**上述格式和规则输出结果，以便后续统一提取学生名字、分数及评分标准信息。
         **不许出现**只有学生姓名没有分数的情况！！！
         **保证出现**{str(number)}名学生的姓名和他们对应的分数！！！
+        评分标准不要有给某位学生打某分的原因，只需要描述整体的打分依据就行！！
         """
     messages = [{"role": "system", "content": system_prompt}]
     return messages
@@ -160,7 +161,7 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
     context_prompt = context_few_shot_learning_prompt(selected_dict_uncorrected, selected_dict_corrected,
                                                       few_shot_learning_system_prompt)
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4o-2024-11-20",
         messages=context_prompt,
     )
     response_content = response.choices[0].message.content
@@ -248,7 +249,8 @@ def main():
 
         if os.path.exists('original_student_score.json'):
             student_score_final = import_json_file('./original_student_score.json')
-            if len(student_score_final) == len(student_answers_prompt_uncorrected):
+            if len(student_score_final) == len(student_answers_prompt_uncorrected) and len(student_score_final) < len(
+                    student_answers_prompt_uncorrected):
                 continue
             else:
                 student_answers_prompt_corrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if
