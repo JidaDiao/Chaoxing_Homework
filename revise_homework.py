@@ -243,7 +243,7 @@ def main():
             with open('student_answers_prompt.json', 'w', encoding='utf-8') as json_file:
                 json.dump(student_answers_prompt_uncorrected, json_file, indent=4, sort_keys=True,
                           ensure_ascii=False)
-        number_prepare = 5
+        number_prepare = 8
         number_gen = 3
 
         if os.path.exists('original_student_score.json'):
@@ -283,7 +283,7 @@ def main():
                 grading_standard = prepare_score(client, selected_dict_uncorrected, prepare_system_prompt,
                                                  number_prepare)
                 count += 1
-                if count % 2 == 0 and number_prepare > number_gen:
+                if count % 2 == 0 and number_prepare > 5:
                     number_prepare -= 1  # 可能是上下文太长了影响模型输出了,少采样几个学生试试。
             pop_uncorrected(student_answers_prompt_uncorrected, selected_keys)
             with open('评分标准.md', 'w', encoding='utf-8') as f:
