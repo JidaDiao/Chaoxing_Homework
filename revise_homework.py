@@ -177,6 +177,8 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
         )
         response_content = response.choices[0].message.content
         print(response_content)
+        grades = re.findall(r"(\S+?)：(\d+)分", response_content)
+        student_scores = {name: int(score) for name, score in grades}
     for _, (key, value) in enumerate(student_scores.items()):
         student_score_final[key] = value
     for _, (key, value) in enumerate(selected_dict_uncorrected.items()):
