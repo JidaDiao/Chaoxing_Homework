@@ -265,12 +265,10 @@ def main():
                     grading_standard = f.read()
 
         else:
-
-            student_answers_prompt_uncorrected = {}
             student_answers_prompt_corrected = {}
             student_score_final = {}
 
-            # 准备number个参考分数和评分标准
+            # 准备number_prepare个参考分数和评分标准
             prepare_system_prompt = gen_prepare_system_prompt(homework_data, number_prepare)
             selected_dict_uncorrected, selected_keys = randomselect_uncorrected(student_answers_prompt_uncorrected,
                                                                                 number_prepare)
@@ -292,8 +290,7 @@ def main():
 
         # 使用线程池并行评分
         with ThreadPoolExecutor() as executor:
-            for index, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items(),
-                                                                   start=1):
+            for _, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items()):
                 few_shot_learning_system_prompt = gen_few_shot_learning_system_prompt(homework_data,
                                                                                       grading_standard)  ###奇怪的bug...可以试试注释掉这段
                 selected_dict_uncorrected = {student_name: student_answer}
