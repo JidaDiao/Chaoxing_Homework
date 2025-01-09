@@ -185,6 +185,8 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
             number_gen -= 1  # 可能是上下文太长了影响模型输出了,少采样几个学生试试。
     for _, (key, value) in enumerate(student_scores.items()):
         student_score_final[key] = value
+    with open('original_student_score.json', 'w', encoding='utf-8') as json_file:
+        json.dump(student_score_final, json_file, indent=4, sort_keys=True, ensure_ascii=False)
     for _, (key, value) in enumerate(selected_dict_uncorrected.items()):
         try:
             value_ = value
@@ -299,9 +301,6 @@ def main():
                                 few_shot_learning_system_prompt)
 
         print(student_score_final)
-
-        with open('original_student_score.json', 'w', encoding='utf-8') as json_file:
-            json.dump(student_score_final, json_file, indent=4, sort_keys=True, ensure_ascii=False)
 
         # 归一化分数并保存
         normalized_scores = normalize_and_save_grade(student_score_final, min_score=70, max_score=100)
