@@ -167,6 +167,7 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
     print(response_content)
     grades = re.findall(r"(\S+?)：(\d+)分", response_content)
     student_scores = {name: int(score) for name, score in grades}
+    count = 1
     while grades == [] or student_scores == {}:
         selected_dict_corrected = randompop_corrected(student_answers_prompt_corrected, number_gen)
         context_prompt = context_few_shot_learning_prompt(selected_dict_uncorrected, selected_dict_corrected,
@@ -179,6 +180,9 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
         print(response_content)
         grades = re.findall(r"(\S+?)：(\d+)分", response_content)
         student_scores = {name: int(score) for name, score in grades}
+        count += 1
+        if count % 2 == 0 and number_gen > 2:
+            number_gen -= 1  # 可能是上下文太长了影响模型输出了,少采样几个学生试试。
     for _, (key, value) in enumerate(student_scores.items()):
         student_score_final[key] = value
     for _, (key, value) in enumerate(selected_dict_uncorrected.items()):
