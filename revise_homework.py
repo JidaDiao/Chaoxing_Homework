@@ -242,8 +242,8 @@ def main():
             if len(student_score_final) == len(student_answers_prompt_uncorrected):
                 continue
             else:
-
-                student_answers_prompt_corrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if k in student_score_final}
+                student_answers_prompt_corrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if
+                                                    k in student_score_final}
                 for _, (key, value) in enumerate(student_answers_prompt_corrected.items()):
                     value_ = value
                     value_.append({
@@ -251,9 +251,11 @@ def main():
                         "content": key + "：" + str(student_score_final[key]) + "分"
                     })
                     student_answers_prompt_corrected[key] = value_
-                student_answers_prompt_uncorrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if k not in student_score_final}
-                grading_standard = import_json_file('./评分标准.md')
-                
+                student_answers_prompt_uncorrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if
+                                                      k not in student_score_final}
+                with open('./评分标准.md', 'r', encoding='utf-8') as f:
+                    grading_standard = f.read()
+
         else:
 
             student_answers_prompt_uncorrected = {}
