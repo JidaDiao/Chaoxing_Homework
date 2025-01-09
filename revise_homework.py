@@ -136,9 +136,9 @@ def prepare_score(client, selected_dict_uncorrected, prepare_system_prompt, numb
     response_content = response.choices[0].message.content
     print(response_content)
     student_scores, grading_standard = parse_grading_response(response_content)
-    for index, (key, value) in enumerate(student_scores.items(), start=1):
+    for _, (key, value) in enumerate(student_scores.items()):
         student_score_final[key] = value
-    for index, (key, value) in enumerate(selected_dict_uncorrected.items(), start=1):
+    for _, (key, value) in enumerate(selected_dict_uncorrected.items()):
         try:
             value_ = value
             value_.append({
@@ -177,9 +177,9 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
         )
         response_content = response.choices[0].message.content
         print(response_content)
-    for index, (key, value) in enumerate(student_scores.items(), start=1):
+    for _, (key, value) in enumerate(student_scores.items()):
         student_score_final[key] = value
-    for index, (key, value) in enumerate(selected_dict_uncorrected.items(), start=1):
+    for _, (key, value) in enumerate(selected_dict_uncorrected.items()):
         try:
             value_ = value
             value_.append({
@@ -201,6 +201,10 @@ def main():
     # 获取要批改的作业目录列表
     class_list = os.listdir('要改的作业')
     homework_dirs = []
+    # 初始化全局变量
+    global student_answers_prompt_uncorrected
+    global student_score_final
+    global student_answers_prompt_corrected
 
     for class_name in class_list:
         homework_name = os.listdir(os.path.join('要改的作业', class_name))
@@ -215,59 +219,71 @@ def main():
         # 导入作业数据
         homework_data = import_json_file('./answer.json')
 
-        if os.path.exists('normalized_student_score.json'):
-            score1 = import_json_file('./original_student_score.json')
-            if len(score1) == len(homework_data["学生回答"]):
-                continue
-
-        # 初始化全局变量
-        global student_answers_prompt_uncorrected
-        global student_score_final
-        global student_answers_prompt_corrected
-
-        student_answers_prompt_uncorrected = {}
-        student_answers_prompt_corrected = {}
-        student_score_final = {}
-
         # 检查是否存在已保存的学生答案提示词
         if os.path.exists('./student_answers_prompt.json'):
             student_answers_prompt_uncorrected = import_json_file('./student_answers_prompt.json')
         else:
             # 使用线程池并行处理学生回答
             with ThreadPoolExecutor() as executor:
-                futures = {executor.submit(create_messages_with_images, homework_data, student_name): student_name for
+                futures = {executor.submit(create_messages_with_images, homework_data, student_name): student_name
+                           for
                            student_name in homework_data["学生回答"].keys()}
             for future in futures:
                 student_name = futures[future]
                 student_answers_prompt_uncorrected[student_name] = future.result()
             with open('student_answers_prompt.json', 'w', encoding='utf-8') as json_file:
-                json.dump(student_answers_prompt_uncorrected, json_file, indent=4, sort_keys=True, ensure_ascii=False)
-
+                json.dump(student_answers_prompt_uncorrected, json_file, indent=4, sort_keys=True,
+                          ensure_ascii=False)
         number_prepare = 10
         number_gen = 5
 
-        # 准备number个参考分数和评分标准
-        prepare_system_prompt = gen_prepare_system_prompt(homework_data, number_prepare)
-        selected_dict_uncorrected, selected_keys = randomselect_uncorrected(student_answers_prompt_uncorrected,
-                                                                            number_prepare)
-        grading_standard = prepare_score(client, selected_dict_uncorrected, prepare_system_prompt, number_prepare)
-        count = 1
-        while grading_standard == "" or len(student_score_final) != number_prepare:
+        if os.path.exists('normalized_student_score.json'):
+            student_score_final = import_json_file('./original_student_score.json')
+            if len(student_score_final) == len(student_answers_prompt_uncorrected):
+                continue
+            else:
+
+                student_answers_prompt_corrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if k in student_score_final}
+                for _, (key, value) in enumerate(student_answers_prompt_corrected.items()):
+                    value_ = value
+                    value_.append({
+                        "role": "assistant",
+                        "content": key + "：" + str(student_score_final[key]) + "分"
+                    })
+                    student_answers_prompt_corrected[key] = value_
+                student_answers_prompt_uncorrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if k not in student_score_final}
+                grading_standard = import_json_file('./评分标准.md')
+                
+        else:
+
+            student_answers_prompt_uncorrected = {}
+            student_answers_prompt_corrected = {}
             student_score_final = {}
-            prepare_system_prompt = gen_prepare_system_prompt(homework_data, number_prepare)  ###奇怪的bug...可以试试注释掉这段
+
+            # 准备number个参考分数和评分标准
+            prepare_system_prompt = gen_prepare_system_prompt(homework_data, number_prepare)
             selected_dict_uncorrected, selected_keys = randomselect_uncorrected(student_answers_prompt_uncorrected,
-                                                                                number_prepare)  # 可能是学生选的不好？
+                                                                                number_prepare)
             grading_standard = prepare_score(client, selected_dict_uncorrected, prepare_system_prompt, number_prepare)
-            count += 1
-            if count % 2 == 0 and number_prepare > number_gen:
-                number_prepare -= 1  # 可能是上下文太长了影响模型输出了,少采样几个学生试试。
-        pop_uncorrected(student_answers_prompt_uncorrected, selected_keys)
-        with open('评分标准.md', 'w', encoding='utf-8') as f:
-            f.write(grading_standard)
+            count = 1
+            while grading_standard == "" or len(student_score_final) != number_prepare:
+                student_score_final = {}
+                prepare_system_prompt = gen_prepare_system_prompt(homework_data, number_prepare)  ###奇怪的bug...可以试试注释掉这段
+                selected_dict_uncorrected, selected_keys = randomselect_uncorrected(student_answers_prompt_uncorrected,
+                                                                                    number_prepare)  # 可能是学生选的不好？
+                grading_standard = prepare_score(client, selected_dict_uncorrected, prepare_system_prompt,
+                                                 number_prepare)
+                count += 1
+                if count % 2 == 0 and number_prepare > number_gen:
+                    number_prepare -= 1  # 可能是上下文太长了影响模型输出了,少采样几个学生试试。
+            pop_uncorrected(student_answers_prompt_uncorrected, selected_keys)
+            with open('评分标准.md', 'w', encoding='utf-8') as f:
+                f.write(grading_standard)
 
         # 使用线程池并行评分
         with ThreadPoolExecutor() as executor:
-            for index, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items(), start=1):
+            for index, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items(),
+                                                                   start=1):
                 few_shot_learning_system_prompt = gen_few_shot_learning_system_prompt(homework_data,
                                                                                       grading_standard)  ###奇怪的bug...可以试试注释掉这段
                 selected_dict_uncorrected = {student_name: student_answer}
