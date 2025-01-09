@@ -289,6 +289,7 @@ def main():
             with open('评分标准.md', 'w', encoding='utf-8') as f:
                 f.write(grading_standard)
 
+
         # 使用线程池并行评分
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             for _, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items()):
