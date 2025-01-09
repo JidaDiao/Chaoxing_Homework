@@ -209,6 +209,7 @@ def main():
     # 获取要批改的作业目录列表
     class_list = os.listdir('要改的作业')
     homework_dirs = []
+    max_workers = 4
     # 初始化全局变量
     global student_answers_prompt_uncorrected
     global student_score_final
@@ -289,7 +290,7 @@ def main():
                 f.write(grading_standard)
 
         # 使用线程池并行评分
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
             for _, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items()):
                 few_shot_learning_system_prompt = gen_few_shot_learning_system_prompt(homework_data,
                                                                                       grading_standard)  ###奇怪的bug...可以试试注释掉这段
