@@ -1,3 +1,5 @@
+import sys
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -5,13 +7,13 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-import json
-import requests
 from bs4 import BeautifulSoup
-import re
 from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
 import threading
+import os
+
+from utils import *
 
 
 def process_student(student, headers, session_cookies, driver_queue, task_list_lock, task_list):
@@ -21,8 +23,9 @@ def process_student(student, headers, session_cookies, driver_queue, task_list_l
         student_name = student['name']
         student_url = student['review_link']
         driver.get(student_url)
-        time.sleep(3)
+        time.sleep(2)  # 等待页面加载
 
+        # 获取浏览器性能日志
         logs = driver.get_log('performance')
         target_url = None
         for log in logs:
@@ -89,6 +92,10 @@ def process_student(student, headers, session_cookies, driver_queue, task_list_l
 
 
 # 学习通
+# 登录并获取作业信息
+# 主要流程包括：登录、获取课程链接、解析作业列表、下载作业数据
+# 使用多线程提高效率
+
 def chaoxing():
     attackurl = "https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com"
 
@@ -104,6 +111,7 @@ def chaoxing():
     caps = DesiredCapabilities.CHROME
     caps['goog:loggingPrefs'] = {'performance': 'ALL'}
     options.set_capability('goog:loggingPrefs', caps['goog:loggingPrefs'])
+    class_list = ['计算机应用技术（3+2）2302', '计算机应用技术（3+2）2303', '人工智能技术应用2301']
 
     # 启动 ChromeDriver
     service = Service('C:\Program Files\Google\Chrome\Application\chromedriver.exe')  # 替换为你的 ChromeDriver 路径
@@ -129,7 +137,7 @@ def chaoxing():
         driver.find_element(By.XPATH, '//*[@id="loginBtn"]').click()
 
         # 等待登录完成
-        time.sleep(5)
+        time.sleep(3)
 
         # 获取登录后的 Cookies
         cookies = driver.get_cookies()
@@ -146,160 +154,199 @@ def chaoxing():
         }
 
         # 发送 GET 请求
-        url = 'https://mooc2-ans.chaoxing.com/mooc2-ans/work/list?courseid=237039005&selectClassid=106790350&cpi=403105172&status=-1&v=0&topicid=0'
-        response = requests.get(url, headers=headers, cookies=session_cookies)
+        course_urls = [
+            'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=237039005&clazzid=111081658&cpi=403105172&enc=454befe7dc8693fe2e1e40f4f21ebcde&t=1736326584243&pageHeader=6&v=2',
+            'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=245486443&clazzid=104412878&cpi=403105172&enc=c184605662f128ccf3c6f45b8394765d&t=1736348305925&pageHeader=6&v=2']
 
-        # 打印返回的内容
-        if response.status_code == 200:
-            print("作业列表请求成功!")
-            # print(response.text)
-        else:
-            print(f"请求失败，状态码：{response.status_code}")
-
-        ##############################
-        # 使用 BeautifulSoup 解析 HTML
-        soup = BeautifulSoup(response.content, 'html.parser')
-
-        # 定位任务的列表 <li> 元素
-        tasks = soup.find_all('li', id=lambda x: x and x.startswith('work'))
-
-        # 存储任务信息的列表
-        task_data = []
-
-        # 遍历每个任务项，提取所需信息
-        for task in tasks:
-            # 提取任务标题
-            title = task.find('h2', class_='list_li_tit').text.strip()
-            # 提取任务批阅链接
-            review_link = task.find('a', class_='piyueBtn')['href']
-            # 拼接完整批阅链接
-            piyue_url = "https://mooc2-ans.chaoxing.com" + review_link
-
-            # 将提取的数据存入字典
-            task_info = {
-                'title': title,
-                'review_link': piyue_url,
-            }
-
-            # 将任务信息添加到列表
-            task_data.append(task_info)
-        driver_queue = Queue()
-
-        for task in task_data:
-            piyue_url = task['review_link']
-            title = task['title']
-            file_name = title + '.json'
-            print("当前批阅链接：" + piyue_url)
-            driver.get(piyue_url)
-            time.sleep(5)  # 等待页面加载
-
+        for course_url in course_urls:
+            # 打开目标网页
+            driver.get(course_url)
+            time.sleep(3)  # 等待页面加载
             # 监听页面的网络请求
             logs = driver.get_log('performance')
             for log in logs:
                 message = log['message']
-                if 'mooc2-ans/work/mark-list' in message:  # 过滤目标请求
+                if 'mooc2-ans/work/list' in message:  # 过滤目标请求
                     log_json = json.loads(message)['message']['params']
                     if 'request' in log_json and 'url' in log_json['request']:
-                        target_url = log_json['request']['url']
-                        print(f"捕获的目标批阅列表请求 URL: {target_url}")
+                        list_url = log_json['request']['url']
+                        print(f"捕获的作业列表请求 URL: {list_url}")
                         break
 
-            target_url = re.sub(r'pages=\d+', 'pages={}', target_url)
-            student_data = []
-            task_list = {}
-            for page in range(1, 5):  # 从 1 到 10
-                target_url_modified = target_url.format(page)  # 替换 URL 中的 {} 为当前的页码
-                response = requests.get(target_url_modified, headers=headers, cookies=session_cookies)
+            for list_page in range(1, 10):
+                url = convert_url(list_url, list_page)
+                response = requests.get(url, headers=headers, cookies=session_cookies)
 
                 # 打印返回的内容
                 if response.status_code == 200:
-                    print("最终批阅链接请求成功!")
+                    print("作业列表请求成功!")
                 else:
                     print(f"请求失败，状态码：{response.status_code}")
 
                 # 使用 BeautifulSoup 解析 HTML
                 soup = BeautifulSoup(response.content, 'html.parser')
 
-                # 检查是否有 "暂无数据"
-                null_data = soup.find('div', class_='nullData')
-                if null_data and "暂无数据" in null_data.text:
-                    print("已超出页数，停止爬取。")
-                    break
-                else:
-                    # 查找每个 ul 元素
-                    ul_elements = soup.find_all('ul', class_='dataBody_td')
+                # 定位任务的列表 <li> 元素
+                tasks = soup.find_all('li', id=lambda x: x and x.startswith('work'))
 
-                    # 遍历 ul 元素，提取学生名字和批阅链接
-                    for ul in ul_elements:
-                        # 提取学生名字
-                        name_div = ul.find('div', class_='py_name')
-                        if name_div:
-                            student_name = name_div.text.strip()
+                # 存储任务信息的列表
+                task_data = []
+
+                # 遍历每个任务项，提取所需信息
+                for task in tasks:
+                    # 班级
+                    class_name = task.find('div', class_='list_class').get('title', '').strip()
+                    if class_name not in class_list:
+                        continue
+                    # 提取任务标题
+                    title = task.find('h2', class_='list_li_tit').text.strip()
+                    # 作答时间
+                    answer_time = task.find('p', class_='list_li_time').find('span').text.strip()
+                    # 待批人数
+                    pending_review = int(task.find('em', class_='fs28').text.strip())
+                    # 提取任务批阅链接
+                    review_link = task.find('a', class_='piyueBtn')['href']
+                    # 拼接完整批阅链接
+                    piyue_url = "https://mooc2-ans.chaoxing.com" + review_link
+
+                    if pending_review > 5:
+                        # 将提取的数据存入字典
+                        task_info = {
+                            '班级': class_name,
+                            '作答时间': answer_time,
+                            '作业名': title,
+                            'review_link': piyue_url
+                        }
+                        if task_info in task_data:
+                            sys.exit()
                         else:
-                            student_name = "未找到名字"
+                            # 将任务信息添加到列表
+                            task_data.append(task_info)
+                driver_queue = Queue()
 
-                        # 提取批阅链接
-                        review_link_tag = ul.find('a', class_='cz_py')
-                        if review_link_tag:
-                            review_link = "https://mooc2-ans.chaoxing.com" + review_link_tag['href']
+                for task in task_data:
+                    save_path = "./" + sanitize_folder_name(task['班级']) + '/' + sanitize_folder_name(
+                        task['作业名'] + task['作答时间'])
+                    if not os.path.exists(save_path):
+                        os.makedirs(save_path)
+                    else:
+                        continue
+                    piyue_url = task['review_link']
+                    file_name = 'answer.json'
+                    print("当前批阅链接：" + piyue_url)
+                    download(driver, save_path, piyue_url)
+                    driver.get(piyue_url)
+                    time.sleep(2)  # 等待页面加载
+
+                    # 监听页面的网络请求
+                    logs = driver.get_log('performance')
+                    for log in logs:
+                        message = log['message']
+                        if 'mooc2-ans/work/mark-list' in message:  # 过滤目标请求
+                            log_json = json.loads(message)['message']['params']
+                            if 'request' in log_json and 'url' in log_json['request']:
+                                target_url = log_json['request']['url']
+                                print(f"捕获的目标批阅列表请求 URL: {target_url}")
+                                break
+
+                    target_url = re.sub(r'pages=\d+', 'pages={}', target_url)
+                    student_data = []
+                    task_list = {}
+                    for page in range(1, 5):  # 从 1 到 10
+                        target_url_modified = target_url.format(page)  # 替换 URL 中的 {} 为当前的页码
+                        response = requests.get(target_url_modified, headers=headers, cookies=session_cookies)
+
+                        # 打印返回的内容
+                        if response.status_code == 200:
+                            print("最终批阅链接请求成功!")
                         else:
-                            review_link = "未找到批阅链接"
+                            print(f"请求失败，状态码：{response.status_code}")
 
-                        # 存储学生数据
-                        student_data.append({
-                            'name': student_name,
-                            'review_link': review_link
-                        })
-            # 创建多个WebDriver实例
-            num_threads = 4  # 可以根据需要调整线程数
-            if driver_queue.empty():
-                for _ in range(num_threads):
-                    options = webdriver.ChromeOptions()
-                    # 设置ChromeOptions...
-                    driver_ = webdriver.Chrome(service=service, options=options)
-                    driver_queue.put(driver_)
+                        # 使用 BeautifulSoup 解析 HTML
+                        soup = BeautifulSoup(response.content, 'html.parser')
 
-            # 创建线程锁
-            task_list_lock = threading.Lock()
+                        # 检查是否有 "暂无数据"
+                        null_data = soup.find('div', class_='nullData')
+                        if null_data and "暂无数据" in null_data.text:
+                            print("已超出页数，停止爬取。")
+                            break
+                        else:
+                            # 查找每个 ul 元素
+                            ul_elements = soup.find_all('ul', class_='dataBody_td')
 
-            # 使用线程池处理学生数据
-            with ThreadPoolExecutor(max_workers=num_threads) as executor:
-                futures = []
-                for student in student_data:
-                    future = executor.submit(
-                        process_student,
-                        student,
-                        headers,
-                        session_cookies,
-                        driver_queue,
-                        task_list_lock,
-                        task_list
-                    )
-                    futures.append(future)
+                            # 遍历 ul 元素，提取学生名字和批阅链接
+                            for ul in ul_elements:
+                                # 提取学生名字
+                                name_div = ul.find('div', class_='py_name')
+                                if name_div:
+                                    student_name = name_div.text.strip()
+                                else:
+                                    student_name = "未找到名字"
 
-                # 等待所有任务完成
-                for future in futures:
-                    future.result()
+                                # 提取批阅链接
+                                review_link_tag = ul.find('a', class_='cz_py')
+                                if review_link_tag:
+                                    review_link = "https://mooc2-ans.chaoxing.com" + review_link_tag['href']
+                                else:
+                                    review_link = "未找到批阅链接"
 
-            final_list = {}
-            final_list["题目"] = {}
-            final_list["学生回答"] = {}
-            student_name_list = list(task_list.keys())
-            len_task = len(task_list[student_name_list[0]])
-            len_student = len(student_name_list)
-            for j in range(len_student):
-                final_list["学生回答"][student_name_list[j]] = {}
-            for i in range(len_task):
-                final_list["题目"]['题目' + str(i+1)] = {}
-                final_list["题目"]['题目' + str(i+1)]["题干"] = task_list[student_name_list[0]][i]["description"]
-                final_list["题目"]['题目' + str(i+1)]["正确答案"] = task_list[student_name_list[0]][i]["correct_answer"]
-                for j in range(len_student):
-                    final_list["学生回答"][student_name_list[j]]['题目' + str(i+1)] = task_list[student_name_list[j]][i][
-                        "student_answer"]
-            with open(file_name, 'w', encoding='utf-8') as json_file:
-                json.dump(final_list, json_file, indent=4, sort_keys=True, ensure_ascii=False)
+                                # 存储学生数据
+                                student_data.append({
+                                    'name': student_name,
+                                    'review_link': review_link
+                                })
+                    # 创建多个WebDriver实例
+                    num_threads = 6  # 可以根据需要调整线程数
+                    if driver_queue.empty():
+                        for _ in range(num_threads):
+                            options = webdriver.ChromeOptions()
+                            # 设置ChromeOptions...
+                            driver_ = webdriver.Chrome(service=service, options=options)
+                            driver_queue.put(driver_)
 
+                    # 创建线程锁
+                    task_list_lock = threading.Lock()
 
+                    # 使用线程池处理学生数据
+                    with ThreadPoolExecutor(max_workers=num_threads) as executor:
+                        futures = []
+                        for student in student_data:
+                            future = executor.submit(
+                                process_student,
+                                student,
+                                headers,
+                                session_cookies,
+                                driver_queue,
+                                task_list_lock,
+                                task_list
+                            )
+                            futures.append(future)
+
+                        # 等待所有任务完成
+                        for future in futures:
+                            future.result()
+
+                    final_list = {}
+                    final_list["题目"] = {}
+                    final_list["学生回答"] = {}
+                    student_name_list = list(task_list.keys())
+                    len_task = len(task_list[student_name_list[0]])
+                    len_student = len(student_name_list)
+                    for j in range(len_student):
+                        final_list["学生回答"][student_name_list[j]] = {}
+                    for i in range(len_task):
+                        final_list["题目"]['题目' + str(i + 1)] = {}
+                        final_list["题目"]['题目' + str(i + 1)]["题干"] = task_list[student_name_list[0]][i][
+                            "description"]
+                        final_list["题目"]['题目' + str(i + 1)]["正确答案"] = task_list[student_name_list[0]][i][
+                            "correct_answer"]
+                        for j in range(len_student):
+                            final_list["学生回答"][student_name_list[j]]['题目' + str(i + 1)] = \
+                                task_list[student_name_list[j]][i][
+                                    "student_answer"]
+                    with open(os.path.join(save_path, file_name), 'w', encoding='utf-8') as json_file:
+                        json.dump(final_list, json_file, indent=4, sort_keys=True, ensure_ascii=False)
+        print("down")
 
     finally:
         # 关闭浏览器
