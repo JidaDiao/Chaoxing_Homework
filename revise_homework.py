@@ -261,8 +261,8 @@ def main():
                     student_answers_prompt_corrected[key] = value_
                 student_answers_prompt_uncorrected = {k: v for k, v in student_answers_prompt_uncorrected.items() if
                                                       k not in student_score_final}
-                with open('./评分标准.md', 'r', encoding='utf-8') as f:
-                    grading_standard = f.read()
+            with open('./评分标准.md', 'r', encoding='utf-8') as f:
+                grading_standard = f.read()
 
         else:
             student_answers_prompt_corrected = {}
