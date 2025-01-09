@@ -200,11 +200,14 @@ def main():
         # 改变当前工作目录到每个作业的目录
         os.chdir(homework_dir)
         print(f"当前正在改: {os.getcwd()}")
-        if os.path.exists('normalized_student_score.json'):
-            continue
 
         # 导入作业数据
         homework_data = import_json_file('./answer.json')
+
+        if os.path.exists('normalized_student_score.json'):
+            score1 = import_json_file('./original_student_score.json')
+            if len(score1) == len(homework_data["学生回答"]):
+                continue
 
         # 初始化全局变量
         global student_answers_prompt_uncorrected
@@ -259,6 +262,10 @@ def main():
                 selected_dict_corrected = randompop_corrected(student_answers_prompt_corrected, 5)
                 executor.submit(gen_score, client, selected_dict_uncorrected, selected_dict_corrected,
                                 few_shot_learning_system_prompt)
+                while not (key in student_score_final):
+                    selected_dict_corrected = randompop_corrected(student_answers_prompt_corrected, 5)
+                    executor.submit(gen_score, client, selected_dict_uncorrected, selected_dict_corrected,
+                                    few_shot_learning_system_prompt)
 
         print(student_score_final)
 
