@@ -281,14 +281,19 @@ def normalize_and_save_grade(student_score_final, min_score, max_score):
         raise ValueError("未找到'学生姓名'或'分数'列，请检查表头是否包含这些字段！")
 
     # 归一化分数
-    scores = list(student_score_final.values())
-    min_original = min(scores)
-    max_original = max(scores)
+    # scores = list(student_score_final.values())
+    # min_original = min(scores)
+    # max_original = max(scores)
 
-    def normalize_score(score):
-        return ((score - min_original) / (max_original - min_original)) * (max_score - min_score) + min_score
+    # def normalize_score(score):
+    #     return ((score - min_original) / (max_original - min_original)) * (max_score - min_score) + min_score
+    def scale_score(score):
+        if score < 20:
+            return score
+        else:
+            return score / 100 * max_score + min_score
 
-    normalized_scores = {name: normalize_score(score) for name, score in student_score_final.items()}
+    normalized_scores = {name: scale_score(score) for name, score in student_score_final.items()}
 
     # 创建副本以便写入数据
     new_workbook = copy(workbook)

@@ -301,7 +301,7 @@ def main():
 
         print(student_score_final)
 
-        # 归一化分数并保存
+        # 缩放分数并保存
         normalized_scores = normalize_and_save_grade(student_score_final, min_score=70, max_score=100)
 
         with open('normalized_student_score.json', 'w', encoding='utf-8') as json_file:
