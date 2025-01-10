@@ -174,7 +174,7 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
         context_prompt = context_few_shot_learning_prompt(selected_dict_uncorrected, selected_dict_corrected,
                                                           few_shot_learning_system_prompt)
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o-2024-11-20",
             messages=context_prompt,
         )
         response_content = response.choices[0].message.content
@@ -203,7 +203,7 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
 def main():
     # 初始化OpenAI客户端
     client = OpenAI(
-        api_key="sk-7xg4nuFTWoLsWNsUbAMnwTclY4pubU9AiJ0DWsXUVubxiAkl",
+        api_key="XXXXX",
         base_url="https://a1.aizex.me/v1"  # 替换为你的API代理地址
     )
 
@@ -244,8 +244,8 @@ def main():
             with open('student_answers_prompt.json', 'w', encoding='utf-8') as json_file:
                 json.dump(student_answers_prompt_uncorrected, json_file, indent=4, sort_keys=True,
                           ensure_ascii=False)
-        number_prepare = 5
-        number_gen = 3
+        number_prepare = 10
+        number_gen = 5
 
         if os.path.exists('original_student_score.json'):
             student_score_final = import_json_file('./original_student_score.json')
@@ -302,7 +302,8 @@ def main():
         print(student_score_final)
 
         # 缩放分数并保存
-        normalized_scores = normalize_and_save_grade(student_score_final, min_score=70, max_score=100)
+        # 如果你有捞学生的需求把这个打开
+        normalized_scores = normalize_and_save_grade(student_score_final, min_score=60, max_score=90)
 
         with open('normalized_student_score.json', 'w', encoding='utf-8') as json_file:
             json.dump(normalized_scores, json_file, indent=4, sort_keys=True, ensure_ascii=False)

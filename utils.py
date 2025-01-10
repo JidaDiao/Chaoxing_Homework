@@ -288,7 +288,7 @@ def normalize_and_save_grade(student_score_final, min_score, max_score):
     # def normalize_score(score):
     #     return ((score - min_original) / (max_original - min_original)) * (max_score - min_score) + min_score
     def scale_score(score):
-        if score < 20:
+        if score < 20 or score > 90:   # 全对或者接近全对的直接输出分数，中间那些捞一手（基本上缩放后的分数都比原分数高很多）
             return score
         else:
             return score / 100 * max_score + min_score
