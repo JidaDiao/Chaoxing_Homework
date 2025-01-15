@@ -97,7 +97,7 @@ def process_student(student, headers, session_cookies, driver_queue, task_list_l
 # 使用多线程提高效率
 
 def chaoxing():
-    attackurl = "https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com"
+    loginurl = "https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com"
 
     # 设置 ChromeOptions
     options = webdriver.ChromeOptions()
@@ -119,7 +119,7 @@ def chaoxing():
 
     try:
         # 打开登录页面
-        driver.get(attackurl)
+        driver.get(loginurl)
 
         # 等待页面加载完成
         WebDriverWait(driver, 10).until(

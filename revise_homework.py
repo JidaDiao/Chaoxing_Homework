@@ -1,6 +1,7 @@
 from openai import OpenAI
 from utils import *
 from concurrent.futures import ThreadPoolExecutor
+from args import config
 
 # 全局变量用于存储学生答案和分数
 student_answers_prompt_uncorrected = {}
@@ -46,7 +47,7 @@ def create_messages_with_images(homework_data, student_name):
 def gen_prepare_system_prompt(homework_data, number):
     """生成系统提示信息，包含题目和评分规则"""
     question_stem = "###\n"
-    for index, (key, value) in enumerate(homework_data["题目"].items(), start=1):
+    for _, (key, value) in enumerate(homework_data["题目"].items(), start=1):
         question_stem += f"{key}：{value['题干']}\n正确答案：{value['正确答案']}\n###"
 
     system_prompt = f"""
