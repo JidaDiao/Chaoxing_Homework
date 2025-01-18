@@ -14,6 +14,7 @@ import threading
 import os
 
 from utils import *
+from args import config
 
 
 def process_student(student, headers, session_cookies, driver_queue, task_list_lock, task_list):
@@ -111,10 +112,11 @@ def chaoxing():
     caps = DesiredCapabilities.CHROME
     caps['goog:loggingPrefs'] = {'performance': 'ALL'}
     options.set_capability('goog:loggingPrefs', caps['goog:loggingPrefs'])
-    class_list = ['计算机应用技术（3+2）2302', '计算机应用技术（3+2）2303', '人工智能技术应用2301']
+    class_list = config.class_list
+    course_urls = config.course_urls
 
     # 启动 ChromeDriver
-    service = Service('C:\Program Files\Google\Chrome\Application\chromedriver.exe')  # 替换为你的 ChromeDriver 路径
+    service = Service(config.chrome_driver_path)
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
@@ -127,8 +129,8 @@ def chaoxing():
         )
 
         # 输入手机号和密码
-        phonenumber = '13958853656'
-        password = '12345ssdlh'
+        phonenumber = config.phonenumber
+        password = config.password
 
         driver.find_element(By.XPATH, '//*[@id="phone"]').send_keys(phonenumber)
         driver.find_element(By.XPATH, '//*[@id="pwd"]').send_keys(password)
@@ -152,11 +154,6 @@ def chaoxing():
             'Referer': 'https://mooc2-ans.chaoxing.com/mooc2-ans/work/list?courseid=237039005&selectClassid=106790350&cpi=403105172&status=-1&v=0&topicid=0',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
         }
-
-        # 发送 GET 请求
-        course_urls = [
-            'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=237039005&clazzid=111081658&cpi=403105172&enc=454befe7dc8693fe2e1e40f4f21ebcde&t=1736326584243&pageHeader=6&v=2',
-            'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=245486443&clazzid=104412878&cpi=403105172&enc=c184605662f128ccf3c6f45b8394765d&t=1736348305925&pageHeader=6&v=2']
 
         for course_url in course_urls:
             # 打开目标网页

@@ -202,16 +202,16 @@ def gen_score(client, number_gen, selected_dict_uncorrected,
 
 
 def main():
-    # 初始化OpenAI客户端
+    # Initialize OpenAI client with arguments from args.py
     client = OpenAI(
-        api_key="XXXXX",
-        base_url="https://a1.aizex.me/v1"  # 替换为你的API代理地址
+        api_key=config.api_key,
+        base_url=config.base_url
     )
 
     # 获取要批改的作业目录列表
     class_list = os.listdir('要改的作业')
     homework_dirs = []
-    max_workers = 4
+    max_workers = config.max_workers
     # 初始化全局变量
     global student_answers_prompt_uncorrected
     global student_score_final
@@ -245,8 +245,8 @@ def main():
             with open('student_answers_prompt.json', 'w', encoding='utf-8') as json_file:
                 json.dump(student_answers_prompt_uncorrected, json_file, indent=4, sort_keys=True,
                           ensure_ascii=False)
-        number_prepare = 10
-        number_gen = 5
+        number_prepare = config.number_prepare
+        number_gen = config.number_gen
 
         if os.path.exists('original_student_score.json'):
             student_score_final = import_json_file('./original_student_score.json')
