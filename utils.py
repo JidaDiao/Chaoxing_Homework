@@ -17,6 +17,7 @@ import xlrd
 from xlutils.copy import copy
 import glob
 import re
+import logging
 
 
 def import_json_file(file_path):
@@ -27,6 +28,7 @@ def import_json_file(file_path):
     :return: 解析后的JSON内容
     """
     try:
+        logging.info(f'导入JSON文件: {file_path}')
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
         return data
@@ -45,6 +47,7 @@ def download_image(url_or_base64):
         'Referer': url_or_base64  # 添加来源页面，部分网站需要
     }
     try:
+        logging.info(f'处理图片: {url_or_base64}')
         if url_or_base64.startswith("data:image/"):  # 判断是否是 Base64 图片
             # 处理 Base64 数据
             base64_data = url_or_base64.split(",")[1]  # 去掉前缀 "data:image/png;base64,"
@@ -81,22 +84,26 @@ def download_image(url_or_base64):
         return base64.b64encode(compressed_image_bytes).decode('utf-8')
 
     except Exception as e:
-        print(f"处理图片失败: {url_or_base64}, 错误: {str(e)}")
+        logging.error(f'发生错误: {str(e)}')
         return None
 
 
 def randomselect_uncorrected(student_answers_prompt_uncorrected, number):
+    """随机选择未批改的学生答案"""
     # 随机选择 n 个键
     selected_keys = random.sample(list(student_answers_prompt_uncorrected.keys()), number)
     # 创建新字典并从原字典删除这些键
     # selected_dict = {key: student_answers_prompt_uncorrected.pop(key) for key in selected_keys}
     selected_dict = {key: student_answers_prompt_uncorrected[key] for key in selected_keys}
+    logging.info(f'随机选择了 {number} 个学生答案')
     return selected_dict, selected_keys
 
 
 def pop_uncorrected(student_answers_prompt_uncorrected, selected_keys):
+    """从未批改的学生答案中删除已选择的键"""
     # 创建新字典并从原字典删除这些键
     _ = {key: student_answers_prompt_uncorrected.pop(key) for key in selected_keys}
+    logging.info('从未批改的学生答案中删除已选择的键')
 
 
 def randompop_corrected(student_answers_prompt_corrected, number):
@@ -108,6 +115,7 @@ def randompop_corrected(student_answers_prompt_corrected, number):
 
 
 def context_prepare_prompt(selected_dict, prepare_system_prompt, number):
+    """准备上下文提示信息"""
     context_prompt = prepare_system_prompt
     for index, (key, value) in enumerate(selected_dict.items(), start=1):
         context_prompt += value
@@ -116,6 +124,7 @@ def context_prepare_prompt(selected_dict, prepare_system_prompt, number):
                 "role": "assistant",
                 "content": "第" + str(index) + "轮：pass"
             })
+    logging.info('准备上下文提示信息')
     return context_prompt
 
 
@@ -130,7 +139,7 @@ def context_few_shot_learning_prompt(selected_dict_uncorrected, selected_dict_co
 
 
 def parse_grading_response(response):
-    # 提取学生名字和成绩部分
+    """解析评分响应，提取学生名字和成绩"""
     # 提取学生名字和成绩
     student_scores = re.findall(r"(\S+)：(\d+)分", response)
     student_dict = {name: int(score) for name, score in student_scores}
@@ -139,6 +148,7 @@ def parse_grading_response(response):
     scoring_standard_match = re.search(r"### 本作业评分标准：\s*(.*)", response, re.DOTALL)
     scoring_standard = scoring_standard_match.group(1).strip() if scoring_standard_match else ""
 
+    logging.info('解析评分响应')
     return student_dict, scoring_standard
 
 
