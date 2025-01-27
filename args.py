@@ -19,7 +19,7 @@ parser.add_argument('--pulling_students_up', type=bool,
                     default=True, help='是否要捞学生一把')
 parser.add_argument('--min_score', type=int, default=60, help='缩放的最高分')
 parser.add_argument('--max_score', type=int, default=90, help='缩放的最低分')
-
+sfas
 # prepare_data.pys使用
 parser.add_argument('--course_urls', type=list, help='要爬取的课程的url列表')
 parser.add_argument('--class_list', type=list, help='要爬取的课程的班级列表')
