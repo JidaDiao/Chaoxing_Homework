@@ -1,0 +1,102 @@
+import argparse
+# revise_homework.py使用
+parser = argparse.ArgumentParser()
+parser.add_argument('--api_key', type=str, help='API key')
+parser.add_argument('--base_url', type=str, help='Base URL',
+                    default='https://a1.aizex.me/v1')
+parser.add_argument('--max_workers', type=int, default=4, help='改作业的最大线程数')
+parser.add_argument('--prepare_model', type=str,
+                    default='gpt-4o', help='用来生成分标准和参考分数的大模型')
+parser.add_argument('--gen_model', type=str,
+                    default='gpt-4o-2024-11-20', help='用来生成单个学生分数的大模型')
+parser.add_argument('--number_prepare', type=int,
+                    default=10, help='用来生成改分标准和参考分数的学生作业数量')
+parser.add_argument('--number_gen', type=int, default=5,
+                    help='生成单个学生分数时用来参考的学生-分数对的数量')
+parser.add_argument('--class_list_path', type=str,
+                    default='homework', help='要改的作业的存放路径')
+parser.add_argument('--pulling_students_up', type=bool,
+                    default=True, help='是否要捞学生一把')
+parser.add_argument('--min_score', type=int, default=60, help='缩放的最高分')
+parser.add_argument('--max_score', type=int, default=85, help='缩放的最低分')
+# prepare_data.pys使用
+parser.add_argument('--course_urls', type=list, help='要爬取的课程的url列表')
+parser.add_argument('--class_list', type=list, help='要爬取的课程的班级列表')
+parser.add_argument('--chrome_driver_path', type=str, help='ChromeDriver的执行路径')
+parser.add_argument('--phonenumber', type=str, help='登录学校通用的手机号')
+parser.add_argument('--password', type=str, help='登录学校通用的密码')
+parser.add_argument('--max_workers_prepare', type=int,
+                    default=6, help='爬作业的最大线程数')
+
+parser.add_argument('--prepare_system_prompt', type=str, default="""
+        ### 角色设定：
+        你是一名高职计算机教师，以下是你布置的作业题目及其参考答案（注意，部分题目可能没有参考答案）。：
+                    
+        ### 题目与参考答案：
+        {question_stem}
+
+        请根据学生的回答进行评分，具体要求如下：
+
+        ### 注意事项：
+        1. **评分范围：0-100分**，分数应有一定随机性，避免过于整齐。
+        2. **学生回答形式：** 可能是文本、图片或两者结合，请根据实际情况判断图片与题目内容的对应关系。
+        3. **学生水平：** 整体水平较低，部分题目可能空白未作答，请合理结合回答内容和逻辑进行评分，**若无作答则给0分**。
+        4. **分数分布：** 力求使学生分数呈现高斯分布。
+        5. **主观判断：** 若对题干有不理解之处，需结合学生作答进行主观判断，给出适当评分。
+        6. **观察阶段：** 前{number_}名学生的回答仅作观察，记录题目难度和学生水平等特征，以制定评分策略；从第{number}名开始评分。
+        7. **整体评分规则：** 观察完{number}名学生的作答后，为所有{number}名学生打分，并提供明确的评分标准。
+        8. **灵活思考：** 若所有{number}名学生的回答与题干有偏差，可能是题外约定未体现，请灵活给予分数，而非一律低分。
+
+        ### 输出格式：
+        1. **观察阶段：** 若在前{number_}名观察阶段，统一回复：`第x轮：pass`，x为对话轮数。
+        2. **评分阶段：** 观察完第{number}名学生后，为所有{number}名学生打分，并提供评分标准，格式如下：
+        ```
+        ### 学生成绩：
+        张三：83分  
+        李四：64分  
+        王五：72分  
+        ...  
+
+        ### 本作业评分标准： 
+        **...（生成的评分标准）**  
+        ```
+
+        请**严格按照**上述格式和规则输出结果，以便后续统一提取学生姓名、分数及评分标准信息。
+        **不允许**出现只有学生姓名没有分数的情况！
+        **确保**{number}名学生的姓名和对应分数完整出现！
+        评分标准无需包含具体学生得分原因，只需描述整体评分依据。
+                    """, help='少样本改作业的系统提示词')
+
+parser.add_argument('--few_shot_learning_system_prompt', type=str, default="""
+        ### 角色设定：
+        你是一名高职计算机教师，负责评阅学生的作业。以下是你布置的作业题目及其参考答案（注意，部分题目可能没有参考答案）。
+        
+        ### 题目与参考答案：
+        {question_stem}
+        
+        ### 本作业评分标准：
+        {grading_standard}
+
+        请根据学生的回答进行评分，具体要求如下：
+
+        ### 注意事项：
+        1. **评分范围：0-100分**，分数应有一定随机性，避免过于整齐。
+        2. **学生回答形式：** 可能是文本、图片或两者结合，请根据实际情况判断图片与题目内容的对应关系。
+        3. **学生水平：** 整体水平较低，部分题目可能空白未作答，请合理结合回答内容和逻辑进行评分，**若无作答则给0分**。
+        4. **主观判断：** 若对题干有不理解之处，需结合学生作答进行主观判断，给出适当评分。
+
+        ### 评分规则：
+        1. 依据"本作业评分标准"进行评分。
+        2. 综合前面所有学生的评分情况进行合理打分。
+
+        ### 输出格式：
+        1. 仅需输出学生姓名和分数，格式如下：
+        ```
+        张三：83分
+        ```
+        
+        请**严格按照**上述格式和规则输出结果，以便后续统一提取学生姓名、分数及评分标准信息。
+        """, help='少样本改作业的系统提示词')
+
+
+config = parser.parse_args()

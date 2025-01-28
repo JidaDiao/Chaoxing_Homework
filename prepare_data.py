@@ -12,7 +12,7 @@ from queue import Queue
 import threading
 import os
 from utils import *
-from args import config
+from config.args import config
 import logging
 
 # 配置logging
