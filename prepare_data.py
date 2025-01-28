@@ -21,194 +21,296 @@ logging.basicConfig(
 )
 
 
-def process_student(
-        student, headers, session_cookies, driver_queue, task_list_lock, task_list
-):
-    # 从队列中获取driver
-    driver = driver_queue.get()
-    try:
-        student_name = student["name"]
-        student_url = student["review_link"]
-        driver.get(student_url)
-        time.sleep(2)  # 等待页面加载
+class HomeworkCrawler:
+    """超星学习通作业爬虫类
 
-        # 获取浏览器性能日志
-        logs = driver.get_log("performance")
+    该类整合了作业爬取的所有功能，包括登录、获取课程链接、解析作业列表、下载作业数据等。
+    使用Selenium进行页面操作，支持多线程并行处理以提高效率。
+
+    Attributes:
+        driver (webdriver.Chrome): Chrome浏览器驱动实例
+        driver_queue (Queue): WebDriver实例队列，用于多线程处理
+        session_cookies (dict): 会话Cookie信息
+        headers (dict): HTTP请求头信息
+    """
+
+    def __init__(self, chrome_driver_path):
+        """初始化作业爬虫
+
+        初始化HomeworkCrawler类的实例，设置必要的属性和WebDriver配置。
+
+        Args:
+            chrome_driver_path (str): Chrome驱动程序的路径
+
+        Returns:
+            None
+        """
+        self.driver = None
+        self.driver_queue = Queue()
+        self.session_cookies = None
+        self.headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+                        }
+        self._init_driver(chrome_driver_path)
+
+    def _init_driver(self, chrome_driver_path):
+        """初始化Chrome WebDriver
+
+        设置并初始化Chrome WebDriver，配置浏览器选项和性能日志捕获。
+
+        Args:
+            chrome_driver_path (str): Chrome驱动程序的路径
+
+        Returns:
+            None
+        """
+        options = webdriver.ChromeOptions()
+        options.add_argument("--disable-blink-features=AutomationControlled")
+        options.add_argument(
+            "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0")
+        options.headless = True
+
+        caps = DesiredCapabilities.CHROME
+        caps["goog:loggingPrefs"] = {"performance": "ALL"}
+        options.set_capability("goog:loggingPrefs", caps["goog:loggingPrefs"])
+
+        service = Service(chrome_driver_path)
+        self.driver = webdriver.Chrome(service=service, options=options)
+
+    def _get_url_from_logs(self, logs, url_pattern, log_message=""):
+        """从浏览器性能日志中获取特定URL
+
+        Args:
+            logs (list): 浏览器性能日志列表
+            url_pattern (str): URL匹配模式
+            log_message (str): 日志消息，默认为空
+
+        Returns:
+            str: 匹配到的URL，如果未找到则返回None
+        """
         target_url = None
         for log in logs:
             message = log["message"]
-            if (
-                    "https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work"
-                    in message
-            ):
+            if url_pattern in message:
                 log_json = json.loads(message)["message"]["params"]
                 if "request" in log_json and "url" in log_json["request"]:
                     target_url = log_json["request"]["url"]
+                    if log_message:
+                        logging.info(log_message + target_url)
                     break
+        return target_url
 
-        if target_url:
-            response = requests.get(
-                target_url, headers=headers, cookies=session_cookies)
-            soup = BeautifulSoup(response.content, "html.parser")
-            all_questions = []
-            question_blocks = soup.find_all("div", class_="mark_item1")
+    def process_student(
+        self, student, headers, session_cookies, driver_queue, task_list_lock, task_list
+    ):
+        """处理单个学生的作业数据
 
-            for block in question_blocks:
-                # 提取题目描述
-                question_description_tag = block.find(
-                    "div", class_="hiddenTitle")
-                if question_description_tag:
-                    question_description = question_description_tag.text.strip()
-                else:
-                    question_description = "未找到题目描述"
+        获取并处理单个学生的作业答案，包括文本答案和图片答案。
 
-                # 提取学生答案
-                student_answer_tag = block.find(
-                    "dl",
-                    class_="mark_fill",
-                    id=lambda x: x and x.startswith("stuanswer_"),
-                )
-                if student_answer_tag:
-                    # 查找文字答案
-                    text_answers = [
-                        p.text.strip()
-                        for p in student_answer_tag.find_all("p")
-                        if p.text.strip()
-                    ]
-                    # 查找图片链接
-                    image_answers = [
-                        img["src"]
-                        for img in student_answer_tag.find_all("img")
-                        if "src" in img.attrs
-                    ]
-                    # 组合学生答案
-                    student_answer = {"text": text_answers,
-                                      "images": image_answers}
-                else:
-                    student_answer = {"text": [], "images": []}
+        Args:
+            student (dict): 学生信息，包含姓名和作业链接
+            headers (dict): HTTP请求头
+            session_cookies (dict): 会话Cookie
+            driver_queue (Queue): WebDriver实例队列
+            task_list_lock (threading.Lock): 线程锁
+            task_list (dict): 存储所有学生答案的字典
 
-                # 提取正确答案
-                correct_answer_tag = block.find(
-                    "dl",
-                    class_="mark_fill",
-                    id=lambda x: x and x.startswith("correctanswer_"),
-                )
-                if correct_answer_tag:
-                    correct_answer = correct_answer_tag.text.strip()
-                else:
-                    correct_answer = "未找到正确答案"
+        Returns:
+            None
+        """
+        # 从队列中获取driver
+        driver = driver_queue.get()
+        try:
+            student_name = student["name"]
+            student_url = student["review_link"]
+            driver.get(student_url)
+            time.sleep(2)
 
-                # 存储题目信息
-                question_data = {
-                    "description": question_description,
-                    "student_answer": student_answer,
-                    "correct_answer": correct_answer.replace("正确答案：", "", 1),
-                }
-                all_questions.append(question_data)
+            logs = driver.get_log("performance")
+            target_url = self._get_url_from_logs(
+                logs,
+                "https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work",
+                "捕获的学生作答内容的 URL: "
+            )
 
-            # 使用锁来保护共享资源
-            with task_list_lock:
-                task_list[student_name] = all_questions
-    finally:
-        # 将driver放回队列
-        driver_queue.put(driver)
+            if target_url:
+                response = requests.get(
+                    target_url, headers=headers, cookies=session_cookies)
+                soup = BeautifulSoup(response.content, "html.parser")
+                all_questions = []
+                question_blocks = soup.find_all("div", class_="mark_item1")
 
+                for block in question_blocks:
+                    # 提取题目描述
+                    question_description_tag = block.find(
+                        "div", class_="hiddenTitle")
+                    if question_description_tag:
+                        question_description = question_description_tag.text.strip()
+                    else:
+                        question_description = "未找到题目描述"
 
-# 学习通
-# 登录并获取作业信息
-# 主要流程包括：登录、获取课程链接、解析作业列表、下载作业数据
-# 使用多线程提高效率
+                    # 提取学生答案
+                    student_answer_tag = block.find(
+                        "dl",
+                        class_="mark_fill",
+                        id=lambda x: x and x.startswith("stuanswer_"),
+                    )
+                    if student_answer_tag:
+                        # 查找文字答案
+                        text_answers = [
+                            p.text.strip()
+                            for p in student_answer_tag.find_all("p")
+                            if p.text.strip()
+                        ]
+                        # 查找图片链接
+                        image_answers = [
+                            img["src"]
+                            for img in student_answer_tag.find_all("img")
+                            if "src" in img.attrs
+                        ]
+                        # 组合学生答案
+                        student_answer = {"text": text_answers,
+                                          "images": image_answers}
+                    else:
+                        student_answer = {"text": [], "images": []}
 
+                    # 提取正确答案
+                    correct_answer_tag = block.find(
+                        "dl",
+                        class_="mark_fill",
+                        id=lambda x: x and x.startswith("correctanswer_"),
+                    )
+                    if correct_answer_tag:
+                        correct_answer = correct_answer_tag.text.strip()
+                    else:
+                        correct_answer = "未找到正确答案"
 
-def chaoxing():
-    loginurl = "https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com"
+                    # 存储题目信息
+                    question_data = {
+                        "description": question_description,
+                        "student_answer": student_answer,
+                        "correct_answer": correct_answer.replace("正确答案：", "", 1),
+                    }
+                    all_questions.append(question_data)
 
-    # 设置 ChromeOptions
-    options = webdriver.ChromeOptions()
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_argument(
-        "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0"
-    )
-    options.headless = True  # 如果调试时需要显示浏览器，则设为 False
+                # 使用锁来保护共享资源
+                with task_list_lock:
+                    task_list[student_name] = all_questions
+        finally:
+            # 将driver放回队列
+            driver_queue.put(driver)
 
-    # 设置性能日志捕获
-    caps = DesiredCapabilities.CHROME
-    caps["goog:loggingPrefs"] = {"performance": "ALL"}
-    options.set_capability("goog:loggingPrefs", caps["goog:loggingPrefs"])
-    class_list = config.class_list
-    course_urls = config.course_urls
+    def run(self):
+        """运行作业爬虫
 
-    # 启动 ChromeDriver
-    service = Service(config.chrome_driver_path)
-    driver = webdriver.Chrome(service=service, options=options)
+        执行完整的作业爬取流程，包括登录、获取作业列表和处理作业数据。
 
-    try:
-        # 打开登录页面
-        driver.get(loginurl)
-        logging.info('打开登录页面')
+        Returns:
+            None
+        """
+        try:
+            # 登录
+            if not self.login():
+                return
 
-        # 等待页面加载完成
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="phone"]'))
-        )
+            # 处理每个课程URL
+            for course_url in config.course_urls:
+                # 获取作业列表
+                task_data = self.get_homework_list(course_url)
+                if not task_data:
+                    continue
 
-        # 输入手机号和密码
-        phonenumber = config.phonenumber
-        password = config.password
+                # 处理每个作业
+                for task in task_data:
+                    self.process_homework(task)
 
-        driver.find_element(
-            By.XPATH, '//*[@id="phone"]').send_keys(phonenumber)
-        driver.find_element(By.XPATH, '//*[@id="pwd"]').send_keys(password)
+            logging.info("作业爬取完成")
 
-        # 点击登录按钮
-        driver.find_element(By.XPATH, '//*[@id="loginBtn"]').click()
+        except Exception as e:
+            logging.error(f'作业爬取失败：{str(e)}')
+        finally:
+            # 关闭浏览器
+            self.driver.quit()
 
-        # 等待登录完成
-        time.sleep(3)
+    def login(self):
+        """登录超星学习通
 
-        # 获取登录后的 Cookies
-        cookies = driver.get_cookies()
-        session_cookies = {cookie['name']: cookie['value']
-                           for cookie in cookies}
-        logging.info('登录成功，获取到的 Cookies')
+        使用Selenium模拟登录超星学习通，并获取登录后的Cookie信息。
 
-        headers = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-            "Accept-Encoding": "gzip, deflate, br, zstd",
-            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
-            "Connection": "keep-alive",
-            "Referer": "https://mooc2-ans.chaoxing.com/mooc2-ans/work/list?courseid=237039005&selectClassid=106790350&cpi=403105172&status=-1&v=0&topicid=0",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
-        }
-        driver_queue = Queue()
+        Returns:
+            bool: 登录是否成功
+        """
+        loginurl = "https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com"
+        try:
+            # 打开登录页面
+            self.driver.get(loginurl)
+            logging.info('打开登录页面')
 
-        for course_url in course_urls:
+            # 等待页面加载完成
+            WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//*[@id="phone"]'))
+            )
+
+            # 输入手机号和密码
+            phonenumber = config.phonenumber
+            password = config.password
+
+            self.driver.find_element(
+                By.XPATH, '//*[@id="phone"]').send_keys(phonenumber)
+            self.driver.find_element(
+                By.XPATH, '//*[@id="pwd"]').send_keys(password)
+
+            # 点击登录按钮
+            self.driver.find_element(By.XPATH, '//*[@id="loginBtn"]').click()
+
+            # 等待登录完成
+            time.sleep(3)
+
+            # 获取登录后的 Cookies
+            cookies = self.driver.get_cookies()
+            self.session_cookies = {cookie['name']: cookie['value']
+                                    for cookie in cookies}
+            logging.info('登录成功，获取到的 Cookies')
+            return True
+        except Exception as e:
+            logging.error(f'登录失败：{str(e)}')
+            return False
+
+    def get_homework_list(self, course_url):
+        """获取作业列表
+
+        访问课程页面并获取作业列表信息。
+
+        Args:
+            course_url (str): 课程URL
+
+        Returns:
+            list: 作业信息列表
+        """
+        task_data = []
+        try:
             # 打开目标网页
-            driver.get(course_url)
+            self.driver.get(course_url)
             time.sleep(3)  # 等待页面加载
             # 监听页面的网络请求
-            logs = driver.get_log("performance")
-            for log in logs:
-                message = log["message"]
-                if "mooc2-ans/work/list" in message:  # 过滤目标请求
-                    log_json = json.loads(message)["message"]["params"]
-                    if "request" in log_json and "url" in log_json["request"]:
-                        list_url = log_json["request"]["url"]
-                        logging.info(f"捕获的作业列表请求 URL: {list_url}")
-                        break
+            logs = self.driver.get_log("performance")
+            list_url = self._get_url_from_logs(
+                logs,
+                "mooc2-ans/work/list",
+                "捕获的作业列表请求 URL: "
+            )
+
+            if not list_url:
+                return task_data
 
             page_num = 1
-            # 存储任务信息的列表
-            task_data = []
             stop_flag = False
             while True:
                 if stop_flag:
                     break
                 url = convert_url(list_url, page_num)
                 response = requests.get(
-                    url, headers=headers, cookies=session_cookies)
+                    url, headers=self.headers, cookies=self.session_cookies)
 
-                # 打印返回的内容
                 if response.status_code == 200:
                     logging.info("作业列表请求成功!")
                 else:
@@ -230,7 +332,9 @@ def chaoxing():
                         task.find("div", class_="list_class").get(
                             "title", "").strip()
                     )
-                    if class_name not in class_list:
+                    if len(config.class_list) == 0:
+                        pass
+                    elif class_name not in config.class_list:
                         continue
                     # 提取任务标题
                     title = task.find("h2", class_="list_li_tit").text.strip()
@@ -245,7 +349,7 @@ def chaoxing():
                     # 拼接完整批阅链接
                     piyue_url = "https://mooc2-ans.chaoxing.com" + review_link
                     # 大于5个学生要改才自动改
-                    if pending_review > 5:
+                    if pending_review > config.min_ungraded_students:
                         # 将提取的数据存入字典
                         task_info = {
                             "班级": class_name,
@@ -266,163 +370,227 @@ def chaoxing():
                         else:
                             # 将任务信息添加到列表
                             task_data.append(task_info)
+            return task_data
+        except Exception as e:
+            logging.error(f'获取作业列表失败：{str(e)}')
+            return task_data
 
-            for task in task_data:
-                save_path = (
-                    "homework/"
-                    + sanitize_folder_name(task["班级"])
-                    + "/"
-                    + sanitize_folder_name(task["作业名"] + task["作答时间"])
+    def process_homework(self, task):
+        """处理单个作业
+
+        处理单个作业的数据，包括下载分数提交模版和抓取学生答案。
+
+        Args:
+            task (dict): 作业信息字典
+
+        Returns:
+            None
+        """
+        try:
+            save_path = (
+                "homework/"
+                + sanitize_folder_name(task["班级"])
+                + "/"
+                + sanitize_folder_name(task["作业名"] + task["作答时间"])
+            )
+            if not os.path.exists(save_path):
+                os.makedirs(save_path)
+            else:
+                return
+
+            piyue_url = task["review_link"]
+            file_name = "answer.json"
+            logging.info("当前批阅链接：" + piyue_url)
+            # 下载分数提交模版
+            download(self.driver, save_path, piyue_url)
+
+            # 获取学生数据
+            student_data = self._get_student_data(piyue_url)
+            if not student_data:
+                return
+
+            # 抓取学生答案
+            task_list = self._process_student_answers(student_data)
+            if not task_list:
+                return
+
+            # 保存结果
+            self._save_results(task_list, save_path, file_name)
+
+        except Exception as e:
+            logging.error(f'处理作业失败：{str(e)}')
+
+    def _get_student_data(self, piyue_url):
+        """获取学生数据
+
+        从批阅页面获取学生的答案数据列表。
+
+        Args:
+            piyue_url (str): 批阅页面URL
+
+        Returns:
+            list: 学生数据列表
+        """
+        student_data = []
+        self.driver.get(piyue_url)
+        time.sleep(2)  # 等待页面加载
+        try:
+            logs = self.driver.get_log("performance")
+            target_url = self._get_url_from_logs(
+                logs,
+                "mooc2-ans/work/mark-list",
+                "捕获的目标批阅列表请求 URL: "
+            )
+
+            target_url = re.sub(r"pages=\d+", "pages={}", target_url)
+            final_page_num = 1
+
+            while True:
+                target_url_modified = target_url.format(final_page_num)
+                response = requests.get(
+                    target_url_modified,
+                    headers=self.headers,
+                    cookies=self.session_cookies,
                 )
-                if not os.path.exists(save_path):
-                    os.makedirs(save_path)
+
+                if response.status_code == 200:
+                    logging.info("最终批阅链接请求成功!")
                 else:
-                    continue
-                piyue_url = task["review_link"]
-                file_name = "answer.json"
-                print("当前批阅链接：" + piyue_url)
-                download(driver, save_path, piyue_url)
-                driver.get(piyue_url)
-                time.sleep(2)  # 等待页面加载
+                    logging.error(f"请求失败，状态码：{response.status_code}")
+                    break
 
-                # 监听页面的网络请求
-                logs = driver.get_log("performance")
-                for log in logs:
-                    message = log["message"]
-                    if "mooc2-ans/work/mark-list" in message:  # 过滤目标请求
-                        log_json = json.loads(message)["message"]["params"]
-                        if "request" in log_json and "url" in log_json["request"]:
-                            target_url = log_json["request"]["url"]
-                            print(f"捕获的目标批阅列表请求 URL: {target_url}")
-                            break
+                soup = BeautifulSoup(response.content, "html.parser")
 
-                target_url = re.sub(r"pages=\d+", "pages={}", target_url)
-                student_data = []
-                task_list = {}
-                final_page_num = 1
-                while True:
-                    target_url_modified = target_url.format(
-                        final_page_num
-                    )  # 替换 URL 中的 {} 为当前的页码
-                    response = requests.get(
-                        target_url_modified,
-                        headers=headers,
-                        cookies=session_cookies,
+                # 检查是否有 "暂无数据"
+                null_data = soup.find("div", class_="nullData")
+                if null_data and "暂无数据" in null_data.text:
+                    logging.info("已超出页数，停止爬取。")
+                    break
+
+                final_page_num += 1
+                # 查找每个 ul 元素
+                ul_elements = soup.find_all("ul", class_="dataBody_td")
+
+                # 遍历 ul 元素，提取学生名字和批阅链接
+                for ul in ul_elements:
+                    # 提取学生名字
+                    name_div = ul.find("div", class_="py_name")
+                    student_name = name_div.text.strip() if name_div else "未找到名字"
+
+                    # 提取批阅链接
+                    review_link_tag = ul.find("a", class_="cz_py")
+                    review_link = (
+                        "https://mooc2-ans.chaoxing.com" +
+                        review_link_tag["href"]
+                        if review_link_tag
+                        else "未找到批阅链接"
                     )
 
-                    # 打印返回的内容
-                    if response.status_code == 200:
-                        logging.info("最终批阅链接请求成功!")
-                    else:
-                        logging.error(f"请求失败，状态码：{response.status_code}")
+                    # 存储学生数据
+                    student_data.append(
+                        {"name": student_name, "review_link": review_link})
 
-                    # 使用 BeautifulSoup 解析 HTML
-                    soup = BeautifulSoup(response.content, "html.parser")
+            return student_data
+        except Exception as e:
+            logging.error(f'获取学生数据失败：{str(e)}')
+            return student_data
 
-                    # 检查是否有 "暂无数据"
-                    null_data = soup.find("div", class_="nullData")
-                    if null_data and "暂无数据" in null_data.text:
-                        logging.info("已超出页数，停止爬取。")
-                        break
-                    else:
-                        final_page_num += 1
-                        # 查找每个 ul 元素
-                        ul_elements = soup.find_all(
-                            "ul", class_="dataBody_td")
+    def _process_student_answers(self, student_data):
+        """处理学生答案
 
-                        # 遍历 ul 元素，提取学生名字和批阅链接
-                        for ul in ul_elements:
-                            # 提取学生名字
-                            name_div = ul.find("div", class_="py_name")
-                            if name_div:
-                                student_name = name_div.text.strip()
-                            else:
-                                student_name = "未找到名字"
+        使用多线程处理所有学生的答案数据。
 
-                            # 提取批阅链接
-                            review_link_tag = ul.find("a", class_="cz_py")
-                            if review_link_tag:
-                                review_link = (
-                                    "https://mooc2-ans.chaoxing.com"
-                                    + review_link_tag["href"]
-                                )
-                            else:
-                                review_link = "未找到批阅链接"
+        Args:
+            student_data (list): 学生数据列表
 
-                            # 存储学生数据
-                            student_data.append(
-                                {"name": student_name,
-                                    "review_link": review_link}
-                            )
-                    # 创建多个WebDriver实例
-                    num_threads = config.max_workers_prepare  # 可以根据需要调整线程数
-                    if driver_queue.empty():
-                        for _ in range(num_threads):
-                            options = webdriver.ChromeOptions()
-                            # 设置ChromeOptions...
-                            driver_ = webdriver.Chrome(
-                                service=service, options=options)
-                            driver_queue.put(driver_)
+        Returns:
+            dict: 处理后的学生答案字典
+        """
+        task_list = {}
+        try:
+            # 创建多个WebDriver实例
+            num_threads = config.max_workers_prepare
+            if self.driver_queue.empty():
+                for _ in range(num_threads):
+                    options = webdriver.ChromeOptions()
+                    driver_ = webdriver.Chrome(
+                        service=Service(config.chrome_driver_path),
+                        options=options
+                    )
+                    self.driver_queue.put(driver_)
 
-                    # 创建线程锁
-                    task_list_lock = threading.Lock()
+            # 创建线程锁
+            task_list_lock = threading.Lock()
 
-                    # 使用线程池处理学生数据
-                    with ThreadPoolExecutor(max_workers=num_threads) as executor:
-                        futures = []
-                        for student in student_data:
-                            future = executor.submit(
-                                process_student,
-                                student,
-                                headers,
-                                session_cookies,
-                                driver_queue,
-                                task_list_lock,
-                                task_list,
-                            )
-                            futures.append(future)
+            # 使用线程池处理学生数据
+            with ThreadPoolExecutor(max_workers=num_threads) as executor:
+                futures = []
+                for student in student_data:
+                    future = executor.submit(
+                        self.process_student,
+                        student,
+                        self.headers,
+                        self.session_cookies,
+                        self.driver_queue,
+                        task_list_lock,
+                        task_list,
+                    )
+                    futures.append(future)
 
-                        # 等待所有任务完成
-                        for future in futures:
-                            future.result()
+                # 等待所有任务完成
+                for future in futures:
+                    future.result()
 
-                    final_list = {}
-                    final_list["题目"] = {}
-                    final_list["学生回答"] = {}
-                    student_name_list = list(task_list.keys())
-                    len_task = len(task_list[student_name_list[0]])
-                    len_student = len(student_name_list)
-                    for j in range(len_student):
-                        final_list["学生回答"][student_name_list[j]] = {}
-                    for i in range(len_task):
-                        final_list["题目"]["题目" + str(i + 1)] = {}
-                        final_list["题目"]["题目" + str(i + 1)]["题干"] = task_list[
-                            student_name_list[0]
-                        ][i]["description"]
-                        final_list["题目"]["题目" + str(i + 1)]["正确答案"] = task_list[
-                            student_name_list[0]
-                        ][i]["correct_answer"]
-                        for j in range(len_student):
-                            final_list["学生回答"][student_name_list[j]][
-                                "题目" + str(i + 1)
-                            ] = task_list[student_name_list[j]][i]["student_answer"]
-                    with open(
-                            os.path.join(save_path, file_name), "w", encoding="utf-8"
-                    ) as json_file:
-                        json.dump(
-                            final_list,
-                            json_file,
-                            indent=4,
-                            sort_keys=True,
-                            ensure_ascii=False,
-                        )
-        logging.info("down")
+            return task_list
+        except Exception as e:
+            logging.error(f'处理学生答案失败：{str(e)}')
+            return task_list
 
-    finally:
-        # 关闭浏览器
-        driver.quit()
+    def _save_results(self, task_list, save_path, file_name):
+        """保存处理结果
 
+        将处理后的学生答案保存到JSON文件。
 
-# 调用登录函数
-if __name__ == "__main__":
-    chaoxing()
+        Args:
+            task_list (dict): 处理后的学生答案字典
+            save_path (str): 保存路径
+            file_name (str): 文件名
+
+        Returns:
+            None
+        """
+        try:
+            final_list = {
+                "题目": {},
+                "学生回答": {}
+            }
+
+            student_name_list = list(task_list.keys())
+            if not student_name_list:
+                return
+
+            len_task = len(task_list[student_name_list[0]])
+            len_student = len(student_name_list)
+
+            # 初始化学生回答字典
+            for student_name in student_name_list:
+                final_list["学生回答"][student_name] = {}
+
+            # 处理每道题目
+            for i in range(len_task):
+                question_key = "题目" + str(i + 1)
+                final_list["题目"][question_key] = {
+                    "题干": task_list[student_name_list[0]][i]["description"],
+                    "正确答案": task_list[student_name_list[0]][i]["correct_answer"]
+                }
+                for student_name in student_name_list:
+                    final_list["学生回答"][student_name][question_key] = \
+                        task_list[student_name][i]["student_answer"]
+
+            # 保存到文件
+            with open(os.path.join(save_path, file_name), "w", encoding="utf-8") as f:
+                json.dump(final_list, f, indent=4,
+                          sort_keys=True, ensure_ascii=False)
+
+        except Exception as e:
+            logging.error(f'保存结果失败：{str(e)}')

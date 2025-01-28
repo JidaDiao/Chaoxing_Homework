@@ -19,15 +19,6 @@ parser.add_argument('--pulling_students_up', type=bool,
                     default=True, help='是否要捞学生一把')
 parser.add_argument('--min_score', type=int, default=60, help='缩放的最高分')
 parser.add_argument('--max_score', type=int, default=85, help='缩放的最低分')
-# prepare_data.pys使用
-parser.add_argument('--course_urls', type=list, help='要爬取的课程的url列表')
-parser.add_argument('--class_list', type=list, help='要爬取的课程的班级列表')
-parser.add_argument('--chrome_driver_path', type=str, help='ChromeDriver的执行路径')
-parser.add_argument('--phonenumber', type=str, help='登录学校通用的手机号')
-parser.add_argument('--password', type=str, help='登录学校通用的密码')
-parser.add_argument('--max_workers_prepare', type=int,
-                    default=6, help='爬作业的最大线程数')
-
 parser.add_argument('--prepare_system_prompt', type=str, default="""
         ### 角色设定：
         你是一名高职计算机教师，以下是你布置的作业题目及其参考答案（注意，部分题目可能没有参考答案）。：
@@ -97,6 +88,21 @@ parser.add_argument('--few_shot_learning_system_prompt', type=str, default="""
         
         请**严格按照**上述格式和规则输出结果，以便后续统一提取学生姓名、分数及评分标准信息。
         """, help='少样本改作业的系统提示词')
+# prepare_data.pys使用
+parser.add_argument('--course_urls', type=list,
+                    default=['https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=245486443&clazzid=104412878&cpi=403105172&enc=2cbcbe33d5c185935a5d301cef2e5870&t=1738050146815&pageHeader=6&v=2'], help='要爬取的课程的url列表')
+parser.add_argument('--class_list', type=list, default=[],
+                    help='要爬取的课程的班级列表，空的话就全爬取')
+parser.add_argument('--chrome_driver_path', type=str,
+                    default='/Users/jixiaojian/Downloads/chromedriver-mac-arm64/chromedriver', help='ChromeDriver的执行路径')
+parser.add_argument('--phonenumber', type=str,
+                    default='13958853656', help='登录学校通用的手机号')
+parser.add_argument('--password', type=str,
+                    default='12345ssdlh', help='登录学校通用的密码')
+parser.add_argument('--max_workers_prepare', type=int,
+                    default=6, help='爬作业的最大线程数')
+parser.add_argument('--min_ungraded_students', type=int,
+                    default=-1, help='至少有多少个学生没改才爬取这个作业')
 
 
 config = parser.parse_args()
