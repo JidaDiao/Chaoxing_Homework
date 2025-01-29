@@ -19,6 +19,7 @@ import glob
 import re
 import logging
 
+
 def import_json_file(file_path):
     """
     导入JSON文件并返回其内容。
@@ -96,7 +97,8 @@ def randomselect_uncorrected(uncorrected_answers, num_to_select):
     :param num_to_select: 需要选择的答案数量
     :return: 选择的答案字典和对应的键列表
     """
-    selected_keys = random.sample(list(uncorrected_answers.keys()), num_to_select)
+    selected_keys = random.sample(
+        list(uncorrected_answers.keys()), num_to_select)
     selected_dict = {key: uncorrected_answers[key] for key in selected_keys}
     logging.info(f'随机选择了 {num_to_select} 个学生答案')
     return selected_dict, selected_keys
@@ -122,7 +124,8 @@ def randompop_corrected(corrected_answers, num_to_select):
     :param num_to_select: 需要选择的答案数量
     :return: 选择的答案字典
     """
-    selected_keys = random.sample(list(corrected_answers.keys()), num_to_select)
+    selected_keys = random.sample(
+        list(corrected_answers.keys()), num_to_select)
     selected_dict = {key: corrected_answers[key] for key in selected_keys}
     return selected_dict
 
@@ -175,8 +178,10 @@ def parse_grading_response(response):
     student_scores = re.findall(r"(\S+)：(\d+)分", response)
     student_dict = {name: int(score) for name, score in student_scores}
 
-    scoring_standard_match = re.search(r"### 本作业评分标准：\s*(.*)", response, re.DOTALL)
-    scoring_standard = scoring_standard_match.group(1).strip() if scoring_standard_match else ""
+    scoring_standard_match = re.search(
+        r"### 本作业评分标准：\s*(.*)", response, re.DOTALL)
+    scoring_standard = scoring_standard_match.group(
+        1).strip() if scoring_standard_match else ""
 
     logging.info('解析评分响应')
     return student_dict, scoring_standard
@@ -213,7 +218,8 @@ def convert_url(original_url, page_number=1):
     }
 
     new_query = urlencode(new_params)
-    new_url = urlunparse((parsed_url.scheme, parsed_url.netloc, parsed_url.path, "", new_query, ""))
+    new_url = urlunparse(
+        (parsed_url.scheme, parsed_url.netloc, parsed_url.path, "", new_query, ""))
     return new_url
 
 
@@ -243,7 +249,7 @@ def sanitize_folder_name(folder_name):
     return sanitized_name
 
 
-def download(driver, destination_path, page_url):
+def download(driver, download_dir, destination_path, page_url):
     """
     使用Selenium下载文件并移动到指定目录。
 
@@ -254,18 +260,20 @@ def download(driver, destination_path, page_url):
     driver.get(page_url)
     wait = WebDriverWait(driver, 10)
 
-    more_button = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'piyue_more')))
+    more_button = wait.until(
+        EC.presence_of_element_located((By.CLASS_NAME, 'piyue_more')))
     ActionChains(driver).move_to_element(more_button).perform()
 
-    import_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//a[@onclick="showImportDiv();"]')))
+    import_button = wait.until(EC.element_to_be_clickable(
+        (By.XPATH, '//a[@onclick="showImportDiv();"]')))
     import_button.click()
 
-    download_button = driver.find_element(By.XPATH, '//a[@onclick="exportScoreTemplate(true)"]')
+    download_button = driver.find_element(
+        By.XPATH, '//a[@onclick="exportScoreTemplate(true)"]')
     download_button.click()
 
-    time.sleep(5)
-    source_path = r"C:\Users\JidaDiao\Downloads"
-    move_xls_files(source_path, destination_path)
+    time.sleep(3)
+    move_xls_files(download_dir, destination_path)
 
 
 def move_xls_files(source_directory, target_directory):
@@ -289,6 +297,3 @@ def move_xls_files(source_directory, target_directory):
         if os.path.isfile(file_path) and file_name.endswith('.xls'):
             shutil.move(file_path, os.path.join(target_directory, file_name))
             logging.info(f"已移动文件: {file_name}")
-
-
-

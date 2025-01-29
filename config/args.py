@@ -94,15 +94,14 @@ parser.add_argument('--course_urls', type=list,
 parser.add_argument('--class_list', type=list, default=[],
                     help='要爬取的课程的班级列表，空的话就全爬取')
 parser.add_argument('--chrome_driver_path', type=str,
-                    default='', help='ChromeDriver的执行路径')
-parser.add_argument('--phonenumber', type=str,
-                    default='123456', help='登录学校通用的手机号')
-parser.add_argument('--password', type=str,
-                    default='123456', help='登录学校通用的密码')
+                    default='/Users/jixiaojian/Downloads/chromedriver-mac-arm64/chromedriver', help='ChromeDriver的执行路径')
 parser.add_argument('--max_workers_prepare', type=int,
                     default=6, help='爬作业的最大线程数')
 parser.add_argument('--min_ungraded_students', type=int,
                     default=-1, help='至少有多少个学生没改才爬取这个作业')
-
+parser.add_argument('--use_qr_code', type=bool,
+                    default=True, help='是否使用二维码登录')
+parser.add_argument('--phonenumber', type=str, help='登录学校通用的手机号')
+parser.add_argument('--password', type=str, help='登录学校通用的密码')
 
 config = parser.parse_args()

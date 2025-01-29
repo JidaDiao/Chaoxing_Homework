@@ -69,6 +69,20 @@ class HomeworkCrawler:
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0")
         options.headless = True
 
+        download_dir = os.path.join(os.getcwd(), "downloads")
+        if not os.path.exists(download_dir):
+            os.makedirs(download_dir)
+        self.download_dir = download_dir
+
+        # 设置下载目录
+        prefs = {
+            "download.default_directory": download_dir,
+            "download.prompt_for_download": False,
+            "download.directory_upgrade": True,
+            "safebrowsing.enabled": True
+        }
+        options.add_experimental_option("prefs", prefs)
+
         caps = DesiredCapabilities.CHROME
         caps["goog:loggingPrefs"] = {"performance": "ALL"}
         options.set_capability("goog:loggingPrefs", caps["goog:loggingPrefs"])
@@ -146,7 +160,7 @@ class HomeworkCrawler:
                     if question_description_tag:
                         question_description = question_description_tag.text.strip()
                     else:
-                        question_description = "未找到题目描述"
+                        logging.error("未找到题目描述")
 
                     # 提取学生答案
                     student_answer_tag = block.find(
@@ -171,9 +185,10 @@ class HomeworkCrawler:
                         student_answer = {"text": text_answers,
                                           "images": image_answers}
                     else:
+                        # 空着呢
                         student_answer = {"text": [], "images": []}
 
-                    # 提取正确答案
+                    # 提取参考答案
                     correct_answer_tag = block.find(
                         "dl",
                         class_="mark_fill",
@@ -182,13 +197,13 @@ class HomeworkCrawler:
                     if correct_answer_tag:
                         correct_answer = correct_answer_tag.text.strip()
                     else:
-                        correct_answer = "未找到正确答案"
+                        correct_answer = "此题无参考答案"
 
                     # 存储题目信息
                     question_data = {
                         "description": question_description,
                         "student_answer": student_answer,
-                        "correct_answer": correct_answer.replace("正确答案：", "", 1),
+                        "correct_answer": correct_answer.replace("参考答案：", "", 1),
                     }
                     all_questions.append(question_data)
 
@@ -207,11 +222,10 @@ class HomeworkCrawler:
         Returns:
             None
         """
-        try:
-            # 登录
-            if not self.login():
-                return
-
+        # 登录
+        if not self.login():
+            return
+        else:
             # 处理每个课程URL
             for course_url in config.course_urls:
                 # 获取作业列表
@@ -224,55 +238,75 @@ class HomeworkCrawler:
                     self.process_homework(task)
 
             logging.info("作业爬取完成")
-
-        except Exception as e:
-            logging.error(f'作业爬取失败：{str(e)}')
-        finally:
             # 关闭浏览器
-            self.driver.quit()
+        self.driver.quit()
 
     def login(self):
         """登录超星学习通
 
-        使用Selenium模拟登录超星学习通，并获取登录后的Cookie信息。
+        使用Selenium模拟登录超星学习通，支持账号密码登录和扫码登录两种方式。
+
+        Args:
+            use_qr_code (bool): 是否使用扫码登录，默认为False使用账号密码登录
 
         Returns:
             bool: 登录是否成功
         """
-        loginurl = "https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com"
-        try:
-            # 打开登录页面
-            self.driver.get(loginurl)
-            logging.info('打开登录页面')
+        loginurl = "https://passport2.chaoxing.com/"
+        # 打开登录页面
+        self.driver.get(loginurl)
+        logging.info('打开登录页面')
 
-            # 等待页面加载完成
-            WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '//*[@id="phone"]'))
-            )
+        if config.use_qr_code:
+            try:
+                # 等待二维码元素出现
+                _ = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.ID, "quickCode"))
+                )
+                logging.info('请使用超星学习通APP扫描二维码登录')
 
-            # 输入手机号和密码
-            phonenumber = config.phonenumber
-            password = config.password
+                # 等待登录成功（通过检测URL变化判断）
+                WebDriverWait(self.driver, 300).until(
+                    lambda driver: "passport2.chaoxing.com" not in driver.current_url
+                )
+                logging.info('扫码登录成功')
+            except Exception as e:
+                logging.error(f'扫码登录失败：{str(e)}')
+                return False
+        else:
+            try:
+                # 等待页面加载完成
+                WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '//*[@id="phone"]'))
+                )
 
-            self.driver.find_element(
-                By.XPATH, '//*[@id="phone"]').send_keys(phonenumber)
-            self.driver.find_element(
-                By.XPATH, '//*[@id="pwd"]').send_keys(password)
+                # 输入手机号和密码
+                phonenumber = config.phonenumber
+                password = config.password
 
-            # 点击登录按钮
-            self.driver.find_element(By.XPATH, '//*[@id="loginBtn"]').click()
+                self.driver.find_element(
+                    By.XPATH, '//*[@id="phone"]').send_keys(phonenumber)
+                self.driver.find_element(
+                    By.XPATH, '//*[@id="pwd"]').send_keys(password)
 
-            # 等待登录完成
-            time.sleep(3)
+                # 点击登录按钮
+                self.driver.find_element(By.XPATH, '//*[@id="loginBtn"]').click()
 
-            # 获取登录后的 Cookies
-            cookies = self.driver.get_cookies()
-            self.session_cookies = {cookie['name']: cookie['value']
-                                    for cookie in cookies}
+                # 等待登录完成
+                time.sleep(2)
+            except Exception as e:
+                logging.error(f'账号密码登录失败：{str(e)}')
+                return False
+
+        # 获取登录后的 Cookies
+        cookies = self.driver.get_cookies()
+        self.session_cookies = {cookie['name']: cookie['value']
+                                for cookie in cookies}
+        if len(cookies) > 6:
             logging.info('登录成功，获取到的 Cookies')
             return True
-        except Exception as e:
-            logging.error(f'登录失败：{str(e)}')
+        else:
+            logging.error('登录失败')
             return False
 
     def get_homework_list(self, course_url):
@@ -290,7 +324,7 @@ class HomeworkCrawler:
         try:
             # 打开目标网页
             self.driver.get(course_url)
-            time.sleep(3)  # 等待页面加载
+            time.sleep(2)  # 等待页面加载
             # 监听页面的网络请求
             logs = self.driver.get_log("performance")
             list_url = self._get_url_from_logs(
@@ -402,7 +436,7 @@ class HomeworkCrawler:
             file_name = "answer.json"
             logging.info("当前批阅链接：" + piyue_url)
             # 下载分数提交模版
-            download(self.driver, save_path, piyue_url)
+            download(self.driver, self.download_dir, save_path, piyue_url)
 
             # 获取学生数据
             student_data = self._get_student_data(piyue_url)
@@ -566,11 +600,7 @@ class HomeworkCrawler:
             }
 
             student_name_list = list(task_list.keys())
-            if not student_name_list:
-                return
-
             len_task = len(task_list[student_name_list[0]])
-            len_student = len(student_name_list)
 
             # 初始化学生回答字典
             for student_name in student_name_list:
