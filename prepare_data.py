@@ -142,8 +142,7 @@ class HomeworkCrawler:
             logs = driver.get_log("performance")
             target_url = self._get_url_from_logs(
                 logs,
-                "https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work",
-                "捕获的学生作答内容的 URL: "
+                "https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work"
             )
 
             if target_url:
@@ -157,10 +156,8 @@ class HomeworkCrawler:
                     # 提取题目描述
                     question_description_tag = block.find(
                         "div", class_="hiddenTitle")
-                    if question_description_tag:
-                        question_description = question_description_tag.text.strip()
-                    else:
-                        logging.error("未找到题目描述")
+                    question_description = question_description_tag.text.strip()
+
 
                     # 提取学生答案
                     student_answer_tag = block.find(
@@ -346,7 +343,7 @@ class HomeworkCrawler:
                     url, headers=self.headers, cookies=self.session_cookies)
 
                 if response.status_code == 200:
-                    logging.info("作业列表请求成功!")
+                    pass
                 else:
                     logging.error(f"请求失败，状态码：{response.status_code}")
                     break
@@ -372,6 +369,10 @@ class HomeworkCrawler:
                         continue
                     # 提取任务标题
                     title = task.find("h2", class_="list_li_tit").text.strip()
+                    if len(config.homework_name_list) == 0:
+                        pass
+                    elif title not in config.homework_name_list:
+                        continue
                     # 作答时间
                     answer_time = (task.find("p", class_="list_li_time").find(
                         "span").text.strip())
@@ -434,7 +435,6 @@ class HomeworkCrawler:
 
             piyue_url = task["review_link"]
             file_name = "answer.json"
-            logging.info("当前批阅链接：" + piyue_url)
             # 下载分数提交模版
             download(self.driver, self.download_dir, save_path, piyue_url)
 
@@ -488,7 +488,7 @@ class HomeworkCrawler:
                 )
 
                 if response.status_code == 200:
-                    logging.info("最终批阅链接请求成功!")
+                    pass
                 else:
                     logging.error(f"请求失败，状态码：{response.status_code}")
                     break

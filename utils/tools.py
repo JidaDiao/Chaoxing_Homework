@@ -161,30 +161,11 @@ def context_few_shot_learning_prompt(uncorrected_answers, corrected_answers, sys
     :return: 准备好的上下文提示信息
     """
     context_prompt = system_prompt
-    for key, value in corrected_answers.items():
+    for _, value in corrected_answers.items():
         context_prompt += value
-    for key, value in uncorrected_answers.items():
+    for _, value in uncorrected_answers.items():
         context_prompt += value
     return context_prompt
-
-
-def parse_grading_response(response):
-    """
-    解析评分响应，提取学生名字和成绩。
-
-    :param response: 评分响应字符串
-    :return: 学生成绩字典和评分标准
-    """
-    student_scores = re.findall(r"(\S+)：(\d+)分", response)
-    student_dict = {name: int(score) for name, score in student_scores}
-
-    scoring_standard_match = re.search(
-        r"### 本作业评分标准：\s*(.*)", response, re.DOTALL)
-    scoring_standard = scoring_standard_match.group(
-        1).strip() if scoring_standard_match else ""
-
-    logging.info('解析评分响应')
-    return student_dict, scoring_standard
 
 
 def convert_url(original_url, page_number=1):
