@@ -8,6 +8,7 @@ import logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
+logging.getLogger("openai").setLevel(logging.ERROR)
 
 
 class HomeworkGrader:
@@ -45,12 +46,13 @@ class HomeworkGrader:
         json_match = re.search(r'\{.*\}', response_content, re.DOTALL)
         if json_match:
             json_str = json_match.group(0)
+            json_str = json_str.replace("'", '"')
             # 将JSON字符串解析为字典
             try:
                 json_data = json.loads(json_str)
                 return json_data
             except json.JSONDecodeError as e:
-                logging.error(f"JSON解析错误: {str(e)}")
+                logging.error(f"JSON解析错误，原内容: {response_content}")
                 return None
         else:
             logging.error("未找到JSON格式内容")
@@ -148,7 +150,7 @@ class HomeworkGrader:
         messages = [{"role": "system", "content": system_prompt}]
         return messages
 
-    def prepare_score(self, selected_dict_uncorrected, prepare_system_prompt, number):
+    def prepare_score(self,  prepare_system_prompt, number):
         """准备参考分数和评分标准
 
         为选定的未批改答案准备参考分数和评分标准。
@@ -162,6 +164,9 @@ class HomeworkGrader:
         Returns:
             str: 生成的评分标准，用于后续批改其他答案
         """
+        selected_dict_uncorrected, selected_keys = randomselect_uncorrected(
+            self.student_answers_prompt_uncorrected, number
+        )
         context_prompt = context_prepare_prompt(
             selected_dict_uncorrected, prepare_system_prompt, number
         )
@@ -171,12 +176,31 @@ class HomeworkGrader:
         )
         response_content = self.extract_json_from_response(
             response.choices[0].message.content)
+        count = 1
+        while response_content is None or len(response_content['student_scores']) != number or response_content['grading_standard'] == "":
+            self.student_score_final = {}
+            selected_dict_uncorrected, selected_keys = randomselect_uncorrected(
+                self.student_answers_prompt_uncorrected, number
+            )
+            response = self.client.chat.completions.create(
+                model=config.prepare_model,
+                messages=context_prompt,
+            )
+            response_content = self.extract_json_from_response(
+                response.choices[0].message.content)
+            count += 1
+            if count % 2 == 0 and number > config.number_prepare_min:
+                number -= 1
 
         logging.info(response_content)
         student_scores = response_content['student_scores']
         grading_standard = response_content['grading_standard']
         for _, (key, value) in enumerate(student_scores.items()):
-            self.student_score_final[key] = value['score']
+            self.student_score_final[key] = value
+        with open("original_student_score.json", "w", encoding="utf-8") as json_file:
+            json.dump(
+                self.student_score_final, json_file, indent=4, sort_keys=True, ensure_ascii=False
+            )
         for _, (key, value) in enumerate(selected_dict_uncorrected.items()):
             try:
                 value_ = value
@@ -190,7 +214,7 @@ class HomeworkGrader:
             except Exception as e:
                 logging.error(f"发生错误: {str(e)}")
         logging.info("准备参考分数和评分标准")
-        return grading_standard
+        return grading_standard, selected_keys
 
     def gen_score(self, number_gen, selected_dict_uncorrected, few_shot_learning_system_prompt):
         """生成学生分数
@@ -218,11 +242,12 @@ class HomeworkGrader:
             model=config.gen_model,
             messages=context_prompt,
         )
-        student_scores = self.extract_json_from_response(
+        response_content = self.extract_json_from_response(
             response.choices[0].message.content)
+        student_scores = response_content['student_scores']
         logging.info(student_scores)
         count = 1
-        while student_scores == {}:
+        while student_scores is None:
             # 大模型打分出错了，需要重新生成
             selected_dict_corrected = randompop_corrected(
                 self.student_answers_prompt_corrected, number_gen
@@ -236,14 +261,15 @@ class HomeworkGrader:
                 model=config.gen_model,
                 messages=context_prompt,
             )
-            student_scores = self.extract_json_from_response(
-                response.choices[0].message.content)
+            response_content = self.extract_json_from_response(
+            response.choices[0].message.content)
+            student_scores = response_content['student_scores']
             logging.info(student_scores)
             count += 1
             if count % 2 == 0 and number_gen > config.number_gen_min:
                 number_gen -= 1  # 可能是参考样本太多了导致提示词过长了
         for _, (key, value) in enumerate(student_scores.items()):
-            self.student_score_final[key] = value['score']
+            self.student_score_final[key] = value
         with open("original_student_score.json", "w", encoding="utf-8") as json_file:
             json.dump(
                 self.student_score_final, json_file, indent=4, sort_keys=True, ensure_ascii=False
@@ -260,23 +286,42 @@ class HomeworkGrader:
                 self.student_answers_prompt_corrected[key] = value_
             except Exception as e:
                 logging.error(f"发生错误: {str(e)}")
-        logging.info("开始生成学生分数")
 
-    def normalize_and_save_grades(self, student_scores, normalized_min=60, normalized_max=85, original_min=20, original_max=90):
-        """对学生成绩进行归一化处理并保存
+    def normalize_score(self, student_scores, normalized_min=60, normalized_max=85, original_min=20, original_max=90):
+        """对学生成绩进行归一化处理
 
-        将原始分数进行归一化处理，并将结果保存到当前工作路径下唯一的Excel文件中（学习通导入模版）。
-        对于特殊分数区间的成绩进行特殊处理。
+        将原始分数进行归一化处理，对特殊分数区间的成绩进行特殊处理。
 
         Args:
             student_scores (dict): 包含学生最终成绩的字典
-            normalized_min (int, optional): 归一化后的最小分数.
-            normalized_max (int, optional): 归一化后的最大分数.
-            original_min (int, optional): 原始成绩的最小值. 
-            original_max (int, optional): 原始成绩的最大值. 
+            normalized_min (int, optional): 归一化后的最小分数
+            normalized_max (int, optional): 归一化后的最大分数
+            original_min (int, optional): 原始成绩的最小值
+            original_max (int, optional): 原始成绩的最大值
 
         Returns:
             dict: 归一化处理后的成绩字典
+        """
+        def scale_score(score):
+            # 对于原始分数特别高或者特别低的，直接返回原始分数，中间那些捞一手（基本上缩放后的分数都比原分数高很多）
+            if score < original_min or score > original_max:
+                return score
+            else:
+                # 对其他分数进行缩放
+                return score / 100 * (normalized_max - normalized_min) + normalized_min
+
+        return {name: scale_score(score) for name, score in student_scores.items()}
+
+    def save_grades(self, scores_to_save):
+        """将归一化后的成绩保存到Excel文件
+
+        将归一化后的成绩保存到当前工作路径下唯一的Excel文件中（学习通导入模版）。
+
+        Args:
+            scores_to_save (dict): 归一化处理后的成绩字典
+
+        Returns:
+            dict: 保存的成绩字典
 
         Raises:
             ValueError: 当Excel文件中未找到必要的列时抛出
@@ -299,29 +344,17 @@ class HomeworkGrader:
             logging.error("未找到'学生姓名'或'分数'列，请检查表头是否包含这些字段！")
             raise ValueError("未找到'学生姓名'或'分数'列，请检查表头是否包含这些字段！")
 
-        def scale_score(score):
-            # 对于原始分数特别高或者特别低的，直接返回原始分数，中间那些捞一手（基本上缩放后的分数都比原分数高很多）
-            if score < original_min or score > original_max:
-                return score
-            else:
-                # 对其他分数进行缩放
-                return score / 100 * normalized_max + normalized_min
-
-        normalized_scores = {name: scale_score(
-            score) for name, score in student_scores.items()}
-
         new_workbook = copy(workbook)
         new_sheet = new_workbook.get_sheet(0)
 
         for row in range(2, sheet.nrows):
             student_name = sheet.cell_value(row, student_name_col_idx)
-            if student_name in normalized_scores:
+            if student_name in scores_to_save:
                 new_sheet.write(row, score_col_idx,
-                                normalized_scores[student_name])
+                                scores_to_save[student_name])
 
         new_workbook.save(xls_file)
         logging.info("分数更新完成！")
-        return normalized_scores
 
     def _process_homework_directories(self):
         """处理作业目录
@@ -402,7 +435,7 @@ class HomeworkGrader:
                 value_ = value
                 value_.append({
                     "role": "assistant",
-                    "content": key + "：" + str(self.student_score_final[key]) + "分",
+                    "content":  str(self.student_score_final[key]),
                 })
                 self.student_answers_prompt_corrected[key] = value_
 
@@ -435,29 +468,28 @@ class HomeworkGrader:
 
         prepare_system_prompt = self.gen_prepare_system_prompt(
             homework_data, number_prepare)
-        selected_dict_uncorrected, selected_keys = randomselect_uncorrected(
-            self.student_answers_prompt_uncorrected, number_prepare
-        )
-        grading_standard = self.prepare_score(
-            selected_dict_uncorrected, prepare_system_prompt, number_prepare
-        )
+        # selected_dict_uncorrected, selected_keys = randomselect_uncorrected(
+        #     self.student_answers_prompt_uncorrected, number_prepare
+        # )
+        grading_standard, selected_keys = self.prepare_score(
+            prepare_system_prompt, number_prepare)
 
-        count = 1
-        while grading_standard == "" or len(self.student_score_final) != number_prepare:
-            self.student_score_final = {}
-            prepare_system_prompt = self.gen_prepare_system_prompt(
-                homework_data, number_prepare)
-            selected_dict_uncorrected, selected_keys = randomselect_uncorrected(
-                self.student_answers_prompt_uncorrected, number_prepare
-            )
-            grading_standard = self.prepare_score(
-                selected_dict_uncorrected,
-                prepare_system_prompt,
-                number_prepare,
-            )
-            count += 1
-            if count % 2 == 0 and number_prepare > config.number_prepare_min:
-                number_prepare -= 1
+        # count = 1
+        # while grading_standard == "" or len(self.student_score_final) != number_prepare:
+        #     self.student_score_final = {}
+        #     prepare_system_prompt = self.gen_prepare_system_prompt(
+        #         homework_data, number_prepare)
+        #     selected_dict_uncorrected, selected_keys = randomselect_uncorrected(
+        #         self.student_answers_prompt_uncorrected, number_prepare
+        #     )
+        #     grading_standard = self.prepare_score(
+        #         selected_dict_uncorrected,
+        #         prepare_system_prompt,
+        #         number_prepare,
+        #     )
+        #     count += 1
+        #     if count % 2 == 0 and number_prepare > config.number_prepare_min:
+        #         number_prepare -= 1
 
         pop_uncorrected(self.student_answers_prompt_uncorrected, selected_keys)
         with open("评分标准.md", "w", encoding="utf-8") as f:
@@ -530,16 +562,18 @@ class HomeworkGrader:
                     homework_data, number_prepare)
 
             self._parallel_grading(homework_data, grading_standard, number_gen)
-            logging.info(self.student_score_final)
-
+            student_score_to_save = {}
+            for _, (key, value) in enumerate(self.student_score_final.items()):
+                student_score_to_save[key] = value['score']
             if config.pulling_students_up:
-                normalized_scores = self.normalize_and_save_grades(
-                    self.student_score_final,
+                normalized_scores = self.normalize_score(
+                    student_score_to_save,
                     normalized_min=config.normalized_min,
                     normalized_max=config.normalized_max,
                     original_min=config.original_min,
                     original_max=config.original_max,
                 )
+                self.save_grades(normalized_scores)
 
                 with open("normalized_student_score.json", "w", encoding="utf-8") as json_file:
                     json.dump(
@@ -549,3 +583,5 @@ class HomeworkGrader:
                         sort_keys=True,
                         ensure_ascii=False,
                     )
+            else:
+                self.save_grades(student_score_to_save)

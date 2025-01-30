@@ -139,13 +139,18 @@ def context_prepare_prompt(selected_answers, system_prompt, num_answers):
     :param num_answers: 答案数量
     :return: 准备好的上下文提示信息
     """
-    context_prompt = system_prompt
+    context_prompt = system_prompt.copy()
     for index, (key, value) in enumerate(selected_answers.items(), start=1):
         context_prompt += value
-        if index < num_answers:
+        if index < (num_answers-1):
             context_prompt.append({
                 "role": "assistant",
                 "content": f"第{index}轮：pass"
+            })
+        if index == (num_answers-1):
+            context_prompt.append({
+                "role": "assistant",
+                "content": f"第{index}轮：pass，下一次回复我将对所有学生进行打分，并提供打分依据和评分标准。"
             })
     logging.info('准备上下文提示信息')
     return context_prompt

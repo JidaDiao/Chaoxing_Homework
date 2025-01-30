@@ -2,10 +2,10 @@ import argparse
 # revise_homework.py使用
 parser = argparse.ArgumentParser()
 parser.add_argument('--api_key', type=str,
-                    default='sk-7xg4nuFTWoLsWNsUbAMnwTclY4pubU9AiJ0DWsXUVubxiAkl', help='API key')
+                    default='', help='API key')
 parser.add_argument('--base_url', type=str,
                     default='https://a1.aizex.me/v1', help='Base URL')
-parser.add_argument('--max_workers', type=int, default=4, help='改作业的最大线程数')
+parser.add_argument('--max_workers', type=int, default=6, help='改作业的最大线程数')
 parser.add_argument('--prepare_model', type=str,
                     default='gpt-4o', help='用来生成分标准和参考分数的大模型')
 parser.add_argument('--gen_model', type=str,
@@ -37,15 +37,24 @@ parser.add_argument('--prepare_system_prompt', type=str, default="""
         1. **评分范围：0-100分**，分数应有一定随机性，避免过于整齐。
         2. **学生回答形式：** 可能是文本、图片或两者结合，请根据实际情况判断图片与题目内容的对应关系。
         3. **学生水平：** 整体水平较低，部分题目可能空白未作答，请合理结合回答内容和逻辑进行评分，**若无作答则给0分**。
-        4. **分数分布：** 力求使学生分数呈现高斯分布。
-        5. **主观判断：** 若对题干有不理解之处，需结合学生作答进行主观判断，给出适当评分。
-        6. **观察阶段：** 前{number_}名学生的回答仅作观察，记录题目难度和学生水平等特征，以制定评分策略；从第{number}名开始评分。
-        7. **整体评分规则：** 观察完{number}名学生的作答后，为所有{number}名学生打分，并提供明确的评分标准。
-        8. **灵活思考：** 若所有{number}名学生的回答与题干有偏差，可能是题外约定未体现，请灵活给予分数，而非一律低分。
-
+        4. **主观判断：** 若对题干有不理解之处，需结合学生作答进行主观判断，给出适当评分。
+        5. **整体评分规则：** 观察完所有{number}名学生的作答后，生成评分标准，并为所有学生打分，同时提供打分依据。
+        6. **灵活思考：** 若所有{number}名学生的回答与题干有偏差，可能是题外约定未体现，请灵活给予分数，而非一律低分。
+        
+        
         ### 输出规则：
-        1. **观察阶段：** 若在前{number_}名观察阶段，统一回复：`第x轮：pass`，x为对话轮数。
-        2. **评分阶段：** 观察完第{number}名学生后，为所有{number}名学生打分，并提供整体评分标准以及每位学生的打分依据，打分依据尽量有理有据。
+        1. **观察阶段：** 观察阶段遵循以下规则：
+            - 前{number_}名学生的回答仅作观察，记录题目难度和学生水平等特征，以制定评分策略；从第{number}名开始评分。
+            - 若在前{number_}名观察阶段，统一回复：`第x轮：pass`，x为对话轮数。
+                    
+        2. **评分阶段：** 评分阶段遵循以下规则：
+            - 观察完第{number}名学生后，生成评分标准，为打分做参考。
+            - 为所有{number}名学生打分，并提供每位学生的打分依据，打分要尽量有理有据。
+
+        3. **评分标准：** 生成的评分标准，要求如下：
+            - 评分标准应**客观**，**客观**地反映题目难度和学生水平。
+            - 评分标准应**具有可解释性**，能够让学生理解评分依据。
+            - 评分标准应**尽量详细！！**，覆盖每道题目的每一个可能的扣分点或得分点。
 
         ### 输出格式：          
         请**严格按照**以下JSON格式输出评分结果：
@@ -94,13 +103,15 @@ parser.add_argument('--few_shot_learning_system_prompt', type=str, default="""
         请**严格按照**以下JSON格式输出评分结果：
         
         {{
-                "张三": {{
-                        "score": 83,
-                        "scoring_criteria": "<根据题目的参考答案和生成的评分标准给出打分依据>"
+                "student_scores": {{
+                        "张三": {{
+                                "score": 83,
+                                "scoring_criteria": "<根据题目的参考答案和生成的评分标准给出打分依据>"
+                        }}
                 }}
         }}           
         
-        **确保**学生的姓名和分数以及对应的打分依据都存在！            
+        **确保**学生的姓名作为键分数以及对应的打分依据都存在！            
         """, help='少样本改作业的系统提示词')
 # prepare_data.pys使用
 parser.add_argument('--course_urls', type=list, default=[
