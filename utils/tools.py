@@ -72,10 +72,28 @@ def download_image(url_or_base64):
         if image.mode in ("RGBA", "P"):
             image = image.convert("RGB")
 
-        # 将图像分辨率调整为原来的80%
+        # 根据长短边比例调整图片大小
         width, height = image.size
-        new_size = (int(width * 0.8), int(height * 0.8))
-        image = image.resize(new_size, Image.Resampling.LANCZOS)
+        aspect_ratio = max(width, height) / min(width, height)
+
+        if aspect_ratio > 0.5:
+            # 将短边固定为256，长边按比例缩放
+            if width < height:
+                new_width = 256
+                new_height = int(height * (new_width / width))
+            else:
+                new_height = 256
+                new_width = int(width * (new_height / height))
+        else:
+            # 将长边固定为512，短边按比例缩放
+            if width > height:
+                new_width = 512
+                new_height = int(height * (new_width / width))
+            else:
+                new_height = 512
+                new_width = int(width * (new_height / height))
+
+        image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
         # 压缩图片并转换为 Base64 格式
         buffered = BytesIO()
