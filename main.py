@@ -1,12 +1,8 @@
 from prepare_data import HomeworkCrawler
 from revise_homework import HomeworkGrader
 from config import config
-import logging
+from utils.my_log import logger as logging
 
-# 配置logging
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-)
 if __name__ == '__main__':
     # logging.info("开始爬作业")
     # crawler = HomeworkCrawler(config.chrome_driver_path)

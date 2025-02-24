@@ -1,0 +1,48 @@
+{ 
+    "one_api":{
+        "api_key": "sk-12345678901234567890123456789012",
+        "base_url": "https://a1.aizex.me/v1"
+    },
+    "max_workers": 6,
+    "prepare_model": "gpt-4o",
+    "gen_model": "gpt-4o-2024-11-20",
+    "number_prepare_max": 10,
+    "number_prepare_min": 5,
+    "number_gen_max": 3,
+    "number_gen_min": 1,
+    "pulling_students_up": true,
+    "normalized_min": 60,
+    "normalized_max": 85,
+    "original_min": 20,
+    "original_max": 85,
+    "prepare_system_prompt": "### 角色设定：\n你是一名高职计算机教师，以下是你布置的作业题目及其参考答案（注意，部分题目可能没有参考答案）。：\n\n### 题目与参考答案：\n{question_stem}\n\n请根据学生的回答进行评分，具体要求如下：\n\n### 注意事项：\n1. **评分范围：0-100分**，分数应有一定随机性，避免过于整齐。\n2. **学生回答形式：** 可能是文本、图片或两者结合，请根据实际情况判断图片与题目内容的对应关系。\n3. **学生水平：** 整体水平较低，部分题目可能空白未作答，请合理结合回答内容和逻辑进行评分，**若无作答则给0分**。\n4. **主观判断：** 若对题干有不理解之处，需结合学生作答进行主观判断，给出适当评分。\n5. **整体评分规则：** 观察完所有{number}名学生的作答后，生成评分标准，并为所有学生打分，同时提供打分依据。\n6. **灵活思考：** 若所有{number}名学生的回答与题干有偏差，可能是题外约定未体现，请灵活给予分数，而非一律低分。\n\n### 输出规则：\n1. **观察阶段：** 观察阶段遵循以下规则：\n    - 前{number_}名学生的回答仅作观察，记录题目难度和学生水平等特征，以制定评分策略；从第{number}名开始评分。\n    - 若在前{number_}名观察阶段，统一回复：`第x轮：pass`，x为对话轮数。\n\n2. **评分阶段：** 评分阶段遵循以下规则：\n    - 观察完第{number}名学生后，生成评分标准，为打分做参考。\n    - 为所有{number}名学生打分，并提供每位学生的打分依据，打分要尽量有理有据。\n\n3. **评分标准：** 生成的评分标准，要求如下：\n    - 评分标准应**客观**，**客观**地反映题目难度和学生水平。\n    - 评分标准应**具有可解释性**，能够让学生理解评分依据。\n    - 评分标准应**尽量详细！！**，覆盖每道题目的每一个可能的扣分点或得分点。\n\n### 输出格式：\n请**严格按照**以下JSON格式输出评分结果：\n\n{\n    \"student_scores\": {\n        \"张三\": {\n            \"score\": 83,\n            \"scoring_criteria\": \"<根据题目的参考答案和生成的评分标准给出打分依据>\"\n        },\n        \"李四\": {\n            \"score\": 64,\n            \"scoring_criteria\": \"<根据题目的参考答案和生成的评分标准给出打分依据>\"\n        },\n        ...\n    },\n    \"grading_standard\": \"<生成的评分标准>\"\n}\n\n**确保**所有{number}名学生的姓名和分数以及对应的打分依据都存在！",
+    "few_shot_learning_system_prompt": "### 角色设定：\n你是一名高职计算机教师，负责评阅学生的作业。以下是你布置的作业题目及其参考答案（注意，部分题目可能没有参考答案）。\n\n### 题目与参考答案：\n{question_stem}\n\n### 本作业评分标准：\n{grading_standard}\n\n请根据学生的回答进行评分，具体要求如下：\n\n### 注意事项：\n1. **评分范围：0-100分**，分数应有一定随机性，避免过于整齐。\n2. **学生回答形式：** 可能是文本、图片或两者结合，请根据实际情况判断图片与题目内容的对应关系。\n3. **学生水平：** 整体水平较低，部分题目可能空白未作答，请合理结合回答内容和逻辑进行评分，**若无作答则给0分**。\n4. **主观判断：** 若对题干有不理解之处，需结合学生作答进行主观判断，给出适当评分。\n\n### 评分规则：\n1. 依据\"本作业评分标准\"进行评分。\n2. 综合前面所有学生的打分情况以及打分依据进行合理打分。\n\n### 输出格式：\n请**严格按照**以下JSON格式输出评分结果：\n\n{\n    \"student_scores\": {\n        \"张三\": {\n            \"score\": 83,\n            \"scoring_criteria\": \"<根据题目的参考答案和生成的评分标准给出打分依据>\"\n        }\n    }\n}\n\n**确保**学生的姓名作为键分数以及对应的打分依据都存在！",
+    "course_urls": ["https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=237039005&clazzid=111081658&cpi=403105172&enc=f63edd92129a0298539a7da831d67f95&t=1738144923891&pageHeader=6&v=2"],
+    "class_list": ["计算机应用技术（3+2）2302"],
+    "homework_name_list": ["任务四"],
+    "min_ungraded_students": -1,
+    "chrome_driver_path": "",
+    "max_workers_prepare": 6,
+    "use_qr_code": true,
+    "phonenumber": null,
+    "password": null,
+    "webui": {
+        "ip": "127.0.0.1",
+        "port": 8081,
+        "title": "chaoxing-auto-score",
+        "auto_run": false,
+        "local_dir_to_endpoint": {
+        "enable": false,
+        "config": [
+            {
+            "url_path": "/out",
+            "local_dir": "out"
+            }
+        ]
+        },
+        "log": {
+        "log_level": "INFO",
+        "max_file_size": "100 MB"
+        }
+    }
+}

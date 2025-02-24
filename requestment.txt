@@ -1,5 +1,4 @@
 openai
-concurrent.futures
 argparse
 selenium
 beautifulsoup4
@@ -7,3 +6,4 @@ requests
 pillow
 xlrd
 xlutils
+nicegui
