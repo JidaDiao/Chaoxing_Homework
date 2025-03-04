@@ -2,9 +2,9 @@ import argparse
 # revise_homework.py使用
 parser = argparse.ArgumentParser()
 parser.add_argument('--api_key', type=str,
-                    default='', help='API key')
+                    default='sk-XLA2zfpOKAWnNSDQD9Af73BcB6Ff4b1aA66eC1Ca27C6B12e', help='API key')
 parser.add_argument('--base_url', type=str,
-                    default='https://a1.aizex.me/v1', help='Base URL')
+                    default='https://ollama.jidadiao.fun/v1', help='Base URL')
 parser.add_argument('--max_workers', type=int, default=6, help='改作业的最大线程数')
 parser.add_argument('--prepare_model', type=str,
                     default='gpt-4o', help='用来生成分标准和参考分数的大模型')
@@ -118,10 +118,10 @@ parser.add_argument('--course_urls', type=list, default=[
                     'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=237039005&clazzid=111081658&cpi=403105172&enc=f63edd92129a0298539a7da831d67f95&t=1738144923891&pageHeader=6&v=2'], help='要爬取的课程的url列表')
 parser.add_argument('--class_list', type=list, default=['计算机应用技术（3+2）2302'],
                     help='要爬取的课程的班级列表，空的话就全爬取')
-parser.add_argument('--homework_name_list', type=list, default=['任务四'],
+parser.add_argument('--homework_name_list', type=list, default=[],
                     help='要爬取的作业名列表，空的话就全爬取')
 parser.add_argument('--min_ungraded_students', type=int,
-                    default=-1, help='没批改的学生数超过这个就爬取,-1表示全改完了也爬')
+                    default=5, help='没批改的学生数超过这个就爬取,-1表示全改完了也爬')
 parser.add_argument('--chrome_driver_path', type=str,
                     default='', help='ChromeDriver的执行路径')
 parser.add_argument('--max_workers_prepare', type=int,

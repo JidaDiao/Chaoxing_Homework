@@ -90,6 +90,8 @@ class HomeworkCrawler:
         service = Service(chrome_driver_path)
         self.driver = webdriver.Chrome(service=service, options=options)
 
+    from crawler2.browser_tools import BrowserLogParser
+
     def _get_url_from_logs(self, logs, url_pattern, log_message=""):
         """从浏览器性能日志中获取特定URL
 
@@ -101,115 +103,9 @@ class HomeworkCrawler:
         Returns:
             str: 匹配到的URL，如果未找到则返回None
         """
-        target_url = None
-        for log in logs:
-            message = log["message"]
-            if url_pattern in message:
-                log_json = json.loads(message)["message"]["params"]
-                if "request" in log_json and "url" in log_json["request"]:
-                    target_url = log_json["request"]["url"]
-                    if log_message:
-                        logging.info(log_message + target_url)
-                    break
-        return target_url
+        return BrowserLogParser.parse_url_from_performance_logs(logs, url_pattern, log_message)
 
-    def process_student(
-        self, student, headers, session_cookies, driver_queue, task_list_lock, task_list
-    ):
-        """处理单个学生的作业数据
-
-        获取并处理单个学生的作业答案，包括文本答案和图片答案。
-
-        Args:
-            student (dict): 学生信息，包含姓名和作业链接
-            headers (dict): HTTP请求头
-            session_cookies (dict): 会话Cookie
-            driver_queue (Queue): WebDriver实例队列
-            task_list_lock (threading.Lock): 线程锁
-            task_list (dict): 存储所有学生答案的字典
-
-        Returns:
-            None
-        """
-        # 从队列中获取driver
-        driver = driver_queue.get()
-        try:
-            student_name = student["name"]
-            student_url = student["review_link"]
-            driver.get(student_url)
-            time.sleep(2)
-
-            logs = driver.get_log("performance")
-            target_url = self._get_url_from_logs(
-                logs,
-                "https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work"
-            )
-
-            if target_url:
-                response = requests.get(
-                    target_url, headers=headers, cookies=session_cookies)
-                soup = BeautifulSoup(response.content, "html.parser")
-                all_questions = []
-                question_blocks = soup.find_all("div", class_="mark_item1")
-
-                for block in question_blocks:
-                    # 提取题目描述
-                    question_description_tag = block.find(
-                        "div", class_="hiddenTitle")
-                    question_description = question_description_tag.text.strip()
-
-
-                    # 提取学生答案
-                    student_answer_tag = block.find(
-                        "dl",
-                        class_="mark_fill",
-                        id=lambda x: x and x.startswith("stuanswer_"),
-                    )
-                    if student_answer_tag:
-                        # 查找文字答案
-                        text_answers = [
-                            p.text.strip()
-                            for p in student_answer_tag.find_all("p")
-                            if p.text.strip()
-                        ]
-                        # 查找图片链接
-                        image_answers = [
-                            img["src"]
-                            for img in student_answer_tag.find_all("img")
-                            if "src" in img.attrs
-                        ]
-                        # 组合学生答案
-                        student_answer = {"text": text_answers,
-                                          "images": image_answers}
-                    else:
-                        # 空着呢
-                        student_answer = {"text": [], "images": []}
-
-                    # 提取参考答案
-                    correct_answer_tag = block.find(
-                        "dl",
-                        class_="mark_fill",
-                        id=lambda x: x and x.startswith("correctanswer_"),
-                    )
-                    if correct_answer_tag:
-                        correct_answer = correct_answer_tag.text.strip()
-                    else:
-                        correct_answer = "此题无参考答案"
-
-                    # 存储题目信息
-                    question_data = {
-                        "description": question_description,
-                        "student_answer": student_answer,
-                        "correct_answer": correct_answer.replace("参考答案：", "", 1),
-                    }
-                    all_questions.append(question_data)
-
-                # 使用锁来保护共享资源
-                with task_list_lock:
-                    task_list[student_name] = all_questions
-        finally:
-            # 将driver放回队列
-            driver_queue.put(driver)
+    
 
     def run(self):
         """运行作业爬虫
@@ -579,6 +475,104 @@ class HomeworkCrawler:
         except Exception as e:
             logging.error(f'处理学生答案失败：{str(e)}')
             return task_list
+    
+    def process_student(
+        self, student, headers, session_cookies, driver_queue, task_list_lock, task_list
+    ):
+        """处理单个学生的作业数据
+
+        获取并处理单个学生的作业答案，包括文本答案和图片答案。
+
+        Args:
+            student (dict): 学生信息，包含姓名和作业链接
+            headers (dict): HTTP请求头
+            session_cookies (dict): 会话Cookie
+            driver_queue (Queue): WebDriver实例队列
+            task_list_lock (threading.Lock): 线程锁
+            task_list (dict): 存储所有学生答案的字典
+
+        Returns:
+            None
+        """
+        # 从队列中获取driver
+        driver = driver_queue.get()
+        try:
+            student_name = student["name"]
+            student_url = student["review_link"]
+            driver.get(student_url)
+            time.sleep(2)
+
+            logs = driver.get_log("performance")
+            target_url = self._get_url_from_logs(
+                logs,
+                "https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work"
+            )
+
+            if target_url:
+                response = requests.get(
+                    target_url, headers=headers, cookies=session_cookies)
+                soup = BeautifulSoup(response.content, "html.parser")
+                all_questions = []
+                question_blocks = soup.find_all("div", class_="mark_item1")
+
+                for block in question_blocks:
+                    # 提取题目描述
+                    question_description_tag = block.find(
+                        "div", class_="hiddenTitle")
+                    question_description = question_description_tag.text.strip()
+
+
+                    # 提取学生答案
+                    student_answer_tag = block.find(
+                        "dl",
+                        class_="mark_fill",
+                        id=lambda x: x and x.startswith("stuanswer_"),
+                    )
+                    if student_answer_tag:
+                        # 查找文字答案
+                        text_answers = [
+                            p.text.strip()
+                            for p in student_answer_tag.find_all("p")
+                            if p.text.strip()
+                        ]
+                        # 查找图片链接
+                        image_answers = [
+                            img["src"]
+                            for img in student_answer_tag.find_all("img")
+                            if "src" in img.attrs
+                        ]
+                        # 组合学生答案
+                        student_answer = {"text": text_answers,
+                                          "images": image_answers}
+                    else:
+                        # 空着呢
+                        student_answer = {"text": [], "images": []}
+
+                    # 提取参考答案
+                    correct_answer_tag = block.find(
+                        "dl",
+                        class_="mark_fill",
+                        id=lambda x: x and x.startswith("correctanswer_"),
+                    )
+                    if correct_answer_tag:
+                        correct_answer = correct_answer_tag.text.strip()
+                    else:
+                        correct_answer = "此题无参考答案"
+
+                    # 存储题目信息
+                    question_data = {
+                        "description": question_description,
+                        "student_answer": student_answer,
+                        "correct_answer": correct_answer.replace("参考答案：", "", 1),
+                    }
+                    all_questions.append(question_data)
+
+                # 使用锁来保护共享资源
+                with task_list_lock:
+                    task_list[student_name] = all_questions
+        finally:
+            # 将driver放回队列
+            driver_queue.put(driver)
 
     def _save_results(self, task_list, save_path, file_name):
         """保存处理结果
