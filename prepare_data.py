@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
 import threading
 import os
-from utils import *
+from utils.tools import *
 from config.args import config
 import logging
 
@@ -90,23 +90,6 @@ class HomeworkCrawler:
         service = Service(chrome_driver_path)
         self.driver = webdriver.Chrome(service=service, options=options)
 
-    from crawler2.browser_tools import BrowserLogParser
-
-    def _get_url_from_logs(self, logs, url_pattern, log_message=""):
-        """从浏览器性能日志中获取特定URL
-
-        Args:
-            logs (list): 浏览器性能日志列表
-            url_pattern (str): URL匹配模式
-            log_message (str): 日志消息，默认为空
-
-        Returns:
-            str: 匹配到的URL，如果未找到则返回None
-        """
-        return BrowserLogParser.parse_url_from_performance_logs(logs, url_pattern, log_message)
-
-    
-
     def run(self):
         """运行作业爬虫
 
@@ -170,7 +153,8 @@ class HomeworkCrawler:
             try:
                 # 等待页面加载完成
                 WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.XPATH, '//*[@id="phone"]'))
+                    EC.presence_of_element_located(
+                        (By.XPATH, '//*[@id="phone"]'))
                 )
 
                 # 输入手机号和密码
@@ -183,7 +167,8 @@ class HomeworkCrawler:
                     By.XPATH, '//*[@id="pwd"]').send_keys(password)
 
                 # 点击登录按钮
-                self.driver.find_element(By.XPATH, '//*[@id="loginBtn"]').click()
+                self.driver.find_element(
+                    By.XPATH, '//*[@id="loginBtn"]').click()
 
                 # 等待登录完成
                 time.sleep(2)
@@ -220,7 +205,7 @@ class HomeworkCrawler:
             time.sleep(2)  # 等待页面加载
             # 监听页面的网络请求
             logs = self.driver.get_log("performance")
-            list_url = self._get_url_from_logs(
+            list_url = extract_url_from_logs(
                 logs,
                 "mooc2-ans/work/list",
                 "捕获的作业列表请求 URL: "
@@ -366,7 +351,7 @@ class HomeworkCrawler:
         time.sleep(2)  # 等待页面加载
         try:
             logs = self.driver.get_log("performance")
-            target_url = self._get_url_from_logs(
+            target_url = extract_url_from_logs(
                 logs,
                 "mooc2-ans/work/mark-list",
                 "捕获的目标批阅列表请求 URL: "
@@ -475,7 +460,7 @@ class HomeworkCrawler:
         except Exception as e:
             logging.error(f'处理学生答案失败：{str(e)}')
             return task_list
-    
+
     def process_student(
         self, student, headers, session_cookies, driver_queue, task_list_lock, task_list
     ):
@@ -503,7 +488,7 @@ class HomeworkCrawler:
             time.sleep(2)
 
             logs = driver.get_log("performance")
-            target_url = self._get_url_from_logs(
+            target_url = extract_url_from_logs(
                 logs,
                 "https://mooc2-ans.chaoxing.com/mooc2-ans/work/library/review-work"
             )
@@ -520,7 +505,6 @@ class HomeworkCrawler:
                     question_description_tag = block.find(
                         "div", class_="hiddenTitle")
                     question_description = question_description_tag.text.strip()
-
 
                     # 提取学生答案
                     student_answer_tag = block.find(

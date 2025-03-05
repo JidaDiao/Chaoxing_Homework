@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from .base import LoginStrategy
+from .interface import LoginStrategy
 from config.args import config
 import time
 import logging

@@ -18,6 +18,31 @@ from xlutils.copy import copy
 import glob
 import re
 import logging
+from typing import List, Dict, Optional, Any
+
+
+def extract_url_from_logs(logs: List[Dict], url_pattern: str, log_message: str = "") -> Optional[str]:
+    """从浏览器性能日志中获取特定URL
+
+    Args:
+        logs (list): 浏览器性能日志列表
+        url_pattern (str): URL匹配模式
+        log_message (str): 日志消息，默认为空
+
+    Returns:
+        Optional[str]: 匹配到的URL，如果未找到则返回None
+    """
+    target_url = None
+    for log in logs:
+        message = log["message"]
+        if url_pattern in message:
+            log_json = json.loads(message)["message"]["params"]
+            if "request" in log_json and "url" in log_json["request"]:
+                target_url = log_json["request"]["url"]
+                if log_message:
+                    logging.info(log_message + target_url)
+                break
+    return target_url
 
 
 def import_json_file(file_path):
