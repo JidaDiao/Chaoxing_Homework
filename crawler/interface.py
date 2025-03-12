@@ -14,7 +14,7 @@ class LoginStrategy(ABC):
     """
 
     @abstractmethod
-    def login(self, driver: webdriver.Chrome) -> bool:
+    def login(self, driver: webdriver.Chrome, loginurl) -> bool:
         """执行登录操作
 
         Args:
@@ -104,9 +104,14 @@ class HomeworkCrawler(ABC):
         pass
 
     @abstractmethod
+    def process_homework(self, course_url):
+        """获取作业列表"""
+        pass
+
+    @abstractmethod
     def save_result(self, final_results, task):
         """保存处理结果
-        
+
         Args:
             final_results: 处理后的结果数据
             task: 任务信息，包含保存路径等数据

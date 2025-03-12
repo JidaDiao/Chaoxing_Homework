@@ -13,9 +13,6 @@ from PIL import Image
 import time
 import os
 import shutil
-import xlrd
-from xlutils.copy import copy
-import glob
 import re
 import logging
 from typing import List, Dict, Optional, Any

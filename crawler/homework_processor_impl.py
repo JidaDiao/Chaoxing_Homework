@@ -6,8 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 import threading
 import requests
 import time
-import os
-import json
+from webdriver_manager.chrome import ChromeDriverManager
 import logging
 from typing import Dict, List, Any
 from queue import Queue
@@ -22,7 +21,7 @@ class ChaoxingHomeworkProcessor(HomeworkProcessor):
     """
 
     def __init__(self, driver: webdriver.Chrome, session_cookies: Dict, headers: Dict,
-                 driver_queue: Queue, download_dir: str, config: Any):
+                 driver_queue: Queue, config: Any):
         """初始化作业处理器
 
         Args:
@@ -37,7 +36,6 @@ class ChaoxingHomeworkProcessor(HomeworkProcessor):
         self.session_cookies = session_cookies
         self.headers = headers
         self.driver_queue = driver_queue
-        self.download_dir = download_dir
         self.config = config
 
     def get_students_grading_url(self, homework_grading_url):
@@ -134,7 +132,7 @@ class ChaoxingHomeworkProcessor(HomeworkProcessor):
                 for _ in range(num_threads):
                     options = webdriver.ChromeOptions()
                     driver_ = webdriver.Chrome(
-                        service=Service(self.config.chrome_driver_path),
+                        service=Service(ChromeDriverManager().install()),
                         options=options
                     )
                     self.driver_queue.put(driver_)
@@ -292,4 +290,18 @@ class ChaoxingHomeworkProcessor(HomeworkProcessor):
             for student_name in student_name_list:
                 final_results["学生回答"][student_name][question_key] = \
                     results[student_name][i]["student_answer"]
-        return final_results
+        
+        # 转换为数据库需要的格式：学生答案列表
+        db_results = []
+        for student_name, answers in final_results["学生回答"].items():
+            student_data = {
+                "姓名": student_name,
+                "学号": "",  # 如果有学号数据，可以在此处添加
+                "答案": answers
+            }
+            db_results.append(student_data)
+        
+        return {
+            "json_result": final_results,
+            "db_result": db_results
+        }

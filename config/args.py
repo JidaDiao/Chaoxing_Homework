@@ -115,15 +115,13 @@ parser.add_argument('--few_shot_learning_system_prompt', type=str, default="""
         """, help='少样本改作业的系统提示词')
 # prepare_data.pys使用
 parser.add_argument('--course_urls', type=list, default=[
-                    'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=237039005&clazzid=111081658&cpi=403105172&enc=f63edd92129a0298539a7da831d67f95&t=1738144923891&pageHeader=6&v=2'], help='要爬取的课程的url列表')
-parser.add_argument('--class_list', type=list, default=['计算机应用技术（3+2）2302'],
+                    'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=249851807&clazzid=116158002&cpi=403105172&enc=864128a6dc492a86849d4623eeccbaeb&t=1741236483060&pageHeader=6&v=2&hideHead=0'], help='要爬取的课程的url列表')
+parser.add_argument('--class_list', type=list, default=['计算机应用（3+2）2402'],
                     help='要爬取的课程的班级列表，空的话就全爬取')
 parser.add_argument('--homework_name_list', type=list, default=[],
                     help='要爬取的作业名列表，空的话就全爬取')
 parser.add_argument('--min_ungraded_students', type=int,
                     default=5, help='没批改的学生数超过这个就爬取,-1表示全改完了也爬')
-parser.add_argument('--chrome_driver_path', type=str,
-                    default='', help='ChromeDriver的执行路径')
 parser.add_argument('--max_workers_prepare', type=int,
                     default=6, help='爬作业的最大线程数')
 parser.add_argument('--use_qr_code', type=bool,
