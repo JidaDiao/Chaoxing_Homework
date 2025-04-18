@@ -17,6 +17,13 @@ import re
 import logging
 from typing import List, Dict, Optional, Any
 
+def my_lisdir(dir_path):
+    dirlist = os.listdir(dir_path)
+    dirlist_result = []
+    for dirname in dirlist:
+        if not dirname.startswith('.'):
+            dirlist_result.append(dirname)
+    return dirlist_result
 
 def extract_url_from_logs(logs: List[Dict], url_pattern: str, log_message: str = "") -> Optional[str]:
     """从浏览器性能日志中获取特定URL
@@ -170,30 +177,30 @@ def randompop_corrected(corrected_answers, num_to_select):
     return selected_dict
 
 
-def context_prepare_prompt(selected_answers, system_prompt, num_answers):
-    """
-    准备上下文提示信息。
+# def context_prepare_prompt(selected_answers, system_prompt, num_answers):
+#     """
+#     准备上下文提示信息。
 
-    :param selected_answers: 选择的学生答案字典
-    :param system_prompt: 系统提示信息
-    :param num_answers: 答案数量
-    :return: 准备好的上下文提示信息
-    """
-    context_prompt = system_prompt.copy()
-    for index, (key, value) in enumerate(selected_answers.items(), start=1):
-        context_prompt += value
-        if index < (num_answers-1):
-            context_prompt.append({
-                "role": "assistant",
-                "content": f"第{index}轮：pass"
-            })
-        if index == (num_answers-1):
-            context_prompt.append({
-                "role": "assistant",
-                "content": f"第{index}轮：pass，下一次回复我将对所有学生进行打分，并提供打分依据和评分标准。"
-            })
-    logging.info('准备上下文提示信息')
-    return context_prompt
+#     :param selected_answers: 选择的学生答案字典
+#     :param system_prompt: 系统提示信息
+#     :param num_answers: 答案数量
+#     :return: 准备好的上下文提示信息
+#     """
+#     context_prompt = system_prompt.copy()
+#     for index, (key, value) in enumerate(selected_answers.items(), start=1):
+#         context_prompt += value
+#         if index < (num_answers-1):
+#             context_prompt.append({
+#                 "role": "assistant",
+#                 "content": f"第{index}轮：pass"
+#             })
+#         if index == (num_answers-1):
+#             context_prompt.append({
+#                 "role": "assistant",
+#                 "content": f"第{index}轮：pass，下一次回复我将对所有学生进行打分，并提供打分依据和评分标准。"
+#             })
+#     logging.info('准备上下文提示信息')
+#     return context_prompt
 
 
 def context_few_shot_learning_prompt(uncorrected_answers, corrected_answers, system_prompt):
@@ -205,7 +212,7 @@ def context_few_shot_learning_prompt(uncorrected_answers, corrected_answers, sys
     :param system_prompt: 少样本学习系统提示信息
     :return: 准备好的上下文提示信息
     """
-    context_prompt = system_prompt
+    context_prompt = system_prompt.copy()
     for _, value in corrected_answers.items():
         context_prompt += value
     for _, value in uncorrected_answers.items():
@@ -275,7 +282,7 @@ def sanitize_folder_name(folder_name):
     return sanitized_name
 
 
-def download(driver, download_dir, destination_path, page_url):
+def download_template(driver, download_dir, destination_path, page_url):
     """
     使用Selenium下载文件并移动到指定目录。
 
