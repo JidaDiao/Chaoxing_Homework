@@ -2,7 +2,7 @@ import argparse
 # revise_homework.py使用
 parser = argparse.ArgumentParser()
 parser.add_argument('--api_key', type=str,
-                    default='sk-XLA2zfpOKAWnNSDQD9Af73BcB6Ff4b1aA66eC1Ca27C6B12e', help='API key')
+                    default='sk-X1234a27C6B12e', help='API key')
 parser.add_argument('--base_url', type=str,
                     default='https://ollama.jidadiao.fun/v1', help='Base URL')
 parser.add_argument('--max_workers', type=int, default=6, help='改作业的最大线程数')
