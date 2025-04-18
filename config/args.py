@@ -7,13 +7,13 @@ parser.add_argument('--base_url', type=str,
                     default='https://ollama.jidadiao.fun/v1', help='Base URL')
 parser.add_argument('--max_workers', type=int, default=6, help='改作业的最大线程数')
 parser.add_argument('--prepare_model', type=str,
-                    default='gpt-4o', help='用来生成分标准和参考分数的大模型')
+                    default='qwenvl', help='用来生成分标准和参考分数的大模型')
 parser.add_argument('--gen_model', type=str,
-                    default='gpt-4o-2024-11-20', help='用来生成单个学生分数的大模型')
+                    default='qwenvl', help='用来生成单个学生分数的大模型')
 parser.add_argument('--number_prepare_max', type=int,
-                    default=10, help='用来生成改分标准和参考分数的学生作业数量')
+                    default=8, help='用来生成改分标准和参考分数的学生作业数量')
 parser.add_argument('--number_prepare_min', type=int,
-                    default=5, help='用来生成改分标准和参考分数的学生作业数量')
+                    default=3, help='用来生成改分标准和参考分数的学生作业数量')
 parser.add_argument('--number_gen_max', type=int, default=3,
                     help='生成单个学生分数时用来参考的学生-分数对的数量')
 parser.add_argument('--number_gen_min', type=int, default=1,
@@ -34,7 +34,7 @@ parser.add_argument('--prepare_system_prompt', type=str, default="""
         请根据学生的回答进行评分，具体要求如下：
 
         ### 注意事项：
-        1. **评分范围：0-100分**，分数应有一定随机性，避免过于整齐。
+        1. **评分范围：**所有题目分数总和100分，每道题分数尽量均匀分配，分数应客观体现学生的作答情况。
         2. **学生回答形式：** 可能是文本、图片或两者结合，请根据实际情况判断图片与题目内容的对应关系。
         3. **学生水平：** 整体水平较低，部分题目可能空白未作答，请合理结合回答内容和逻辑进行评分，**若无作答则给0分**。
         4. **主观判断：** 若对题干有不理解之处，需结合学生作答进行主观判断，给出适当评分。
@@ -116,7 +116,7 @@ parser.add_argument('--few_shot_learning_system_prompt', type=str, default="""
 # prepare_data.pys使用
 parser.add_argument('--course_urls', type=list, default=[
                     'https://mooc2-ans.chaoxing.com/mooc2-ans/mycourse/tch?courseid=249851807&clazzid=116158002&cpi=403105172&enc=864128a6dc492a86849d4623eeccbaeb&t=1741236483060&pageHeader=6&v=2&hideHead=0'], help='要爬取的课程的url列表')
-parser.add_argument('--class_list', type=list, default=['计算机应用（3+2）2402'],
+parser.add_argument('--class_list', type=list, default=[],
                     help='要爬取的课程的班级列表，空的话就全爬取')
 parser.add_argument('--homework_name_list', type=list, default=[],
                     help='要爬取的作业名列表，空的话就全爬取')

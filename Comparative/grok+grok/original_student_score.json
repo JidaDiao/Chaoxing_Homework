@@ -1,0 +1,158 @@
+{
+    "倪旭玮": {
+        "score": 62,
+        "scoring_criteria": "Question 1 (40/50): Image reading uses correct path ('img/morph01.png') (10/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (22/50): Image reading uses correct path ('img/cross.png') (10/10). First attempt uses incorrect rectangular kernel (1,1) and invalid dilation with negative iterations (-10 points, 5/15 for kernel, 0/15 for operation). Second attempt uses correct (5,5) cross-shaped kernel and opening operation but only displays result image (-5 points, 5/10 for display). Cleanup included, no deduction. Partial credit for second attempt."
+    },
+    "倪理浩": {
+        "score": 80,
+        "scoring_criteria": "Question 1 (40/50): Correct image reading (10/10). Kernel is rectangular but oriented incorrectly as (10,1) instead of (1,N), leading to ineffective dilation for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). No cleanup deduction as cv2.destroyAllWindows() is included. Question 2 (40/50): Correct image reading (10/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct (15/15). Both images displayed, but window title 'NLH' is used (10/10, assuming it reflects the student's initials). No deductions for cleanup."
+    },
+    "冯帅": {
+        "score": 88,
+        "scoring_criteria": "Question 1 (43/50): Correct image reading with filename 'morph01.png', but lacks path specificity, partial credit (8/10). Kernel is rectangular but incorrectly oriented as (10,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed correctly (10/10). Cleanup included, no deduction. Question 2 (45/50): Correct image reading with filename 'cross.png' (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed, one with student's initials 'fs' as title (10/10). Cleanup included, no deduction. Note: Screenshot provided for Q2 matches expected output, supporting correctness."
+    },
+    "华江辰": {
+        "score": 72,
+        "scoring_criteria": "Question 1 (35/50): Image reading has incorrect path ('sucai5/morph01.png'), partial credit assuming it works in their environment (5/10). Kernel is rectangular but oriented incorrectly as (16,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only dilated image displayed (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (37/50): Image reading path ('img/cross.png') is correct (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Only result image displayed with correct student name 'HJC' (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "叶挺": {
+        "score": 85,
+        "scoring_criteria": "Question 1 (45/50): Image reading has incorrect path ('sucai5/morph01.png'), partial credit (5/10). Kernel is correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (40/50): Correct image reading (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed with student’s initials 'yt' (10/10). Cleanup included, no deduction."
+    },
+    "叶桉鸣": {
+        "score": 72,
+        "scoring_criteria": "Question 1 (35/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit assuming it works in their environment (5/10). Kernel is rectangular but oriented incorrectly as (16,1) instead of (1,N), ineffective for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only dilated image displayed (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (37/50): Correct image reading ('img/cross.png') (10/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct but variable named 'gradient' is misleading (12/15). Only result image displayed with title 'yam' (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "吕鸿凯": {
+        "score": 78,
+        "scoring_criteria": "Question 1 (38/50): Image reading uses incorrect path ('img/img/morph01.png'), but assuming it works in their environment, partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) instead of (1,N), leading to ineffective dilation for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (8/10, slight deduction for generic titles). Cleanup included, no deduction. Question 2 (40/50): Image reading uses incorrect path ('img/img/cross.png'), partial credit (5/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct (15/15). Both images displayed, with 'LHK' as title, assumed to reflect student’s initials (5/10, deduction for generic 'src' title). Cleanup included, no deduction."
+    },
+    "吴争航": {
+        "score": 62,
+        "scoring_criteria": "Question 1 (32/50): Image reading has incorrect path ('sucai5/morph01.png'), partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only result image displayed (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (30/50): Image reading has incorrect path ('sucai5/cross.png'), partial credit (5/10). Kernel is cross-shaped but incorrect size (4,4) instead of (5,5) (-5 points, 10/15 for kernel). Opening operation is correct (15/15). Only result image displayed with correct student name (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "周愉越": {
+        "score": 77,
+        "scoring_criteria": "Question 1 (45/50): Image reading has incorrect path ('sucai5/morph01.png'), partial credit (5/10). Kernel is rectangular and correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (32/50): Correct image reading (10/10). Kernel is incorrectly rectangular (20,1) instead of cross-shaped (-5 points, 10/15 for kernel). Incorrect dilation operation instead of opening (-5 points, 10/15 for operation). Both images displayed (5/10, assuming 'dst' title is not personalized). Cleanup included, no deduction."
+    },
+    "夏忆豪": {
+        "score": 70,
+        "scoring_criteria": "Question 1 (45/50): Image reading has incorrect path ('sucai5/morph01.png'), partial credit (5/10). Kernel is correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (25/50): Image reading uses 'cross.png', assuming correct in their environment, partial credit (5/10). Kernel is rectangular (20,1) instead of cross-shaped (-5 points, 10/15). Incorrectly uses dilation instead of opening operation (-10 points, 5/15). Both images displayed (10/10). Cleanup included, no deduction."
+    },
+    "夏有德": {
+        "score": 68,
+        "scoring_criteria": "Question 1 (45/50): Image reading has incorrect path ('sucai5/morph01.png'), partial credit (5/10). Kernel is rectangular and correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (23/50): Image reading is correct ('cross.png') (10/10). Kernel is incorrectly rectangular (20,1) instead of cross-shaped (-10 points, 5/15 for kernel). Incorrectly uses dilation instead of opening (-10 points, 5/15 for operation). Both images displayed but with generic title 'dst' instead of student’s name (-2 points, 8/10 for display). Cleanup included, no deduction."
+    },
+    "宋葛萍": {
+        "score": 82,
+        "scoring_criteria": "Question 1 (42/50): Image reading correct ('img/morph01.png') (10/10). Kernel is rectangular but oriented incorrectly as (20,1) for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (40/50): Image reading correct ('img/cross.png') (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed, but title 'dst' for result is generic (-2 points, 8/10 for display). Cleanup included, no deduction."
+    },
+    "庞志强": {
+        "score": 75,
+        "scoring_criteria": "Question 1 (35/50): Image reading has incorrect path ('sucai5/morph01.png'), but assuming it works in their environment, partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only dilated image displayed (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (40/50): Image reading has incorrect path ('sucai5/cross.png'), partial credit (5/10). Kernel size (4,4) is slightly small but cross-shaped (12/15). Opening operation is correct (15/15). Only result image displayed (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "方烨": {
+        "score": 85,
+        "scoring_criteria": "Question 1 (40/50): Correct image reading with path 'img/morph01.png' (10/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed correctly (10/10). Cleanup included, no deduction. Question 2 (45/50): Correct image reading with path 'img/cross.png' (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed, one with student's name 'fangye' as title (10/10). Cleanup included, no deduction. Screenshot for Q1 shows incorrect horizontal line retention due to kernel orientation, and Q2 screenshot matches expected output."
+    },
+    "李盛长": {
+        "score": 74,
+        "scoring_criteria": "Question 1 (42/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit assuming it works in their environment (5/10). Kernel is correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both source and result images displayed (10/10). Cleanup included, no deduction. Question 2 (32/50): Image reading likely correct ('cross.png'), assuming it matches reference environment (10/10). Kernel incorrectly uses rectangular (20,1) instead of cross-shaped (-5 points, 10/15 for kernel). Incorrect dilation operation used instead of opening (-5 points, 10/15 for operation). Both images displayed, but title not personalized (-3 points, 7/10 for display). Cleanup included, no deduction."
+    },
+    "杨峥荣": {
+        "score": 70,
+        "scoring_criteria": "Question 1 (35/50): Correct image reading (10/10). Kernel uses np.ones((1,15)), which is correct in shape but non-standard (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed but with generic titles (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (35/50): Correct image reading but loaded in grayscale, which may affect results (-5 points, 5/10). Hardcoded cross-shaped kernel is correct in shape but non-standard (-5 points, 10/15 for kernel). Opening operation is correct (15/15). Both images displayed but with generic titles (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "杨雯杰": {
+        "score": 68,
+        "scoring_criteria": "Question 1 (42/50): Image reading has incorrect path ('sucai6/morph01.png'), partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (26/50): Image reading has incorrect path ('sucai6/cross.png'), partial credit (5/10). Kernel is correct (5,5) cross-shaped (15/15). Incorrectly applies both dilation and opening (-5 points, 8/15 for operation). Only result image displayed with incorrect title 'grh' (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "林佳明": {
+        "score": 75,
+        "scoring_criteria": "Question 1 (35/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit as filename is correct (5/10). Kernel is rectangular but oriented incorrectly as (20,1) instead of (1,N), ineffective for horizontal lines (-5 points, 10/15 for kernel). Dilation operation uses cv2.morphologyEx with MORPH_DILATE, which is non-standard but functional (12/15). Both images displayed (8/10, slight deduction for generic titles). Cleanup included, no deduction. Question 2 (40/50): Image reading uses incorrect path ('sucai5/cross.png'), partial credit (5/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct (15/15). Both images displayed, with 'ljm' reflecting student’s initials (8/10, slight deduction for generic 'src' title). Cleanup included, no deduction."
+    },
+    "林涛": {
+        "score": 75,
+        "scoring_criteria": "Question 1 (45/50): Correct image reading with proper path ('img/morph01.png') (10/10). Kernel is rectangular and correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (30/50): Correct image reading ('img/cross.png') (10/10). Kernel is incorrectly elliptical (1,1) instead of cross-shaped, ineffective for retaining intersection points (-5 points, 10/15 for kernel). Incorrect dilation operation instead of opening (-5 points, 10/15 for operation). Both images displayed, but title 'dst3' is not personalized (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "林西面": {
+        "score": 87,
+        "scoring_criteria": "Question 1 (42/50): Image reading uses 'morph01.png' without path specificity, partial credit (8/10). Kernel is rectangular but incorrectly oriented as (10,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed correctly (10/10). Cleanup included, no deduction. Question 2 (45/50): Image reading uses 'cross.png' without path specificity, partial credit (8/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed, one with student's name 'linximian' as title (10/10). Cleanup included, no deduction. Screenshot for Q2 matches expected output, supporting correctness."
+    },
+    "潘易函": {
+        "score": 68,
+        "scoring_criteria": "Question 1 (32/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit assuming it works in their environment (5/10). Kernel is rectangular but oriented incorrectly as (20,1) instead of (1,N), ineffective for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only dilated image displayed, missing original (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (36/50): Image reading uses incorrect path ('sucai5/cross.png'), partial credit (5/10). Cross-shaped kernel with (4,4) is slightly undersized but functional (-3 points, 12/15 for kernel). Opening operation is correct (15/15). Only result image displayed with 'PYH' title, assumed to reflect student’s initials, but missing original image (-4 points, 6/10 for display). Cleanup included, no deduction."
+    },
+    "王家翔": {
+        "score": 82,
+        "scoring_criteria": "Question 1 (42/50): Image reading correct with 'morph01.png' (10/10). Kernel is rectangular but oriented incorrectly as (10,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (40/50): Image reading correct with 'cross.png' (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed with student’s initials 'WJX' (10/10). Cleanup included, no deduction. Note: Unnecessary import of numpy not penalized as it does not affect functionality."
+    },
+    "王斌": {
+        "score": 87,
+        "scoring_criteria": "Question 1 (45/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit assuming it works in their environment (5/10). Kernel is rectangular and correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (42/50): Image reading is correct but specifies grayscale, which may not align with color image requirement, partial credit (8/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed, but title 'WB'/'WB2' not fully personalized (-3 points, 7/10 for display). Cleanup included, no deduction."
+    },
+    "王浩": {
+        "score": 76,
+        "scoring_criteria": "Question 1 (38/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit assuming it works in their environment (5/10). Kernel is rectangular but incorrectly oriented as (20,1) instead of (1,N) for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (8/10, slight deduction for generic titles). Cleanup included, no deduction. Question 2 (38/50): Image reading uses incorrect path ('sucai5/cross.png'), partial credit (5/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Incorrect dilation operation included alongside correct opening operation (-3 points, 12/15 for operation). Only one image displayed with personalized 'WH' title, missing source image (-4 points, 6/10 for display). Cleanup included, no deduction."
+    },
+    "王钰洁": {
+        "score": 72,
+        "scoring_criteria": "Question 1 (40/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit (5/10). Kernel is rectangular but oriented incorrectly as (30,1) for horizontal lines (-5 points, 10/15). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (32/50): Image reading uses incorrect path ('sucai5/cross.png'), partial credit (5/10). Kernel is correct (5,5) cross-shaped (15/15). Incorrectly uses erosion instead of opening operation (-10 points, 5/15). Both images displayed (10/10). Cleanup included, no deduction."
+    },
+    "葛人欢": {
+        "score": 65,
+        "scoring_criteria": "Question 1 (40/50): Image reading has incorrect path ('sucai6/morph01.png'), partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (25/50): Image reading has incorrect path ('sucai6/cross.png'), partial credit (5/10). Kernel is correct (5,5) cross-shaped (15/15). Incorrectly applies both dilation and opening (-5 points, 8/15 for operation). Only result image displayed (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "蒋子豪": {
+        "score": 76,
+        "scoring_criteria": "Question 1 (36/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit assuming it works in their environment (6/10). Kernel is rectangular but incorrectly oriented as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only dilated image displayed (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (40/50): Correct image reading with filename 'cross.png' (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Only result image displayed (-5 points, 5/10 for display). Cleanup included, no deduction. Screenshots provided match expected outputs, supporting correctness."
+    },
+    "蔡雨轩": {
+        "score": 65,
+        "scoring_criteria": "Question 1 (40/50): Image reading has incorrect path ('sucai6/morph01.png'), partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (25/50): Image reading has incorrect path ('sucai6/cross.png'), partial credit (5/10). Kernel is correct (5,5) cross-shaped (15/15). Incorrectly applies both dilation and opening (-5 points, 8/15 for operation). Only result image displayed with incorrect title 'grh' (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "薛凯": {
+        "score": 78,
+        "scoring_criteria": "Question 1 (42/50): Image reading uses incorrect path ('sucai6/morph01.png'), but assuming it works in their environment, partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) instead of (1,N), ineffective for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (36/50): Image reading uses incorrect path ('sucai6/cross.png'), partial credit (5/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Incorrect dilation operation included before opening, adding unnecessary processing (-5 points, 10/15 for operation). Only result image displayed with title 'XK' (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "许贤明": {
+        "score": 76,
+        "scoring_criteria": "Question 1 (38/50): Image reading uses 'morph01.png', assumed correct in their environment (10/10). Kernel is rectangular but incorrectly oriented as (20,1) instead of (1,N) for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both source and result images displayed (10/10). Cleanup included, no deduction. Question 2 (38/50): Image reading uses 'cross.png', assumed correct (10/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct (15/15). Both images displayed, but titles 'xxm' (assumed student initials) and '14' are inconsistent and not fully personalized (-7 points, 3/10 for display). Cleanup included, no deduction."
+    },
+    "赖志和": {
+        "score": 82,
+        "scoring_criteria": "Question 1 (40/50): Image reading uses correct path ('img/morph01.png') (10/10). Kernel is rectangular but oriented incorrectly as (20,1) for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (42/50): Image reading uses correct path ('img/cross.png') (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Both images displayed with student’s initials 'LZH' (10/10). Cleanup included, no deduction. Slightly lower score due to kernel orientation error in Q1, consistent with moderate understanding."
+    },
+    "邱伊琳": {
+        "score": 75,
+        "scoring_criteria": "Question 1 (35/50): Image reading has incorrect path ('sucai5/morph01.png'), partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only dilated image displayed (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (40/50): Correct image reading (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct (15/15). Only result image displayed (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "郭捷瑞": {
+        "score": 78,
+        "scoring_criteria": "Question 1 (38/50): Correct image reading (10/10). Kernel is rectangular but oriented incorrectly as (10,1) instead of (1,N), ineffective for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed, but same window title 'GJR' for both may cause overwrite issues (-2 points, 8/10 for display). Cleanup included, no deduction. Question 2 (40/50): Correct image reading (10/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct (15/15). Both images displayed with 'src' and 'GJR' titles (10/10). Cleanup included, no deduction."
+    },
+    "金孝华": {
+        "score": 68,
+        "scoring_criteria": "Question 1 (35/50): Image reading with 'morph01.png' is likely correct assuming standard directory (10/10). Kernel is rectangular but incorrectly oriented as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only result image displayed, missing source image (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (33/50): Image reading with 'cross.png' is likely correct assuming standard directory (10/10). Kernel is correct (5,5) cross-shaped (15/15). Opening operation is correct but followed by unnecessary dilation (-5 points, 10/15 for operation). Only result image displayed with correct title 'JXH', missing source image (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "陈沈祺": {
+        "score": 67,
+        "scoring_criteria": "Question 1 (34/50): Image reading uses 'morph01.png', assuming it works in their environment, but path lacks specificity, partial credit (6/10). Kernel is rectangular but incorrectly oriented as (20,1) instead of (1,N) for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed with generic titles (8/10, slight deduction for lack of personalization). Cleanup included, no deduction. Question 2 (33/50): Image reading uses 'cross.png', likely correct assuming reference environment (8/10). Kernel is correctly cross-shaped (5,5) (15/15). Operation is incorrect; uses dilation and opening but only displays opening result, missing original image and including unnecessary dilation (-7 points, 8/15 for operation). Only one image displayed with 'WH' title, not clearly personalized, and missing original image (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "陈泽宇": {
+        "score": 65,
+        "scoring_criteria": "Question 1 (40/50): Image reading has incorrect path ('sucai6/morph01.png'), partial credit (5/10). Kernel is rectangular but oriented incorrectly as (20,1) (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Both images displayed (10/10). Cleanup included, no deduction. Question 2 (25/50): Image reading has incorrect path ('sucai6/cross.png'), partial credit (5/10). Kernel is correct (5,5) cross-shaped (15/15). Incorrectly applies both dilation and opening (-5 points, 8/15 for operation). Only result image displayed (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "高嘉泽": {
+        "score": 72,
+        "scoring_criteria": "Question 1 (34/50): Image reading uses correct path ('img/morph01.png') (10/10). Kernel is rectangular but oriented incorrectly as (20,1) instead of (1,N), ineffective for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only one image displayed ('gjz' for dst), missing original image (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (38/50): Image reading uses correct path ('img/cross.png') (10/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct (15/15). Only one image displayed ('gjz' for dst), missing original image (-5 points, 5/10 for display). Cleanup included, no deduction."
+    },
+    "黄君健": {
+        "score": 68,
+        "scoring_criteria": "Question 1 (45/50): Image reading uses incorrect path ('sucai5/morph01.png'), partial credit as filename is correct (5/10). Kernel is rectangular and correctly oriented as (1,20) for horizontal lines (15/15). Dilation operation is correct (15/15). Both images displayed with generic titles 'src' and 'dst' (10/10). Cleanup included, no deduction. Question 2 (23/50): Image reading uses correct filename but ambiguous path ('cross.png'), partial credit (5/10). Kernel is rectangular (20,1), incorrect for cross-shaped structure required for intersection points (-10 points, 5/15 for kernel). Dilation operation used instead of opening, inappropriate for retaining intersection points (0/15). Both images displayed with generic titles (8/10, slight deduction for lack of personalization). Cleanup included, no deduction."
+    },
+    "黄塨燚": {
+        "score": 76,
+        "scoring_criteria": "Question 1 (35/50): Image reading uses incorrect path ('img/img/morph01.png'), partial credit assuming it works in their environment (5/10). Kernel is rectangular but incorrectly oriented as (20,1) instead of (1,N) for horizontal lines (-5 points, 10/15 for kernel). Dilation operation is correct (15/15). Only result image displayed, missing source image (-5 points, 5/10 for display). Cleanup included, no deduction. Question 2 (41/50): Image reading uses incorrect path ('img/img/cross.png'), partial credit assuming it works in their environment (5/10). Cross-shaped kernel with (5,5) is appropriate (15/15). Opening operation is correct (15/15). Only result image displayed with title 'huanggongyi', missing source image (-4 points, 6/10 for display). Cleanup included, no deduction."
+    }
+}
