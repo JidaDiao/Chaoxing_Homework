@@ -1,9 +1,0 @@
-openai
-argparse
-selenium
-beautifulsoup4
-requests
-pillow
-xlrd
-xlutils
-nicegui
