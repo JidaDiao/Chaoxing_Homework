@@ -1,17 +1,20 @@
+from grader.homework_grader import HomeworkGrader
+from config.args import config
+import logging
 from crawler.homework_crawler import ChaoxingHomeworkCrawler
-from revise_homework import HomeworkGrader
-from config import config
-from utils.my_log import logger as logging
 
-if __name__ == '__main__':
-    # 爬取作业
-    logging.info("开始爬取作业")
-    
-    # 使用封装后的静态工厂方法创建爬虫实例
-    crawler = ChaoxingHomeworkCrawler.create(config)
-    crawler.run()
-    
-    # 批改作业
-    logging.info("开始改作业")
-    Grader = HomeworkGrader(config.api_key, config.base_url)
-    Grader.run()
+
+def main():
+    ChaoxingHomeworkCrawler.create(config, headless=False).run()
+
+    # 创建作业批改器实例，直接传入config对象
+    grader = HomeworkGrader(config=config)
+
+    # 运行作业批改流程
+    logging.info("开始运行作业批改流程...")
+    grader.run()
+    logging.info("作业批改流程完成")
+
+
+if __name__ == "__main__":
+    main()
