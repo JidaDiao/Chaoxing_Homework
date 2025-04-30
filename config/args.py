@@ -1,10 +1,16 @@
 import argparse
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
 # revise_homework.py使用
 parser = argparse.ArgumentParser()
 parser.add_argument('--api_key', type=str,
-                    default='sk-123456', help='API key')
+                    default=os.getenv('API_KEY', ''), help='API key')
 parser.add_argument('--base_url', type=str,
-                    default='hahahahha', help='Base URL')
+                    default=os.getenv('BASE_URL', 'https://ollama.jidadiao.fun/v1'), help='Base URL')
 parser.add_argument('--max_workers', type=int, default=6, help='改作业的最大线程数')
 parser.add_argument('--prepare_model', type=str,
                     default='qwenvl', help='用来生成分标准和参考分数的大模型')
@@ -126,7 +132,7 @@ parser.add_argument('--max_workers_prepare', type=int,
                     default=6, help='爬作业的最大线程数')
 parser.add_argument('--use_qr_code', type=bool,
                     default=True, help='是否使用二维码登录')
-parser.add_argument('--phonenumber', type=str, help='登录学校通用的手机号')
-parser.add_argument('--password', type=str, help='登录学校通用的密码')
+parser.add_argument('--phonenumber', type=str, default=os.getenv('PHONENUMBER', ''), help='登录学校通用的手机号')
+parser.add_argument('--password', type=str, default=os.getenv('PASSWORD', ''), help='登录学校通用的密码')
 
 config = parser.parse_args()
