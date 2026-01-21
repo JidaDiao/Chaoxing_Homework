@@ -3,14 +3,8 @@ import base64
 import requests
 from io import BytesIO
 import random
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from urllib.parse import urlencode, urlparse, parse_qs, urlunparse
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 from PIL import Image
-import time
 import os
 import shutil
 import re
@@ -281,33 +275,6 @@ def sanitize_folder_name(folder_name):
         sanitized_name = "default_folder"
 
     return sanitized_name
-
-
-def download_template(driver, download_dir, destination_path, page_url):
-    """
-    使用Selenium下载文件并移动到指定目录。
-
-    :param driver: Selenium WebDriver实例
-    :param destination_path: 文件保存路径
-    :param page_url: 下载页面的URL
-    """
-    driver.get(page_url)
-    wait = WebDriverWait(driver, 10)
-
-    more_button = wait.until(
-        EC.presence_of_element_located((By.CLASS_NAME, 'piyue_more')))
-    ActionChains(driver).move_to_element(more_button).perform()
-
-    import_button = wait.until(EC.element_to_be_clickable(
-        (By.XPATH, '//a[@onclick="showImportDiv();"]')))
-    import_button.click()
-
-    download_button = driver.find_element(
-        By.XPATH, '//a[@onclick="exportScoreTemplate(true)"]')
-    download_button.click()
-
-    time.sleep(3)
-    move_xls_files(download_dir, destination_path)
 
 
 def move_xls_files(source_directory, target_directory):
