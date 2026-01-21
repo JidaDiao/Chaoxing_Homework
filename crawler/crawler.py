@@ -123,7 +123,23 @@ class ChaoxingCrawler:
 
             list_url = client.get_captured_url("mooc2-ans/work/list")
             if not list_url:
-                logging.error("Failed to capture homework list URL")
+                try:
+                    await page.get_by_role("link", name="作业").click()
+                    await page.wait_for_timeout(2000)
+                except Exception:
+                    logging.warning("Failed to click homework tab; attempting iframe fallback")
+
+                iframe = await page.query_selector("iframe[name='frame_content-zy']")
+                if iframe:
+                    iframe_src = await iframe.get_attribute("src")
+                    if iframe_src:
+                        if iframe_src.startswith("/"):
+                            list_url = f"https://mooc2-ans.chaoxing.com{iframe_src}"
+                        else:
+                            list_url = iframe_src
+
+            if not list_url:
+                logging.error("Failed to resolve homework list URL")
                 return tasks
 
             class_list = getattr(self.config, "class_list", []) or []
