@@ -70,3 +70,9 @@ logs/
 
 # Homework Data (Student Data Should Not Be Committed)
 homework/
+
+# Local tooling and work-in-progress docs
+.codex/
+AGENTS.md
+doc/
+specs/001-responses-api-migration/
