@@ -1,0 +1,1163 @@
+{
+    "上官宗恒": [
+        {
+            "content": [
+                {
+                    "text": "上官宗恒的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n 'sss*' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r.*g' /etc/passswd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep命令在/root/sample.tx中找到g后面接2~5个o，然后接一个d的字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "上官瀚涛": [
+        {
+            "content": [
+                {
+                    "text": "上官瀚涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r'/etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep-n'sss*'/etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep命令在/root/sample.tx找到g后面接2-5个o，然后接一个d的字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴何莹": [
+        {
+            "content": [
+                {
+                    "text": "吴何莹的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep \"u..r\" /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"ss\" /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*p' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：在文件 /root/sample.txt 中搜索并显示包含good、goood、gooood或goooood的行，并显示行号。",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴登灿": [
+        {
+            "content": [
+                {
+                    "text": "吴登灿的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 'sss*d' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep命令在/root/sample.tx文件中找到g后面接2-5个o，然后接一个d的字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌州": [
+        {
+            "content": [
+                {
+                    "text": "施昌州的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n 'sss*' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep在/root/sample.tx中寻找出g后面2~5个o后面接一个d的行和字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌建": [
+        {
+            "content": [
+                {
+                    "text": "施昌建的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：gerp -n 'sss*' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用gerp命令在/root/sample.tx中找到g后面接2~5个o,然后接一个d的字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱彤彤": [
+        {
+            "content": [
+                {
+                    "text": "朱彤彤的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -E 's..s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -E 'r..g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：该命令使用grep在/root/sample.txt文件中查找匹配go\\{2,5\\}d模式的行。-n选项让输出显示行号。go\\{2,5\\}d表示查找以g开头，接着2到5个连续的o，再以d结尾的字符串，最后输出匹配行及其行号",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱明杰": [
+        {
+            "content": [
+                {
+                    "text": "朱明杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 's.*s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：文件中查找符合特定模式的文本行，并且在输出结果时显示这些匹配行的行号",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李檀": [
+        {
+            "content": [
+                {
+                    "text": "李檀的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 'ss*' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：找出并标记root文件里sample.txt中所有go?d的句子，其中？是1个到4个o",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李诗琪": [
+        {
+            "content": [
+                {
+                    "text": "李诗琪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -E 's{2,}' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "杨守波": [
+        {
+            "content": [
+                {
+                    "text": "杨守波的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/paswd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 's.*s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：要找出G后面有2~5个O，然后接一个G的字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林上宝": [
+        {
+            "content": [
+                {
+                    "text": "林上宝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep  's.*s' /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r.*g' /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：查找、root/sample.txt中所有包括\"go\"重复2到5次，然后紧接着三十\"d\"的行，并输出这些的行号和内容",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林晓微": [
+        {
+            "content": [
+                {
+                    "text": "林晓微的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 's.*s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：在文件/root/sample.tx中搜索包含特定重复模式的字符串，并返回匹配行及其行号。",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林梦萍": [
+        {
+            "content": [
+                {
+                    "text": "林梦萍的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 's.*s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep  'r.g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：文件中、root/sample.tx里搜索包含特定重复模式的字符串，并返回匹配行及其行号",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林经纬": [
+        {
+            "content": [
+                {
+                    "text": "林经纬的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n 'sss*' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：作用是找出2~5个d的字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林贝贝": [
+        {
+            "content": [
+                {
+                    "text": "林贝贝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n  'u..r\"  /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n  'sss*'  /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n  'r...g*'  /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep命令找出g后面接2~5个o，然后接一个g的字符串。",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王河": [
+        {
+            "content": [
+                {
+                    "text": "王河的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n 'sss' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：grep命令找到2-5后面的d和字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王涛": [
+        {
+            "content": [
+                {
+                    "text": "王涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n 'sss' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r..g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep命令找出/root/sample.tx文本里2-5带d的字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "章宗杰": [
+        {
+            "content": [
+                {
+                    "text": "章宗杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 's.*s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep在/root/sample.tx中寻找出g后面2~5个o后面接一个d的行和字符串",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "董佳旭": [
+        {
+            "content": [
+                {
+                    "text": "董佳旭的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep  'ss' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：这个命令是在文件/root/sample.tx中搜索匹配正则表达式go/{2,5}d的行。显示匹配行和行号",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "蒋贤炽": [
+        {
+            "content": [
+                {
+                    "text": "蒋贤炽的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep ‘u..r’/ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 's.*s' /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：该命令表达的是文本行，并显示这些文本的行号",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "诸葛萌萌": [
+        {
+            "content": [
+                {
+                    "text": "诸葛萌萌的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：gtep  'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep  ' s.*s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：在文件 /root/sample.txt 中搜索符合 go\\{2,5\\}\\d 的文本行，并显示匹配行及其行号",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "谢作祥": [
+        {
+            "content": [
+                {
+                    "text": "谢作祥的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n 'sss*' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：找出g后面接2~5个o，然后接一个g的字符串。",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈伟文": [
+        {
+            "content": [
+                {
+                    "text": "陈伟文的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n '.*' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n '[ss]' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -n 'r...g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈玲玲": [
+        {
+            "content": [
+                {
+                    "text": "陈玲玲的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep'u...r' /etc /passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -e 's{2,}' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：该命令使用grep在/root /sample.txt 文件中匹配go/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄佳慧": [
+        {
+            "content": [
+                {
+                    "text": "黄佳慧的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 's.*s' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r.*g' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：此命令借助grep工具，在文件查找符合特定模式的行，并且显示这些行的行号",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄开桂": [
+        {
+            "content": [
+                {
+                    "text": "黄开桂的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：grep -n 'u..r' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -n 's*' /ect/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep 'r..p' /etc/passwd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：用grep命令找出/root/sample.tx文件中找到g后面接2~5个0，再接一个d",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ]
+}

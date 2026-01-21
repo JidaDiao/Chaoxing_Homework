@@ -1,0 +1,223 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin1 -group\ngroupadd dev1 del-group\ngroupadd dev2 -m -c*admin One* -G admin-group admin1\necho *admin1: admin123*|chpasswd\ngroupadd -m -c Developer 1 -G dev-group dev1\necho *dev1:depass1*|chpasswd\nuseradd -m -c Developer 2* -G dev-group dev2"
+                ]
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -G admin-group -m -s /bin/bash admin1\necho \"Admin123\" | passwd --stdin admin1\nuseradd -    G dev-group -m -s /bin/bash dev1\necho \"Devpass1\" | passwd --stdin dev1\nuseradd -G dev-group -m -s /sbin/nologin dev2\necho \"Devpass2\" | passwd --stdion dev2\nuseradd -m -s /sbin/nologin guest1\necho \"Guest123\" | passwd --stdin guest1"
+                ]
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin group\ngroupadd dev-group\nuseradd -G admin group  -c \"Admin One\" admin1\nuseradd -G dev-group -c\"Developer1\" dev1\nuseradd -G dev-group -c\"Developer2\" -s /sbin/noligin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin  guest1\npasswd Admin123 admin1\npasswd DevPass1 dev1\npasswd DevPass2 dev2\npasswd Guest123 guest1"
+                ]
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd-G admin-group-c\"Admin One\"admin1\nuseradd-G dev-group-c\"Deceloper1\"dev1\nuseradd-G dev-group-c\"Deceloper2\"-s/sbin/n\nuseradd-G dev-group-c\"Guest User\"-s/sbin/n"
+                ]
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -c \"Admin One\" -G admin-group -m -s /bin/bash admin1 echo \"admin1:Admin123\"| chpsswd"
+                ]
+            }
+        },
+        "吴语哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd -c \"Admin One\" -G admin-group -s /bin/bash admin1\necho \"admin1:Admin123\" |chpasswd\nuseradd -c \"Developer 1\" -G dev-group -s /bin/bash dev1\necho \"dev1:DevPass2\" | chasswd\nuseradd -c \"Guest User\" -s /sbin/nologin guest1\necho \"guest1:Guest123\"  | chpasswd"
+                ]
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd -G admin-group -c \"Admin One\" admin1\nuseradd -G dev-group -c \"Developer 1\" dve1\nuseradd -G dev-group -c \"Developer 2\" -s /sbin/nologin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin guest1\necho \"Admin123\" | passwd--stdin admin1\necho \"DevPass1\" | passwd--stdin dev1\necho \"DevPass2\" | passwd--stdin dev2\necho \"Guest123\" | passwd--stdin guest1"
+                ]
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin group\ngroupadd dev-group\nuseradd-G admin group -c\"Admin One\" admin1\nuseradd-G dev-group-c\"Developer1\" dev1\nuseradd-G dev-group-c\"Developer2\"-s/shin/noligin dev2\nuseradd-c \"Guest User\"-s/sbin/nologin guest1\npasswd Admin123 admin1\npasswd Devpass1 dev1\npasswd Devpass2 dev2\npasswd Guest123 gust1"
+                ]
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd -G admin-group -c \"Admin One\" admin1\nuseradd -G dev-group -c \"Developer 1\" dev1\nuseradd -G dev-group -c \"Developer 2\" -s /sbin/nologin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin guest1\necho \"Admin123\" | passwd --stdin admin1\necho \"DevPass1\" | passwd --stdin dev1\necho \"DevPass2\" | passwd --stdin dev2\necho \"Guest123\" | passwd --stdin guest1"
+                ]
+            }
+        },
+        "李斌浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\nuseradd -G admin-group -c \"Admin One\" admin1\nuseradd -G dev-group -c \"Developer 1\" dev1\nuseradd -G dev-group -c \"Developer 2\" -s /sbin/nologin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin guest1\necho \"password\" | Admin123 --stdin admin1\necho \"password\" | DevPass1 --stdin dev1\necho \"password\" | Devpass2 --stdin dev2\necho \"password\" | Guser User --stdin guest1"
+                ]
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -c \"Admin one\" -G admin-group -m -s /bin/bash admin1 echo\"admin:Admin123\" | chpasswwd"
+                ]
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-grop\ngroupadd dev-group\nuseradd-G admin-group -c \"Admin One\" admin1\nuseradd-G dev-group -c\"Developer 1\" dev1\nuseradd-G dev-group -c\"Developer 2\" -s /sbin/nologin dev2\necho \"Admin123\" | passwd --stdin admin1\necho \"DevPass1\" | passwd --stain dev1\necho \"DevPass2\" | passwd--stdin dev2\necho \"Guest123\" | paswd --stdin guest1"
+                ]
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin1-group\ngroupadd dev-gruop\nuseradd -m -c \"Admin One\" -G admin-group admin1\necho \"admin1:Admin123\" | sudo chpasswd\nuseradd -m -c \"Developer 1\" -G dev-group dev1\necho \"dev1:DevPass1\" | sudo chpasswd\nuseradd -m -c \"Developer 2\" -G dev-group dev2\necho \"dev2:DevPass2\" | sudo chpasswd\nuseradd -m -c \"Guest User\"\necho \"guest1:Guest123\" | sudo chpasswd"
+                ]
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -G admin-group -m -s /bin/bash admin1\necho \"Admin123\" | passwd --stdin admin1\nuseradd -    G dev-group -m -s /bin/bash dev1\necho \"Devpass1\" | passwd --stdin dev1\nuseradd -G dev-group -m -s /sbin/nologin dev2\necho \"Devpass2\" | passwd --stdion dev2\nuseradd -m -s /sbin/nologin guest1\necho \"Guest123\" | passwd --stdin guest1"
+                ]
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd -m -c \"Admin One\" -G admin-group admin1\necho \"admin1:Admin123\" | sudo chpasswd\nuseradd -m -c \"Developer1\" -G dev-group dev1\necho \"dev1:Devpass1\" | sudo chpasswd\nuseradd -m -c \"Developer2\" -G dev-group dev2\necho \"dev2:Devpass2\" | sudo chpasswd\nuseradd -m 0c \"Guest User\" -s /sbin/nologin guest1\necho \"gust1:Guest123\" | sudo chpasswd"
+                ]
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd -G admin-group -c \"Admin One\" admin1\nuseradd -G dev-group -c \"Developer 1\" dev1\nuseradd -G dev-group -c \"Developer 2\" -s /sbin/nologin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin gurest1\necho \"password\" | Admin123 --stdin admin1\necho \"password\" | DevPass1 --stdin dev1\necho \"password\" | DevPass2 --stdin dev2\necho \"password\" | Guest123 --stdin guest1"
+                ]
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin1-group\nuseradd -G admin1-group -c \"Admin One\" admin1\nuseradd -G dev-group -c \"Devloper1\" dev1\nuseradd -G dev-group -c \"Devloper2\" dev2\nuseradd -c \"Guest User\" -s /sbin/nologin guest1"
+                ]
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd -c \"Admin One\" -G admin-group -s /bin/bash/admin1\necho \"admin1:Admin123\" | chpasswd\nuseradd -c \"Developer 1\" -G dev-group -s /bin/bash/ dev1\necho \"dev1:Devpass1\" | chpasswd\nuseradd -c \"Developer -2\" -G dev-group -s /sbin/nologin dev2\necho \"dev2:Devpass2\" | chpasswd\nuseradd -c \"Guest User\" -s /sbin/nologin guest1\necho \"guest1:Guest123\" | chpasswd"
+                ]
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\nuseradd -G admin-group -c \"Admin One\" admin1\ngroupadd dev-group\nuseradd -G dev-group -c \"Developer 1\" dev1\nuseradd -G dev-group -c \"Developer 2\" -s /sbin/nologin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin guest1\necho \"Admin123\" | passwd --stdin admin1\necho \"DevPass1\" | passwd --stdin dev1\necho \"DevPass2\" | passwd --stdin dev2\necho \"Guset123\" | passwd --stdin guest1"
+                ]
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin1-group\ngroupadd dev-group\nuseradd -G admin-group -c \"Admin One\" admin\nuseradd -G dev-group -c \"Developer 1\" dev1\nuseradd -G dev-group -c \"Developer 2\" -s /sdin/nologin dev2\nuseradd -c \"Guest User\" -s /sdin/nologin guest1\necho \"Admin123\" | passwd --stdin admin\necho \"DevPass1\" | passwd --stdin dev1\necho \"DevPass2\" | passwd --stdin dev2\necho \"Guest123\" | passwd --stdin guest1"
+                ]
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd mygroup1\nuseradd -G mygroup1 -c \"1st user\" myuser1\nuseradd -G mygroup1 -c \"2nd user\" myuser2\nuseradd -c \"3rd user\" -s /sbin/nologin myuser3\necho \"password\" | passwd --stdin myuser1\necho \"password\" | passwd --stdin myuser2\necho \"password\" | passwd --stdin myuser3"
+                ]
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -G admin-group -m -s /bin/bash admin1\necho \"Admin123\" | passwd --stdin admin1\nuseradd -    G dev-group -m -s /bin/bash dev1\necho \"Devpass1\" | passwd --stdin dev1\nuseradd -G dev-group -m -s /sbin/nologin dev2\necho \"Devpass2\" | passwd --stdion dev2\nuseradd -m -s /sbin/nologin guest1\necho \"Guest123\" | passwd --stdin guest1"
+                ]
+            }
+        },
+        "陈海宇": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin-group\ngroupadd dev-group\nuseradd -G admin-group -c \"Admin One\" admin1\nuseradd -G dev-group-c \"Developer 1\" dev1\nuseradd -G dev-group-c \"Developer\" -s /sbin/nologin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin gurest1\necho \"password\" | Admin123 --stdin admin1\necho \"password\" | DevPass1 --stdin dev1\necho \"password\" | DevPass2 --stdin dev2\necho \"password\" | Guest123 --stdin guest1"
+                ]
+            }
+        },
+        "陈瑞易": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin -group\nuserdd -G admin -C \"Admin One\" admin 1\nuseradd -G dev -group-c \"Developer 1\" dev 1\nuseradd -G dev -group-c \"Developer\" -s/sbin/nologin dev2\nuseradd-c \"Guet User\" -s/sbin/nolongin guest1\necho \"password\" | Aamin123 --stdin admin1\necho \"password\" | DevPass1 --stdin dev1\necho \"password\" | \"DevPass2\" --stdin dev2\necho \"passworf\" |  Guser User--stdin guest1"
+                ]
+            }
+        },
+        "黄奔拓": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd admin1 -group\nuseradd -G admin-group -c *Admin One* admin\nuseradd -G dey-group -c*Developer 1* dey1\nuseradd -G dey-group -c*Developer 2* dey2 -s /sdin/nologin\nuseradd -c*Guest User* -s/sdin/nologin gusest1"
+                ]
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -G admin-group -m -s /bin/bash admin1\necho \"Admin123\" | passwd --stdin admin1\nuseradd -    G dev-group -m -s /bin/bash dev1\necho \"Devpass1\" | passwd --stdin dev1\nuseradd -G dev-group -m -s /sbin/nologin dev2\necho \"Devpass2\" | passwd --stdion dev2\nuseradd -m -s /sbin/nologin guest1\necho \"Guest123\" | passwd --stdin guest1"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ngroupadd admin-group\ngroupadd dev-group\nuseradd -G admin-group -c \"Admin One\" admin\nuseradd -G dev-group -c \"Developer 1\" dev1\nuseradd -G dev-group -c \"Developer 2\" -s /sbin/nologin dev2\nuseradd -c \"Guest User\" -s /sbin/nologin guest1\n\necho \"Admin123\" | passwd --stdin admin1\necho \"DevPass1\" | passwd --stdin dev1\necho \"DevPass2\" | passwd --stdin dev2\necho \"Guest123\" | passwd --stdin guest1",
+            "题干": {
+                "images": [],
+                "text": [
+                    "假设你的公司正在创建新的用户账户以进行系统管理和开发。你需要按照以下要求进行账户配置：\n账号名称\n账号全名\n支持次要组\n是否可登录主机\n口令\nadmin1\nAdmin One\nadmin-group\n可以\nAdmin123\ndev1\nDeveloper 1\ndev-group\n可以\nDevPass1\ndev2\nDeveloper 2\ndev-group\n不可以\nDevPass2\nguest1\nGuest User\n无\n不可以\nGuest123"
+                ]
+            }
+        }
+    }
+}

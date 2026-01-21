@@ -1,0 +1,951 @@
+{
+    "学生回答": {
+        "倪旭玮": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"sucai1/building.jpg\")\n###\n\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,255,0)\n\n###\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "倪理浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread(\"sucai1/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,0,0)\ncv2.imshow('dcz',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread(\"sucai1/dcz.jpg\")\ncv2.imshow('img',img)\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,0,0)\nmask = np.random.randint(0,256,img.shape,dtype=np.uint8)\ncv2.imshow('dcz',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread(\"sucai1/dcz.jpg\")\ncv2.imshow('img',img)\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,0,0)\nmask = np.random.randint(0,256,img.shape,dtype=np.uint8)\ncv2.imshow('dcz',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "冯帅": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f8beabe6390e6074625076e260f0811f"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/76d1d1377129326779404f83a0cda799"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "华江辰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3fcac43e58ec8fc46a89d963d940c86f.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/building.jpg')\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_] = (255, 0,0)\ncv2.imshow('building',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4fe5343448aa7b430bee8738c9d38490.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\ncv2.imwrite('img/dcz_noise.png',src)"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "叶挺": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\n\nimg = cv2.imread(\"sucai1/building.jpg\")\n\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_,0] =255\ncv2.imshow(\"building\", img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\n\nsrc = cv2.imread('.\\sucai1\\dcz.jpg')\nglasses = src[350:520, 220:670]\nmask = np.random.randint(0, 255, (170, 450, 3), dtype=np.uint8)\nsrc[350:520, 220:670] = mask\ncv2.imshow(\"src\", src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "叶桉鸣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d4ebbef3f1a0760094f7bb4f4884ef0b.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e334a88b9412396337129c1b24de6d79.png"
+                ],
+                "text": [
+                    "import cv2\nimg=cv2.imread('img/building.jpg')\nh,w,c=img.shape\nh1=int(h/2)\nw1=int(w/2)\nh2=int((h-h1)/2)\nw2=int((w-w1)/2)\nimg[h2:h2+h1,w2:w2+w1]=(255,0,0)\ncv2.imshow('building',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/22f14d63be885a362a0f38faeeee57e8.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/8254c8f06bf9799486fcb655873eb2f6.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg=cv2.imread('sucai1/dcz.jpg')\nglasses=img[350:520,220:670]\nmask= np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nimg[350:520,220:670]=mask\ncv2.imshow('img',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\ncv2.imwrite('img/dcz_noise.png',img)"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "吕鸿凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0adb2e42d94efb581477d939b75d9949.png"
+                ],
+                "text": [
+                    "import cv2\nfrom numpy.ma.core import shape\n\nimg=cv2.imread(\"sucai1/img/img/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_,0]=255\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bac7237d8770e7ca2fbd73f5ae2ee29b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('dcz.jpg')\nglasses = src[350:520,220:670]\nmask = np.random.randint(0,255,(170,450,3),dtype = np.uint8)\nsrc[350:520,220:670] = mask\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\n\ncv2.imwrite('dcz_noise.png',src)"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/dcz_noise.png')\nh, w, c = img.shape\nprint(h, w, c)\nfor i in range(1, h-1):\nfor j in range(1, w-1):\nfor y in range(c):\nif abs(img[i, j, y] - img[i-1, j, y]) > 30 and abs(img[i, j, y] - img[i+1, j, y]):\nimg[i, j, y] = img[i, j, y]\nelse:\nimg[i, j, y] = 0\ncv2.imshow('sucha', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吴世杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7f0d3da34db271da551e7f42ead13fc5"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread(\"img/img/building.jpg\")\n\n###\nimg[0:60, 0:40, 0] = 255\n###\ncv2.imshow(\"img\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cd17c25b8d03d5d5d89d2c2b5c788c04"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('img\\img\\dcz.jpg')\n###\nglasses = src[350:520,220:670]\nmask = np.random.randint(0,255,(170,450,3),dtype = np.uint8)\nsrc[350:520,220:670] = mask \n###\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "吴争航": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai1/building.jpg')  \n###\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_] = (255, 0, 0)\n###\ncv2.imshow('building',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\n###\nglasses = src[350:520,220:670]\nmask = np.random.randint(0,255,(170,450,3),dtype = np.uint8)\nsrc[350:520,220:670] = mask\n###\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "周愉越": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/40eeb805c00db4dc5881215110ed0fc1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b2bc7c6af4f93557b34440356c3427ea"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "周泽鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread(\"sucai1/building.jpg\")\n###\nh, w, c = img.shape\nh_ = int(h / 2)\r\nw_ = int(w / 2)\r\nh__ = int((h - h_) / 2)\r\nw__ = int((w - w_) / 2)img[h__:h__ + h_, w__:w__ + w_] = (255, 0, 0)\n###\ncv2.imshow(\"lena\", img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask cv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "夏宇浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread('img/building.jpg')\nh,w,c=img.shape\nprint(h,w,c)\nimg[int(h*0.25):int(h*0.75),int(w*0.25):int(w*0.75),0]=255\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg=cv2.imread('img/dcz.jpg')\nh,w,c=img.shape\nprint(h,w,c)\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\ngal=img[350:520,220:670]=mask\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "夏忆豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/40eeb805c00db4dc5881215110ed0fc1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b2bc7c6af4f93557b34440356c3427ea"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "夏有德": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/40eeb805c00db4dc5881215110ed0fc1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b2bc7c6af4f93557b34440356c3427ea"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "宋葛萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fcf1328c54526b2d66975d3cd0047ecc.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ecb00c1ac1573fe7693b6a31789b69aa.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "庞志强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dcbce975319858270590e5af82ffa289"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0b7d99155bb6af620c01d0f42e5d3b11"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cdead272c602f8780cad6e357d0fe897"
+                ],
+                "text": []
+            }
+        },
+        "方烨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a299d97d44bae8e8bd6368827e15fc80.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/be0313dae855e5be05c17e3a84c36baa.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "方胜超": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nfrom numpy.ma.core import shape\nimg=cv2.imread(\"sucai1/img/img/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_,0]=255\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('dcz.jpg')\nglasses = src[350:520,220:670]\nmask = np.random.randint(0,255,(170,450,3),dtype = np.uint8)\nsrc[350:520,220:670] = mask\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\ncv2.imwrite('dcz_noise.png',src)"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/dcz_noise.png')\nh, w, c = img.shape\nprint(h, w, c)\nfor i in range(1, h-1):\nfor j in range(1, w-1):\nfor y in range(c):\nif abs(img[i, j, y] - img[i-1, j, y]) > 30 and abs(img[i, j, y] - img[i+1, j, y]):\nimg[i, j, y] = img[i, j, y]\nelse:\nimg[i, j, y] = 0\ncv2.imshow('sucha', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李盛长": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/40eeb805c00db4dc5881215110ed0fc1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b2bc7c6af4f93557b34440356c3427ea"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f8f0dd85c44b097f93cc7f368c96ef32.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d89f15312c479b04c53809b607840714.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e5aa05b9e351c59249db3bca3cd587a5.png"
+                ],
+                "text": []
+            }
+        },
+        "杨峥荣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai1/building.jpg')\nheight, width = image.shape[:2]\nstart_x = width // 4\nend_x = 3 * width // 4\nstart_y = height // 4\nend_y = 3 * height // 4\nregion = image[start_y:end_y, start_x:end_x]\nregion[:, :, 0] = 255\nimage[start_y:end_y, start_x:end_x] = region\ncv2.imwrite('modified_building.jpg', image)\ncv2.imshow('Modified Image', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai1/dcz.jpg')\nif image is None:\n    print(\"无法读取图像，请检查文件路径和文件完整性。\")\nelse:\n    start_x, end_x = 350, 520\n    start_y, end_y = 220, 670\n    region = image[start_y:end_y, start_x:end_x]\n    rows, cols, _ = region.shape\n    block_size = 10\n    mosaic_region = np.zeros((rows, cols, 3), np.uint8)\n    for i in range(0, rows, block_size):\n        for j in range(0, cols, block_size):\n            block = region[i:i+block_size, j:j+block_size]\n            block_mean = np.mean(block, axis=(0, 1)).astype(int)\n            mosaic_region[i:i+block_size, j:j+block_size] = block_mean\n    image[start_y:end_y, start_x:end_x] = mosaic_region\n    cv2.imwrite('img/dcz_noise.png', image)\n    cv2.imshow('Mosaic Image', image)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "杨雯杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"sucai1/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,255,0)\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "林涛": {
+            "题目1": {
+                "images": [],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "林西面": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/97c2e2e6f26a302de1a29be89f08b87a.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5a25ebeff17fadbbb713117cee6715d1.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/be00d11b160a7040499515dc4852d31d.png"
+                ],
+                "text": []
+            }
+        },
+        "潘易函": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2ce6ce7e0dbf3f1c6f4153d0be3de632.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai1/building.jpg')  \n###\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_] = (255, 0, 0)\n###\ncv2.imshow('building',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d980d3b72d27e65bed58993687e8eec2.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\n###\nglasses = src[350:520,220:670]  \nmask = np.random.randint(0,255,(170,450,3),dtype = np.uint8)\nsrc[350:520,220:670] = mask \n###\ncv2.imshow(\"src\",src)\ncv2.waitKey(0) \ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "王家翔": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"sucai1/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(250,0,0)\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg=cv2.imread(\"sucai1/dcz.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nmask=np.random.randint(0,255,(100,200,3),dtype=np.uint8)\nimg[h__:h__+h_,w__:w__+w_]=(\"mask\")\ndtype=np.uint8\ncv2.imshow(\"mask\",mask)\ncv2.imshow(\"dcz\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg=cv2.imread(\"sucai1/dcz.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nmask=np.random.randint(0,255,(100,200,3),dtype=np.uint8)\nimg[h__:h__+h_,w__:w__+w_]=(\"mask\")\ndtype=np.uint8\ncv2.imshow(\"mask\",mask)\ncv2.imshow(\"dcz\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王斌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread('sucai1/building.jpg')\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,0,0)\n\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('./sucai2/dcz.jpg')\ns=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "王昱诺": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"./img/img/building.jpg\")\nimg[225:675,225:675,0]=255\ncv2.imshow(\"img\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "王浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread(\"img/building.jpg\")\n###\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_,0] =255\n###\ncv2.imshow('building',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('img\\dcz.jpg')\n###\nglasses = src[350:520,220:670]\nmask = np.random.randint(0,255,(170,450,3),dtype = np.uint8)\nsrc[350:520,220:670] = mask\n###\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "王钰洁": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"img/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nw__=int((w-w_)/2)\nh__=int((h-h_)/2)\na=int(h-h__)\nb=int(w-w__)\nimg[h__:a,w__:b]=(255,0,0)\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('.\\img\\dcz.jpg')\nglasses = src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\nretval=cv2.imwrite('img/dcz_noise.png', src)"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/dcz_noise.png')\nh, w, c = img.shape\nfor i in range(h):\n    for j in range(w):\n        for y in range(c):\n            if  abs(img[i+1, j+1, y+1]-img[i+1, j+1, y+1])< 30 and:\n                img[i, j, y] = 0\ncv2.imshow(\"shape\", img)\ncv2.waitKey(0)\ncv2.destroyWindow()"
+                ]
+            }
+        },
+        "胡智渊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread(\"img/building.jpg\")\nimg[225:675,225:675]=(255,0,0)\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "葛人欢": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\n\nimg = cv2.imread(\"sucai1/building.jpg\")\n\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_,0] =255\ncv2.imshow(\"building\", img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\n\nsrc = cv2.imread('.\\sucai1\\dcz.jpg')\nglasses = src[350:520, 220:670]\nmask = np.random.randint(0, 255, (170, 450, 3), dtype=np.uint8)\nsrc[350:520, 220:670] = mask\ncv2.imshow(\"src\", src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "蒋子豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread('./img/building.jpg')\nwidth,height,deep=img.shape\nh,w,c=img.shape\n###\nimg[int(width/4):int(width/4*3),int(height/4):int(height/4*3),0]=255\n###\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "蔡雨轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\n\nimg = cv2.imread(\"sucai1/building.jpg\")\n\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_,0] =255\ncv2.imshow(\"building\", img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\n\nsrc = cv2.imread('.\\sucai1\\dcz.jpg')\nglasses = src[350:520, 220:670]\nmask = np.random.randint(0, 255, (170, 450, 3), dtype=np.uint8)\nsrc[350:520, 220:670] = mask\ncv2.imshow(\"src\", src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "薛凯": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\n\nimg = cv2.imread(\"sucai1/building.jpg\")\n###\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_] = (255, 0, 0)\n\n###\ncv2.imshow(\"lena\", img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "许贤明": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/739d6ef3418ffa13ab60a9328d44528d.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('building.jpg') \n\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_] = (255, 0, 0)\n\ncv2.imshow('xxm',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "赖志和": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"sucail/building.jpg\")\n##\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,0,0)\n##\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "邱伊琳": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\n\nimg = cv2.imread(\"sucai1/building.jpg\")\n###\nh, w, c = img.shape\nh_ = int(h / 2)\nw_ = int(w / 2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\nimg[h__:h__ + h_, w__:w__ + w_] = (255, 0, 0)\n\n###\ncv2.imshow(\"lena\", img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "郑光甫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\n\nimg=cv2.imread('img/img/building.jpg')\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh_=int((h-h_)/2)\nw_=int((w-w_)/2)\nimg[h_:h_+h_,w_:w_+w]=[255,255,255]\ncv2.imshow('building',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses = src[350:520,220:670]\nmask = np.random.randint(0,255,(170,450,3),dtype = np.uint8)\nsrc[350:520,220:670] = mask\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "郭捷瑞": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/68cff01d23ed5c1c945df25f7d246169.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/25b8e7fe2d5614c7f3f7ff0cdd266988.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "金孝华": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/16ed97b484fa1f0790341369e441ae50.png"
+                ],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"building.jpg\")\nimg[225:725,225:725]=(255,0,0)\ncv2.imshow('lena',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aaae491162e68a4dca996f6dd5dbc4ac"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('./sucai1/dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imshow(\"src\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈沈祺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/98cb83da972f46de23881e05c5da20de.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread(\"img/img/building.jpg\")\n###\nimg[125:600,125:600,0] = 255\n###\n#显示图像\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3c757e04cde6068437620ec42b7e0d52.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg=cv2.imread('img/dcz.jpg')\n\n\nmask = np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nglasses = img[350:520,220:670] = mask\ncv2.imshow(\"glasses\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/372b70f89d560e37e3d7c8260a14d99e.png"
+                ],
+                "text": [
+                    "import cv2\nimport os\nimport numpy as np\nimg=cv2.imread('D:\\opencv\\sucai1')\nh,w,c=img.shape\nprint(h,w,c)\n\nfor i in range(1,h-1):\n    for j in range(1,w-1):\n        for y in range(c):\n            if abs(img[i,j,y]-img[i-1,j,y])>30 and abs(img[i,j,y]-img[i+1,j,y]):\n                img[i, j, y]=img[i, j, y]\n            else:\n                img[i, j, y] = 0\ncv2.imshow('cc',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈泽宇": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"img/building.jpg\")\nimg[225:675,225:675]=(255,0,0)\ncv2.imshow(\"building\",img)\ncv2.waitKey(0)\ncv2.destroyWindow()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import  cv2\nimport numpy as np\nsrc=cv2.imread('.\\sucai1\\dcz.jpg')\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\ncv2.imwrite('./img/dcz_noise.png',src)\ncv2.imshow(\"dcz_noise.png\",src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"sucai1/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,255,0)\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread(\"sucai1/building.jpg\")\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,255,0)\ncv2.imshow(\"lena\",img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "韩哲涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f865eb499123bfb82d7fefbc3bc5f8e7"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5a805f6d618f76767c1397f69270c2bd"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "高嘉泽": {
+            "题目1": {
+                "images": [],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "黄君健": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/40eeb805c00db4dc5881215110ed0fc1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b2bc7c6af4f93557b34440356c3427ea"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "黄塨燚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0c8f3ba2e773398fe2bf66c4f73050d2.png"
+                ],
+                "text": [
+                    "import cv2\nimg=cv2.imread('img/building.jpg')\n#####\nh,w,c=img.shape\nh_=int(h/2)\nw_=int(w/2)\nh__=int((h-h_)/2)\nw__=int((w-w_)/2)\nimg[h__:h__+h_,w__:w__+w_]=(255,0,0)\n#####\ncv2.imshow('img',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9fb20da514407cabd661e0ae02f03f31.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('sucai1/dcz.jpg')\n#####\nglasses=src[350:520,220:670]\nmask=np.random.randint(0,255,(170,450,3),dtype=np.uint8)\nsrc[350:520,220:670]=mask\n#####\ncv2.imshow('src',src)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\ncv2.imwrite('img/dcz_noise.png',src)"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg=cv2.imread('img/dcz_noise.png')\n####\nh,w,c=img.shape\nfor i in range(h):\n    for j in range(w):\n        for y in range(c):\n            if j!=0 and j!=w-1:\n                if abs(img[i,j,y]-img[i,j+1,y])>30 and abs(img[i,j,y]-img[i,j-1,y])>30:\n                    img[i, j, y]=img[i,j,y]\n                else:\n                    img[i, j, y]=0\n####\ncv2.imshow('shape',img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nimport cv2\nimg = cv2.imread(\"./img/building.jpg\")\nh, w, c = img.shape\nh_ = int(h/2)\nw_ = int(w/2)\nh__ = int((h - h_) / 2)\nw__ = int((w - w_) / 2)\ncv2.imshow(\"xxx\", img)\ncv2.waitKey(0)\ncv2.destoryAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9c6f192979ba690714bdd0dd0d2805ef"
+                ],
+                "text": [
+                    "读取图像building.jpg，并将图像正中央1/4面积的部分的蓝色通道修改成255。（效果如下）\n提交代码。"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimg = cv2.imread(\"./img/dcz.jpg\")\nmask = np.random.randint(0, 255, (170, 450, 3), dtype = np.uint8)\nimg[350:520, 220:670] = mask\ncv2.imwrite('./save/dcz_noise.png, img)",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/49cb2445353110007b5cc6a80c2d398e"
+                ],
+                "text": [
+                    "为了保护用户的肖像权，我们会对其关键信息进行马赛克处理。本任务要求对dcz.jpg图像中的眼镜区域([350:520,220:670] )进行马赛克处理”，并保存到img文件夹下命名为“dcz_noise.png”，效果如图所示。\n提交代码。"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\nimg = cv2.imread('./img/dcz_noise.png')h, w, c = img.shapefor i in range(h):    for j in range(1, w - 1):        for y in range(c):            if abs(img[i, j, y] - img[i, j - 1, y]) > 30 and abs(img[i, j, y] - img[i, j + 1, y]) > 30:                pass            else:                img[i, j, y] = 0cv2.imshow(\"shape\", img)cv2.waitKey(0)cv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f6fa412fb941730b5a238a9fc61b8777"
+                ],
+                "text": [
+                    "（附加）读取上一题保存的“dcz_noise.png”，遍历每一个像素，如果某个位置的像素与他左右两个个位置的像素值差距均大于30（python绝对值函数为abs()），则保留原像素值，否则设置为0。\n提交代码。效果如下。"
+                ]
+            }
+        }
+    }
+}

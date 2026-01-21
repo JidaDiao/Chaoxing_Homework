@@ -1,0 +1,2153 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ef559ce290800dc36fc1cd606068c45e",
+                    "https://p.ananas.chaoxing.com/star3/origin/62676b279274b32ce8f5efb93631bfd0",
+                    "https://p.ananas.chaoxing.com/star3/origin/47efda3bd86d920eb0b820de7932f039"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f39801e435a04639b7a00707e0d8a76c",
+                    "https://p.ananas.chaoxing.com/star3/origin/cd4019be7fc5d7f6f06109b9e2933a40"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/49c4083954b5d7dcb535bf3c5f45720d"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d60c93be9cc1bd9a6fb9eb691fcc3da0"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8b1d3f93d9a114fef5601f36967971a5"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1390a771dcfe25036f55ad1ccd906f16"
+                ],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "倪博源": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6f655e0c5bbc30c95db71a1196cf7cbd",
+                    "https://p.ananas.chaoxing.com/star3/origin/2d87232e260748c590742773cc358523",
+                    "https://p.ananas.chaoxing.com/star3/origin/98a70f3475e5030aaca238ac57f3df0b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y\nrpm -qa|grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b474c78913ce4c58967db7f97e5161d6",
+                    "https://p.ananas.chaoxing.com/star3/origin/9ee6a7701c5c790d87dc211790f14c41",
+                    "https://p.ananas.chaoxing.com/star3/origin/9748e46e3e3d32af35d84bba5467769f"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/559ed80072151b0e231c5035e232abf2"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ba21007d0666f19e861dfdef17f78d46"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/921ee2154f1590ff6d65df4be76643a1"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/887082974d0c9d51012d7b80fdea2a49"
+                ],
+                "text": []
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d7dd95fde54d88f0254494cc41f18b61",
+                    "https://p.ananas.chaoxing.com/star3/origin/98f6bc6cb4318ab3c10a522d2045e11c",
+                    "https://p.ananas.chaoxing.com/star3/origin/6ee10e58b6692521565e92d0c6d8c0f3"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dev/cdrom/media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y\nrpm-qalgrep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/506c071edf11735785eb1f52d1bb2cfe.png",
+                    "https://p.ananas.chaoxing.com/star3/750_1024/c9026e60e1eed5d22fc2e0f69dd82ffe.png"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/c50cb079ac330c5946bc50fe1dab91aa.png"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/82deeebe1789413f536b3e0bfa0e3bad.png"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/294f9fdf3df3d97eb0baba225248dbe4.png"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount/dve/cdrom/media\nend clean all\ndnf install http-y\nsystemctl restart httpd\nnetstay-an ｜grep：80"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/926722fbf6f9ff918b588dd7d317b123.png"
+                ],
+                "text": []
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c8085f3caa0fbdeba7c6f8294951f65e",
+                    "https://p.ananas.chaoxing.com/star3/origin/d5fca87778c5db34518312a765fb8d30",
+                    "https://p.ananas.chaoxing.com/star3/origin/80713143abd3ea83c8a0783f992dc17b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/27d2265366d6e708552ddb0adc465399",
+                    "https://p.ananas.chaoxing.com/star3/origin/5d7c6f94f9eabedf2d30e903a92fd05e"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/98d5b6e9262f41765a112f5fc02aa133"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0f2152d26795b6dc9d8abdecb4fe954b"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nsystemctl restart httpd\nnetstat -an |grep :80"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/84d49a0200546241b3092777482a384f"
+                ],
+                "text": []
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6068ea5b0f5ad65488992041a5c91f77",
+                    "https://p.ananas.chaoxing.com/star3/origin/57d52381531d91e9dc70003212f2592e",
+                    "https://p.ananas.chaoxing.com/star3/origin/0d413714ece04d9a80887c1ac2d8d89b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y\nrpm -qa|grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0de4b7898e9a70f5e01d74527f7f6309",
+                    "https://p.ananas.chaoxing.com/star3/origin/51dba1397d3ea991ff2a148acde72673",
+                    "https://p.ananas.chaoxing.com/star3/origin/83f11c4246bfcf00f11ac92d66ebb326"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/42da7b25b237f8cac0a8366722171cba"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "叶璐杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08",
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b"
+                ],
+                "text": [
+                    "b"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y\nrpm -qa|grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711",
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount/dav/cdrom/media\ndnf clean all\ndnf install httpd -y\nrpm -qa|grep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4aec96a379ffe5aa690aed83cb4e9fa"
+                ],
+                "text": []
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7ef54f03db6c660ec153d5b3a9709522",
+                    "https://p.ananas.chaoxing.com/star3/origin/8129815e22a3d049e1d502de8fd33e0e",
+                    "https://p.ananas.chaoxing.com/star3/origin/623b6f5a9a656abf7cca95007429daf1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y\nrpm -qa|grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db",
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount/dav/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -qa|grep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/dfaca8691fb71c6c03ce5bdc4a5eaf4f.jpg"
+                ],
+                "text": []
+            }
+        },
+        "吴晓静": {
+            "题目1": {
+                "images": [],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo systectl start named\nsudo systemctl enable named\nsudo cp /etc /name.conf/etc/named.conf.bak\nsudo tee /etc/name.conf\nsudo tee /var/named/exanple.con.zone\nsudo firewall-cmd--permanent--add-service=dns\nsudo firewall-cmd --reload\nsudo systemctl res named\ndig @193.168.10.1 nsl.exampele.com"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1d8f5864efbad2e52d70b02793a60756",
+                    "https://p.ananas.chaoxing.com/star3/origin/21bbfc9fa7cb473f124e84112f4e5245",
+                    "https://p.ananas.chaoxing.com/star3/origin/daeaf0f1d2e2ab5c47a32d0c0c692639"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/edce7c5f4a689629c3e114d946233b05",
+                    "https://p.ananas.chaoxing.com/star3/origin/78f011146124250e29313ec7d2d14c54"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ee49f9c05ffc2a5083957f4ffac7344b"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/144522835d80e1ebeadadec83cef9806"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6a9b88ae26bcae9e11b5525bfff0276c"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nfirewall-cmd --permanent -add-service=http\nfirewall-cmd --reload\nfirewall-cmd -list-all\nsystemctl restart httpd"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7ef54f03db6c660ec153d5b3a9709522",
+                    "https://p.ananas.chaoxing.com/star3/origin/8129815e22a3d049e1d502de8fd33e0e",
+                    "https://p.ananas.chaoxing.com/star3/origin/623b6f5a9a656abf7cca95007429daf1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dve/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/27d2265366d6e708552ddb0adc465399",
+                    "https://p.ananas.chaoxing.com/star3/origin/5d7c6f94f9eabedf2d30e903a92fd05e"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/98d5b6e9262f41765a112f5fc02aa133"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0f2152d26795b6dc9d8abdecb4fe954b"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dve/cdrom /media\ndnf clean all\ndnf install http-y\nsystemctl restart httpd\nnetstat -an |grep:80"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/84d49a0200546241b3092777482a384f"
+                ],
+                "text": []
+            }
+        },
+        "应欣凌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/4224493feb4c8c2ba9374d3548bd2590.png",
+                    "https://p.ananas.chaoxing.com/star3/750_1024/f6cd861e11a7a97de791f8fa36432582.png",
+                    "https://p.ananas.chaoxing.com/star3/750_1024/24d0c2329a097b04bd65c3bc9450077a.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dve/cdrom/media\ndef clean all\ndef install bind bind-chariot bind-utility-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/1f00b30dee4eb76780078f68c240c84a.png",
+                    "https://p.ananas.chaoxing.com/star3/750_1024/9232805de4f3645fa0451d56b66ba5e0.png"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/24bd0b66d687f4704d0b48ab255a069d.png"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/e5f389e61742e69b42778e170ab0ef91.png"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/baa3be08fdfc15fec319ff71886ad822.png"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount/dve/cdrom/media\nend clean all\ndnf install http-y\nsystemctl restart httpd\nnetstay-an |grep:80"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/5da43b01a06c5f4ac9b373f4308363f0.png"
+                ],
+                "text": []
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6bf22ecea564d7919106d060f485ef7e",
+                    "https://p.ananas.chaoxing.com/star3/origin/2dfb89641fec68ecceeaf39572148019",
+                    "https://p.ananas.chaoxing.com/star3/origin/a1cbf909f1a6ddb5582789d1d62c7d81"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e06ccc721aee798ede1e389970681db2",
+                    "https://p.ananas.chaoxing.com/star3/origin/958f8bcf019c4899af70d50f541ff2aa",
+                    "https://p.ananas.chaoxing.com/star3/origin/2c06f010695a010bf6e71dc0bc91f912"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/82463ab7b9381e770b4f69d38dc681ef"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6703390272ca88802b392087ed5f3d13"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b911de9885764ea48032256fac5261f9"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nfirewall-cmd --permanent --add-service=http\nfirewall-cmd --reload\nfirewall-cmd -list-all\nsystemctl restart httpd"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李奕哲": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08",
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot-bind-utuls-y\nrpm-qaigrep hind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9dae35816e9b12e92b70855b557fc368"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d5c2cf9d737e007271886e778ba33fae"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f39dcf51c86bbae1388d725006aba733"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/25d3ec60354e7f437e17108571971861"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httd\nmount/dav/cdrom/mrdia\ndnf insrall httpd-y\nrmp -qalgrep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4a91a9b10c3e81c37821823d1636843f"
+                ],
+                "text": []
+            }
+        },
+        "李斌浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f0c69afbbc87a7a18411f3d494a68c5a",
+                    "https://p.ananas.chaoxing.com/star3/origin/dcf2c0570e505bd09fa7e6d18b7a7a04",
+                    "https://p.ananas.chaoxing.com/star3/origin/0034481c67190b1528898cd506d1fa61"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount  /dev/cdrom /media\ndnf  clean  all\ndnf  install  bind  bind-chroot  bind-utils-y\nrpm  -qa | grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot bind-utis-y\nrpm-qa|grep bin"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db",
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount/dav/cdrom/media\ndnf clean all\ndnf install httpd -y\nepm -qa|grep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4a91a9b10c3e81c37821823d1636843f"
+                ],
+                "text": []
+            }
+        },
+        "杨子楚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0b390d18a5daa2314befbe21a93ffe81",
+                    "https://p.ananas.chaoxing.com/star3/origin/792d964f9bf797d83dcce4c9f1db7dda",
+                    "https://p.ananas.chaoxing.com/star3/origin/105817909989f1cfb667cbc615f0908a"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y\nsystemctl start named\nsystemctl restart named"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7043466d085b9fcfa8abbfa15502bb05"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/95812af321c1e4cdf912b21857a20b6f"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1ba09993e37844322a162273c3f2bdad"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/158a4026b00a834d2282101ee732c404"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nfirewall-cmd --permanet --add-service=http\nfirewall-cmd --reload\nfirewall-cmd --list-all\nsystemctl restart httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cb942eb1d23232c6d8127f1c691e9961"
+                ],
+                "text": []
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/31f7ab96a6b2584a603a9411a72f0fc4",
+                    "https://p.ananas.chaoxing.com/star3/origin/501a781626cfdc35c7f927947599c195",
+                    "https://p.ananas.chaoxing.com/star3/origin/5ac66fa225cfbce1295577e5f0c33613"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clen all\ndnf install bind bind-chroot bind-utils--y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711",
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount /dav/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -1a|grep httpd\nsystemct1 start httpd"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "杨海博": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08",
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "munt/dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot-bind-utlis-y\nrpm-qalgrep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4",
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm-q httd\nmount/dav/cdrom/media\ndnf clean all\nrpm"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4aec96a379ffe5aa690aed83cb4e9fa"
+                ],
+                "text": []
+            }
+        },
+        "林文静": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2ca90e1cc1551be7b185ec866a01daf5",
+                    "https://p.ananas.chaoxing.com/star3/origin/b340f4ad962cb68fcdef13a811e66406",
+                    "https://p.ananas.chaoxing.com/star3/origin/455e635f52d96fe8441436bb5e9b19d4"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils  -y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aaa675b5b85650c1ced23ce211a8f93b",
+                    "https://p.ananas.chaoxing.com/star3/origin/c93423e974fc917e1cf29c809b0ff77a",
+                    "https://p.ananas.chaoxing.com/star3/origin/ffd2ee1dd327b3174cdf0a78fde77bac"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1fcc63161e289ba67b4439a4e2fde195"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/65dad2d39c533a9d650ec93936639e8b"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/17f39a1616e4333c449fe526fac4c040"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fe7b195fcda705e189acb5122868c2ad"
+                ],
+                "text": []
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/65ef728b8cd1f89e21d913c10709f1d6",
+                    "https://p.ananas.chaoxing.com/star3/origin/3f0dc58678d66e665ae00ef2d6d0b900",
+                    "https://p.ananas.chaoxing.com/star3/origin/0cd3957270b378e6094aa76829f0dc11"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y\nsystemctl start named;systemctl stop named\nsystemctl restart named;systemctl enble named"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8f16aaa8a34dc7a0508426f13e10f65d",
+                    "https://p.ananas.chaoxing.com/star3/origin/213b1a4a79977a36b2ac1493bff2ed91",
+                    "https://p.ananas.chaoxing.com/star3/origin/624bbc0a30cd6e2091fbee9faa2e5acc"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3a916ebaee3303f1e1c5ae643d5f22c1"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2a88b1b1cc4ae61bf729f578c7ec2e5a"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -qa|grep httpd\nsystemctl start httpd"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "汤宾豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b",
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot-bind-utlis-y\nrpm-qalgrep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711",
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httd\nmount/dav/cdrom/media\ndnf clean all\ndnf install httpd-y\nrpm -qalgrep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4aec96a379ffe5aa690aed83cb4e9fa"
+                ],
+                "text": []
+            }
+        },
+        "王可欣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/32e68ba9422703c5464d6ba033d013db",
+                    "https://p.ananas.chaoxing.com/star3/origin/3fec352d2497f7f12702e65f45a81fe3",
+                    "https://p.ananas.chaoxing.com/star3/origin/f61335c37d9a7a1e23f93a82d0f4f386"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot binf-utils-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/8b1b2ef15b0e5b79c5e8488e8822d7da.jpg",
+                    "https://p.cldisk.com/star3/origin/2dfb88bf557404c48d274c467cf99d46.jpg"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/83e7a01768dd51d01c9e8d0e0279b6cd.jpg"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/3529876897a486080a3419364db1e9c5.jpg"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/1f41c13d193f6834fe4f3f79663e30df.jpg"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -qa|grep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/210a476e3bf183cb0321542df650cbd3.jpg"
+                ],
+                "text": []
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08",
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08",
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot-bind-utlis-y\nrpm-qalgrep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httd\nmount/dav/cdrom/mrdia\ndnf install httpd-y\nrmp -qalgrep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4a91a9b10c3e81c37821823d1636843f"
+                ],
+                "text": []
+            }
+        },
+        "王翔玮": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8c3de289856ed6f2df3a08da32f74304",
+                    "https://p.ananas.chaoxing.com/star3/origin/c1a35653349a7601d9e3871e83fd615d",
+                    "https://p.ananas.chaoxing.com/star3/origin/7f667a4d10f503932807c7abc9629c8f"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5d7c6f94f9eabedf2d30e903a92fd05e",
+                    "https://p.ananas.chaoxing.com/star3/origin/27d2265366d6e708552ddb0adc465399"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/98d5b6e9262f41765a112f5fc02aa133"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0f2152d26795b6dc9d8abdecb4fe954b"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/012972b9eaa4b8068b4601894fde46ed"
+                ],
+                "text": []
+            }
+        },
+        "王译浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4d8bb05b39bb85d367796b2a46296194",
+                    "https://p.ananas.chaoxing.com/star3/origin/abddd9e97aaa28c4fbab3e6d4ccf8729",
+                    "https://p.ananas.chaoxing.com/star3/origin/3c204556eb845b6ba050abc9199b1ab8"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8b1b2ef15b0e5b79c5e8488e8822d7da",
+                    "https://p.ananas.chaoxing.com/star3/origin/2dfb88bf557404c48d274c467cf99d46"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/98d5b6e9262f41765a112f5fc02aa133"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0f2152d26795b6dc9d8abdecb4fe954b"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -qa|grep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/84d49a0200546241b3092777482a384f"
+                ],
+                "text": []
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8129815e22a3d049e1d502de8fd33e0e",
+                    "https://p.ananas.chaoxing.com/star3/origin/7ef54f03db6c660ec153d5b3a9709522",
+                    "https://p.ananas.chaoxing.com/star3/origin/623b6f5a9a656abf7cca95007429daf1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdeom /media\nanf clean all\ndnf install bind bind-chroot bind-utils-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5d7c6f94f9eabedf2d30e903a92fd05e",
+                    "https://p.ananas.chaoxing.com/star3/origin/27d2265366d6e708552ddb0adc465399"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/98d5b6e9262f41765a112f5fc02aa133"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0f2152d26795b6dc9d8abdecb4fe954b"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dve/cdrom /media\ndnf clean all\ndnf install http-y\nsystemctl restart httpd\nnetsat -an /grep:80"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/84d49a0200546241b3092777482a384f"
+                ],
+                "text": []
+            }
+        },
+        "胡棋浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e453945b6938afcecdd777149edbad33",
+                    "https://p.ananas.chaoxing.com/star3/origin/7fde8c62e0d7ca9951026ef642f4b8ca",
+                    "https://p.ananas.chaoxing.com/star3/origin/816ccca5ee8a22a1f968fb1270388625"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot binf-utils-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ade6940f74f1c8e485f5eab562b79025",
+                    "https://p.ananas.chaoxing.com/star3/origin/3577f6a3c6b8bd801831e2536a4b7f95"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7089c7861d703171c0bb7939b6ddea09"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f3c4144f454c2866e16aace06e98e03a"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2f47e424701575e1a787424e97e29c9e"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -qalgrep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/83c03b4ae9361f06e87e294d6e4039a8"
+                ],
+                "text": []
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5f9565ac5359ae16b5400fb6b467e3cc",
+                    "https://p.ananas.chaoxing.com/star3/origin/5fbca348f9423b1a8d7c8bd8da868ff1",
+                    "https://p.ananas.chaoxing.com/star3/origin/a50db67944880c0b0c883469714772f9"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y\nrpm -qa|grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/83f11c4246bfcf00f11ac92d66ebb326"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/51dba1397d3ea991ff2a148acde72673"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0de4b7898e9a70f5e01d74527f7f6309"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/42da7b25b237f8cac0a8366722171cba"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4c2f23e4d98ae68bf0669218ab8dc934",
+                    "https://p.ananas.chaoxing.com/star3/origin/af52a75c41473f7dc6b43bf625976aed",
+                    "https://p.ananas.chaoxing.com/star3/origin/dd46e4fdf34b18f5cded252afecc5f73"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y\nrpm -qa|grep bind\nsystemctl restart named"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4857d6ec1d3c1f67b5e0b184efedcefe"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d6fac2d21537d052501a278db3199330"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/61b11a79a70a51c390dc0c66845f3c16"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fb11b46012b31ca19fcfe4e6cdfec677"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "firewall-cmd --permanent -add-service=dns\nfirewall-cmd --reload\nchgrp named /etc/named.conf /etc/named.zones\nchgrp named long60.cn.zone 4.10.168.192.zone\nsystemctl restart named"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/930504dd83e09e5ee7017f0b7a1672df"
+                ],
+                "text": []
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/eb317bacab745308ca10530f4ae652f4",
+                    "https://p.ananas.chaoxing.com/star3/origin/369c27342ff17c41535301b3486f830f",
+                    "https://p.ananas.chaoxing.com/star3/origin/f3e2fc2ca55d86abd01d44db5d799ae1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils -y\nrpm -qa|grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b00b3a61654620bbca95afff87d8803f",
+                    "https://p.ananas.chaoxing.com/star3/origin/961bd430c04bec1ec030fae819c4d521"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/820b4d8057235c31a240a1bd7d0c46a0"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "谢雨晨": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "network:\nethernets:\nens33:\naddresses:[192.168.10.1/24]\ngateway4:<your_gateway_ip>\nnameservers:\naddresses:[]\nwersion:2\nsudo netplan apply"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo systectl start named\nsudo systemctl enable named\nsudo cp /etc /name.conf/etc/named.conf.bak\nsudo tee /etc/name.conf\nsudo tee /var/named/exanple.con.zone\n..."
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "sudo yum install -y httpd\nsudo systemct1 enable --now httpd\nsudo systemct1 status httpd | grep Active\nsudo firewall-cmd --permanent --add-service=http\nsudo firewall-cmd --reload\ncur1 -I 127.0.0.1"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fa40295771c19e8a8dd940c8ce899f8f",
+                    "https://p.ananas.chaoxing.com/star3/origin/7ae45bb44311de41e7c7553eb63f458f"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/efaadc4f7998d0713daa7e0295058f3b",
+                    "https://p.ananas.chaoxing.com/star3/origin/1c08e18d495a0a3a784d8d291533f376",
+                    "https://p.ananas.chaoxing.com/star3/origin/2433ddeade1a7131042ca01426f74dbe"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/57e63a84d0498bff0f006a82c05060ff"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c0777995c19d34f34b269ae3d30f4500"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/66b7535a1afd7a3eb918e67455457ab1"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6ee10e58b6692521565e92d0c6d8c0f3",
+                    "https://p.ananas.chaoxing.com/star3/origin/d7dd95fde54d88f0254494cc41f18b61",
+                    "https://p.ananas.chaoxing.com/star3/origin/98f6bc6cb4318ab3c10a522d2045e11c"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a3a51f83968eda0727f2f03849e1c5d5",
+                    "https://p.ananas.chaoxing.com/star3/origin/2d8064da76eea2ba11e1427aac15b4f9"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c99af3722982750eb81a1c90e42d527e"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c2c515a498fa4e1c45e69ad4f3b94086",
+                    "https://p.ananas.chaoxing.com/star3/origin/5a731a55490ed12e2f21e64c3f375cb9",
+                    "https://p.ananas.chaoxing.com/star3/origin/96b03475750fbb58be89486349303d58"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y\nrpm -qa|grep bind\nsystemtl start named;systemctl stop named\nsystemctl restart named; systemctl enable named"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3b225c0a0adbb0538c9a52f034dfd917"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e65e9e0c125bb4856ff5c77061f49fe3"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8b65c20217c015e3ad1eeba947754be3"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/32d26b64ecc5cf718c14674d6f2b13d7"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "host dns.long60.cn\nhost 192.168.10.3\nhost -t NS long60.cn\nhost -1 long60.cn\nhost -a web.long60.cn"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/53e6d66d5e3a4f065b83a703b90459fc"
+                ],
+                "text": []
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e453945b6938afcecdd777149edbad33",
+                    "https://p.ananas.chaoxing.com/star3/origin/7fde8c62e0d7ca9951026ef642f4b8ca",
+                    "https://p.ananas.chaoxing.com/star3/origin/816ccca5ee8a22a1f968fb1270388625"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dev/cdrom /media\ndnf clean all\ndnf install bind bind-chroot binf-utils-y"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ade6940f74f1c8e485f5eab562b79025",
+                    "https://p.ananas.chaoxing.com/star3/origin/3577f6a3c6b8bd801831e2536a4b7f95"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7089c7861d703171c0bb7939b6ddea09"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f3c4144f454c2866e16aace06e98e03a"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2f47e424701575e1a787424e97e29c9e"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount /dev/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -qalgrep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/83c03b4ae9361f06e87e294d6e4039a8"
+                ],
+                "text": []
+            }
+        },
+        "陈海宇": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8c3de289856ed6f2df3a08da32f74304",
+                    "https://p.ananas.chaoxing.com/star3/origin/7f667a4d10f503932807c7abc9629c8f",
+                    "https://p.ananas.chaoxing.com/star3/origin/c1a35653349a7601d9e3871e83fd615d"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5d7c6f94f9eabedf2d30e903a92fd05e",
+                    "https://p.ananas.chaoxing.com/star3/origin/27d2265366d6e708552ddb0adc465399"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/98d5b6e9262f41765a112f5fc02aa133"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1705c2ae01bf87f3cca6c9048493bf26"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0f2152d26795b6dc9d8abdecb4fe954b"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/012972b9eaa4b8068b4601894fde46ed"
+                ],
+                "text": []
+            }
+        },
+        "陈瑞易": {
+            "题目1": {
+                "images": [],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount  /dev/cdrom /media\ndnt clean all\ndnf install bind-chroot bind-utils-y\nrpm -qa | grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "马景欣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b",
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot-bind-utils-y\nrpm-qaigrep hind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9dae35816e9b12e92b70855b557fc368"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d5c2cf9d737e007271886e778ba33fae"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f39dcf51c86bbae1388d725006aba733"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/25d3ec60354e7f437e17108571971861"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httd\nmount/dav/cdrom/mrdia\ndnf install httpd-y\nrmp -qalgrep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4a91a9b10c3e81c37821823d1636843f"
+                ],
+                "text": []
+            }
+        },
+        "麻仁俊": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/be3330861d035f0b9ba6ff536b827355",
+                    "https://p.ananas.chaoxing.com/star3/origin/f22bd5be8108c70a4fa61039d5e830a1",
+                    "https://p.ananas.chaoxing.com/star3/origin/87c4078d973b64a223debcc322eed445"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount /dav/cdrom /media\ndnf clean all\ndnf install bind bind-chroot bind-utils-y\nrpm -qa|grep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711",
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httpd\nmount /dav/cdrom /media\ndnf clean all\ndnf install httpd -y\nrpm -1a|grep httpd\nsystemctl start httpd"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "黄奔拓": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b",
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mount/dav/cdrom/media\ndnf clean all\ndnf install bind bind-chroot-bind-utlis-y\nrpm-qalgrep bind"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/259894b32a00eceaceab4bf1dda42bb4",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711",
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rpm -q httd\nmount/dav/cdrom/media\ndnf clean all\nrpm -qalgrep httpd"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4aec96a379ffe5aa690aed83cb4e9fa"
+                ],
+                "text": []
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/091692ed6f2c33565db062732da6c1a4",
+                    "https://p.ananas.chaoxing.com/star3/origin/c726b424986fec027fdb6dfb99b0fa08",
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd9881ed5c0bc215136130bed38e8b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/424e828c501114ea9fc538579b60f0db",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2573cd16cf3cf1291f7e3896acb711"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b65c3403e500d7966871606e8230236a"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a1fbe0db5db9d5ecc4a8262f94974f14"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12d359b7233236d752024b40557c1c17"
+                ],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4a91a9b10c3e81c37821823d1636843f"
+                ],
+                "text": []
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "配置Server01的ip为192.168.10.1，Client1的ip为192.168.10.4，Client2的ip为192.168.10.10。其中两台Client的dns服务器都是Server01。\n截图三台机子的网络配置。"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "安装DNS服务，提交用到的所有命令。"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "截图全局配置文件，把所有修改的部分截进去。"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "截图区域配置文件。"
+                ]
+            }
+        },
+        "题目5": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "截图正向解析区域声名文件。（按照书上的要求修改）"
+                ]
+            }
+        },
+        "题目6": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "截图反向解析区域声名文件。（按照书上的要求修改）"
+                ]
+            }
+        },
+        "题目7": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "在Client1上安装http服务，提交用到的命令。"
+                ]
+            }
+        },
+        "题目8": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "在Client2上用域名访问Client1上的网页，截图。"
+                ]
+            }
+        }
+    }
+}

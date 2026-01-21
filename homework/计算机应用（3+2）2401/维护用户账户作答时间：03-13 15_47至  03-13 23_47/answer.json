@@ -1,0 +1,673 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "吴何莹": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "addgroup -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "张俊楠": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root testgroup\ngpasswd -A root testgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root testgroup\ngpasswd -A root testgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devhroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -A root devhroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devhroup"
+                ]
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 -devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd  -a root  devgroup\npgasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupel devgroup"
+                ]
+            }
+        },
+        "林贝贝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd  -g  2000  debgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd  -a  root  devgroup\ngpasswd  -A root  devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel  devgroup"
+                ]
+            }
+        },
+        "王河": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgrou"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grupdel testgroup"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel testgroup"
+                ]
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g  2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "董佳旭": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a user1 testgroup\ngpasswd -A user1 testgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupde1 devgroup"
+                ]
+            }
+        },
+        "蒋贤炽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermod -aG devgroup root\nsudo visudo"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "蔡进元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupmod -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "诸葛萌萌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 debgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\npgasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "钱益乐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root testgroup\ngpasswd -A root testgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "陈中宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermod -a -G devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgrop\ngpasswd -a toor devgrop\ngpasswd-A toor decgrop"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "陈庆鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "# gpasswd -a 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "#gpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "#gpasswd -d devgroup"
+                ]
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd GID  2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupadd -a root devgroup\ngroupadd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            }
+        },
+        "陈真": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupmod -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "黄开桂": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ngroupadd -g 2000 devgroup",
+            "题干": {
+                "images": [],
+                "text": [
+                    "创建一个新组 devgroup，并设置组ID（GID）为 2000。（输入命令）"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ngpasswd -A root devgroup",
+            "题干": {
+                "images": [],
+                "text": [
+                    "将root账户添加入到 devgroup 组中并设置为管理员。（输入命令）"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ngroupdel devgroup",
+            "题干": {
+                "images": [],
+                "text": [
+                    "删除组devgroup。（输入命令）"
+                ]
+            }
+        }
+    }
+}

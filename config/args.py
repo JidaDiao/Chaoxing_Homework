@@ -34,9 +34,6 @@ parser.add_argument('--prepare_system_prompt', type=str, default="""
         ### 角色设定：
         你是一名高职计算机教师，以下是你布置的作业题目及其参考答案（注意，部分题目可能没有参考答案）。：
                     
-        ### 题目与参考答案：
-        {question_stem}
-
         请根据学生的回答进行评分，具体要求如下：
 
         ### 注意事项：
@@ -86,10 +83,7 @@ parser.add_argument('--prepare_system_prompt', type=str, default="""
 parser.add_argument('--few_shot_learning_system_prompt', type=str, default="""
         ### 角色设定：
         你是一名高职计算机教师，负责评阅学生的作业。以下是你布置的作业题目及其参考答案（注意，部分题目可能没有参考答案）。
-        
-        ### 题目与参考答案：
-        {question_stem}
-        
+
         ### 本作业评分标准：
         {grading_standard}
 

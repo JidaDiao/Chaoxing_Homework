@@ -1,0 +1,1679 @@
+{
+    "余茴茴": [
+        {
+            "content": [
+                {
+                    "text": "余茴茴的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.address 192.168.50.111/ 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "倪博源": [
+        {
+            "content": [
+                {
+                    "text": "倪博源的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifnameens160 autoconnect no type Ethernet ipv4 .addresses 192.168.50.111/25 ipv4.gateway 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modifyn zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "倪恩义": [
+        {
+            "content": [
+                {
+                    "text": "倪恩义的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manyal ifname ens160 autoconnect no type Etherrnet ipv4.addresses 192.168.50.111/24 gw4 255.255.255.0",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "刘奕豪": [
+        {
+            "content": [
+                {
+                    "text": "刘奕豪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "包先杰": [
+        {
+            "content": [
+                {
+                    "text": "包先杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-nam zjdf  ipv4.method manual ifname ens160 autoconnect no tupe ethernet ipv4.addresses 192.168.10.100/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcliconnection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "叶璐杰": [
+        {
+            "content": [
+                {
+                    "text": "叶璐杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcil connection add-name zjdf ipv4.method manual ifname ens 160cautoconnect no typr\nethernet ipv4,addressrs 192.168.50.111/27 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modyify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吕品欧": [
+        {
+            "content": [
+                {
+                    "text": "吕品欧的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：namcli connection add con-name zjdf ifname ens160 type ethernet ipv4.addresses 192.168.50.111/24 ipv4.gateway 192.168.50.254 ipv4.menual connection.autoconnect no",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴语哲": [
+        {
+            "content": [
+                {
+                    "text": "吴语哲的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con_name zjdf ipv4.method manual manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.10.100/24 gw4 192.168.10.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "周磊": [
+        {
+            "content": [
+                {
+                    "text": "周磊的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "夏家帆": [
+        {
+            "content": [
+                {
+                    "text": "夏家帆的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no typ Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "应欣凌": [
+        {
+            "content": [
+                {
+                    "text": "应欣凌的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv1.method manual ifname ens160 autconnect no type\nEthernet ipv4,add resses 192.168.50.11/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：bmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connecion modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "张政": [
+        {
+            "content": [
+                {
+                    "text": "张政的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "张浩然": [
+        {
+            "content": [
+                {
+                    "text": "张浩然的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.manual ifnameens160 autoconnect no tupe Ethernet ipv4.addresses 190.168.10.100/24 gw4 192.168.10.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.10.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection modifty zjdf -ipv4.ddns 144.144.144.144",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李奕哲": [
+        {
+            "content": [
+                {
+                    "text": "李奕哲的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4. method manual ifname ens160 autoconnect no type Ethernet ipv4. addresses 192.168.50.111/22 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李艺斐": [
+        {
+            "content": [
+                {
+                    "text": "李艺斐的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add-name zjdf ipv4.method manual ifname ens 160 autoconnect no type Ethernet ipv4.addersses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "杨子楚": [
+        {
+            "content": [
+                {
+                    "text": "杨子楚的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf type Ethernet ifname ens160",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "杨宏恩": [
+        {
+            "content": [
+                {
+                    "text": "杨宏恩的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv1.method manual ifname ens160 autconnect no type\nEthernet ipv4.add resses 192.168.50.11/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：bmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connecion modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "杨海博": [
+        {
+            "content": [
+                {
+                    "text": "杨海博的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv1.method manual ifname ens160 autconnect no type\nEthernet ipv4 .add resses 192.168.50.11/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：bmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connecion modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林文静": [
+        {
+            "content": [
+                {
+                    "text": "林文静的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection show zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zidf ipv4. dns \"192.168.50.1\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林锦豪": [
+        {
+            "content": [
+                {
+                    "text": "林锦豪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "汤宾豪": [
+        {
+            "content": [
+                {
+                    "text": "汤宾豪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli conection add con-name zjdf ipv4.methodmanual ifname ens 160 autonnect no typeEthrnetipv4.addresses192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify  zjdify ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王可欣": [
+        {
+            "content": [
+                {
+                    "text": "王可欣的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnnect no type Ehternet ipv4.addresses 192.168.50.111/24 ipv4 192.168.50.254 connect",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王启泽": [
+        {
+            "content": [
+                {
+                    "text": "王启泽的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli conection add con-name zjdf ipv4.methodmanual ifname ens 160 autonnect no\ntypeEthrnetipv4.addresses192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli cconnection modify zjdify ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王翔玮": [
+        {
+            "content": [
+                {
+                    "text": "王翔玮的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens 160 autoconnect no type\nEthernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcil connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli donnection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王译浩": [
+        {
+            "content": [
+                {
+                    "text": "王译浩的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf type ethernet ifname ens160 ipv4.addresses 192.168.50.111/24 ipv4. jateway 192.168.50.254 ipv4.method manual",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "祝韩": [
+        {
+            "content": [
+                {
+                    "text": "祝韩的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcil connection add con-namne zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet  ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "胡棋浩": [
+        {
+            "content": [
+                {
+                    "text": "胡棋浩的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4. method manual ifname ens160 autoconnect no type Ethernet ipv4. addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "胡溯元": [
+        {
+            "content": [
+                {
+                    "text": "胡溯元的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "苏文烁": [
+        {
+            "content": [
+                {
+                    "text": "苏文烁的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf type Ethernet ifname ens160 ip4 192.168.50.111 /24 gw4 192.168.50.254 autoconnect no",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "蒋宇轩": [
+        {
+            "content": [
+                {
+                    "text": "蒋宇轩的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4 .method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "邵慧鑫": [
+        {
+            "content": [
+                {
+                    "text": "邵慧鑫的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "郑鑫豪": [
+        {
+            "content": [
+                {
+                    "text": "郑鑫豪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4. method manualifnamr ens160 autoconnect notype Ethernet ipv4. addresses192.168.50.111/24 gw4\n192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdfipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "郑镕": [
+        {
+            "content": [
+                {
+                    "text": "郑镕的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈智强": [
+        {
+            "content": [
+                {
+                    "text": "陈智强的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli add zjdf\nipv4 192.168.50.111\n255.255.255.0\nens 160\n192.168.50.254\nno",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：numcli connection up zjdf\nnumcli connection show zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：makedir zjdf dns 192.168.50.1\nnumcli connection show zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：makedir zjdf dns delete",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈柯洋": [
+        {
+            "content": [
+                {
+                    "text": "陈柯洋的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4. method manual ifname ens160 autoconnect no type Ethernet ipv4. addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈海宇": [
+        {
+            "content": [
+                {
+                    "text": "陈海宇的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add con-name zjdf ipv4.method manual ifname ens 160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "马景欣": [
+        {
+            "content": [
+                {
+                    "text": "马景欣的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli conection add con-name zjdf\nipv4.methodmanual ifname ens 160 autonnet no\ntypeEthrnetip4.addresses 192.168.50.111/24 gw4\n192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify  ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "麻仁俊": [
+        {
+            "content": [
+                {
+                    "text": "麻仁俊的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：namcli connection add con-name zjdf tyoe ethernet ifname ens160 ipv4.method manuai ipv4.addresses 192.168.50.111/24 ipv4.gateway 192.168.50.254 connection.autoconnect no",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli connection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli connection modify zjdf ipv4.dns 192.168.50.1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli connection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄政杰": [
+        {
+            "content": [
+                {
+                    "text": "黄政杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：nmcli connection add-name zjdf ipv4.manual ifname ens 160 autoconnect no type Ethernet ipv4.addersses 192.168.50.111/24 gw4 192.168.50.254",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：nmcli vonnection up zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：nmcli vonnection modify zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：nmcli vonnection delete zjdf",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ]
+}

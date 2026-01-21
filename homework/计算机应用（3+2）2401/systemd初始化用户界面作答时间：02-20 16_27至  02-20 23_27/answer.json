@@ -1,0 +1,1063 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd ../var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>testcat"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd .. /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "Is-a"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "Is-aA"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat-boot.log cron>testcat"
+                ]
+            }
+        },
+        "吴何莹": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>testcat"
+                ]
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>testcat"
+                ]
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd ../var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "echo \"\">testcat\ncat boot.log>>testcat"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "pwd\ncd..\ncd etc\ncd ./yun\ncd~\ncd ../var\ncd /var/mail\ncd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls  -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>>testcat"
+                ]
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron testcat"
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls\nls -a"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -aR"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>testcat"
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d0de66ce968d2bf6fcbeaa8c149d2419"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/53a893513ec1cb0e92f3ed269a045641"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6689e908e6b440af1b25a375ba177ffb"
+                ],
+                "text": []
+            },
+            "题目4": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/279e5dc8a0545182ba30398a68aac8fd"
+                ],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李诗琪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd/var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "#pwt\n#ls"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "#cd..log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron >>testcat"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat-boot.log cron>testcat"
+                ]
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var\ncd /var /mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls\nls -R"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat file2 file1>>file3"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cad  /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls\nls-R"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd..log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls\nls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat file2 file1>>FILE3"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd../var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-aR"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>>testcat"
+                ]
+            }
+        },
+        "林贝贝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd   /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd . . /log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -R"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "王河": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd/var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "Is-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "echo\"\">testcat\ncat boot.log cron>>testcat"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd .. /log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "echo \"\">testcat\ncat boot.log cron>>testcat"
+                ]
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -aR"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron >>testcat"
+                ]
+            }
+        },
+        "董佳旭": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ..log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>>testcat.txt"
+                ]
+            }
+        },
+        "蒋贤炽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>testcat"
+                ]
+            }
+        },
+        "蔡进元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /val/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "echo \"\">testcat\ncat boot.log cron>>testcat"
+                ]
+            }
+        },
+        "诸葛萌萌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "pwd\ncd/var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd\nls"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd..\ncd log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat booy.log cron>>testcat"
+                ]
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot cron>>testcat"
+                ]
+            }
+        },
+        "钱益乐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -aR"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>testcat"
+                ]
+            }
+        },
+        "陈中宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>>testcat"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "pwd\ncd /var/mail\npwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "pwd\ncd /log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "la -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cp boot.log cron>testcat"
+                ]
+            }
+        },
+        "陈庆鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[root@server01~]#cd var"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[root@server01~]#cd log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[root@server01~]#1s -a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "[root@server01~]#cat boot.log cron>testcat"
+                ]
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd\ncd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron testcat"
+                ]
+            }
+        },
+        "陈真": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "pwd\ncd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cp ~/.boot.log cron /testcat"
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd /var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "pwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron testcat"
+                ]
+            }
+        },
+        "黄开桂": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "cd../var/mail"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls-a"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd../log"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls-aA"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cat boot.log cron>testcat"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ncd /var/mail",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用cd命令使用绝对路径将目录位置切换到/var/mail下。\n输入命令"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\npwd\npwd -P",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用命令显示当前路径。\n（附加）使用命令显示当前路径的完整路径。\n输入命令，如果附加你会写在下面填入两条命令"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ncd ../log",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用cd命令使用相对路径切换目录位置到当前目录的父目录下的log子目录下。\n输入命令"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\nls -a",
+            "题干": {
+                "images": [],
+                "text": [
+                    "列出当前文件夹下的所有文件和目录信息，包括隐藏文件。\n输入命令"
+                ]
+            }
+        },
+        "题目5": {
+            "正确答案": "正确答案：\ncat boot.log cron>testcat",
+            "题干": {
+                "images": [],
+                "text": [
+                    "将当前目录下的boot.log和cron文件的内容合并且覆盖到testcat这个文件里面。\n输入命令"
+                ]
+            }
+        }
+    }
+}

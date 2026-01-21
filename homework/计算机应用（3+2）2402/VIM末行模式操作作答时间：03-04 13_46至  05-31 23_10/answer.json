@@ -1,0 +1,1364 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 zjdf\npasswd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /ect/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd\npasswd user3"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 user3"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/250b280f17719d10117f2f170dbba8c9",
+                    "https://p.ananas.chaoxing.com/star3/origin/7772458d988516fca3eeab6a3d9aaa2f"
+                ],
+                "text": [
+                    "chage -l user3"
+                ]
+            }
+        },
+        "倪博源": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 zjdf\npasswd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep user3 /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwwd\npasswwd user123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 user1\nchage -l user1"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0891f0456cf016b76ec2b0d8bfb3e253"
+                ],
+                "text": []
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 zjdf\necho \"df123456\" | passwd --stdin zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"zjdf\" /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "echo \"123465df\" | passwd --zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2c7a42ba5ad105dca1fbb8f700ea414d"
+                ],
+                "text": []
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 -d /home/zjdf -s /bin/bash -p df123456 -f -1 zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/80056bf45323109752fefd772923a24b"
+                ],
+                "text": []
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd-u 1111 -p dif123456zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m4 -M50 -w3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ed82072897b87e2b1c1a14b2cb8d5e01"
+                ],
+                "text": [
+                    "chage-l zjdf"
+                ]
+            }
+        },
+        "叶璐杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 <d /home/zjdf -p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'newuser'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passed zidf:"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "udo chage -m -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/4bfce20da2f6e090d7567429cb4e2a23.jpg"
+                ],
+                "text": []
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd-u 1111 zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep‘zjdf’"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chage -m 4"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/4bfce20da2f6e090d7567429cb4e2a23.jpg"
+                ],
+                "text": [
+                    "1"
+                ]
+            }
+        },
+        "吴晓静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 zjdf\npasswd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep user3 /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwwd\npasswwd user123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m4 -M 50 - W 3 user1\nchage - l user1"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0891f0456cf016b76ec2b0d8bfb3e253"
+                ],
+                "text": []
+            }
+        },
+        "吴语哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd zidf\nsudo passwd newuser"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  'zidf' / etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zidf:"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "udo chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sudo chage -1 zjdf"
+                ]
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 zjdf\npasswd zidf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zidf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zidf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -m 50 zidf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/17073592582338e735b524d80dd92964"
+                ],
+                "text": [
+                    "chage -1 zidf"
+                ]
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111-d/home/ zjdf-s/bin/bash-p df123456-f-1 zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage-m 4-m 509-w 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/f7ac039820f0c7dfc14569fa58a08ebf.jpg"
+                ],
+                "text": []
+            }
+        },
+        "应欣凌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "soud useradd -u 1111 zjdfr"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gerp 'zjdf' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 -p df123456 zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1779d265415400b8bf25d7c9b67a295f"
+                ],
+                "text": [
+                    "chage -l zjdf"
+                ]
+            }
+        },
+        "张浩然": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "userdd- u 1111  -d/home.zjdf -p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'zjdf' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd uesmame"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李奕哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd zjdf -u 1111 -p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c918c76fe58b2a6ef3ad9177f1bb705a"
+                ],
+                "text": []
+            }
+        },
+        "李斌浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 1111 group1\nuseradd -u 1111 -g 1111 -d /home/zjdf -s /bin/bash -p df123456 -f -1 zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "tail -1 /tec/passwd\ngrep zjdf /etc/shadow"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd\npasswd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -w zjdf\nchage -1 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd-u 1111 <d/home/zjdf-p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'newuser'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passed zidf:"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "udo chage -m -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/98e8df7eb4641c0734eafccb53b8ffe2.jpg"
+                ],
+                "text": []
+            }
+        },
+        "杨子楚": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd zjdf -u 1111 -p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/shadow"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/93e01d41b5a329b22e66979a95b3ded6"
+                ],
+                "text": []
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd-u 1111 zjdf\nsudo passwd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'zjdf' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chage -m 4 -m 50 -w 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "杨海博": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd-u 1111 zjdf\necho \"zjdf:df123456\"|sudo chapasswd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep'zjdf'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage-m 4-m 50 -w 3zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chage-l zjdf"
+                ]
+            }
+        },
+        "林文静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 1111 group1\nuseradd -u 1111 -g 1111 -d/home/zidf -s/bin/bash/ -p df 123456 -f zidf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "tail-1/tec/psswd\ngrep zidf /etc/shadow"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd\npasswd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 M50 -w zjdf\nchage -1 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111 zjdf && sudo passwd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep '^zjdfL'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e3c9b1941fe5e830d87b9a5e919a32a3"
+                ],
+                "text": [
+                    "sudo chage -1 zjdf"
+                ]
+            }
+        },
+        "王可欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111 -p $(openssl passwd -1 df123456) zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep '^newuser:' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo passwd testuser"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage  -m 4 -M 50 -W 3 newuser"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/94823ce1bbbac982ac486a335c374fa4"
+                ],
+                "text": [
+                    "sudo chage -1 testtuser"
+                ]
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ecdd1a254e7ff60996fd186647230c1a"
+                ],
+                "text": []
+            }
+        },
+        "王翔玮": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd zjdf-u1111-p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage-m 4-m50-w 3zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "王译浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111 zjdf echo \"zjdf: df123456\" | sudo chpasswd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'zjdf' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo passwd testuser"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 newuser"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/c693edaee2999612e98bbc2af66e4892.jpg"
+                ],
+                "text": [
+                    "chage -1 testuser"
+                ]
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111 zjdf && sudo passwd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep '^zjdfL' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8b4c60a75d5c96fd1f9f3eecabebc633"
+                ],
+                "text": [
+                    "sudo chage -1 zjdf"
+                ]
+            }
+        },
+        "胡棋浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111 -p $(openssl passwd -1 df123456)zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep '^newuaer:' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd your_username"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 newuser"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5770424b731ba0ad1640b44b4b62d303"
+                ],
+                "text": []
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 -p df123456 zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/487cdd2954f1e7ee84ef8894356272f2"
+                ],
+                "text": [
+                    "chage -l zjdf"
+                ]
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111 zjdf\nsudo passwd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep '^zjdf:' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/29d134874550f12d3a71c107b7d8fa89"
+                ],
+                "text": [
+                    "sudo chage -1 zjdf"
+                ]
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo  userdd -u 1111 $(openss| passwd -1 df123456)zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep '^newuser:' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd your_username"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5770424b731ba0ad1640b44b4b62d303"
+                ],
+                "text": []
+            }
+        },
+        "谢雨晨": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 zjdf\npasswd zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep user3 /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwwd\npasswwd user123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m4 -M 50 -W 3 user1\nchage - l user1"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0891f0456cf016b76ec2b0d8bfb3e253"
+                ],
+                "text": []
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd zjdf -u 1111 -p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6f1787c86a8574e447d7bf9a379341c3"
+                ],
+                "text": [
+                    "chage -l zjdf"
+                ]
+            }
+        },
+        "郑鑫豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd zjdf -u 1111 -p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c918c76fe58b2a6ef3ad9177f1bb705a"
+                ],
+                "text": [
+                    "chage -l zjdf"
+                ]
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "useradd -u 1111 -p df123456 zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep zjdf /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/4b9e96159bc6d1f891969141410e66a1.jpg"
+                ],
+                "text": [
+                    "chage -l zjdf"
+                ]
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 1111 zjdf\nuseradd -u 1111 -g 1111 -d/home/zjdf -s/bin/bash -p df123456 -f -1 user3"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cat /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd\npasswd zjdf\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 user3\nchage -1 user3"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/861e52ba5406943cddaa0f7c5f8a0c28"
+                ],
+                "text": []
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "soud useradd -u 1111 zjdf -p df123456"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gerp 'zjdf' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf\n123456df\n123456df"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c918c76fe58b2a6ef3ad9177f1bb705a"
+                ],
+                "text": [
+                    "chage -l zjdf"
+                ]
+            }
+        },
+        "陈瑞易": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 1111 group1\nuseradd -u 1111 -g 1111 -d /home/zidf -s /bin/bash/ -p df 123456 -f zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "tail-1/tec/passwd\ngrep zjdf /etc/shadow"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd\npasswd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage-m 4 M 50 -w zjdf\nchage -1 zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "马景欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd -u 1111$(openss|passwd -1 df123456)zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep '^newuser.'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd your _username"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage -m 4 -M 50 -W 3"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "黄奔拓": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd-u 1111 zjdf\necho*zjdf;df123456\"jsudo chapasswd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep'zjdf'/ect/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage-m 4-m 50 -w 3zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "change-l zjdf"
+                ]
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo useradd-u 1111 zjdf\necho \"zjdf:df123456\"|sudo chapasswd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep'zjdf/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "passwd zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chage-m 4-m 50-w 3zjdf"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chage-| zjdf"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nuseradd -u 1111 -p df123456 zjdf",
+            "题干": {
+                "images": [],
+                "text": [
+                    "添加用户,用户名为：zjdf，uid设置为：1111，并设置密码为：df123456。（输入命令）"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ngrep zjdf /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep方法，通过筛选用户名查看/etc/passwd文件中刚创建的用户的信息。（输入命令）"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\npasswd zjdf",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用root账户使用passwd命令删除修改刚才创建的账户的密码，改为：123456df。（输入命令）"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\nchage -m 4 -M 50 -W 3 zjdf",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用chage命令设置刚创建的用户的最短口令存活期为4天，最长口令存活期为50天，口令到期前3天提醒用户修改口令。（输入命令）"
+                ]
+            }
+        },
+        "题目5": {
+            "正确答案": "正确答案：\nchage -l zjdf",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用chage命令查看刚才创建的用户的各种属性。（输入命令，截图）"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,1156 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch/tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls /nonexistent-dir 没有那个文件目录\necho 不存在\n因为目录不存在和&& echo存在，&&只有一个命令成功所以\"echo存在\"不会运行\n||是前一个命令执行失败后一个命令“echo不会执行"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc || mkdir /root/abc  && touch /root/abc.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir -p/tmp/logs && touch /tmp/logs/logs.txt\n没有正确判断目录是否存在"
+                ]
+            }
+        },
+        "倪博源": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[-d\"/tmp/data\"]&& toucch\"/tmp/data/file.txt\"\n[-d\"/tmp/data\"]||  mkdir  /tmp/data"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls /nonexistennt_dir : 没有哪个文件或目录\nenho 不存在：未找到命令\n||"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d \"/root/abc\"]&& touch \"/root/abc/abc.txt\"|| echo\"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[-d\"/tmp/logs\"]||mkdi\"/tmp/logs\"&& touch\"/tmp/logs/log.txt\"\n&& 不执行"
+                ]
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/data ] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在 因为 is /nonexistent_dir要查看一个不存在的目录，该命令会执行失败并返回非零状态码 &&运算符要求其左边的命令执行成功（返回状态码为0）时 才会执行右边的命令 所以echo存在不会执行 而||运算符会在其左边的命令执行失败时 执行右边的命令，因此echo不存在会被执行"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d /root/abc ] && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "原命令存在问题 is命令用于列出目录内容 若/tmp/logs存在，ls执行成功，返回状态码0；若不存在，ls执行失败，返回非零状态码。||运算符在ls失败是会执行mkdir命令，只是合理的。问题在于&&运算符优先级高于||，原命令实际执行顺序实现判断ls结果，若执行失败则执行mkdir 不管mkdir是否成功都会执行touch命令，而且mkdir命令不管目录是否存在都会尝试创建，所以即使目录存在，mkdir仍会执行"
+                ]
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir /tmp/data\nls/tmp/data && touch /tmp/data/file.txt ||/tmp/data"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "bash:ls/nonexistent_dir：没有那个文件或目录\nbash:不存在：未找到命令..."
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d\"/root/abc\"]&& touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[-d /tmp/logs]||{mkdir /tmp/logs && touch /tmp/logs/log.txt;}\n[-d /tmp/logs ] 是直接检查目录是否存在比ls更高效"
+                ]
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && mkdir file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在因为没有/nonexistent_dir所以执行不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /root/abc/abc.txt || echo \"exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls/tmp/logs && mkdir /tmp/logs || touch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "叶璐杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "chmod+x create-file_if_dir_exists.sh\n./create_file_if_dir_exists.sh'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n因为Is/nonexistent_dir 执行失败，echo\"存在\"这个命令不会执行\n|| 由于ls /nonexistent_dir 执行失败, echo\"不存在这个命令会被执行,所以会输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d \"/root/abc: ] && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "正确命令:( Is /tmp/logs || mkdir -p /tmp/logs ) && touch /tmp logs/log.txt"
+                ]
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "chmod+x create_file_if_dir_exists.sh\n./create_file_if_dir_exists.sh"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n因为ls/nonexistent_dir 执行失败，echo\"存在 不会被执行\n|| 由于ls /nonexistent_dir执行失败，echo\"不存在 最终终端输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d\"/root/abc\"] &&touch /root/abc/abc.txt | | echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "正确命令:(Is /tmp/logs | | mkdir -p /tmp/logs) && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "吴晓静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[ -d \"/tmp/data\" ] && toouch/tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/data/ ] && touch/tmp/data/file.txt"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d \"/root/abc\" ]&& touch /root/abc/.txt || echo\"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[! -d/tmp/logs ] && mkdir -p /tmp/logs && touch/tmp/logs/log.txt || touch /tmp"
+                ]
+            }
+        },
+        "吴语哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/data ] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在，由于目录不存在，is命令执行失败，会返回一个非零的退出状态码。"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d /root/abc ] && touch /root/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "由于ls和mkdir是通过||链接的，ls成功后不会阻止后续的mkdir，而mkdir命令在目录已存在时会报错，应为默认情况下mkdir不允许创建已存在目录。[ ! -d /tmp/lods ] && mkdir /tmp/logs ;touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "终端会输出echo\"不存在\"，因为ls查阅目录文件不存在，执行echo\"不存在\""
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "小明问题在&&和||使用错误\nls /tmp/logs && touch /tmp/logs/log.txt || mkdir  /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[-d \"/tmb/data\"] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "bash:ls /nonexistent_dir :没有那个文件或目录\nbash: echo 不存在: 未找到命令\n因为目录不存在和&& echo存在因为&&只有前一个命令才会成功，这里失败了\n||是前一个 命令失败执行后续命令这个ls失败了，所以输出不存在。"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d \"/root/abc\" ] && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[-d /tmp/logs ] || { mkdir /tmp/logs && touch /tmp/logs/log.txt;}\n[-d /tmp/logs ] 是直接检查目录是否存在比ls更高效"
+                ]
+            }
+        },
+        "应欣凌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "#!/bin/sh\n[-d/tmp/data]&& touch/tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls:cannot access'/nonexistent_dir':No such file or director\n不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d/toor/adc]&touch/root/adc/adc.txt||echo\"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls命令的误用\n逻辑运算符优先级问题\n[-d/tmp/logs]||mkdir-p/tmp/logs&&touch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n判断错误不执行&&\n执行||\n所以不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "经过||的判断错误，程序运行了mkdir，然后&&程序判断正确运行了touch\nls /tmp/log && touch /tmp/logs/log.txt || makdir /tmp/logs"
+                ]
+            }
+        },
+        "张浩然": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[-d /tmp/data]&& touch /tmp/data/file.tet"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls:nonexistent_dir:没有那个文件或目录\n不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d/root/abc]&&touch /root/abc/abc.txt ||echo\"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "(ls/tmp/logs || mkdir /tmp/logs)&& touch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "李奕哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "create-file-if-dir-exists"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls: cannot access '/nonexistent_dif': No such file or directory\n不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "create-file-if-dif-exists"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/logs ] | | (mkdir /tmp/logs && touch /tmp/logs/log.txt) && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "李斌浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "Is  /tmp/data && touch /tmp/data/file.txt\nmakdir  /tmp/data\nls  /tmp/data && touch   /tmp/data/file.txt\nll   /tmp/data"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "输出“不存在”\n因为ls /nonexistent_dir运行失败，所以&&右边的echo“存在”不会被运行\n因为&&左边的命令失败，接着会运行||，因为||左边的命令运行失败，所以||右边的echo“不存在”会运行，结结果在终端输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d  /root/abc ] && touch  /root/abc/abc.txt  ||  echo  \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "原因：&&和||是按顺序从右到左运行的，所以当ls  /tmp/logs 运行成功时，整个ls  /tmp/logs  ||  makdir  /tmp/logs表达式返回成功时，就会继续与运行makdir  /tmp/logs，这就会造即使目录已存在。makdir仍会运行，且makdir会报错\n命令：（ls  /tmp/logs  ||  makdir  /tmp/logs） &&  touch  /tmp/log.txt"
+                ]
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "chmod+x create-file_if_dir_exists.sh\ncreate_file_if dir_exists.sh'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n因为ls/onoexistent_dir 执行失败, echo \"存在\"这个命令不会执行\n||由于ls /nonexistent_dir执行失败, echo\"不存在这个命令会被执行,所以会输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d\"/root/abc: ]&& touch/root/abc/abc/.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "正确命令:(ls/tmp/logs || mkdir -p /tmp/logs )&& touch /tmp logs/log.txt"
+                ]
+            }
+        },
+        "杨子楚": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && rouch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在 当目录/nonexistent_dir不存在时，LS会返回非零退出状态码，并输出错误信息"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "&&优先级高于||所以先执行ls /tmp/logs在执行mkdir /tmp/logs\nls /tmp/logs || mkdir -p /tmp/logs && touch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "Is /tmp/data &&"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n未找到命令"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "Is /root/abc && touch /toor/abc/abc.tet || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "这是因为逻辑运算符是按顺序处理的，并没有将mkdir /tmp/logs作为ls /tmp/logs执行失败后的可选操作\nls /tmp/log && touch /tmp/logs/log.txt || mkdir /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "杨海博": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "#!/bin/sh\n[-d/tmp/data]&& touch/tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls:cannot access'/nonexistent_dir':No such file or director\n不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d/toor/abc]&touch/root/abc/abc.txt||echo\"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls命令的误用\n逻辑运算符优先级问题\n[-d/tmp/logs]||mkdir-p/tmp/logs&&touch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "林文静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在,因为没有这个文件，ls失败所以不存在。"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /root/abc/abc.txt|| echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls /tmp/logs && touch /tmp/logs/log.txt || mkdir /tmp/logs，&&优先级高于||，导致这个命令与预期不符"
+                ]
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "bash: ls /nonexistent-dir :没有那个文件或目录\nbash: echo 不存在 : 未找到命令\n因为目录不存在而&&只有前一个命令才会成功这里ls失败了所以“echo存在”不会执行\n||是前一个命令失败执行后一个命令所以“echo不存在”会执行"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /root/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls /tmp/logs || mkdir /tmp/los || touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "汤宾豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[-d /tmp/data ] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "is /ninexustent_dir 失败，因为目录不存在\n由于IS失败。&&运算符右侧的 echo\"“存在”不会被执行\n由于IS失败。||运算符右侧的echo“不存在”会被执行\n因此，终端输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "if [ -d /root/abc ]; then\nsudo touch /root/abc/abc.txt\nelse\necho\"not exist\"\nfi"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/logs ]:检查/tmp/logs 目录是否存在\n||:如果目录不存在(即 [-d /tmp/logs ]返回为假），则执行 mkdir/tmp/logs\n&&:如果mkdir /tmp/logs 成功(或在此逻辑中，由于 mkdir仅在目录不存在时执行，且touch总爱逻辑路劲中确保执行)，则touch\n/tmp/logs/log.txt会被执行\nif[! -d /tmp/logs ];then\n,mkdir /tmp/logs\nfi\ntouch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "王可欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tmp/data /file.txt\nmkdir /tmp/data\nls /tmp/data && touch /tmp/data/file.txt\nll /tmp/data"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls: cannot access'/nonexistent_dir':No such file or directory 不存在\n&&和||的带安陆逻辑决定了最终输出：前序命令失败->忽略&&后的内容，执行||后的内容。\n因此，终端会先报错（ls的错误信息），再输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d \"/tmp/abc\"]&& touch /tmp/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "&&和||的优先级倒置命令分组不符合预期。\n[-d /tmp/logs] || mkdir -p /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[-d /tmp/data ] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\nis /ninexustent_dir失败, 因为目录不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "if [-d /root/abc ];rhen\nsudo touch /root/abd/abc.txt\nelse\nechp\"not exist\"\nfi"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/logs ]:检查/tmp/logs 目录是否存在\n||:如果目录不存在(即 [-d /tmp/logs ]返回为假) ，则执行 mkdir/tmp/logs\n&&:如果mkdir /tmp/logs 成功(或此逻辑中，由于mkdir仅又目录不存在时执行，且toucha总爱逻辑路劲中确保执行)，则touch\n/tmp/logs/log.txt会被执行\nif[! -d /tmp/logs ];then\n,mkdir /tmp/logs\nfi\ntouch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "王翔玮": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[-d /tmp/data]&& touch /tmp /data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在,由于/nonexistent_dir这个目录不存在，ls命令执行失败"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d /root/abc]&& touch /root/abd/abc.txt||echo\"not exst\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "当ls /tmp/logs执行成功时，因为||左侧命令成功，所以不会执行madir /tmp/logs但&&运算会继续"
+                ]
+            }
+        },
+        "王译浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "Is /tmp/data && touch /tmp/data /file.txt\nmkdir /tmp/data\nIs /tmp/data\nIs /tmp/data && touch /tmp/data/file.txt\n|| /tmp/data"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "Is: cannot access'/nonexistent_dir':No such file or directory 不存在\n&&和||的带安陆逻辑决定了最终输出：前序命令失败->忽略&&后的内容, 执行||后的内容。\n因此, 终端会先报错 (ls的错误信息) , 在输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d \"/tmp/abc\"]&& touch /tmp/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "&&和||的优先级倒置命令分组不符合预期\n[-d /tmp/logs] || mkdir -p /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[ -d \"/tmp/data\" ] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "bash: ls /nonexistent-dir :没有那个文件或目录\nbash: echo 不存在 : 未找到命令\n因为目录不存在 和 && echo存在 因为&&只有前一个命令才会成功这里ls失败了所以echo 存在不会执行\n|| 是前一个命令失败执行后续命令这个ls失败了所以输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d \"/root/abc\" ] && touch  /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/logs ] || { mkdir /tmp/logs && touch /tmp/logs/log.txt;}\n[-d /tmp/logs] 是直接检查目录是否存在 比ls更高效"
+                ]
+            }
+        },
+        "胡棋浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls/tmp/data && touch/tmp/data\nmkdir /tmp/data\nls/tmp/data\nls/tmp/data && touch /tmp/data/file.txt\n|| /tmp/data"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls: cannot access '/nonexistent_dir':    No such file or directory"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc ||echo \"not exsit\"&& touch/root/abc.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && mkdir file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在 因为没有/nonexistent_dir所以&&后面的存在echo不执行 执行||后面的echo“不存在”"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /root/abc/abc.txt || echo \"exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "因为/tmp/logs不存在然后会执行mkdir /tmp/logs执行成功&&会执行后面的touch 修改后的正确命令ls /tmp/logs && mkdir /tmp/logs || touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tmp/data/file.txt || :"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n因为/nonexistent_dir不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch/root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "原因：ls和||的组合使用导致逻辑不清晰，容易触发不必要操作\n修正后:[ -d /tmp/logs ] || mkdir /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data &&mkdir file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在，因为没有/nonexistent_dir，所以执行不存在 执行||后面的echo \"不存在\""
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /soot/abc && touch /root/abc/abc.txt || echo \"exisit\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "因为/tmp/logs不存在然后会执行 && mkdir /tmp/logs || touch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "谢雨晨": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[-d \"/tmp/data\"]&& touch/tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "[-d/tmp/data]&& touch/tmp/data/file.txt"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d\"/root/abc\"]&& touch /root/abc/abc.txt || echo\"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[! -d /tmp/logs]&& mkdir -p /tmp/logs && touch /tmp/logs/log.txt || touch/tmp"
+                ]
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "会输出不存在\n因为ls寻找了一个没有的目录，所以echo\"存在\"则会跳过并执行echo\"不存在\""
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc || echo \"not exist\" && touch /root/abc.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir -p /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "郑鑫豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "create-file-if-dif-exists"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ls: cabnnot access '/nonexistent_dif':No such file or directory\n不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "create-file-if-dif-exists"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[  -d/tmp/logs ] | |（mkdir /tmp/logs && touch /tmp/logs/log.txt) && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/data && touch /tem/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n未找到命令"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "ls /root/abc && touch /toor/abc/abc.tet || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "逻辑运算符的优先级错误和命令组合错误"
+                ]
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "ls /tmp/abc && touch /tmp/abc/hehe\nmkdir /tmp/abc\nls /tmp/abc && touch /tmp/abc/hehe\nls /tmp/abc"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "ks /nonexistent__dir && echo\"存在\""
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "rm -r /tmp/abc\nls /tmp/abc && touch /tmp/abc/hehe\nll /tmp/abc"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ls /tmp/logs || mkdir /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/data ] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "答案是终端会输出“不存在”。\n此命食运用了88和这两个逻辑运算符。&表示逻辑与，只有在其左边的命令执行成功（这回状态码为0）\n时，右边的命令才会执行；打表示逻辑或，只有在其在边的命令执行失败：《返回状态码非0)时，右边的命令\n才会执行。"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d /root/abc ] && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/logs ] || mkdir /tmp/logs && touch /tmp/log.txt\n原命令1s /tmp/logs || mkdir /tmp/logs && touch /tmp/logs/log.txt 存在逻辑问题。在 shell 中,\n3&和||操作符遵循短路求值规则，但原命令没有正确处理优先级。"
+                ]
+            }
+        },
+        "陈海宇": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "[ -d /tmp/data ] && touch /tmp/data/file.txt"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在，由于/nonexistent_dir 这个目录不存在，ls命令执行失败，会返回一个非零的推出状态码"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d /root/abc ] && touch /root/abc/abc.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "当 ls /tmp/logs 执行成功时，因为||左侧命令成功，所以不会执行madir /tmp/logs,但&&运算会继续将madir /tmp/logs的结果与touch /tmp/logs/log.txt进行逻辑编辑，由于前面mkdir未执行可视为失败，就会导致整体逻辑混乱。\n[ -d /tmp/logs ] || mkdir /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "陈瑞易": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "is /tmp/data && touch /tpm/data/hehe\nmkdir /tmp/data/ && touch /tmp/data/file.txt\n|| /tmp/data"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "因为ls /nonexistent_dir运行失败,所以&&右边的echo存在不会被运行"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d /root/abc]&& touch /root/abc/abc.txt ||echo\"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            }
+        },
+        "马景欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "create -file-if -dir-exists"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "Is:cannot access'/nonexstent_dif:No such file or directory"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "create-file-if-dif -exists"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "[-d/tmp/logs]||(mkdir/tmp/logs && touch/tmp/logs/log.txt)&& touch/tmp/logs/log.txt"
+                ]
+            }
+        },
+        "麻仁俊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "chmod +x create_file_if_dir_exists.sh\n./create_file_if_dir_exists.sh"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n因为ls /nonexistent_dir  执行失败,echo\"存在\"这个命令不会执行\n|| 由于ls /nonexistent_dir 执行失败，echo\"不存在\"这个命令会被执行,所以会输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[ -d \"/root/abc\" ] && touch /root/abc/abc.text || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "正确命令(ls /tmp/logs || mkdir /tmp/logs && touch /tmp/logs/log.txt"
+                ]
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "chmod+x create-file_if_dir_eists.sh\ncreate_file_if dir_exists.sh'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "不存在\n因为ls/onoexistent_dir 执行失败, echo \"存在\"这个命令不会执行\n||由于ls/nonexistent_dir执行失败, echo\"不存在这个命令会被执行,所以会输出不存在"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "[-d\"/root/abc:]&& touch/root/sbc/sbc/.txt || echo \"not exist\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "正确命令:(ls/tmp/logs || mkdir -p /tmo/logs )&& touch /tmp logs/log.txt"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nls /tmp/data && touch /tmp/data/file.txt",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用&&和||命令实现功能：如果目录 /tmp/data 存在，则在其中创建文件 file.txt ；若目录不存在，则不执行任何操作。\n提交完整代码"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "在你的终端中执行以下命令后，终端会输出什么？为什么？"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\nls /root/abc && touch /root/abc/abc.txt || echo \"not exist'",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用&&和||命令实现功能：查看/root目录下有没有abc这个文件夹，如果有在这个文件夹下创建（touch命令）一个abc.txt文件，如果没有则输出（echo命令）“not exist”"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\n解释略\n修正后的命令：\nmkdir -p /tmp/logs && touch /tmp/logs/log.txt",
+            "题干": {
+                "images": [],
+                "text": [
+                    "小明尝试编写以下命令，目的是：\n- 若目录 /tmp/logs 不存在，则创建目录并生成文件 log.txt ；\n- 若目录存在，则仅生成文件。\n但实际运行时，即使目录已存在，mkdir 仍会被执行。请解释错误原因并修正命令。\n提交“原因解释”和“修正后的命令”。"
+                ]
+            }
+        }
+    }
+}

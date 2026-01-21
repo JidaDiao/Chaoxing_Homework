@@ -1,0 +1,645 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0c6efc8087f5e58e7e70b008334e1536"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2e57a3ac4f393eed9d2bac0d72b850b4"
+                ],
+                "text": []
+            }
+        },
+        "倪博源": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/308d67de9ec4c16f5a006de23264e840"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d71a7deaae013d941b44c1112d6295af"
+                ],
+                "text": []
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bd6d7a3c3ff5d4bfc996c0be7426ec82"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/24f839596f2f44fa232b6d3b0a1a3b2f"
+                ],
+                "text": []
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b0f8a683055340cee4aac84339b48620"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/18f7aef87824e77b80a8d86d1383b2f2"
+                ],
+                "text": []
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b418a0b24bdc994bbcbf56f65aa04081"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0dc158384478dcfbe57f196c1fbe35a0"
+                ],
+                "text": []
+            }
+        },
+        "叶璐杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e343087d23b8622e9a89c353e81797c2"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f13773222985cbab9306b4aced3cbef7"
+                ],
+                "text": []
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/76c327030ee09950f531a9b129814c2a"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f2fdcf92be935187ed03d0c7ef9f3a20"
+                ],
+                "text": []
+            }
+        },
+        "吴晓静": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/03215f32c2e60bbb9718145200482b4c"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4a04bd8858815a578fc6a64345ca3580"
+                ],
+                "text": []
+            }
+        },
+        "吴语哲": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/031fd6b507a199f706c7a240dc4504ed"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/32eb0600b6fbaf8aa21dc543e3e63ee1"
+                ],
+                "text": []
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8d1c18290c9c012be3ff5fc661eb8760"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b4ed168275ba2b19b637c0ae364d531c"
+                ],
+                "text": []
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/56abdae8119f659cba7a87765aa8e041"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/87d4e713301ec4c14491c844b5564c87"
+                ],
+                "text": []
+            }
+        },
+        "应欣凌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7493780a8f1788253872319a916281ef"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f0b275625271dbbb80857f5c02b278e3"
+                ],
+                "text": []
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/78fce782c7ee414384f6f9bbfe355e73"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1c0d46711ea0f5f313698b29d2f5e642"
+                ],
+                "text": []
+            }
+        },
+        "张浩然": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/01b3a2bcaae1bd5c30ad08b30da14d07"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/22b3307309227087fb7dba09ffc686a7"
+                ],
+                "text": []
+            }
+        },
+        "李奕哲": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/88b5b5b0f187df3704f2d3d97fefcffd"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a7e38099609f5b08b230a27dfa20b7f0"
+                ],
+                "text": []
+            }
+        },
+        "李斌浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/db006d7a63a694fb4b47c17dbc1270e9"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f6fcf99b7da8f932af20bbf3cf5cc80b"
+                ],
+                "text": []
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8c0dfc03bf2ef10d105e060e6788a2e9"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8c0dfc03bf2ef10d105e060e6788a2e9",
+                    "https://p.ananas.chaoxing.com/star3/origin/8cd40e9b402bc4e4abfbfa95a1a8e9ad"
+                ],
+                "text": []
+            }
+        },
+        "杨子楚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a225bbf4c774e44798071e6bcad909a3"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a3a0182a0a33ac37511986d56952c5ca"
+                ],
+                "text": []
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e327ddc5d70926c3854fa5946f7e2fc6"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0bbf11c59cad6934eb286d44df6f1d86"
+                ],
+                "text": []
+            }
+        },
+        "杨海博": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/324d0f22227c6e61a5fc4791b8ef543d"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/52dd87a1a1d99ba7c59e751d797b7891"
+                ],
+                "text": []
+            }
+        },
+        "林文静": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2de33b06abe229d680827cc988864ab2"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e168045f9a08e1ee61ce2acf20fdc7ed"
+                ],
+                "text": []
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/de8d34c2057857d8a63de6fb3438a8f8"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4c9ca5d570ccd4ae235331b422217d1d"
+                ],
+                "text": []
+            }
+        },
+        "汤宾豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/104b9dc63149c9e1339bfdd9590f73a4"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ab339d5fcf29e91aeac8535535025328"
+                ],
+                "text": []
+            }
+        },
+        "王可欣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7579b4fe1764341b9de3ec56f994c1f5"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/45298c0856c074086d88f1eb725e54b2"
+                ],
+                "text": []
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2cdc49dec8cb68856530828db51f8d29"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/702aed6bbeaa1e8c1956c879d1f74022",
+                    "https://p.ananas.chaoxing.com/star3/origin/8cd40e9b402bc4e4abfbfa95a1a8e9ad"
+                ],
+                "text": []
+            }
+        },
+        "王翔玮": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3facf51b718a7b4433e7324d47b87a5a"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/be284847b6507c4e8ee45319a39aafd8"
+                ],
+                "text": []
+            }
+        },
+        "王译浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/69d28de1ea121f6d508c583c120dd06a"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4b07efe2fe93f5b5308abc6e23b9969"
+                ],
+                "text": []
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3cfe00e153adcf11e0e4fcadbfb8d867"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cb67a1c15197dc73fd4373bd9cb4ff9c"
+                ],
+                "text": []
+            }
+        },
+        "胡棋浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/894d6cf2975eb0e5666c1896bbacf708"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/245349932fd471987e61132bb02f1331"
+                ],
+                "text": []
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/33f41abaa4ab8872d89d8eee7d1b0c7b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/46157f2ca8e26ff0b4971b136b83594e"
+                ],
+                "text": []
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/13cf1983d06472850d3c945a71ac9397"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d7b8af065c06348160d0154c2bcf6759"
+                ],
+                "text": []
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/af2a7c52e5ce2572d32881fa1c2e0517"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6805db769d899a522a76b34595396777"
+                ],
+                "text": []
+            }
+        },
+        "谢雨晨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ad2acf68382345cb19832e691bb79469"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/627cb9ffa701da8471ed8b8ece77d18c"
+                ],
+                "text": []
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2cfbbf197838064af437974fa6e9199a"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/40244c334b6992533c17ec2b5fb4d64e"
+                ],
+                "text": []
+            }
+        },
+        "郑鑫豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/57126d9c91d8465f224f6719a8119ab0"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6d64191d3b4b74344d4dcd02dc5a9a99"
+                ],
+                "text": []
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/09f1f345e3a98cf59a822f3086394f40"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/94c478bed63a7cf80808618339b5484f"
+                ],
+                "text": []
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cd6760497a296bd2e7b6044c090a1d81"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/92e015e8ad41876e5e987aa56a3e111c"
+                ],
+                "text": []
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/27f6f2d2d38680e4e634a2af5057c975"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/76e4422f3e82f574192405b78db4f76b"
+                ],
+                "text": []
+            }
+        },
+        "陈海宇": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/de29147d55d1529e9859e1e1534877b7"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ef1ebdc9927b48b5893adcbf96b256dc"
+                ],
+                "text": []
+            }
+        },
+        "陈瑞易": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c66acb49cb27d1c7293c1eea6e3bb055"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b088f25e50e2dbc10e0301dc3c0b923d"
+                ],
+                "text": []
+            }
+        },
+        "马景欣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/90bbf551a771827f00521edb42029e7c"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/01e458c7cc3fa4b481059468f78d5a17"
+                ],
+                "text": []
+            }
+        },
+        "麻仁俊": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d8be7b0e2b3521057f5e6fe6ebacf35b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5b1a7636fb0062690163d1f40dc552d2",
+                    "https://p.ananas.chaoxing.com/star3/origin/e49657b87f9f3e859b949043603d3f45"
+                ],
+                "text": []
+            }
+        },
+        "黄奔拓": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1373df393a371a72c4b9fd1baffc8c5d"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/09faa6c9349c2f1c085ccf39a343fc82"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4cb96ed78b8c8e5a8baabd9eb47fdc0a"
+                ],
+                "text": []
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f829e3d34cb7b45dfc97b36657e27ed7.png"
+                ],
+                "text": [
+                    "参考书本P7-9的步骤用VMware创建虚拟机，要求：\n- 虚拟机名称填自己名字的缩写\n- 操作系统选择Red Hat Enterprise Linux 8 64位\n- 硬盘大小选100GB\n截图并提交“已准备好创建虚拟机”界面（此题只截这一张图，其他截图在后面的题目提交）。\n截图参考："
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/df0ac359f673c0a5a3cd74b7b3787386.png"
+                ],
+                "text": [
+                    "参考书本P9-10的步骤修改创建的虚拟机的参数，要求：\n- 内存设置为4GB\n- 处理器设置成4个核心（可以是两个2核心或一个4核心）\n- 修改新CD/DVD（SATA）选项从自动检测到使用ISO映像文件\n- 网络适配器选择仅主机\n截图并提交“硬件”界面（此题只截这一张图）。\n截图参考："
+                ]
+            }
+        }
+    }
+}

@@ -57,7 +57,8 @@ class ChaoxingHomeworkCrawler(HomeworkCrawler):
         # 实例化登录策略
         use_qr_code = config.use_qr_code if hasattr(
             config, 'use_qr_code') else False
-        login_strategy = LoginStrategyFactory.create_strategy(use_qr_code)
+        login_strategy = LoginStrategyFactory.create_strategy(
+            use_qr_code, config)
 
         # 创建并返回爬虫实例
         return ChaoxingHomeworkCrawler(driver_factory, login_strategy, config)
@@ -384,7 +385,8 @@ class ChaoxingHomeworkCrawler(HomeworkCrawler):
         try:
             # 下载作业提交模板（使用导出分数模板的方式）
             # self._download_score_template(homework_grading_url, save_path)
-            download_template(self.driver, self.download_dir, save_path, homework_grading_url)
+            download_template(self.driver, self.download_dir,
+                              save_path, homework_grading_url)
 
             # 处理不同格式的结果数据
             json_result = final_results
@@ -440,38 +442,15 @@ class ChaoxingHomeworkCrawler(HomeworkCrawler):
         Returns:
             List[Dict[str, Any]]: 作业信息列表
         """
-        class_tasks = []
 
         logging.info(f"开始处理班级作业列表: {list_url}")
+        tasks = []
 
         try:
-            # 获取第一页数据
-            response = requests.get(
-                list_url, headers=self.headers, cookies=self.session_cookies)
-
-            if response.status_code != 200:
-                logging.error(f"请求失败，状态码：{response.status_code}")
-                return class_tasks
-
-            # 使用BeautifulSoup解析HTML
-            soup = BeautifulSoup(response.content, "html.parser")
-
-            # 检查是否有分页元素
-            has_pagination = self._check_pagination(soup)
-
-            # 处理第一页数据
-            tasks = soup.find_all(
-                "li", id=lambda x: x and x.startswith("work"))
-            if not tasks:
-                logging.info("未找到任何作业任务")
-                return class_tasks
+            tasks = self._process_all_pages(list_url, tasks)
 
             # 处理第一页的作业数据
-            self._process_page_tasks(tasks, class_tasks)
-
-            # 如果需要翻页，则继续处理后续页面
-            if has_pagination:
-                self._process_remaining_pages(list_url, class_tasks)
+            class_tasks = self._process_page_tasks(tasks)
 
             logging.info(f"共获取到 {len(class_tasks)} 个作业任务")
             return class_tasks
@@ -480,28 +459,8 @@ class ChaoxingHomeworkCrawler(HomeworkCrawler):
             logging.error(f"处理班级作业列表失败: {str(e)}")
             return class_tasks
 
-    def _check_pagination(self, soup: BeautifulSoup) -> bool:
-        """检查是否有分页
 
-        检查页面是否包含分页元素。
-
-        Args:
-            soup: BeautifulSoup解析对象
-
-        Returns:
-            bool: 是否有分页
-        """
-        pagination = soup.find("div", class_="page")
-        has_pagination = pagination and pagination.find_all("a")
-
-        if has_pagination:
-            logging.info("检测到作业列表有多页，将进行翻页获取")
-        else:
-            logging.info("作业列表仅有一页")
-
-        return bool(has_pagination)
-
-    def _process_remaining_pages(self, list_url: str, class_tasks: List[Dict[str, Any]]) -> None:
+    def _process_all_pages(self, list_url: str, tasks: List[Dict[str, Any]]) -> None:
         """处理剩余页面
 
         获取并处理除第一页外的其他页面的作业数据。
@@ -510,9 +469,10 @@ class ChaoxingHomeworkCrawler(HomeworkCrawler):
             list_url: 作业列表URL
             class_tasks: 存储作业信息的列表
         """
-        page_num = 2  # 从第二页开始
+        page_num = 1 
 
         while True:
+            # 使用convert_url函数将原始URL转换为新格式并指定页码
             url = convert_url(list_url, page_num)
             logging.info(f"获取第 {page_num} 页作业数据: {url}")
 
@@ -527,29 +487,30 @@ class ChaoxingHomeworkCrawler(HomeworkCrawler):
             soup = BeautifulSoup(response.content, "html.parser")
 
             # 查找作业任务列表
-            tasks = soup.find_all(
+            tasks_ = soup.find_all(
                 "li", id=lambda x: x and x.startswith("work"))
 
             # 如果没有找到任务，说明已经到达最后一页
-            if not tasks:
+            if not tasks_:
                 logging.info(f"第{page_num}页没有作业任务，翻页结束")
                 break
 
             # 处理当前页的作业任务
-            self._process_page_tasks(tasks, class_tasks)
+            tasks += tasks_
 
             # 继续下一页
             page_num += 1
+        return tasks
 
-    def _process_page_tasks(self, tasks, class_tasks) -> None:
+    def _process_page_tasks(self, tasks) -> None:
         """处理单页的作业任务列表
 
         解析并提取单页中的作业信息。
 
         Args:
             tasks: 当前页面的作业任务列表
-            class_tasks: 存储作业信息的列表
         """
+        class_tasks = []
         # 遍历每个任务项，提取所需信息
         for task in tasks:
             try:
@@ -640,6 +601,7 @@ class ChaoxingHomeworkCrawler(HomeworkCrawler):
             except Exception as e:
                 logging.error(f"处理作业项失败: {str(e)}")
                 continue
+        return class_tasks
 
     def _download_score_template(self, homework_grading_url: str, save_path: str) -> None:
         """下载作业分数导入模板

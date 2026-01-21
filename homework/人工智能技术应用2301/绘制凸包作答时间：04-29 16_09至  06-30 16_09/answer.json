@@ -1,0 +1,899 @@
+{
+    "学生回答": {
+        "倪旭玮": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/55a9bd99189229f483f50c6423efef28.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/a15903e381d121dc14d9831c8deceaf3.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"nxw1\",img)\ncv2.imshow(\"nxw2\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fa0238512a065a6388249dad616635d3.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e0b8ad2dff519cf8d15165292f49e147.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimport numpy as np\nimg=cv2.imread(\"img/test.png\")\nheight, width = img.shape[:2]\nhalf_height = height //2\nmask = np.zeros(img.shape[:2], dtype=np.uint8)\nmask[half_height :height, :] =255\nhistb = cv2.calcHist([img],[0],mask,[256],[0,255])\nhistg = cv2.calcHist([img],[1],mask,[256],[0,255])\nhistr = cv2.calcHist([img],[2],mask,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "倪理浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f088e61762afcd9d9859f99bbae940ef.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nimg = cv2.imread('img/img/test.png', cv2.IMREAD_GRAYSCALE)\nif img is None:\n    raise FileNotFoundError(\"错误\")\n\nhist_original = cv2.calcHist([img], [0], None, [256], [0, 256])\n\nimg_eq = cv2.equalizeHist(img)\nhist_eq = cv2.calcHist([img_eq], [0], None, [256], [0, 256])\n\n\nplt.figure(figsize=(15, 10))\n\nplt.subplot(2, 2, 1)\nplt.imshow(img, cmap='gray')\nplt.title('Original Image')\nplt.axis('off')\n\nplt.subplot(2, 2, 2)\nplt.plot(hist_original, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\n\nplt.subplot(2, 2, 3)\nplt.imshow(img_eq, cmap='gray')\nplt.title('Equalized Image')\nplt.axis('off')\n\nplt.subplot(2, 2, 4)\nplt.plot(hist_eq, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\n\nplt.suptitle('Image Processing - Created by [你的名字]', y=0.98)\n\nplt.savefig('result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aec4536fd89c75f0ac7a7efa7e429256.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread('img/img/test.png')\nif img is None:\n    raise FileNotFoundError(\"无法加载图片，请检查路径是否正确\")\n\nb, g, r = cv2.split(img)\n\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\n\nb_eq = clahe.apply(b)\ng_eq = clahe.apply(g)\nr_eq = clahe.apply(r)\n\nimg_eq = cv2.merge((b_eq, g_eq, r_eq))\n\nhist_b = cv2.calcHist([b_eq], [0], None, [256], [0, 256])\nhist_g = cv2.calcHist([g_eq], [0], None, [256], [0, 256])\nhist_r = cv2.calcHist([r_eq], [0], None, [256], [0, 256])\n\nplt.figure(figsize=(18, 12))\n\nplt.subplot(2, 2, 1)\nplt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))\nplt.title('Original Image')\nplt.axis('off')\n\nplt.subplot(2, 2, 2)\nplt.imshow(cv2.cvtColor(img_eq, cv2.COLOR_BGR2RGB))\nplt.title('CLAHE Equalized Image')\nplt.axis('off')\n\nplt.subplot(2, 2, 3)\nplt.plot(hist_b, color='blue', label='Blue')\nplt.plot(hist_g, color='green', label='Green')\nplt.plot(hist_r, color='red', label='Red')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.legend()\n\nplt.suptitle('CLAHE Image Processing - Created by [你的名字]', y=0.98)\n\nplt.savefig('clahe_result.png')\nplt.show()"
+                ]
+            }
+        },
+        "冯帅": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f520864a26a6a533fca338b64a873209.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/653fa1cb78b1228a15c2d19352d4e419.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e113c1a8192d3bb44e79b4d79f18b01f.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimg=cv2.imread(\"img/img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure('原始图')\nplt.plot(hist1,color='b')\nplt.show()\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure('均衡化原始图')\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9403eca4b4b6731b79d94a4e261c0d12.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/1486fa03a584a9577692c1769f543d4c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"LSM-img\",img)\ncv2.imshow(\"LSM-img_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "华江辰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a8158a8c0cff9cef211c0e9640cbc5cf.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/1c783e1ba64832dfe6c41bdbf05b7e4d.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"hjc_img\",img)\ncv2.imshow(\"HJC_equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5ed586954790d1a17e45fbe4f67afdbc.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/bd5b7a82ba0462811764fad302e34332.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"HJC\",img)\ncv2.imshow(\"HJC_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶挺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a5dc5282346854ef0138313135770531"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"yt\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\ngray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\noriginal_hist = cv2.calcHist([gray_image], [0], None, [256], [0, 256])\nequalized_image = cv2.equalizeHist(gray_image)\nequalized_hist = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(gray_image, 'Original Image', 'gray')\nplt.subplot(2, 2, 2)\nplt.plot(original_hist, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(original_hist)/2, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.subplot(2, 2, 3)\nshow_image_with_name(equalized_image, 'Equalized Image', 'gray')\nplt.subplot(2, 2, 4)\nplt.plot(equalized_hist, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(equalized_hist)/2, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.tight_layout()\nplt.savefig('histogram_equalization_result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b17de2585b0ef76ed86be5fa08653cac"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"yt\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\nb, g, r = cv2.split(image)\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\nb_clahe = clahe.apply(b)\ng_clahe = clahe.apply(g)\nr_clahe = clahe.apply(r)\nequalized_image = cv2.merge((b_clahe, g_clahe, r_clahe))\ncolors = ('b', 'g', 'r')\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(cv2.cvtColor(image, cv2.COLOR_BGR2RGB), 'Original Image')\nplt.subplot(2, 2, 2)\nshow_image_with_name(cv2.cvtColor(equalized_image, cv2.COLOR_BGR2RGB), 'Equalized Image')\nplt.subplot(2, 2, 3)\nfor i, color in enumerate(colors):\nhist = cv2.calcHist([image], [i], None, [256], [0, 256])\nplt.plot(hist, color=color)\nplt.title('Original Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')"
+                ]
+            }
+        },
+        "叶桉鸣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ff3a9d70cf722c9ed4e02fa963eeb4e3.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/66b6492c8b998a8937191d5726495ace.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread('sucai8/test.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nhist1 = cv2.calcHist([gray],[0],None,[256],[0,256])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(gray)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,256])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"yam1\",gray)\ncv2.imshow(\"yam2\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/87142a01a6e62f7dc23f5464ee9a4ea3.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/dddee13d5378baae04acbab16a4a4acd.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"yam\",img)\ncv2.imshow(\"yam_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吕鸿凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9ca4e4f9e2092147e027a721de409579.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/0a22cfd83cd958993d3ed7ce2accab48.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"LHK_原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"LHK_均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"LHK_img\",img)\ncv2.imshow(\"LHK_equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d1320c5881fd3488d8fa26527ebc5747.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/22d862f18d86557f273e1e9a12a51587.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"LHK\",img)\ncv2.imshow(\"LHK_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吴世杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3d13d4edb1117af1a527818ee728d310.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/5df0dc0fb807dfaafa403ad3d167317e.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/11d68695c683437fda3bd875f994129f.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/b84fa3241ac36570da940f381a67da08.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/60fea8f5a0c1cfa065a496a4149c0820.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/dc9d8665ec9207bef1f5b462b6756288.png"
+                ],
+                "text": []
+            }
+        },
+        "吴争航": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/885ee6d4ae405aca347ccaf43a7eff21",
+                    "https://p.ananas.chaoxing.com/star3/origin/f2819acf47c69e07d06c14e5f0410d50"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"PYH_img\",img)\ncv2.imshow(\"PYH_epu\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0a72983ff78fb0d80b06818976b9bfe4",
+                    "https://p.ananas.chaoxing.com/star3/origin/65da49a612153fd4e478fd076da92a45"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"./sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"PYH\",img)\ncv2.imshow(\"PYH_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "周愉越": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dc5cbc9ca6f5fa2d03579321b9f4f8df.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"XYH\"\ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\ngray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\noriginal_hist = cv2.calcHist([gray_image], [0], None, [256], [0, 256])\nequalized_image = cv2.equalizeHist(gray_image)\nequalized_hist = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(gray_image, 'Original Image', 'gray')\nplt.subplot(2, 2, 2)\nplt.plot(original_hist, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(original_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.subplot(2, 2, 3)\nshow_image_with_name(equalized_image, 'Equalized Image', 'gray')\nplt.subplot(2, 2, 4)\nplt.plot(equalized_hist, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(equalized_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.tight_layout()\nplt.savefig('histogram_equalization_result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/557a9f588bdbef3bd82dd5b1c8a231f4.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"  \ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\n\nimage_path = 'img/test.png'  \nimage = cv2.imread(image_path)\n\nb, g, r = cv2.split(image)\n\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\n\nb_clahe = clahe.apply(b)\ng_clahe = clahe.apply(g)\nr_clahe = clahe.apply(r)\n\nequalized_image = cv2.merge((b_clahe, g_clahe, r_clahe))\n\ncolors = ('b', 'g', 'r')\nplt.figure(figsize=(15, 10))\n\nplt.subplot(2, 2, 1)\nshow_image_with_name(cv2.cvtColor(image, cv2.COLOR_BGR2RGB), 'Original Image')\nplt.subplot(2, 2, 2)\nshow_image_with_name(cv2.cvtColor(equalized_image, cv2.COLOR_BGR2RGB), 'Equalized Image')\n\nplt.subplot(2, 2, 3)\nfor i, color in enumerate(colors):\n   hist = cv2.calcHist([image], [i], None, [256], [0, 256])\n   plt.plot(hist, color=color)\nplt.title('Original Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\n\n\nplt.subplot(2, 2, 4)\nfor i, color in enumerate(colors):\n   hist = cv2.calcHist([equalized_image], [i], None, [256], [0, 256])\n   plt.plot(hist, color=color)\nplt.title('Equalized Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([equalized_image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\n\nplt.tight_layout()\nplt.savefig('clahe_equalization_result.png')  \nplt.show()"
+                ]
+            }
+        },
+        "周泽鑫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5fbca08f3540ff9a97d1be9eeab03181.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"zzx\",img)\ncv2.imshow(\"zzx\",equ)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e291f139e572ac1c7894d0c67bdd48be.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/f7972741a21379b42726fe2c0fca5bd1.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimport numpy as np\nimg=cv2.imread(\"img/test.png\")\nheight, width = img.shape[:2]\nhalf_height = height //2\nmask = np.zeros(img.shape[:2], dtype=np.uint8)\nmask[half_height :height, :] =255\nhistb = cv2.calcHist([img],[0],mask,[256],[0,255])\nhistg = cv2.calcHist([img],[1],mask,[256],[0,255])\nhistr = cv2.calcHist([img],[2],mask,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"zzx\",img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏宇浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/653fa1cb78b1228a15c2d19352d4e419",
+                    "https://p.ananas.chaoxing.com/star3/origin/e113c1a8192d3bb44e79b4d79f18b01f",
+                    "https://p.ananas.chaoxing.com/star3/origin/f520864a26a6a533fca338b64a873209"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure('原始图')\nplt.plot(hist1,color='b')\nplt.show()\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure('均衡化原始图')\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7f67c48e03a6e6044bbd986c73c65a0a",
+                    "https://p.ananas.chaoxing.com/star3/origin/6132c5e0fb68f8ab2fe1f348369f49dd"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"LSM-img\",img)\ncv2.imshow(\"LSM-img_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏忆豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a5dc5282346854ef0138313135770531.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"XYH\"\ndef show_image_with_name(image, title, cmap=None):\n    plt.imshow(image, cmap=cmap)\n    plt.title(title)\n    plt.text(image.shape[1]//2, 10, name,\n             color='red', fontsize=12,\n             alpha=0.5, ha='center', va='center')\n    plt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\ngray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\noriginal_hist = cv2.calcHist([gray_image], [0], None, [256], [0, 256])\nequalized_image = cv2.equalizeHist(gray_image)\nequalized_hist = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(gray_image, 'Original Image', 'gray')\nplt.subplot(2, 2, 2)\nplt.plot(original_hist, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(original_hist)/2, name,\n         color='red', fontsize=12,\n         alpha=0.5, ha='center', va='center')\nplt.subplot(2, 2, 3)\nshow_image_with_name(equalized_image, 'Equalized Image', 'gray')\nplt.subplot(2, 2, 4)\nplt.plot(equalized_hist, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(equalized_hist)/2, name,\n         color='red', fontsize=12,\n         alpha=0.5, ha='center', va='center')\nplt.tight_layout()\nplt.savefig('histogram_equalization_result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b17de2585b0ef76ed86be5fa08653cac.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"  \ndef show_image_with_name(image, title, cmap=None):\n    plt.imshow(image, cmap=cmap)\n    plt.title(title)\n    plt.text(image.shape[1]//2, 10, name,\n             color='red', fontsize=12,\n             alpha=0.5, ha='center', va='center')\n    plt.axis('off')\n\nimage_path = 'img/test.png'  \nimage = cv2.imread(image_path)\n\nb, g, r = cv2.split(image)\n\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\n\nb_clahe = clahe.apply(b)\ng_clahe = clahe.apply(g)\nr_clahe = clahe.apply(r)\n\nequalized_image = cv2.merge((b_clahe, g_clahe, r_clahe))\n\ncolors = ('b', 'g', 'r')\nplt.figure(figsize=(15, 10))\n\nplt.subplot(2, 2, 1)\nshow_image_with_name(cv2.cvtColor(image, cv2.COLOR_BGR2RGB), 'Original Image')\nplt.subplot(2, 2, 2)\nshow_image_with_name(cv2.cvtColor(equalized_image, cv2.COLOR_BGR2RGB), 'Equalized Image')\n\nplt.subplot(2, 2, 3)\nfor i, color in enumerate(colors):\n    hist = cv2.calcHist([image], [i], None, [256], [0, 256])\n    plt.plot(hist, color=color)\nplt.title('Original Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\n         color='red', fontsize=12,\n         alpha=0.5, ha='center', va='center')\n\n\nplt.subplot(2, 2, 4)\nfor i, color in enumerate(colors):\n    hist = cv2.calcHist([equalized_image], [i], None, [256], [0, 256])\n    plt.plot(hist, color=color)\nplt.title('Equalized Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([equalized_image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\n         color='red', fontsize=12,\n         alpha=0.5, ha='center', va='center')\n\nplt.tight_layout()\nplt.savefig('clahe_equalization_result.png')  \nplt.show()"
+                ]
+            }
+        },
+        "夏有德": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a5dc5282346854ef0138313135770531.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"XYD\"\ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\ngray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\noriginal_hist = cv2.calcHist([gray_image], [0], None, [256], [0, 256])\nequalized_image = cv2.equalizeHist(gray_image)\nequalized_hist = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(gray_image, 'Original Image', 'gray')\nplt.subplot(2, 2, 2)\nplt.plot(original_hist, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(original_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.subplot(2, 2, 3)\nshow_image_with_name(equalized_image, 'Equalized Image', 'gray')\nplt.subplot(2, 2, 4)\nplt.plot(equalized_hist, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(equalized_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.tight_layout()\nplt.savefig('histogram_equalization_result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            }
+        },
+        "宋葛萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6c2c8d875d83b77f3c42ca21fe1f6e21.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"img\",img)\ncv2.imshow(\"sgp\",img)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/db909a605e488b968b4a03dbcd48329d.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/2e73c52a11ccbffbe732b8e1d304e449.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"sgp\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "庞志强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9e86fd2578b1837277ece0253207ef3c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# 1. 读取图片并转换为灰度图\nimg = cv2.imread(\"./sucai9/test.png\")\nif img is None:\n    print(\"错误：图片加载失败，请检查路径\")\n    exit()\n\ngray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\n# 2. 计算原始直方图\nhist_original = cv2.calcHist([gray_img], [0], None, [256], [0, 256])\n\n# 3. 直方图均衡化\nequ_img = cv2.equalizeHist(gray_img)\nhist_equ = cv2.calcHist([equ_img], [0], None, [256], [0, 256])\n\n# 4. 可视化结果\nplt.figure(figsize=(15, 10))\n\n# 显示原图与均衡后图像\nplt.subplot(2, 2, 1)\nplt.imshow(gray_img, cmap='gray')  # 修正颜色映射\nplt.title(\"Original Grayscale Image\")\nplt.axis('off')\n\nplt.subplot(2, 2, 2)\nplt.imshow(equ_img, cmap='gray')  # 修正颜色映射\nplt.title(\"Equalized Image\")\nplt.axis('off')\n\n# 显示直方图对比\nplt.subplot(2, 2, 3)\nplt.plot(hist_original, color='blue', label='Original')  # 添加颜色和图例\nplt.title(\"Original Histogram\")\nplt.xlabel(\"Pixel Value\")\nplt.ylabel(\"Frequency\")\nplt.xlim([0, 256])\nplt.legend()\n\nplt.subplot(2, 2, 4)\nplt.plot(hist_equ, color='green', label='Equalized')  # 添加颜色和图例\nplt.title(\"Equalized Histogram\")\nplt.xlabel(\"Pixel Value\")\nplt.ylabel(\"Frequency\")\nplt.xlim([0, 256])\nplt.legend()\n\nplt.tight_layout()\nplt.show()\n\n# OpenCV显示对比\ncv2.imshow(\"Original vs Equalized\", np.hstack([gray_img, equ_img]))\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a560d8f1dc2e803a6ab6a8f0b09122c6.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/91cd9fab2b9206fa5106a0a0b0f9a59b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# 读取图像并校验\nimg = cv2.imread(\"./sucai9/test.png\")\nif img is None:\n    print(\"错误：图像加载失败，请检查路径\")\n    exit()\n\n# 拆分BGR通道并应用CLAHE\nb, g, r = cv2.split(img)\nclah = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10,10))\nequb = clah.apply(b)\nequg = clah.apply(g)\nequr = clah.apply(r)\nimg_new = cv2.merge([equb, equg, equr])\n\n# 计算直方图（修正范围参数）\nhistb = cv2.calcHist([img_new], [0], None, [256], [0, 256])\nhistg = cv2.calcHist([img_new], [1], None, [256], [0, 256])\nhistr = cv2.calcHist([img_new], [2], None, [256], [0, 256])\n\n# 绘制直方图（修正引号错误）\nplt.plot(histb, color='b', label='Blue')\nplt.plot(histg, color='g', label='Green')\nplt.plot(histr, color='r', label='Red')\nplt.title('BGR Channel Histogram')\nplt.xlabel('Pixel Value')\nplt.ylabel('Frequency')\nplt.legend()\nplt.show()\n\n# 显示图像对比\ncv2.imshow(\"pzq1\", img)\ncv2.imshow(\"pzq2\", img_new)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方烨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8d296c31759ccf978d8f430038ed6306.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"img\",img)\ncv2.imshow(\"fangye\",img)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/16a7d4fefff2dcddca7dd20465f2d94b.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/c5a1d275a5ae3b257181942979eae2ce.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"fangye\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李盛长": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2337b0ea0a1f2a1bd1d112c6944eb5ef",
+                    "https://p.ananas.chaoxing.com/star3/origin/fef5919c6ece98ba51cae72a04ebdaa6"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ccffc3d5242b2068bc4791e6491bcf25"
+                ],
+                "text": []
+            }
+        },
+        "李超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/10d221985524a209c2d5e19b8f945d73.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/f2873dbe7832ffe413533afbcfa838af.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimg=cv2.imread(\"test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure('原始图')\nplt.plot(hist1,color='b')\nplt.show()\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure('均衡化原始图')\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/12c55197406b903c2c0c8bcce9f09d7f.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/77820085fe10b097d2e3062c8f70b5c9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"LSM-img\",img)\ncv2.imshow(\"LSM-img_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨峥荣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/35c283bef3e5ba23366868539f62df8d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas\nfrom matplotlib.figure import Figure\n\n\nimg = cv2.imread('img/test.png')\ngray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\nhist = cv2.calcHist([gray_img], [0], None, [256], [0, 256])\nplt.figure()\nplt.plot(hist, color='blue')\nplt.title('原始直方图')\nplt.xlabel('像素值')\nplt.ylabel('像素数量')\nplt.xlim([0, 256])\nplt.savefig('original_histogram.png')\n\nequ_img = cv2.equalizeHist(gray_img)\n\nequ_hist = cv2.calcHist([equ_img], [0], None, [256], [0, 256])\nplt.figure()\nplt.plot(equ_hist, color='green')\nplt.title('均衡化后的直方图')\nplt.xlabel('像素值')\nplt.ylabel('像素数量')\nplt.xlim([0, 256])\nplt.savefig('equalized_histogram.png')\n\nplt.figure(figsize=(10, 5))\nplt.subplot(121)\nplt.imshow(gray_img, cmap='gray')\nplt.title('原始灰度图')\nplt.axis('off')\n\nplt.subplot(122)\nplt.imshow(equ_img, cmap='gray')\nplt.title('均衡化后的灰度图')\nplt.axis('off')\nplt.savefig('gray_images.png')\n\ncv2.imshow('原始灰度图', gray_img)\ncv2.imshow('均衡化后的灰度图', equ_img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/64cd03c0dc81238ec8c4d5c23ba67ca8.png"
+                ],
+                "text": [
+                    "import cv2\n\nimg = cv2.imread('img/test.png')\n\nimg_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\n\nchannels = cv2.split(img_rgb)\n\n\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\n\nchannels = [clahe.apply(channel) for channel in channels]\n\nimg_clahe = cv2.merge(channels)\n\nimg_clahe_bgr = cv2.cvtColor(img_clahe, cv2.COLOR_RGB2BGR)\n\ncv2.imshow('yangzhengrong', img)\ncv2.imshow('yangzhengrong1', img_clahe_bgr)\n\ncolor = ('b', 'g', 'r')\nfor i, col in enumerate(color):\n    histr = cv2.calcHist([img], [i], None, [256], [0, 256])\n    cv2.imshow('Original Histogram ' + str(i), histr)\n    histr2 = cv2.calcHist([img_clahe], [i], None, [256], [0, 256])\n    cv2.imshow('CLAHE Histogram ' + str(i), histr2)\n\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨雯杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/92d431c960ec68083b37787950334689.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/8b686fbdb4141595923beade3efe1ba0.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"ywj\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fc52fd0f336c19861a67175ad7ddf22e.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/0d307a5fab97777d704d2f2b6457cb73.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"ywj\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/277b0511c9d31ba6e090f2930409c2dc.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\n# 读取图片，将图片转化为灰度图\nimg = cv2.imread(\"img/test.png\", 0)\n\n# 计算原始的直方图\nhist1 = cv2.calcHist([img], [0], None, [256], [0, 255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1, color='b')\nplt.title(\"原始图像直方图\")\nplt.xlabel(\"灰度值\")\nplt.ylabel(\"像素数量\")\n\n# 直方图均衡化\nequ = cv2.equalizeHist(img)\n\n# 计算均衡化后的直方图\nhist2 = cv2.calcHist([equ], [0], None, [256], [0, 255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2, color='g')\nplt.title(\"均衡化后图像直方图\")\nplt.xlabel(\"lintao\")\nplt.ylabel(\"lintao1\")\n\n# 显示均衡化前后的图片\ncv2.imshow(\"原始图像\", img)\ncv2.imshow(\"均衡化后图像\", equ)\n\n# 显示直方图\nplt.show()\n\n# 等待按键事件，然后关闭所有窗口\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d2b690b3d12411f2dbe14b53fea829c1.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\n\n# 读取彩色图像\nimg = cv2.imread(\"img/test.png\")\nif img is None:\n    print(\"无法加载图像，请检查路径\")\n    exit()\n\n# 分离通道\nb, g, r = cv2.split(img)\n\n# 创建CLAHE对象\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10,10))\n\n# 对各通道应用CLAHE\nb_eq = clahe.apply(b)\ng_eq = clahe.apply(g)\nr_eq = clahe.apply(r)\n\n# 合并通道\nimg_eq = cv2.merge([b_eq, g_eq, r_eq])\n\n# 计算原始图像直方图\nhistb = cv2.calcHist([img],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img],[2],None,[256],[0,255])\n\n# 计算均衡化后直方图\nhistb_eq = cv2.calcHist([img_eq],[0],None,[256],[0,255])\nhistg_eq = cv2.calcHist([img_eq],[1],None,[256],[0,255])\nhistr_eq = cv2.calcHist([img_eq],[2],None,[256],[0,255])\n\n# 绘制原始直方图\nplt.figure(\"原始图像直方图\")\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\n\n# 绘制均衡化后直方图\nplt.figure(\"CLAHE均衡化后直方图\")\nplt.plot(histb_eq,color='b')\nplt.plot(histg_eq,color='g')\nplt.plot(histr_eq,color='r')\n\n# 显示图像\ncv2.imshow(\"原始图像\", img)\ncv2.imshow(\"CLAHE均衡化图像\", img_eq)\n\n# 显示直方图\nplt.show()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林西面": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8eca45a0819beffbf6e93b39cce1797d.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/be23ac4fdae144b8a43b8d86d9cbbf14.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimg=cv2.imread(\"test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure('原始图')\nplt.plot(hist1,color='b')\nplt.show()\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure('均衡化原始图')\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b7205972b95a5cd4283181759cc210b3.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/ae2b0ae0b451fb570f35c125f2b702f5.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"LSM-img\",img)\ncv2.imshow(\"LSM-img_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "潘易函": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/885ee6d4ae405aca347ccaf43a7eff21.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/f2819acf47c69e07d06c14e5f0410d50.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"PYH_img\",img)\ncv2.imshow(\"PYH_epu\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0a72983ff78fb0d80b06818976b9bfe4.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/65da49a612153fd4e478fd076da92a45.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"./sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"PYH\",img)\ncv2.imshow(\"PYH_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王嘉鹏": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"XYH\"\ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\ngray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\noriginal_hist = cv2.calcHist([gray_image], [0], None, [256], [0, 256])\nequalized_image = cv2.equalizeHist(gray_image)\nequalized_hist = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(gray_image, 'Original Image', 'gray')\nplt.subplot(2, 2, 2)\nplt.plot(original_hist, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(original_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.subplot(2, 2, 3)\nshow_image_with_name(equalized_image, 'Equalized Image', 'gray')\nplt.subplot(2, 2, 4)\nplt.plot(equalized_hist, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(equalized_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.tight_layout()\nplt.savefig('histogram_equalization_result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"  \ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\n\nimage_path = 'img/test.png'  \nimage = cv2.imread(image_path)\n\nb, g, r = cv2.split(image)\n\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\n\nb_clahe = clahe.apply(b)\ng_clahe = clahe.apply(g)\nr_clahe = clahe.apply(r)\n\nequalized_image = cv2.merge((b_clahe, g_clahe, r_clahe))\n\ncolors = ('b', 'g', 'r')\nplt.figure(figsize=(15, 10))\n\nplt.subplot(2, 2, 1)\nshow_image_with_name(cv2.cvtColor(image, cv2.COLOR_BGR2RGB), 'Original Image')\nplt.subplot(2, 2, 2)\nshow_image_with_name(cv2.cvtColor(equalized_image, cv2.COLOR_BGR2RGB), 'Equalized Image')\n\nplt.subplot(2, 2, 3)\nfor i, color in enumerate(colors):\n   hist = cv2.calcHist([image], [i], None, [256], [0, 256])\n   plt.plot(hist, color=color)\nplt.title('Original Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\n\n\nplt.subplot(2, 2, 4)\nfor i, color in enumerate(colors):\n   hist = cv2.calcHist([equalized_image], [i], None, [256], [0, 256])\n   plt.plot(hist, color=color)\nplt.title('Equalized Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([equalized_image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\n\nplt.tight_layout()\nplt.savefig('clahe_equalization_result.png')  \nplt.show()"
+                ]
+            }
+        },
+        "王家翔": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/173ebcf495e7aa4cc44317427eaf5d02.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"wjx\",img)\ncv2.imshow(\"wjx1\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d8cb10ef68f0b5336ebf9299316b38a8.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nhistb = cv2.calcHist([img],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\ncv2.imshow(\"wjx\",img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王斌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/79f683ab62db3b1235389c87a1523237.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img2/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"img\",img)\ncv2.imshow(\"equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3c4dda4eba7ad32cba09250416f3ca15.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e3d92f91deb805266a4241800d5480f1.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/4c748dee81fa58b8a95d1ab6a33c36b3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img2/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"img_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王昱诺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/11df907e6a56053eddba8edd08ae2d85.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"wyn的原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"wyn的均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"wyn的img\",img)\ncv2.imshow(\"wyn的equ\",equ)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e245323a73457caf5113ca9ea681f005.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/8e32367932dc15e11624c626aeb73765.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nb,g,r=cv2.split(img)\nhistb1 = cv2.calcHist([img],[0],None,[256],[0,255])\nhistg1 = cv2.calcHist([img],[1],None,[256],[0,255])\nhistr1 = cv2.calcHist([img],[2],None,[256],[0,255])\nplt.plot(histb1,color='b')\nplt.plot(histg1,color='g')\nplt.plot(histr1,color='r')\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"wyn\",img)\ncv2.imshow(\"wyn_new\",img_new)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bc04e3227a29c4c688d4d53e6626a7a3.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/2ff1836545017edd41ae6197684fbb44.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d3591edd9e66a746c7a1ba9f73290507.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/65f46f383fca11ea1c44abc1e26c6ec6.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"wh\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王钰洁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fea9eb17f30dbd70c675459a855ef1c5.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/847a57a2915773de53e0d2c10a73b6c4.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"img\",img)\ncv2.imshow(\"wyj\",img)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dba6b7eb3f5aced4e62ac6bb77e85650.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/12d7d32004f9c818767865cae8aa44fe.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"img_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "葛人欢": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9dd74947ec4b68e4f4cf4467bf015d12.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/3e92db14cbfc2cf154ef85a063ffcd7e.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"grh\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1f3c194cecdf6d13aba07e0789712db2.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/dbea26b84166a0e619619e994abb275d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"grh\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蒋子豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/92ac9cf6a35695034a31ad2aa55a24ad.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"jzh\",img)\ncv2.imshow(\"jzh1\",equ)\n\nimg=cv2.imread(\"test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\n\nplt.show()\ncv2.imshow(\"jzh2\",img)\ncv2.imshow(\"jzh3\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/647fbf2dfb7b89f5727e04ba8ce24557.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/5775242ba4fb406f25db8af2fed89b09.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\n\ncv2.imshow(\"jzh\",img)\ncv2.imshow(\"jzh1\",equ)\n\nimg=cv2.imread(\"test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\n\nplt.show()\ncv2.imshow(\"jzh2\",img)\ncv2.imshow(\"jzh3\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蔡雨轩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d492b41734a733b4f718ee6b1ecbb66d.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/f3128c617e0521593caadcb94fab44d5.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"cyx\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/85861cfefea54bb8387f65d7c8f39ca9.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/69872d24b2d82b38ad3c11615e2952f8.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"cyx\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "薛凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/41d26cba6a1aca6d9eaedd5fbb883291.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"xk\",img)\ncv2.imshow(\"XK\",equ)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/da8a75d0e9408ea5a109047d941ddad3.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/44840633c259efa14bcd3d0815c40c36.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimport numpy as np\nimg=cv2.imread(\"img/test.png\")\nheight, width = img.shape[:2]\nhalf_height = height //2\nmask = np.zeros(img.shape[:2], dtype=np.uint8)\nmask[half_height :height, :] =255\nhistb = cv2.calcHist([img],[0],mask,[256],[0,255])\nhistg = cv2.calcHist([img],[1],mask,[256],[0,255])\nhistr = cv2.calcHist([img],[2],mask,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"xk\",img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "许贤明": {
+            "题目1": {
+                "images": [],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c60d05ea8ea83567d0ff2b11269d0962.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/c8cc6f4af6d1307acf838cdacfa706e0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"xxm\",img)\ncv2.imshow(\"xxm_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "赖志和": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e6651dc5c47348ecd2e7348a289e80ad.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"lzh\",img)\ncv2.imshow(\"LZH\",equ)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/723337bd2ec40484cf6c9b6575732603.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e604a73f62aafcd21cbf70d762d8c4bb.png"
+                ],
+                "text": [
+                    "import cv2\nfrom matplotlib import pyplot as plt\nimport numpy as np\nimg=cv2.imread(\"img/test.png\")\nheight, width = img.shape[:2]\nhalf_height = height //2\nmask = np.zeros(img.shape[:2], dtype=np.uint8)\nmask[half_height :height, :] =255\nhistb = cv2.calcHist([img],[0],mask,[256],[0,255])\nhistg = cv2.calcHist([img],[1],mask,[256],[0,255])\nhistr = cv2.calcHist([img],[2],mask,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"lzh\",img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "邱伊琳": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4c508efd9ddf54ff16d17eb19b86b28",
+                    "https://p.ananas.chaoxing.com/star3/origin/2b7c375ad829cd03a2137fd4ce78a999"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img2/img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"qyl\",img)\ncv2.imshow(\"qyl\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/0a56fbb913d4509bde5573653fc04421.png",
+                    "https://p.ananas.chaoxing.com/star3/750_1024/b527cc0b9166841bfae96d080d16c376.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nb,g,r=cv2.split(img)\nhistb1 = cv2.calcHist([img],[0],None,[256],[0,255])\nhistg1 = cv2.calcHist([img],[1],None,[256],[0,255])\nhistr1 = cv2.calcHist([img],[2],None,[256],[0,255])\nplt.plot(histb1,color='b')\nplt.plot(histg1,color='g')\nplt.plot(histr1,color='r')\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"qyl\",img)\ncv2.imshow(\"qyl_new\",img_new)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郑光甫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7151a81e132bb8543b14a9d8953143d2.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/1bcbebe22fa5fead1e7d75716d13da2d.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/919108790c984fc00923584f2e55d142.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg=cv2.imread(\"img/img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nplt.show()\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"zgf1\",img)\ncv2.imshow(\"zgf2\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            }
+        },
+        "郭捷瑞": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7226086506ef8c197c4311ae31ad46b4.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg_path = 'img/puke.png'\nimg = cv2.imread(img_path)\nif img is None:\n    raise FileNotFoundError(f\"图片未找到，请检查路径: {img_path}\")\ngray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nhist_original = cv2.calcHist([gray_img], [0], None, [256], [0, 256])\nequalized_img = cv2.equalizeHist(gray_img)\nhist_equalized = cv2.calcHist([equalized_img], [0], None, [256], [0, 256])\nplt.figure(figsize=(12, 8))\nplt.subplot(2, 2, 1)\nplt.imshow(gray_img, cmap='gray')\nplt.title('Original Image')\nplt.axis('off')\nplt.subplot(2, 2, 2)\nplt.plot(hist_original, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.subplot(2, 2, 3)\nplt.imshow(equalized_img, cmap='gray')\nplt.title('Equalized Image')\nplt.axis('off')\nplt.subplot(2, 2, 4)\nplt.plot(hist_equalized, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.tight_layout()\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a8c9acbfd0ac51dceb41f5919acbb5b9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg_path = 'img/puke.png'\nimg = cv2.imread(img_path)\nif img is None:\n    raise FileNotFoundError(f\"图片未找到，请检查路径: {img_path}\")\nb, g, r = cv2.split(img)\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\nb_eq = clahe.apply(b)\ng_eq = clahe.apply(g)\nr_eq = clahe.apply(r)\nequalized_img = cv2.merge([b_eq, g_eq, r_eq])\nhist_original = cv2.calcHist([g], [0], None, [256], [0, 256])\nhist_equalized = cv2.calcHist([g_eq], [0], None, [256], [0, 256])\nplt.figure(figsize=(14, 8))\nplt.subplot(2, 3, 1)\nplt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))\nplt.title('Original Image')\nplt.axis('off')\nplt.subplot(2, 3, 2)\nplt.imshow(cv2.cvtColor(equalized_img, cv2.COLOR_BGR2RGB))\nplt.title('CLAHE Equalized Image')\nplt.axis('off')\nplt.subplot(2, 3, 4)\nplt.plot(hist_original, color='green')\nplt.title('Original Histogram (G Channel)')\nplt.xlim([0, 256])\nplt.subplot(2, 3, 5)\nplt.plot(hist_equalized, color='green')\nplt.title('Equalized Histogram (G Channel)')\nplt.xlim([0, 256])\nplt.subplot(2, 3, 3)\nplt.text(0.1, 0.5,\n         f\"CLAHE Parameters:\\nclipLimit=1.5\\ntileGridSize=(10,10)\",\n         fontsize=12)\nplt.axis('off')\nplt.tight_layout()\nplt.show()"
+                ]
+            }
+        },
+        "金孝华": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a0989f8b59189cdee742b28f5e4165ac.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/41bdccd88bc345d604b88aa2c6fb3248.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/d5bbe6b549ed7f11ba5ef8316c111718.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图JXH\")\nplt.plot(hist1,color='b')\nplt.show()\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图JXH\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"equ\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7cbe83e06e4faff50ef27ec1f32aed3b.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/b522809d704dc9029f2e51e9aa3c2519.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"sucai9/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nplt.figure(\"JXH\")\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"img_new\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈沈祺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2337b0ea0a1f2a1bd1d112c6944eb5ef.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/9b1415a6741d30b568143e3294529714.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/fef5919c6ece98ba51cae72a04ebdaa6.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ccffc3d5242b2068bc4791e6491bcf25.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/9a9ac3fb4e5bff93ae6333ab9950d3d7.png"
+                ],
+                "text": []
+            }
+        },
+        "陈泽宇": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a400dc51d5a33461e715961a143168b3.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"czy\",img)\ncv2.imshow(\"CZY\",equ)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8e948cfa425a56248164f4a25eb1e3fd.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/7006c713435d9fe3a51d61f5698d8885.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nb,g,r=cv2.split(img)\nhistb1 = cv2.calcHist([img],[0],None,[256],[0,255])\nhistg1 = cv2.calcHist([img],[1],None,[256],[0,255])\nhistr1 = cv2.calcHist([img],[2],None,[256],[0,255])\nplt.plot(histb1,color='b')\nplt.plot(histg1,color='g')\nplt.plot(histr1,color='r')\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"czy\",img)\ncv2.imshow(\"czy_new\",img_new)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"XYD\"\ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\ngray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\noriginal_hist = cv2.calcHist([gray_image], [0], None, [256], [0, 256])\nequalized_image = cv2.equalizeHist(gray_image)\nequalized_hist = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(gray_image, 'Original Image', 'gray')\nplt.subplot(2, 2, 2)\nplt.plot(original_hist, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(original_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.subplot(2, 2, 3)\nshow_image_with_name(equalized_image, 'Equalized Image', 'gray')\nplt.subplot(2, 2, 4)\nplt.plot(equalized_hist, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(equalized_hist)/2, name,\n        color='red', fontsize=12,\n        alpha=0.5, ha='center', va='center')\nplt.tight_layout()\nplt.savefig('histogram_equalization_result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            }
+        },
+        "韩哲涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"XYH\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\ngray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\noriginal_hist = cv2.calcHist([gray_image], [0], None, [256], [0, 256])\nequalized_image = cv2.equalizeHist(gray_image)\nequalized_hist = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(gray_image, 'Original Image', 'gray')\nplt.subplot(2, 2, 2)\nplt.plot(original_hist, color='black')\nplt.title('Original Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(original_hist)/2, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.subplot(2, 2, 3)\nshow_image_with_name(equalized_image, 'Equalized Image', 'gray')\nplt.subplot(2, 2, 4)\nplt.plot(equalized_hist, color='black')\nplt.title('Equalized Histogram')\nplt.xlim([0, 256])\nplt.text(128, max(equalized_hist)/2, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.tight_layout()\nplt.savefig('histogram_equalization_result.png')\nplt.show()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/test.png'\nimage = cv2.imread(image_path)\nb, g, r = cv2.split(image)\nclahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(10, 10))\nb_clahe = clahe.apply(b)\ng_clahe = clahe.apply(g)\nr_clahe = clahe.apply(r)\nequalized_image = cv2.merge((b_clahe, g_clahe, r_clahe))\ncolors = ('b', 'g', 'r')\nplt.figure(figsize=(15, 10))\nplt.subplot(2, 2, 1)\nshow_image_with_name(cv2.cvtColor(image, cv2.COLOR_BGR2RGB), 'Original Image')\nplt.subplot(2, 2, 2)\nshow_image_with_name(cv2.cvtColor(equalized_image, cv2.COLOR_BGR2RGB), 'Equalized Image')\nplt.subplot(2, 2, 3)\nfor i, color in enumerate(colors):\nhist = cv2.calcHist([image], [i], None, [256], [0, 256])\nplt.plot(hist, color=color)\nplt.title('Original Histogram')\nplt.text(128, max(np.max(hist) for hist in [cv2.calcHist([image], [i], None, [256], [0, 256]) for i in range(3)])/2, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')"
+                ]
+            }
+        },
+        "高嘉泽": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/60d64034a3598f49de631be1c9ce38cb.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/aba51f71e8b8c8c3dd06080483a0fa4e.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"gjz\",img)\ncv2.imshow(\"gjz1\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ce72f399766aef2f649f699cfa17575a.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/11d5e152edb4cada213ba94a20ed40cb.png"
+                ],
+                "text": [
+                    "import cv2\ncv2.destroyAllWindows()\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"gjz\",img)\ncv2.imshow(\"gjz1\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "黄君健": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c09bcd5c00c4aac3411cf9c11d6d096f.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/8057531e81e8f9456dc058833a851be9.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/2aff8a1c6a6fea5bb9b3bb5487a73f02.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg=cv2.imread(\"img/img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nplt.show()\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"hjj1\",img)\ncv2.imshow(\"hjj2\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ccffc3d5242b2068bc4791e6491bcf25"
+                ],
+                "text": []
+            }
+        },
+        "黄塨燚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/93b2850fcdcd28ac0ad8ffff9328a01f",
+                    "https://p.ananas.chaoxing.com/star3/origin/6358636762fddb24a49e02544de641d7"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/img/test.png\",0)\nhist1 = cv2.calcHist([img],[0],None,[256],[0,255])\nplt.figure(\"原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"均衡化后图像直方图\")\nplt.plot(hist2,color='g')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"hgy\",equ)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/913a48b4e371ce8439b5488fcebd31b7",
+                    "https://p.ananas.chaoxing.com/star3/origin/e4a57002dc4fa58ad1249c4fed9706e6"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/img/test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\nplt.show()\ncv2.imshow(\"img\",img)\ncv2.imshow(\"hgy\",img_new)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"img/test.png\")\nimg_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nhist1 = cv2.calcHist([img_gray],[0],None,[256],[0,255])\nplt.figure(\"JXJ_img原始图像直方图\")\nplt.plot(hist1,color='b')\nequ=cv2.equalizeHist(img_gray)\nhist2 = cv2.calcHist([equ],[0],None,[256],[0,255])\nplt.figure(\"JXJ_均衡化后图像直方图\")\nplt.plot(hist2,color='g')\ncv2.imshow(\"JXJ_img\",img_gray)\ncv2.imshow(\"JXJ_equ\",equ)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8beb221b3a2236bd43c23e15d826a1f9.png"
+                ],
+                "text": [
+                    "下载附件并解压，读取img文件夹下的\"test\"。\n- 读取图片，将图片转化为灰度图。\n- 计算原始的直方图并显示\n- 用calcHist进行直返图均衡化后显示直方图\n- 将均衡化前后的图片显示并截图。\n提交完整代码和截图（窗口加自己名字）。\n截图参考："
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg=cv2.imread(\"test.png\")\nb,g,r=cv2.split(img)\nclah=cv2.createCLAHE(clipLimit=1.5,tileGridSize=(10,10))\nequb=clah.apply(b)\nequg=clah.apply(g)\nequr=clah.apply(r)\nimg_new=cv2.merge([equb,equg,equr])\nhistb = cv2.calcHist([img_new],[0],None,[256],[0,255])\nhistg = cv2.calcHist([img_new],[1],None,[256],[0,255])\nhistr = cv2.calcHist([img_new],[2],None,[256],[0,255])\nplt.plot(histb,color='b')\nplt.plot(histg,color='g')\nplt.plot(histr,color='r')\ncv2.imshow(\"JXJ_img\",img)\ncv2.imshow(\"JXJ_img_new\",img_new)\nplt.show()\ncv2.waitKey()\ncv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a916a89c021cfa589e3ee7b0824818e3.png"
+                ],
+                "text": [
+                    "读取img文件夹下的\"test\"。\n- 读取图片，将图片通道进行分离。\n- 分别对每个通道使用CLAHE进行均衡化（clipLimit设置为1.5，tileGridSize设置为10）\n- 将均衡化后的三个通道融合\n- 计算均衡化后的直方图并显示\n- 将均衡化前后的图片显示并截图。\n提交完整代码和截图（窗口加自己名字）。\n截图参考："
+                ]
+            }
+        }
+    }
+}

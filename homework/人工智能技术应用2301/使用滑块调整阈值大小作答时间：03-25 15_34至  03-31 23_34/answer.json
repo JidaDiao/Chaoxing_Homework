@@ -1,0 +1,1065 @@
+{
+    "学生回答": {
+        "倪旭玮": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('img/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8ab2d300a27477d3883174fceb73486e.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg = cv2.imread('img/cv2z.png',0)\nwindowName = \"nxw\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF == 27:\n       break\n   Type = cv2.getTrackbarPos('Type',windowName)\n   Value = cv2.getTrackbarPos('Value',windowName)\n   kernel = np.ones((2*Value+1, 2*Value+1), np.uint8)\n   erosion = cv2.erode(img, kernel, iterations=Type)\n   cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "倪理浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0a2b54579dcba76f2bdca3a9a0d46027.png"
+                ],
+                "text": [
+                    "import cv2 #导入OpenCV库\nimport numpy as np\nsrc = cv2.imread('img/cv2d.png')    #读取图像\nkernel = np.ones((7,7),np.uint8) #定义结构元5×5\ndilate = cv2.dilate(src,kernel,iterations = 1)#膨胀操作\ncv2.imshow('src', src)  #显示原始图像\ncv2.imshow('dilate', dilate)#显示结果图像\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0c473a78a8b90c131c0940f2cc47e50a.png"
+                ],
+                "text": [
+                    "import cv2 #导入OpenCV库\nimport numpy as np\nsrc = cv2.imread('img/cv2d.png')    #读取图像\nkernel = np.ones((11,11),np.uint8) #定义结构元5×5\ndilate = cv2.dilate(src,kernel,iterations = 1)#膨胀操作\ncv2.imshow('src', src)  #显示原始图像\ncv2.imshow('dilate', dilate)#显示结果图像\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6ccc126331dfb2b82b247b7f09a00d85.png"
+                ],
+                "text": []
+            }
+        },
+        "冯帅": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ed0f89f04020ddc482e889e9ae4d5cb3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1d07456673b18c64db44d82ca1c7f22f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/246ff1200611679e5e3c0a5f97c19b2d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\n    print(\"Error: 无法读取图像文件。\")\n    exit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\n    global iter_val, kernel_size_val\n    if kernel_size_val % 2 == 0:\n        kernel_size_val += 1\n    kernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\n    eroded_image = cv2.erode(image, kernel, iterations=iter_val)\n    cv2.imshow('fs', eroded_image)\ncv2.namedWindow('fs')\ncv2.createTrackbar('Iterations', 'fs', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'fs', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\n    key = cv2.waitKey(1) & 0xFF\n    if key == ord('s'):\n        cv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\n        print(\"截图已保存为 eroded_screenshot.png\")\n    elif key == ord('q'):\n        break\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "华江辰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cbfd2a1a24906d3b7b2f5f7c33f95ca2.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7b7989d03386f42b3b8e96fc442b3f78.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c85118440b410b8fd5c6e7c77589ce9c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"HJC\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value', windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    kernel=np.ones((2*Value+1,2*Value+1),np.uint8)\n    erosion = cv2.erode(img,kernel,iterations = Type)\n    cv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶挺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6ad4d63c816332998dde3738995de0e0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/210fd7ab31161eedac41b22ffec4e5fa.png"
+                ],
+                "text": [
+                    "\\\nimport cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dafc17e2e2b6a8f22fb2c81c8ede2ee3.png"
+                ],
+                "text": [
+                    "image = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\n   print(\"Error: 无法读取图像文件。\")\n   exit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\n   global iter_val, kernel_size_val\n   if kernel_size_val % 2 == 0:\n       kernel_size_val += 1\n   kernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\n   eroded_image = cv2.erode(image, kernel, iterations=iter_val)\n   cv2.imshow('yt', eroded_image)\ncv2.namedWindow('yt')\ncv2.createTrackbar('Iterations', 'yt', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'yt', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\n   key = cv2.waitKey(1) & 0xFF\n   if key == ord('s'):\n       cv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\n       print(\"截图已保存为 eroded_screenshot.png\")\n   elif key == ord('q'):\n       break\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶桉鸣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/66fae280131dc6f738b83bdc667cbfa8.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/2cdd08bf5d670c4f9db98a4982bb6811.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png')\nwindowName = \"yam\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Values',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type', windowName)\n    Value = cv2.getTrackbarPos('Values', windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    kernel = np.ones((2*Value+1,2*Value+1),np.uint8)\n    erosion = cv2.erode(img,kernel,iterations=Type)\n    cv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吕鸿凯": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/img/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion  = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img',img)\ncv2.imshow('erosion',erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('img/img/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9d5932397449b3fa00fe21f7b727c738.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/img/cv2z.png')\ncv2.waitKey(0)\ncv2.destroyAllWindows()\ndef nothing(x):\n  pass\nwindowName = \"LHK\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('value',windowName,1,5,nothing)\ncv2.createTrackbar('it',windowName,1,5,nothing)\nwhile(1):\n  if cv2.waitKey(1) & 0xFF == 27:\n      break\n  Type = cv2.getTrackbarPos('value',windowName)\n  Value = cv2.getTrackbarPos('it',windowName)\n  kernel = np.ones((Value*2+1,Value*2+1), np.uint8)\n  erosion = cv2.erode(img, kernel, iterations=Type)\n  cv2.imshow(windowName,erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吴世杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0a9f4d8d645664f918d968bc1b99722c.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/93823ad1b054a782645ce86097455b0e.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/822fad08083c0ed0239078555cd0304d.png"
+                ],
+                "text": []
+            }
+        },
+        "吴争航": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/41444fdd0d20c48c32f6c7b12a4ac046"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"PYH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF == 27:\n       break\n   Type = cv2.getTrackbarPos('Type',windowName)\n   Value = cv2.getTrackbarPos('Value',windowName)\n   kernel = np.ones((Value, Value), np.uint8)\n   erosion = cv2.erode(img, kernel, iterations=Type)\n   cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e81d5d1b8032742eae058db9ef09c3b4"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(img,kernel,iterations=1)\ncv2.imshow('img',img)\ncv2.imshow('dilate',dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/41444fdd0d20c48c32f6c7b12a4ac046"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"PYH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF == 27:\n       break\n   Type = cv2.getTrackbarPos('Type',windowName)\n   Value = cv2.getTrackbarPos('Value',windowName)\n   kernel = np.ones((Value, Value), np.uint8)\n   erosion = cv2.erode(img, kernel, iterations=Type)\n   cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "周愉越": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/33310b23a4148c37ba8a0a911f14b195"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cb94af5fc294545677afdaadc4b20b9c"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3c5ba3ec6c614bd30f28e2536cdc3243"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\n  print(\"Error: 无法读取图像文件。\")\n  exit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\n  global iter_val, kernel_size_val\n  if kernel_size_val % 2 == 0:\n      kernel_size_val += 1\n  kernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\n  eroded_image = cv2.erode(image, kernel, iterations=iter_val)\n  cv2.imshow('fsc', eroded_image)\ncv2.namedWindow('fsc')\ncv2.createTrackbar('Iterations', 'fsc', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'fsc', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\n  key = cv2.waitKey(1) & 0xFF\n  if key == ord('s'):\n      cv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\n      print(\"截图已保存为 eroded_screenshot.png\")\n  elif key == ord('q'):\n      break\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏宇浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "夏忆豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7c7cbcc7bfcdbc30b3afc3e167b6032b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b575b6dc45dcafa14f4258f1975dc3e5.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4467140490e996dea5e99ed3476744dd.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\n   print(\"Error: 无法读取图像文件。\")\n   exit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\n   global iter_val, kernel_size_val\n   if kernel_size_val % 2 == 0:\n       kernel_size_val += 1\n   kernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\n   eroded_image = cv2.erode(image, kernel, iterations=iter_val)\n   cv2.imshow('xyh', eroded_image)\ncv2.namedWindow('xyh')\ncv2.createTrackbar('Iterations', 'xyh', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'xyh', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\n   key = cv2.waitKey(1) & 0xFF\n   if key == ord('s'):\n       cv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\n       print(\"截图已保存为 eroded_screenshot.png\")\n   elif key == ord('q'):\n       break\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏有德": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b81cf92f3daaf259154e57e917cbd379.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/77d1ba2e4072ed8ad17c1f5ef849bce0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a595fbfd98f84e2940b6708d23c3605d.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/d9870953c196f203847dacc32a92ff93.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7ca66efacf6b287d7595d898de1c0686.PNG"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\nprint(\"Error: 无法读取图像文件。\")\nexit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\nglobal iter_val, kernel_size_val\nif kernel_size_val % 2 == 0:\nkernel_size_val += 1\nkernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\neroded_image = cv2.erode(image, kernel, iterations=iter_val)\ncv2.imshow('xyd', eroded_image)\ncv2.namedWindow('xyd')\ncv2.createTrackbar('Iterations', 'xyd', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'xyd', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\nkey = cv2.waitKey(1) & 0xFF\nif key == ord('s'):\ncv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\nprint(\"截图已保存为 eroded_screenshot.png\")\nelif key == ord('q'):\nbreak\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "宋葛萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5b754838b8937f1acc249274303cad9f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((5,5),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/87da8eb37eaecc1a7cca14e22b632349.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((5,5),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/76a528d0c443544aeaeb7b30e76dce1c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"dcz_Thresholding\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel=np.ones((2*Value+1,2*Value+1),np.uint8)\n    erosion=cv2.erode(img,kernel,iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "庞志强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f2d9aa9134b41274bc3d007ad06ec359"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b94a735d2d930bf6371d4b6997a4e2d6"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\nerosion = cv2.dilate(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a572bb7f59f7a197153d89837c7dadda"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"pangzhiqiang\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((2*Value+1,2*Value+1), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方烨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/df31b646685c65dede82d1363bb2df77.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/37840c18151d52bf145ab8769294a480.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5a1e3bcca90453fbe312aea8cfd1d88a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png', 0)\nwindow_name = \"Erosion Demo\"\ncv2.namedWindow(window_name)\ncv2.createTrackbar('Iterations', window_name, 1, 5, nothing)\ncv2.createTrackbar('Kernel Size', window_name, 1, 5, nothing)\nwhile True:\n    iterations = cv2.getTrackbarPos('Iterations', window_name)\n    ksize = cv2.getTrackbarPos('Kernel Size', window_name)\n    ksize = max(1, ksize)\n    if ksize % 2 == 0:\n        ksize += 1\n    kernel = np.ones((2*ksize+1, 2*ksize+1), np.uint8)\n    eroded = cv2.erode(img, kernel, iterations=iterations)\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    cv2.imshow(window_name, eroded)\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方胜超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/33310b23a4148c37ba8a0a911f14b195"
+                ],
+                "text": [
+                    "import cv2 \nimport numpy as np\nimg = cv2.imread('cv2z.png')\nkernel = np.ones((7,7),np.uint8) \nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('fsc', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cb94af5fc294545677afdaadc4b20b9c"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2. dilate(img,kernel,iterations = 1)\nclosing = cv2. morphologyEx(img, cv2.MORPH_CLOSE,kernel)\ncv2.imshow('fsc', dilate)\ncv2.imshow('closing', closing)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4e6a0a19b1ca47d999b912dad05a0b86"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\n   print(\"Error: 无法读取图像文件。\")\n   exit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\n   global iter_val, kernel_size_val\n   if kernel_size_val % 2 == 0:\n       kernel_size_val += 1\n   kernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\n   eroded_image = cv2.erode(image, kernel, iterations=iter_val)\n   cv2.imshow('fsc', eroded_image)\ncv2.namedWindow('fsc')\ncv2.createTrackbar('Iterations', 'fsc', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'fsc', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\n   key = cv2.waitKey(1) & 0xFF\n   if key == ord('s'):\n       cv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\n       print(\"截图已保存为 eroded_screenshot.png\")\n   elif key == ord('q'):\n       break\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李盛长": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/33310b23a4148c37ba8a0a911f14b195"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cb94af5fc294545677afdaadc4b20b9c"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3c5ba3ec6c614bd30f28e2536cdc3243"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\nprint(\"Error: 无法读取图像文件。\")\nexit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\nglobal iter_val, kernel_size_val\nif kernel_size_val % 2 == 0:\nkernel_size_val += 1\nkernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\neroded_image = cv2.erode(image, kernel, iterations=iter_val)\ncv2.imshow('fsc', eroded_image)\ncv2.namedWindow('fsc')\ncv2.createTrackbar('Iterations', 'fsc', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'fsc', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\nkey = cv2.waitKey(1) & 0xFF\nif key == ord('s'):\ncv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\nprint(\"截图已保存为 eroded_screenshot.png\")\nelif key == ord('q'):\nbreak\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨峥荣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2 \nimport numpy as np\n\n\nimg = cv2.imread('img/cv2z.png') \n\n\nkernel = np.ones((7,7),np.uint8) \n\nerosion = cv2.erode(img,kernel,iterations = 1) \n\n\ncv2.imshow('img', img) \ncv2.imshow('erosion', erosion) \n\n\ncv2.waitKey(0)\n\n\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('img/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c829c65721e724cfb6dc40e7e7540b77.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/b771441eec6638c2d291ff9a3fd1fe68.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nfrom tkinter import Tk, Scale, Button\n\nimg = cv2.imread('img/cv2z.png')\n\nwindow = Tk()\nwindow.title(\"腐蚀操作\")\n\nscale1 = Scale(window, from_=1, to=5, orient='horizontal', label='迭代次数')\nscale1.set(3)\nscale1.pack()\n\nscale2 = Scale(window, from_=1, to=5, orient='horizontal', label='结构元素大小')\nscale2.set(2)\nscale2.pack()\ndef erode_image():\n    iterations = scale1.get()\n    kernel_size = scale2.get() * 2 - 1\n    kernel = np.ones((kernel_size, kernel_size), np.uint8)\n    eroded = cv2.erode(img, kernel, iterations=iterations)\n    cv2.imshow('eroded', eroded)\n\n\nbutton = Button(window, text=\"腐蚀\", command=erode_image)\nbutton.pack()\n\n\ncv2.imshow('original', img)\n\ncv2.waitKey(0)\ncv2.destroyAllWindows()\nwindow.mainloop()"
+                ]
+            }
+        },
+        "杨雯杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a5aaa0766a6d3fc8a8c9c1c50479c615"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/img/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7b94cc9fc7afab56423484a7de82f462"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('img/img/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1512e101d1bb6ae4444da3787a49aabd"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg = cv2.imread('img/img/cv2z.png',0)\nwindowName = \"ywj\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF == 27:\n       break\n   Type = cv2.getTrackbarPos('Type',windowName)\n   Value = cv2.getTrackbarPos('Value',windowName)\n   kernel = np.ones((Value, Value), np.uint8)\n   erosion = cv2.erode(img, kernel, iterations=Type)\n   cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2 \nimport numpy as np\n\nsrc = cv2.imread('img/cv2d.png')\n\nkernel = np.ones((11,11), np.uint8)\n\ndilate = cv2.dilate(src, kernel, iterations=1)\n\ncv2.imshow('src', src) \ncv2.imshow('dilate', dilate)  \n\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ec0199663de9c8dea5bc3b7deb77a7de.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef erode_image(val):\n    iterations = cv2.getTrackbarPos('Iterations', 'Erosion Demo')\n    ksize = cv2.getTrackbarPos('Kernel Size', 'Erosion Demo')\n    ksize = max(1, ksize)\n    ksize = ksize if ksize % 2 == 1 else ksize + 1\n    kernel = np.ones((ksize, ksize), np.uint8)\n    eroded = cv2.erode(img, kernel, iterations=iterations)\n    cv2.imshow('Erosion Demo', eroded)\nimg = cv2.imread('img/cv2z.png', cv2.IMREAD_COLOR)\nif img is None:\n    print(\"Error: 无法读取图像，请检查路径是否正确。\")\n    exit()\ncv2.namedWindow('Erosion Demo')\ncv2.createTrackbar('Iterations', 'Erosion Demo', 1, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'Erosion Demo', 1, 5, erode_image)\nerode_image(0)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林西面": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aced46f990a8ed643e33f891b7209a14.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('cv2z.png')\n\ncv2.waitKey(0)\ncv2.destroyAllWindows()\ndef nothing(x):\n   pass\nwindowName = \"linximian\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,0,2,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF == 27:\n       break\n   Type = cv2.getTrackbarPos('Type',windowName)\n   Value = cv2.getTrackbarPos('Value',windowName)\n   kernel = np.ones((Value*2+1,Value*2+1), np.uint8)\n   erosion = cv2.erode(img, kernel, iterations=Type)\n   cv2.imshow(windowName,erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王嘉鹏": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6ad4d63c816332998dde3738995de0e0"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/210fd7ab31161eedac41b22ffec4e5fa"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dafc17e2e2b6a8f22fb2c81c8ede2ee3"
+                ],
+                "text": [
+                    "image = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\nprint(\"Error: 无法读取图像文件。\")\nexit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\nglobal iter_val, kernel_size_val\nif kernel_size_val % 2 == 0:\nkernel_size_val += 1\nkernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\neroded_image = cv2.erode(image, kernel, iterations=iter_val)\ncv2.imshow('yt', eroded_image)\ncv2.namedWindow('yt')\ncv2.createTrackbar('Iterations', 'yt', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'yt', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\nkey = cv2.waitKey(1) & 0xFF\nif key == ord('s'):\ncv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\nprint(\"截图已保存为 eroded_screenshot.png\")\nelif key == ord('q'):\nbreak\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王家翔": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2 \nimport numpy as np\nimg = cv2.imread('img/cv2z.png')\nkernel = np.ones((7,7),np.uint8) \nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9e34acadeec9c0a71281b5ebc9036f12.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n\ndef nothing(x):\n    pass\n\n\n# Read the image\nimg = cv2.imread('img/cv2z.png', 0)  # Read as grayscale\n\n# Create a window\nwindow_name = 'Erosion Demo'\ncv2.namedWindow(window_name)\n\n# Create trackbars for iterations and kernel size\ncv2.createTrackbar('Iterations', window_name, 1, 5, nothing)\ncv2.createTrackbar('Kernel Size', window_name, 1, 5, nothing)\n\nwhile True:\n    # Get current trackbar positions\n    iterations = cv2.getTrackbarPos('Iterations', window_name)\n    kernel_size = cv2.getTrackbarPos('Kernel Size', window_name)\n\n    # Ensure kernel size is odd and at least 1\n    kernel_size = max(1, kernel_size)\n    if kernel_size % 2 == 0:\n        kernel_size += 1\n\n    # Create kernel\n    kernel = np.ones((kernel_size, kernel_size), np.uint8)\n\n    # Perform erosion\n    erosion = cv2.erode(img, kernel, iterations=iterations)\n\n    # Display images\n    cv2.imshow(window_name, erosion)\n\n    # Press ESC to exit\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王斌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n\nimg=cv2.imread('sucai5/cv2z.png')\nkernel=np.ones((5,5),np.uint8)\nerosion=cv2.erode(img,kernel,iterations=1)\ncv2.imshow('img',img)\ncv2.imshow('erosion',erosion)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n\nimg=cv2.imread('sucai5/cv2d.png')\nkernel=np.ones((5,5),np.uint8)\ndilate=cv2.dilate(img,kernel,iterations=1)\ncv2.imshow('img',img)\ncv2.imshow('dilate',dilate)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/174de6f635018eda09de335d2b489dc1.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n\nimg_path = 'sucai5/cv2z.png'\nimg = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)\n\niterations = 1\nkernel_size = 3\n\n\ncv2.namedWindow('Erosion')\n\ncv2.createTrackbar('Iterations', 'Erosion', iterations, 5, lambda x: None)\ncv2.createTrackbar('Kernel Size', 'Erosion', kernel_size, 5, lambda x: None)\n\nwhile True:\n\n    iterations = cv2.getTrackbarPos('Iterations', 'Erosion')\n    kernel_size = cv2.getTrackbarPos('Kernel Size', 'Erosion')\n\n    if kernel_size % 2 == 0:\n        kernel_size += 1\n\n    kernel = np.ones((kernel_size, kernel_size), np.uint8)\n\n    erosion_result = cv2.erode(img, kernel, iterations=iterations)\n\n    cv2.imshow('Erosion', erosion_result)\n\n\n    key = cv2.waitKey(1) & 0xFF\n    if key == ord('q'):\n        break\n\n\ncv2.imwrite('erosion_result.png', erosion_result)\n\n\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王昱诺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/44fd40681c2838a745a683fd83f220c8.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg=cv2.imread('img/cv2z.png')\nkernel=np.ones((7,7),np.uint8)\nerosion=cv2.erode(img,kernel,iterations=1)\ncv2.imshow('img',img)\ncv2.imshow('rse',erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a222f322e40d487bf65c64b66cc8c1ed.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"pangzhiqiang\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nType = cv2.getTrackbarPos('Type',windowName)\nValue = cv2.getTrackbarPos('Value',windowName)\nkernel = np.ones((Value, Value), np.uint8)\nerosion = cv2.erode(img, kernel, iterations=Type)\ncv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4cd1628d038d06e67b8dd61ca6189453.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/67c8472b1b34bf40d845c75abc22cf50.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5ba77c80ce72232c3c02659e87a231fa.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"wh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((Value, Value), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王钰洁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9bf11686859f8209fee4407dfa2540fa.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg=cv2.imread('sucai5/cv2z.png')\nkernel=np.ones((7,7),np.uint8)\nerosion=cv2.erode(img,kernel,iterations=1)\ncv2.imshow('img',img)\ncv2.imshow('erosion',erosion)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aab208b9f7bcd3cad25d8f6b4645563f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc=cv2.imread('sucai5/cv2d.png')\nkernel=np.ones((11,11),np.uint8)\ndilate=cv2.dilate(src,kernel,iterations=1)\ncv2.imshow('src',src)\ncv2.imshow('dilate',dilate)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ec3f99edd7883f94ddb596535f2e2b08.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"wyj\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((Value, Value), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "葛人欢": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/adbdb43069949df7d9a0ef3ec6abf09a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4347d6bf12b86f104da327fb4426a178.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2e29f87a871ec28679602548b8439c96.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"GRH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((Value, Value), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蒋子豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f9f2feaaa5e304aac4629b3c53801375.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('jzh', img)\ncv2.imshow('jzh2', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0d5bdc24d58bf15c59053b931533a1a9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('jzh', src)\ncv2.imshow('jzh2', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0d475279be4c695703830fed33f39cba.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('cv2z.png',0)\nwindowName = \"JZH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((Value, Value), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蔡雨轩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/784def4c8fd4abf377a14d1fdc5c636d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/42550f5141bc4af1c84df98ddb6cfe8c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2d86fdab5b0ac56831a49179e96621af.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"CYX\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF == 27:\n       break\n   Type = cv2.getTrackbarPos('Type',windowName)\n   Value = cv2.getTrackbarPos('Value',windowName)\n   kernel = np.ones((Value, Value), np.uint8)\n   erosion = cv2.erode(img, kernel, iterations=Type)\n   cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "许贤明": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "赖志和": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/620cd7e135a8191a7bc609f77430934f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"LZH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((2*Value+1,2*Value+1), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "邱伊琳": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8bf916798cba28d9e06703ce683e6522"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"pangzhiqiang\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((Value, Value), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郑光甫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6239daa8a33a53475d153c8dd94517ca.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/33d8d8bb383ac4123f8b8b6d73cff8d7.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3c5ba3ec6c614bd30f28e2536cdc3243"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\nprint(\"Error: 无法读取图像文件。\")\nexit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\nglobal iter_val, kernel_size_val\nif kernel_size_val % 2 == 0:\nkernel_size_val += 1\nkernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\neroded_image = cv2.erode(image, kernel, iterations=iter_val)\ncv2.imshow('fsc', eroded_image)\ncv2.namedWindow('fsc')\ncv2.createTrackbar('Iterations', 'fsc', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'fsc', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\nkey = cv2.waitKey(1) & 0xFF\nif key == ord('s'):\ncv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\nprint(\"截图已保存为 eroded_screenshot.png\")\nelif key == ord('q'):\nbreak\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郭捷瑞": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aa90ad1881f66ba60a91903b805690e9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a7e611efc298a59c969640d969525608.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('cv2d.png')\nkernel = np.ones((7,7),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/956a073163ba1fa073648c133df652f1.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef erode_image(val):\n    iterations = cv2.getTrackbarPos('Iterations', 'gjr')\n    ksize = cv2.getTrackbarPos('Kernel Size', 'gjr')\n    ksize = max(1, ksize)\n    ksize = ksize if ksize % 2 == 1 else ksize + 1\n    kernel = np.ones((ksize, ksize), np.uint8)\n    eroded = cv2.erode(img, kernel, iterations=iterations)\n    cv2.imshow('Erosion Demo', eroded)\nimg = cv2.imread('cv2z.png', cv2.IMREAD_COLOR)\nif img is None:\n    print(\"Error: 无法读取图像，请检查路径是否正确。\")\n    exit()\ncv2.namedWindow('gjr')\ncv2.createTrackbar('Iterations', 'gjr', 1, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'gjr', 1, 5, erode_image)\nerode_image(0)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "金孝华": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2c3c46c4e7984f31050fc7ac14e690d6.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai5/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3edce159124e959c7ac91f039bd166a1.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9241dd9d83fe162f186b3c85943e4252.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"jxh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((2 * Value + 1, 2 * Value + 1), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈沈祺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8455fb5012bcf2d936377a136a8c3cc0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion  = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img',img)\ncv2.imshow('erosion',erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dc3432a6f6b0eca6ab2a58904abf571d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate  = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src',src)\ncv2.imshow('dilate',dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c77891ac349e684e4894cb83501ef646.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef callback(a):\n    Type = cv2.getTrackbarPos(tType ,windowsName)\n    Value = cv2.getTrackbarPos(tValue,windowsName)\n    kernel = np.ones((2 * Value + 1, 2 * Value + 1), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowsName,erosion)\nimg = cv2.imread('cv2z.png')\nwindowsName = \"Threshold\"\ncv2.namedWindow(windowsName)\ntType = \"Type\"\ntValue = \"Value\"\ncv2.createTrackbar(tType,windowsName,1,5,callback)\ncv2.createTrackbar(tValue,windowsName,1,5,callback)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/77d1ba2e4072ed8ad17c1f5ef849bce0",
+                    "https://p.ananas.chaoxing.com/star3/origin/b81cf92f3daaf259154e57e917cbd379"
+                ],
+                "text": [
+                    "import cv2import numpy as npimg = cv2.imread('sucai5/cv2z.png')kernel = np.ones((7,7),np.uint8)erosion = cv2.erode(img,kernel,iterations = 1)cv2.imshow('img', img)cv2.imshow('erosion', erosion)cv2.waitKey(0)cv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d9870953c196f203847dacc32a92ff93",
+                    "https://p.ananas.chaoxing.com/star3/origin/a595fbfd98f84e2940b6708d23c3605d"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('sucai5/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('dilate', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2import numpy as npimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)if image is None:print(\"Error: 无法读取图像文件。\")exit()iter_val = 1kernel_size_val = 1def erode_image(val=None):global iter_val, kernel_size_valif kernel_size_val % 2 == 0:kernel_size_val += 1kernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)eroded_image = cv2.erode(image, kernel, iterations=iter_val)  cv2.imshow('xyd', eroded_image)\ncv2.namedWindow('ch')\ncv2.createTrackbar('Iterations', 'xyd', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'xyd', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\nkey = cv2.waitKey(1) & 0xFF\nif key == ord('s'):\ncv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\nprint(\"截图已保存为 eroded_screenshot.png\")\nelif key == ord('q'):\nbreak\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "韩哲涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d476e321aff32117e0b5740130787c74"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/492ee3fb96fcc57cc0fbe32edae3736f"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dd289f2a35d09a8be497f2fdff4a76eb"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('book1.png')\nrows, cols, _ = img.shape\nsrc = []\ndef select_points(event, x, y, flags, param):\nglobal src\nif event == cv2.EVENT_LBUTTONDOWN:\nsrc.append((x, y))\nprint(f\"Point selected: {x}, {y}\")\ncv2.imshow(\"Original Image\", img)\ncv2.setMouseCallback(\"Original Image\", select_points)\nwhile True:\ncv2.waitKey(1)\nif len(src) == 4:\nbreak\ncv2.destroyAllWindows()\ndst = np.float32([[0, 0], [1500, 0], [0, 600], [1500, 600]])\nM = cv2.getPerspectiveTransform(np.float32(src), dst)\nresult = cv2.warpPerspective(img, M, (1500, 600))\ncv2.imshow('Image', img)\ncv2.imshow('Warped Image', result)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\nimport cv2\nimport numpy as np\nimg = cv2.imread('book1.png')\nrows, cols, _ = img.shape\nsrc = []\ndef select_points(event, x, y, flags, param):\nglobal src\nif event == cv2.EVENT_LBUTTONDOWN:\nsrc.append((x, y))\nprint(f\"Point selected: {x}, {y}\")\ncv2.imshow(\"Original Image\", img)\ncv2.setMouseCallback(\"Original Image\", select_points)\nwhile True:\ncv2.waitKey(1)\nif len(src) == 4:\nbreak\ncv2.destroyAllWindows()\ndst = np.float32([[0, 0], [1500, 0], [0, 600], [1500, 600]])\nM = cv2.getPerspectiveTransform(np.float32(src), dst)\nresult = cv2.warpPerspective(img, M, (1500, 600))\ncv2.imshow('Image', img)\ncv2.imshow('Warped Image', result)\ncv2.waitKey(0)\ncv2.destroyAllWindows()\nimport cv2\nimport numpy as np\nimg = cv2.imread('book1.png')\nrows, cols, _ = img.shape\nsrc = []\ndef select_points(event, x, y, flags, param):\nglobal src\nif event == cv2.EVENT_LBUTTONDOWN:\nsrc.append((x, y))\nprint(f\"Point selected: {x}, {y}\")\ncv2.imshow(\"Original Image\", img)\ncv2.setMouseCallback(\"Original Image\", select_points)\nwhile True:\ncv2.waitKey(1)\nif len(src) == 4:\nbreak\ncv2.destroyAllWindows()\ndst = np.float32([[0, 0], [1500, 0], [0, 600], [1500, 600]])\nM = cv2.getPerspectiveTransform(np.float32(src), dst)\nresult = cv2.warpPerspective(img, M, (1500, 600))\ncv2.imshow('Image', img)\ncv2.imshow('Warp"
+                ]
+            }
+        },
+        "高嘉泽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2 #导入OpenCV库\nimport numpy as np\nimg = cv2.imread('cv2z.png')#读取图像\nkernel = np.ones((7,7),np.uint8) #定义结构元5×5\nerosion = cv2.erode(img,kernel,iterations = 1)#腐蚀操作\ncv2.imshow('img', img)#显示原始图像\ncv2.imshow('erosion', erosion)#显示结果图像\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/93f8b0fea8dbb1e1324cf4e95f7d1548.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"GJZ\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,1,5,nothing)\ncv2.createTrackbar('Value',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    kernel = np.ones((Value, Value), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "黄君健": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/33310b23a4148c37ba8a0a911f14b195"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cb94af5fc294545677afdaadc4b20b9c"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3c5ba3ec6c614bd30f28e2536cdc3243"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai5/cv2z.png', cv2.IMREAD_GRAYSCALE)\nif image is None:\nprint(\"Error: 无法读取图像文件。\")\nexit()\niter_val = 1\nkernel_size_val = 1\ndef erode_image(val=None):\nglobal iter_val, kernel_size_val\nif kernel_size_val % 2 == 0:\nkernel_size_val += 1\nkernel = np.ones((kernel_size_val, kernel_size_val), np.uint8)\neroded_image = cv2.erode(image, kernel, iterations=iter_val)\ncv2.imshow('fsc', eroded_image)\ncv2.namedWindow('fsc')\ncv2.createTrackbar('Iterations', 'fsc', iter_val, 5, erode_image)\ncv2.createTrackbar('Kernel Size', 'fsc', kernel_size_val, 5, erode_image)\nerode_image()\nwhile True:\nkey = cv2.waitKey(1) & 0xFF\nif key == ord('s'):\ncv2.imwrite('eroded_screenshot.png', cv2.imread('./img/cv2z.png'))\nprint(\"截图已保存为 eroded_screenshot.png\")\nelif key == ord('q'):\nbreak\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "黄塨燚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1307514b5a8e75eb7f728144af699ffa.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/cv2z.png')\nkernel = np.ones((7,7),np.uint8)\nerosion = cv2.erode(img,kernel,iterations = 1)\ncv2.imshow('img', img)\ncv2.imshow('erosion', erosion)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/567b137f607e81ac1f086959dbf9dcc9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nsrc = cv2.imread('img/cv2d.png')\nkernel = np.ones((11,11),np.uint8)\ndilate = cv2.dilate(src,kernel,iterations = 1)\ncv2.imshow('src', src)\ncv2.imshow('huanggongyi', dilate)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2bc016297b20eea5f39ffec2c03ad358.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai5/cv2z.png',0)\nwindowName = \"huanggongyi\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Value 3',windowName,1,5,nothing)\ncv2.createTrackbar('it 2',windowName,1,5,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Value 3',windowName)\n    Value = cv2.getTrackbarPos('it 2',windowName)\n    kernel = np.ones((2*Value+1, 2*Value+1), np.uint8)\n    erosion = cv2.erode(img, kernel, iterations=Type)\n    cv2.imshow(windowName, erosion)\ncv2.destroyAllWindows()"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nimport cv2import numpy as npimg = cv2.imread('./img/cv2z.png') kernel = np.ones((7, 7), np.uint8)erosion = cv2.erode(img, kernel, iterations=1)cv2.imshow('img', img)cv2.imshow('erosion', erosion)cv2.waitKey(0)cv2.destroyAllWindows()",
+            "题干": {
+                "images": [],
+                "text": [
+                    "下载附件并解压，读取附件中img文件夹下的\"cv2z.png\"并对其进行腐蚀操作。\n- 结构元选用(7, 7)的大小。\n提交完整代码。"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\nimport cv2import numpy as npsrc = cv2.imread('./img/cv2d.png')kernel = np.ones((11, 11), np.uint8)dilate = cv2.dilate(src, kernel, iterations=1)cv2.imshow('src', src)cv2.imshow('dilate', dilate)cv2.waitKey(0)cv2.destroyAllWindows()",
+            "题干": {
+                "images": [],
+                "text": [
+                    "读取附件中img文件夹下的\"cv2d.png\"并对其进行膨胀操作。\n- 结构元选用(11, 11)的大小。\n提交完整代码。"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\nimport cv2import numpy as npdef onValue(a):    Value = cv2.getTrackbarPos(\"Value\", windowName)    it = cv2.getTrackbarPos(\"it\", windowName)    kernel = np.ones((2 * Value + 1, 2 * Value + 1), np.uint8)    dilate = cv2.erode(img, kernel, iterations=it)    cv2.imshow(windowName, dilate)img = cv2.imread('./img/cv2z.png')windowName = \"JXJ\"cv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)cv2.imshow(windowName, img)cv2.createTrackbar(\"Value\", windowName, 1, 100, onValue)cv2.createTrackbar(\"it\", windowName, 1, 10, onValue)cv2.waitKey()cv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/77f746a090ef0a8d40a3e4fc3e071bf4.png"
+                ],
+                "text": [
+                    "读取附件中img文件夹下的\"cv2z.png\"并对其进行腐蚀操作，显示并截图。\n- 创建滑动条，使用滑动条来调整腐蚀操作的迭代次数，范围(1, 5)。\n- 创建滑动条，使用滑动条来调整结构元大小，范围(1, 5)（注意这个参数只能是奇数！！）。\n给出完整代码、截图。\n截图参考："
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,424 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep -n -A1 -B3 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8a54bc28da8d639e9bc73af541d09dfd"
+                ],
+                "text": [
+                    "grep -n -A1 -B1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep -n -A1 -B3 \"IPv4\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n -A1 -B1'root' /etc/password"
+                ]
+            }
+        },
+        "吴何莹": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/77d90c69bf845a19739c4c9985793cbe"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/af3a414a2f629a25798b580ff3f47c8c"
+                ],
+                "text": []
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg  | grep -A1 -B3 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cat /ect/passwd\ngrep -n -A1 -B1 --color=auto 'root' /ect/passwd"
+                ]
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep -n -A1 -B3 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2c9e4c5df4385dd53e1d35d4ae920fdb"
+                ],
+                "text": [
+                    "grep -n -A1 -B1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep -n -A1 -B3 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n -A1 -B1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4b0771179e1074fa225d517f32a10a4"
+                ],
+                "text": [
+                    "dmesg|grep -B 3 -A 1\"  IPv4\""
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cd536fd44a31098d416c446fdb3fed3f"
+                ],
+                "text": [
+                    "cat /etc/passwd |grep -n  --color=auto -B 1 -A 1 \"root\""
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/776e5673e8dd6b2f139347411c5e8cf8"
+                ],
+                "text": [
+                    "dmesg|grep -B -A \"IPv4\""
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9652918d0170b96e2246bed5ade6543e"
+                ],
+                "text": [
+                    "cat /etc/passwd |grep -n --color=auto -B 1 -A  1 \"root\""
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/24b5721b3ce327aac53402adc97b19b5"
+                ],
+                "text": [
+                    "dmesg | grep -A3 -B1  'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e8901b128b49c855aa8406ac7dd201a5"
+                ],
+                "text": [
+                    "grep -n -A1 -B1 --color=auto 'root'  /etc/passwd"
+                ]
+            }
+        },
+        "李诗琪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep  -n --color=auto 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cat  /root/etc/passwd"
+                ]
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/87d91d5a82dc92d77aa2c90c20724a7b"
+                ],
+                "text": [
+                    "dmesg | grep -B3 -A1 --color=auto 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c0885db1d15f158c7c003a23f6fa59f1"
+                ],
+                "text": [
+                    "cat /etc/passwd | grep -n-B1 -A1 --color=auto 'root'"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c0999ff58ac4a7551bb2b0221d6f65aa"
+                ],
+                "text": [
+                    "dmesg | grep -n -A1 -B3 'IPV4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/526596a58b5e9618cd8d475ae7c9d7a5"
+                ],
+                "text": [
+                    "grep -n A1 -B1 --color=auto 'root' /evt/passwd"
+                ]
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fd2523ebcef9577de69626385e066d68"
+                ],
+                "text": [
+                    "dmesg | grep -B3 -A1 --color=auto 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ea5d1e278bac973f82aa5058e9ed6c9a"
+                ],
+                "text": [
+                    "grep -n --color =auto -C1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e9dc8cb142035d512d4a836d6610c7d6"
+                ],
+                "text": [
+                    "dmesg | grep -B3 -A1 --color=auto 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6e751318fe16556661e1db8896751af3"
+                ],
+                "text": [
+                    "grep -n --color=auto -C1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep -n -A1 -B3 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n -A1 -B1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "林贝贝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep 'IPv4'\ndmesg | grep -n -A3 -B1 --color=auto 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0dd93df6e1b010f464527399558bb83f",
+                    "https://p.ananas.chaoxing.com/star3/origin/d221bc52459daa3bc81b75f0dede985d"
+                ],
+                "text": [
+                    "dmesg | grep /etc/passwd 'root'\ndmesg | grep -n --color=auto 'root'\ndmesg | grep -n  -A1 -B1 --color=auto 'root'"
+                ]
+            }
+        },
+        "王河": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep -n A1 -B3 'IPV4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n -A1 -B 1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep -A1 -B3 'ipv4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cc0700e2426a7371869ce52da7008b80"
+                ],
+                "text": [
+                    "dmesg | grep -B 3 -A 1\"IPv4\""
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b11161f012888414284e2b3991a0646e"
+                ],
+                "text": [
+                    "cat/etc/passwd | grep -n --color =auto -B 1 -A 1 \"root\""
+                ]
+            }
+        },
+        "蒋贤炽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep --color=auto -n -B3 -A1 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n --color=auto -C1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "诸葛萌萌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6db7bb3362d43ef102aa4f294acfcc1f"
+                ],
+                "text": [
+                    "dmesg | grep 'IPv4'\ndmesg | grep -n --color=auto 'IPv4'\ndmesg | grep -n -A1 -B3 --color=auto 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/25786d75a83073ac379cf16380c1e1f3"
+                ],
+                "text": [
+                    "grep -n --color=auto -B1 -A1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f643f87fe2ce20d974441fe3b24dbfc0",
+                    "https://p.ananas.chaoxing.com/star3/origin/dadb91c033feeb4b2a530e44f76f9e8a"
+                ],
+                "text": [
+                    "dmesg | grep 'IPv4'\ndmesg | grep -n --color=auto 'IPv4'\ndmesg | grep -n -A1 -B3 --color=auto 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1e00f1c39bbff779ffd941c7cfe27e97"
+                ],
+                "text": [
+                    "grep -n 'root' /etc/passwd"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c91fe723c520297d6e274bdaed683938"
+                ],
+                "text": [
+                    "dmesg | grep 'Ipv6'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n -A1 -B1 'root' /etc/passwd"
+                ]
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesglgrep -B 3-A 1“ipv”"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/df47863fe34c9286a9c5a9f2efe5b3f1"
+                ],
+                "text": [
+                    "cat /etc/passwd |grep -n --color=auto -B 1-A 1\"root\""
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "dmesg | grep 'IPv4'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cat /etc/passwd | grep -n --color=auto -B 1 -A 1 'root'"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ndmesg | grep -A3 -B1 'IPv4'",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用dmesg列出核心信息，再用grep找出内含“IPv4”的内容，要求：\n- 将关键字所在行的前3行和后1行一起显示出来。\n提交完整命令和截图！！"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ncat /etc/passwd | grep -n -A1 -B1 --color=auto 'root'",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep命令筛选/etc/passwd（cat命令）中带有“root”的行，要求：\n- 加上行号\n- 关键字显色\n- 显示出关键字所在的前1行和后1行\n提交完整命令和截图！！"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,740 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'sss*' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r.*g' /etc/passswd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep命令在/root/sample.tx中找到g后面接2~5个o，然后接一个d的字符串"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r'/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep-n'sss*'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep命令在/root/sample.tx找到g后面接2-5个o，然后接一个d的字符串"
+                ]
+            }
+        },
+        "吴何莹": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep \"u..r\" /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"ss\" /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*p' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "在文件 /root/sample.txt 中搜索并显示包含good、goood、gooood或goooood的行，并显示行号。"
+                ]
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'sss*d' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep命令在/root/sample.tx文件中找到g后面接2-5个o，然后接一个d的字符串"
+                ]
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'sss*' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep在/root/sample.tx中寻找出g后面2~5个o后面接一个d的行和字符串"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gerp -n 'sss*' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用gerp命令在/root/sample.tx中找到g后面接2~5个o,然后接一个d的字符串"
+                ]
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -E 's..s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -E 'r..g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "该命令使用grep在/root/sample.txt文件中查找匹配go\\{2,5\\}d模式的行。-n选项让输出显示行号。go\\{2,5\\}d表示查找以g开头，接着2到5个连续的o，再以d结尾的字符串，最后输出匹配行及其行号"
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 's.*s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "文件中查找符合特定模式的文本行，并且在输出结果时显示这些匹配行的行号"
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'ss*' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "找出并标记root文件里sample.txt中所有go?d的句子，其中？是1个到4个o"
+                ]
+            }
+        },
+        "李诗琪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -E 's{2,}' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/paswd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 's.*s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "要找出G后面有2~5个O，然后接一个G的字符串"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /ect/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  's.*s' /ect/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r.*g' /ect/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "查找、root/sample.txt中所有包括\"go\"重复2到5次，然后紧接着三十\"d\"的行，并输出这些的行号和内容"
+                ]
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 's.*s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "在文件/root/sample.tx中搜索包含特定重复模式的字符串，并返回匹配行及其行号。"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 's.*s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep  'r.g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "文件中、root/sample.tx里搜索包含特定重复模式的字符串，并返回匹配行及其行号"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'sss*' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "作用是找出2~5个d的字符串"
+                ]
+            }
+        },
+        "林贝贝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n  'u..r\"  /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n  'sss*'  /ect/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n  'r...g*'  /ect/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep命令找出g后面接2~5个o，然后接一个g的字符串。"
+                ]
+            }
+        },
+        "王河": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'sss' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep命令找到2-5后面的d和字符串"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'sss' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r..g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep命令找出/root/sample.tx文本里2-5带d的字符串"
+                ]
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 's.*s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep在/root/sample.tx中寻找出g后面2~5个o后面接一个d的行和字符串"
+                ]
+            }
+        },
+        "董佳旭": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  'ss' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "这个命令是在文件/root/sample.tx中搜索匹配正则表达式go/{2,5}d的行。显示匹配行和行号"
+                ]
+            }
+        },
+        "蒋贤炽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep ‘u..r’/ect/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 's.*s' /ect/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /ect/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "该命令表达的是文本行，并显示这些文本的行号"
+                ]
+            }
+        },
+        "诸葛萌萌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "gtep  'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  ' s.*s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "在文件 /root/sample.txt 中搜索符合 go\\{2,5\\}\\d 的文本行，并显示匹配行及其行号"
+                ]
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'sss*' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "找出g后面接2~5个o，然后接一个g的字符串。"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n '.*' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n '[ss]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n 'r...g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep'u...r' /etc /passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -e 's{2,}' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "该命令使用grep在/root /sample.txt 文件中匹配go/"
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 's.*s' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r.*g' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "此命令借助grep工具，在文件查找符合特定模式的行，并且显示这些行的行号"
+                ]
+            }
+        },
+        "黄开桂": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u..r' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 's*' /ect/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep 'r..p' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "用grep命令找出/root/sample.tx文件中找到g后面接2~5个0，再接一个d"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ngrep -n 'u..r' /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep的“.”找出/etc/passwd文件中所有包含\"u??r\"的行，其中??可以是任意字符。"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ngrep -n 'sss*' /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep命令找出/etc/passwd文件中所有至少包含两个“s”字符串的行。如\"ssd\"和\"sssd\""
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ngrep -n 'r.*g' /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep命令找出/etc/passwd文件中所有满足“r...g”的行，其中\"...\"可以代表任何数量的任何字符。"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "解释以下命令的作用："
+                ]
+            }
+        }
+    }
+}

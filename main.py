@@ -1,5 +1,5 @@
 from grader.homework_grader import HomeworkGrader
-from config.args import config
+from config._args import config
 import logging
 from crawler.homework_crawler import ChaoxingHomeworkCrawler
 

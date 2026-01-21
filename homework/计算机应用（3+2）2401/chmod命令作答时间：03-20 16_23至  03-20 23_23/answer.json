@@ -1,0 +1,1041 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c66365ea43154fe6d62384809c541274"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4828e522a8b5bc6575eead538ff73804"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "toucch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "吴何莹": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dd95d483bb344994e4d3d24a1bf0d732"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch ~/testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/04af4b6dd2fdbea51d5b04a9cabb68be"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "张俊楠": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/57857e1eefecd20a45a8bb2c65a483d1"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 550 ;touch test1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd ~\ntouch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8716539c69e3d2cbf61124c0b2761879"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6716570496e903abcf3acba84366605e"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testflie"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a269f4b590311a723d34113ecacc2dca"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 006"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i attrest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i attrtest"
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/185d4a8ee99cdb57b49f51422f39c9ac"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 006"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i  attrtest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i attrtest"
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/07159278ab6b738980438d549a8f04f6"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "李诗琪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9a6eae8ababa08b1db99fb60b8b824ab"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "#umask 002\n#touch test3\n#mkdir test4\n#ll"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "#touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "#testfile +i attrtest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "#testfile -i attrtest"
+                ]
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/519ecf64355593f389bd0e18d874390f"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfilr"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i test testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i test testfile"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2e8a9ca12f4cc13ae19fcd4390fd8051"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chatty +i attrtest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i attrtest"
+                ]
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b9a27bd7dccd372b47c09f9c708b04e6"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr +i ~/testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sudo chattr -i ~/testfile"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f5e89c45d944a524cf6bac048a4cc5a8"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch  ~/testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr +i ~/testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sudo chattr -i ~/testfile"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4b7f11e17af228bd75b179deac0b437d"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i attrtest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "林贝贝": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0ee97efe247fc6b45d8753717c1f3941"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask  -rw-x"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "cd  /home\ntouch  testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i  testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr  -i  testfile"
+                ]
+            }
+        },
+        "王河": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aaf5f4bfc47ed8baea17e0f3a0f464a3"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/70fd423a6f86d9baf3c5f7eb0873e854"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8b080e69b688a92a60ebe44fe0c64cf9"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 550;touch"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "董佳旭": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9bb104c64357dbc1d81a5e78fc4efcad"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "chmod u=w,g=w,0=rwx /etc/file"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch / testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "蔡进元": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0ed4fda5b7a7eec699ed80135fd3a193"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 011\numask000"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr +itestfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "suodo chattr -i testfile"
+                ]
+            }
+        },
+        "诸葛萌萌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8cac4807c44d90a751015b655e47897c"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch ~/testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5a306d94ff48b1ab2f6c30894d385670"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sudo chattr  -i testfile"
+                ]
+            }
+        },
+        "钱益乐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "umask"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 550 ;touch test1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch - testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/679b2ded39aeaa795173f40dbc4485bf"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 002"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touck testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        },
+        "陈庆鑫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8565c04dde6d87d9418b872e9f0ba145"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile.tet"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr -i/path/to/you/testfile.tet"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "rm testfile.tet"
+                ]
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/555588a594f4aaf726a9a27e07830c3b"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 0111\numask 0000\numask"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr +i"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sudo chattr -i"
+                ]
+            }
+        },
+        "陈真": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fbae7015af3e9fad84ae624abac20a51"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 0111\numask 0000"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr +i tsetfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sudo chattr -i testfile"
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/41fd9ceab0754271e22bc269c9652455"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 0111\numask 0000"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo chattr +i"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chmod u+w filename"
+                ]
+            }
+        },
+        "黄开桂": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b03b56b30cbef64d3a20a5c007e332d2"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "umask 022"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch testfile"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "chattr +i testfile"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chattr -i testfile"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：",
+            "题干": {
+                "images": [],
+                "text": [
+                    "查看当前系统的 umask 值。（上传截图）"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\numask 002",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用umask调整系统的默认权限设置，使得新创建的文件和目录满足以下要求：\n- 允许所有者修改\n- 允许所在组的成员也能修改文件\n- 其他用户权限不变。\n（输入命令）"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ntouch testfile",
+            "题干": {
+                "images": [],
+                "text": [
+                    "在家目录下创建一个名为“ testfile ”的新文件。\n（输入命令）"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\nchattr +i testfile",
+            "题干": {
+                "images": [],
+                "text": [
+                    "设置该文件为不可删除状态。（输入命令）"
+                ]
+            }
+        },
+        "题目5": {
+            "正确答案": "正确答案：\nchattr -i testfile",
+            "题干": {
+                "images": [],
+                "text": [
+                    "取消文件的不可删除状态。（输入命令）"
+                ]
+            }
+        }
+    }
+}

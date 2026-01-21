@@ -1,0 +1,1132 @@
+{
+    "上官宗恒": [
+        {
+            "content": [
+                {
+                    "text": "上官宗恒的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls/tmp/data&&touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出未找到命令，echo不存在\n因为文件不存在所以&&后面的不执行然后||前面没有运行所以echo不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root /abc && touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls /tmp/logs && touch /tmp/logs/log.txt || tmp/logs",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "上官瀚涛": [
+        {
+            "content": [
+                {
+                    "text": "上官瀚涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：Is/tmp/data&& touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出未找到命令，echo不存在\n因为文件不存在所以&&后面的不执行然后||前面没有运行，所以echo不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：Is /root/abc&& touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：编辑运算符的顺序不对，导致执行顺序出错\nIs /tmp/logs && touch /tmp/logs/log.txt || tmp/logs",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴何莹": [
+        {
+            "content": [
+                {
+                    "text": "吴何莹的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[ -d /tmp/data ] && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[ -d /root/abc ] && touch /root/abc/abc.tet || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：原命令的问题在于逻辑运算符 && 和 || 的优先级和组合方式。\n[ -d -tmp-logs] || {mkdir -p /tmp/logs && touch /tmp logs/log.txt;}",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴登灿": [
+        {
+            "content": [
+                {
+                    "text": "吴登灿的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出不存在，因为不存在这一文件或目录",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc && touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：顺序错误\nls /tmp/logs && touch /tmp/logs/log.txt || mkdir /tmp/logs",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌州": [
+        {
+            "content": [
+                {
+                    "text": "施昌州的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：会输出没有文件和echo\"不存在\"\n因为文件不存在所以&&后面的不执行然后||前面是没有运行所以输出echo\"不存在\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc &&  touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls /tmp/logs && touch /tmp/logs/log.txt || /tmp/logs\n因为命令是一个个往后执行的所以经过||的判断如果文件不存在会输出makdir /tmp/logs 然后&&判断前面的执行了所以也输出了 touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌建": [
+        {
+            "content": [
+                {
+                    "text": "施昌建的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：Is/tmp/data&&touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出未找到命令，echo不存在\n因为文件不存在所以&&后面的的不执行然后||前面没有运行所以echo不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：Is /root /abc && touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：逻辑运算符的优先级导致执行顺序不符合预期\nIs /tmp/logs && touch /tmp/logs/log.txt || tmp/logs",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱彤彤": [
+        {
+            "content": [
+                {
+                    "text": "朱彤彤的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[ -d /tmp/data ] && touch /tmp/data/file.txt ||true",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：先输出/nonexistent_dir目录下的内容，若失败则不输出存在，而是输出不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[ -d /root/abc] &&touch /root/abc/abc.txt ||echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：在原始命令is /tmp/logs ||mkdir /tmp/logs &&touch /tmp/logs/log.txt里，逻辑运算符的优先级和结合性导致了问题。||和&&是按照从左到右的顺序执行的·",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱明杰": [
+        {
+            "content": [
+                {
+                    "text": "朱明杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[-d /tmp/data]&& touch /tmp/data/file.txt ||true",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：/nonexistent",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[-d/root/adc]&&touch/root/abc/abc.txt ||echo\"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：is /tmp/logs ||mkdir /tmp/logs &&touch /tmp/logs/log.txt  ||&&",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李檀": [
+        {
+            "content": [
+                {
+                    "text": "李檀的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data &&  touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：不存在\n因为没有nonexistent_dir文件",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc && touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李诗琪": [
+        {
+            "content": [
+                {
+                    "text": "李诗琪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：ls /echo\"存在\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "杨守波": [
+        {
+            "content": [
+                {
+                    "text": "杨守波的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.text",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：会输出没有文件和echo 不存在\n因为文件不存在所以&&后面不执行然后||前面是运行所以输出echo 不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc && touch/root/abc.txt ||echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls /tmp/logs && touch /tmp/logs/log.txt || /tmp/logs\nw因为命令是一个个往后执行的所以经过||的判断如果文件不存在会输出makdir /tmp/logs 然后&&判断前面的执行了所以也输出touch /tmo/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林上宝": [
+        {
+            "content": [
+                {
+                    "text": "林上宝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出结果为不存在，因为ls /nonexistent_dir 由于是一个不存在的目录，所以命令会失败，&&是逻辑运算符，表示前面的命令如果成功，则执行后面的命令，||表示前面的命令失败，则执行后面的命令",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc && touch /root/abc/abc.txt || echo\"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：原因解释\nmkdir -p /tmp/logs:使用-p选项确保目录及其上目录存在，如果目录已存在，则不会报错。\n&& couch /tmp/logs/log.txt:只在有mkdir -p /tmp/logs成功执行后，才会执行touch /tmp/logs/log.txt命令。这样可以确保：如果/tmp/logs目录不存在，则创建该目录并生成文件log.txt。如果/tmp/logs目录以存在,则生成文件log.txt\n修正后的命令\nmkdir -p tmp/logs && touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林晓微": [
+        {
+            "content": [
+                {
+                    "text": "林晓微的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[ -d /tmp/data ] && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1对应的学生截图：",
+                    "type": "text"
+                },
+                {
+                    "image_url": {
+                        "url": "data:image/jpeg;base64,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n/Ib1D/fP86cn3hTZOdXvZB9x3JWlpgdb8G9RXTvH0Ms5xFuxk17F8fvD2pa1apquk3EiwhM/Ia+coZntpVmhOHBzkV7l8P/AIoxTaWula2VMBG0lqTBHgyjU4yyTahOHzjG41dt9I8QXa7re7ndR15NfSMukfDe6/fyXMIkPJGRWXr2s+FtFspE0dopGIxxRcLHz1PHLBfwRXJJnDDJNfWvw1svt/gaRBy3l8flXylrc4vPEMdwBgM9fU3w/wBQfTfCiSR8rs5oYI+ZPGenXem+J777WjKhY7eK9N/Z90S6urk3pQ+TGc5IrtnuvBniXUZBrksUcqnnJFP1nxp4d8IaPNZ+GnjbcpGVouB55+0bqMWoalFFCwYxnBxXlI/1afSrmr6lNquozXFwxO8k81TpoAooooAKKKKACiiigAoop0ODeRh/9XnmgBIz+/HWvqv4XsP+FX3vP/LM/wAq5HwLpXgOawR9VuIlmwMgmvTdN8UeBtK0yXTbe6i8lxg80mNHx7qx/wCJze9fvnt71Tuf9SPrX05r+kfDh9PuLi3uojcuCcZHWvnPxTHAt262JBjDcYppiPff2eiBZHJ/hrzH406pfxeOHSG7kRM9A1d18DvFGjaLaFdTlVDt7mvM/i/fW2q+M3utPYPAT1FLqBzNzPfzyEvfSkehY1GAQPnO5vWnOcsabTAOlxHL/cOa+mPhXex+LvB93YysHeOMhR+FfM5+4w9RXpnwG8UQeF9TP26TbC55yaTBHpPwb8NtoM2uT367Am4oTXhnxB1htb8Q3kTtuRHIH519C/Ez4h6B/Y0qaLKnmzL82018synffzTE5LkmhAzpfB/ja58IsrWse5hXeS/tI6kkA86wWVhwCy149x6A0y5w0GAi5z6U7AfWfw7+Js/ibS2upbZYiBnAFeU/GX4mT6jdPo5tVVDxvxWh8I/EukaVojRX7okm3oa82+JF5b6h4iaaz2tFnqKVtQOcSPygVBznmlpW60lMAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCpSUtJSKENNpxptACU006mmgCxa9asv/AK1KrW3WrR600Se8/C2FrvRpYoWG8pgV55r3wx8TSa5d3iL+4BJzWHo3i3VND/48GIrZb4r+JXheJsbXGDSA5C5gktbh4Jv9YpwajqW5uHu7hrib/WOcmoqYDXQuMByv0ojj8oYLl/rTqKACiiigAIyMZx71A1oWOftEg+hqeigCKO3MZ5mdvqaloooAKiktzJ/y2ZfoalooAgW0KnP2iQ/U1OBgYzmiigAooooAiktzIc+c6/Q01LQocm5kb2JqeigAx0zyR0rvPh144m0mf7NfHdatwQ3TFcHSMN4wTj6UAfQb23w4v3+3XTwi5bkjjrXnnxJm0NwsehlCg/u15wbJCc+a/wCdSxwiLoxb60WAePuj1prpv43lfpTqKAK5smJ/4+pPzo+xN/z9S/8AfVWKKAIEtDG277RI3sTT3gMnSVl+hqSigBEXYu3du9zS0UUAMliMvSQp9KVE2DBct7mnUUARNbl23ecy+wNSjgAdcd6KKAI3gLtuEzL7A08DAxnNLRQAUUUUAFFFFABRRRQAUUUUAPgja4uFgj/1jHArq9N+GviSS4jnVT5Z5FcpBI1vcrcR/wCsU5FdbB8UfEdvEsUeNqjAoA9Y1Wzl0j4fy296w83Z0r5yteHn/wB4102reN9Z1mIx3rnYeornQAucd+tCAWmeUd27zG+mafRQA14y/Ryv0pVG0Yzn3paKACiiigAooooAKBRRQAySIydJGT6Go0tShz9okb6mrAGaXafUUAQfZznPnN9M1JjjGfxpSMUUARpCY23GVnz2JpZITKciRk9gafRQAm35NuTn+9TY4TGSTIz59TT6KACopLcyH/XMv0NS0UAVxZkf8vMh/GpkjKfxlvrTqKAAjPtUL2xc5891+hqaigCuLMg5+0yH8anVdoxnd70tFAB/F7V3vg/wHJ4qs3No+2QDjFcFW7oHjTVvDP8AyDCaAOh/4UV4oa+KSzSfZs8/MelewWM+m/DnwDcaa8im8dCOvOa8db42eLXT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IIGau6ho15pYQ3akb+BmrOoeFdU0vTE1O7Ui0kGVJoAyKKRGDoHXoaWgAooooAju3MVsXXrmvoH4J/CzRfF/hf8AtDU8mXOMAV8+X/8Ax5H619d/svrnwS3JoYIcfgB4bYHEhX6VGf2e/D3/AD8y/nXqiL15PX1p233P51FyrHlq/ADw2oALljnqa4D44/C/RfB3htb7S8iQnBBr6PZeV5PX1ryf9qdceD4+TTTEz5MtWMtssjdSakqKx/48l+tS1QgooooAKKKKACiiigAooooAKKKKACiiigAooooAKMe9FFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADGidjkTMo9AaeBgYJyfWiigAooooAAPeiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCN4nc5WZ09gaQQSA83Ln6mpaKAADAwTn3ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKMe9FFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADXRn+7IU+lCIU+85f606igAooooAMe9FFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAY96KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAqUlLSUihGpp6U5qaelACU09aUmm0gLNr1qy/+tj+tVrXrVl/9bH9apEnu3w4G7QJgf7leH+IrOM+Kbpt7Z3HvXuPw3/5AM3+5XiviL/kaLr/eNJAU8beBRQeppH4QmmAjyeWM7S30pqzblLeWw9q9H+D+j2GraxEmooHjJ5Br03x/8MtL0/VLfULZUSwGC6+1K4WPmY3uDj7PJ+VTRy+YM7Cv1FfStnrnwyUrbTW0JlUYJwOteU/E2PRzfmXRFVYD0Ap3A4MnAz1qB7vaceQ5+gru/hl4KufE+qgFT5IOSTXtU+n+BPC22z1iKJ7gDByBRcD5cjufMOPJZfqKlr6Yv/BfhrxjYSP4ZSNXUZwtfPPiPSJ9E1iazuFI2EjNCYGbUUlx5f8AyyZvoK1ND0mfWdTit7ZSQxA4r6H0zwT4c8JaVFc+JUjYsoOGouB8xLebjj7PIPqKnByM4xX09FZ+AfEwNppMUKXD8LwK8b+KXge48J34+UmFzkEUrhY4Xds5KlvYVv8Awlgt9e8cQ2F/A32dzzkdKi8FT2Nr4ihl1dQ1mCCwNfR3hPxL8N77XYINBtokv+ASAM5oYI81+OfhnSfDFwq6ZASCuflFeMQXvm5Bt5F56kV9ofEDV/COnyAeIoUdscbhXmXizxN8N7vSXTSLaJbjHUChMbPBc9M8E9K9A+G3gG41qY3F4u21XklumK4p7b+0tbgW0H7vzBx7Zr6G8eakvhP4ZWo0zCXDoAxHXpTYimY/hzZzf2ZcrEb0/Ln3rhPil4HXSIkvtNGbWTkbfSvMZHa6votSl3vcbt3B71734Yv5vFHhKWK+jIWFPl3ClsB4O3EX+0K9G+DPh+w1/XIYNSUGNjzmvPdRXy9Vu4h91GIFep/AEA+JLfP96mwK/wC0b4b07wprFrDo6BEcDIFeZEfKvuK9g/axAGv2ePavHz91PpQgYCuw+FMWkXPiERa/t+zscDdXHU1i6NG8BIdTnigD274xfDyz0ywGq6GgNmwyNteIxFnaJQpLO2MV9LfCnxLa+MvDbeHtQZTIqYG6ua8MfCaRfH8/2oAWMLF1J6UkwNXwB8OdHs/C82q+JlUK0e5N30rD+Ffh7w74h8T6jDcqhtlJ8urHx08bRm0bw9pjYWEbflrkvgTdfY9UVJCd7tg0DIPi74ftfD+qyJYqFi3cYrz/AO0YCDyWbPcCva/2hrLZeWZx/rSK7z4e/DvQLjwSLjUIU+0tHlSR7UXEfNHh2Fb7xBBayD5HYAivd/F/gXQNJ8Hi5VFF0UyPrXmVro4sPizDbIuIjLhfzr1r4/Trp+lWtuDjdGOKAPmyAlpJg3QHin0iDDOfWlpgFFFGKAAc0EYq7omlXOuzmG1Rsjvipda0G80M4mjaQ+woAzaKQMSu7bg/3e9Ijs5+aNk+ooAdjPFJY2kZv0O9uvrTh1qWw/4/0+tAHvQUJ8NpQOfk7/Svnq1+/P8A7xr6Hb/km8v+5/Svni0+/P8A7xpICZa6X4R/6b4meHyG+XuRxXP2RRbhDLygPP0r6R+C2r+C7xPstnBGNUVfmbHNNgeVfE288/Xbew8hvkcdBXU/FrVQPhjY2nkH5VA4Feh6hrvgWTxO1hdW8bagh5JFL4y8R+C7fSJLfUYUYbcICKkZ8l2XNjGcY9jUtWNWeGXWJpbIYsyx2AelVz1qhBRRRQBDf/8AHkfrX17+y9/yJLV8hX//AB5H619e/svf8iS1Jgj1JO/1p1NTv9adUlDW6r9a8m/ao/5E6OvWW6r9a8m/ao/5E6OhAz5Ksf8AjyX61LUVj/x5L9alqyQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCpSUopKRQ00hpzU2gBKaadTTQBYtetWX/1sf1qta9asv8A62P600Se7/Df/kAzf7leK+Iv+Rouv9417V8N/wDkAzf7leK+Iv8AkaLr/eNJAUz1NI/+rNKeppH/ANWaYHqfwHUP4igVuhIrqv2mPE15pt3b6fauVhcYIFcr8B+PEMH1qX9qM58RWufal1H0PJTAnmead3mNznNGoXMogjBJxuAqVui/Sq2ogtDGB/eFMR9V/DC2TSPhx/acCgTGPOa+dvHOpXGr+Ipprl2bk45r6N8BSLffCb7JD80oj6D6V80+KIZbTXJoZl2EE9aSGzvP2f8AX7zTtdeEOfJc4wTXQftFaZDDbtqEagSOMkiuQ+BlnPf+IyEjJRWzkCu4/aPuIzpItVYGRVwRR1F0Mn9l/TotRM1xMoZ4skE1U+PWvXd9qbWRc+VGcYBrU/ZSuUt4LqKQgM4IArnPjfZT2evSzPGQjtkE0dR9DivB9/c6Z4ms5bV2XDDPNfS/xBhj8ReB1vLlQ0qR5z+FfMPh1ZJ/EVpFCu8sw6V9Q+KNul/Dww3B2O8fQ/ShiR8oxASXM8b/AHVYiur+B9pAnxHgKZyDxXKWwxeXB9WNdh8Ezj4iwk+tNgek/tH28Ut0nmA/drwC2srZAxQHNfQn7RIY3CNtwu3rXgUDJtbDqTSQM6T4c24uNaRR/C1eh/Ga4ZtGtbIZJYBRXnvw4mEGsg+pr0vxvbpO9jJcEbSwxmgCj4G+HUWj6TBq2uMpt2G7DV6Tb6jot74du4dDjVCiHJWuS+Mw1RPBWmQ6UHkidQDsqf4daKmkeCpri8mCTyRklWPPSkM+f9T41q9B6hjmvUvgB/yMlv8A71eW6qc67fMOVLnBr1L4Af8AIyW/+9VMRc/ay/5D9n+FePH7qfSvYf2sj/xP7Pkdq8eJ+VOR0oQMSnJ1PPam5z3FKqPNJHHbjc7HGBQB13whS/l8UINNDh93zEV9X+I7SZfDD/YZQdR8v58deled/Dbw/aeCPCp1+/ULK6ZAPrXIeDvibNJ4+nlvZSbGdiqqTxUvUZ5H4l+0DxHcLeBvP3HJNaXgS9+xeKLJScBpB/OvTvjr4NSKL+39PTck3zcCvE9MkZNe0+TOGDgkfjVCPov4/aeb248OtEuQ5TNb3irWF8OW+h6dE2DMqggVtajp6eIfDulXOAWgVTmvF/inq7T+NdJQsStuyj8qkZ03iLQhbfETR7vaP3hVs1i/tTX5XU9PhU8bAK9avbFdaj0vUYwD5KDJr5//AGgLz7fr8Izny+KaA88IwB7ikpT0X6UlMQU1ydyY6Z5p1FAHrngrWtI8PaSZnRDOy/rVnwr4u0XU9XuI9ajR1lOEyOleONLI67WJK+lNT92weLIcdDSsB7rd/CCG4vzrMF1GLDO/ZntXB/FObST5Vpo6KssXDle9c2vi7xOsH2db1/s/TbntWW7vK5klJMh6mmAifcUHrjmprD/j/T61COtTWH/H+n1oA98b/km8v+5/Svni1+/P/vGvodv+Sby/7n9K+ebT/WT/AO8aSAk5H3VLH0Fegfs82slt4suLl7SVflPJFcd4fvINN1JLi9UPDnoa+mvAfjTw0+nb7WyRJFXlgtDBHkdvZm/+MF5I9nIAGPzEcVlfFje+oPbtaSlF744r3rwl458Ma/4muLO0skW8izufbya4/wCJvxH8LjUbnSWsU+1Jld+3vQM+e4hshCAYA7U6pb11lv5JYhiMngVFTEFFFFAEN/8A8eR+tfXv7L3/ACJLV8hX/wDx5H619e/svf8AIktSYI9STv8AWnU1O/1p1SUNbqv1ryb9qj/kTo69Zbqv1ryb9qj/AJE6OhAz5Ksf+PJfrUtRWP8Ax5L9alqyQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCpSUopKRQjU2lJpDQAlMNPppoAsWvWrL/wCtj+tVrXrVl/8AWx/WmiT3f4b/APIBm/3K8V8Rf8jRdf7xr2v4aI8mhTCFdzbOleO+IdH10+Jbt1sJDFuPzbaSAyz1NNf/AFZpzq6OVlG1x1FJTA9R+BUlvH4ggNzKI1z1JxUv7T8lvN4htTZSiVeMkHNeVxz3MJzaSmN/UGllnurk7r+VpX7EnNFgEbov0pjKHAB7UtFAHqnwa8ejRL8Wl6c27cYPSvSPEnw70LxteDUob2KEtyRkCvmMZU5j4f1qwmq67ENtvqEiL6BqVgPqHRLLQfhfZTSJPFPMVOCCK+evH3iOXxFr9xMz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/wB6vKv2l9a0nUPCCR2N3FNNnohzxXy5nUP+f6T/AL6pQbo/8fFy8q+hOaLCuR2QIs1Ddc1LR9OlFMAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCqabSmmikUBpppTSGgBKaadTTQBYtetWjVW161aNNEhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAFOil4pppFA1Npxpp6cUAJTTTu1NNAFi161aNVbXrVo00SFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAVMUlLSZpFCNTacaaaAEphp3akJoAsWvWrRqra9atGmiQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCpTacabSKA0zvTzTaAENMNOPNNoAs2vWrRqra9atGmiQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k="
+                    },
+                    "type": "image_url"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出‘不存在’\n由于项目不存在，ls命令失败，&&右侧的echo'存在'被跳过。",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[ -d /root/abc ] && touch /root/abc/abc.txt || echos \"not exit\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls的退出码不可靠，逻辑组合顺序错误\n[ -d /tmp/logs] || mkdir -p /,tmo/logo && touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林梦萍": [
+        {
+            "content": [
+                {
+                    "text": "林梦萍的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[ -d /tmp/data ] && touch/tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1对应的学生截图：",
+                    "type": "text"
+                },
+                {
+                    "image_url": {
+                        "url": "data:image/jpeg;base64,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oADxTec0tFAB1pRSUUAKTRSUUAIwzTkGKSigBX9qaRkUo96WgBIxinN1ptFACmg8ig0lACx8Gkk5alooAUdKCeKbRQAAc0HrRRQBIG+WmEUlFACilzTaKAFYZoXikoNADieaM02igBO9SZ4plFAAetKelJRQA5TxSMM0lFADlOBikYZpKKAFHApoX5qWlzQAMaFNJRQAP81NVadRQA4UGm0UAKvvR0NJRQA5+RSIMUmaKAHMaaBzzRRQA49KZjmlooAeDxTSOaSigBx6ULTaKAA9acDTaKAHZpp5oooATPanqdoptLQA1hubNO7UlFADgcCmkZoooAaVpyEiiigAIyc05j8uKbRQALSHrS0YoACKMUUUAHWk70tFABnFIBk5paKAHE8VHjmnUUAKOlLTaM0AKRSCloNAC9qaaKKAEpw4pKKAB801RzT6SgBxPFIoxSUtACHlqU9KSigBMZpcUUUAIwpFJzTqMUAIRzUgPFMzS5oAa3WnqeKbRQAxxzT0PFFFACnpSKMGiigBzjNR7adRQAlOHSkAooAU000tFAAtOptFADhxUb8mn0hFABFxRJyaKKAFB4pO9FFACsMikTiiigBrrk0KuBT+1JQAzb82ak7UlFACikY0UUANApSKWigBAKBS0UAFFFFADhTJP9WaeKZJ/qzQUetfAT/kMR/Wvrq4/wCPKP6CvkX4Cf8AIYj+tfXc4/0JPoKAKa9BQetA6UHrQA9vu1CPvipm+7UI++KAOK+MH/IvTf7tfFF3/wAhiX/eNfa/xg/5F6b/AHa+J7r/AJDMv+8aALLdaSlY80lABRRRQAUUUUCYUUGigQUgpaKAClzSUUABooFFABRRRQAUUUUAFFFLigBKKWkoAMUYp1FADcUhFPooAbiinUhoASilpKACiiigAooooAKWjFFACUuaSigAoopRQAmKKU0UAJRS0lABRRRQAUUUUAFFJiloAKKKKAFopKKACiiigAooFLQAlFFFABRRS0AFBpKKAClFFBoAKSlpKACiiigAooooAKKWkoAKKKKACiiigAopaTNABRRRQAUUUUAFFFLQAlFFFABRRRQAUUUUAFBoooAKKKKACgUUUAFLSUUAFFFFABRRRQAUUUuKAEooooAKKUUlABRRRQAUUUUAFFANB60AAoxRRQAUYoooAKKDQKACiiigAoopaAEopaDQAlLSUUAFFFFABRRRQAUUUUAGKKKKACiiigAooooAKKKKBBRRRmgYtJRRQAUUUUAFFJS0AFFFFABRRRQAUCiigAooooAKKKKACiiloASg0tBoAQUUUUAFFFLigBKKKKAHCmSf6s08UyT/AFZoKPWvgJ/yGI/rX13Of9CT6CvkT4Cf8hiP619dXH/HlH9BQBUUdKD1oXoKD1oAe33ahH3xUrfdqMffWgDivjB/yL03+7XxPd/8hiX/AHjX2v8AGL/kXpv9018UXP8AyGZf940AWGHNJTn+9TaACiiigAooooEwooooEFFFFABRRRQAUUUUAFFFFABRRRQAUuaSigBaSiigBaKSigBc0ZpKKAFzRSUUAFFFFABRRRQAUUUUALmikooAKKKKACiiigApaSigBaSiigAooooAKKKKACiiigAooooAKKKKACiiigBaKSigAooooAKWkooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigBaTFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABS5pKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAClpKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKBBRiiigYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABS0lFABS0lFABRRRQAUuaSigAooooAcKZJ/qzTxTJP9WaCj1r4C/8hiP619dXH/HlH9BXyL8Bf+QxH9a+urj/AI8o/oKAKa9qeRTFqQ0ANb7tNQfOKc3SkT7y0AcR8ZOPD03+6a+J5udZl/3jX2x8ZP8AkXpv9018Ty/8hmX/AHjQBak4amU+X71MoAKKKKACiiigTCiiigQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR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AUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH/9k="
+                    },
+                    "type": "image_url"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：不存在\n由于项目不存在 Is命令失败，&&右侧的 echo'存在'被跳过。",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[-d /root/abc ] && touch\n/root/abc/abc.txt || echos \"not exit\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls /tmp/logs || mkdir /tmp/logs && touch /tmp/l\nogs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林经纬": [
+        {
+            "content": [
+                {
+                    "text": "林经纬的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：会输出没有文件和echo\"不存在\"\n因为文件不存在所以&&后面的不执行然后||前面是没有运行所以输出echo\"不存在\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc &&  touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls /tmp/logs && touch /tmp/logs/log.txt || /tmp/logs\n因为命令是一个个往后执行的所以经过||的判断如果文件不存在会输出makdir /tmp/logs 然后&&判断前面的执行了所以也输出了 touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林贝贝": [
+        {
+            "content": [
+                {
+                    "text": "林贝贝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：is /file.txt  && /tmp/data存在||/tmp/data不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：什么都没发生，因为echo不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：is/abc.txt &&  /root/abc存在||root/abc\nis/abc.txt && touch abc.txxt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：因为/tmp/logs已经存在，所以mkdir不会执行\nis /tmp/logs || mkdir  && touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王河": [
+        {
+            "content": [
+                {
+                    "text": "王河的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：is /tmp/data && touch /tmp.data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：会输出没有文件和echo\"不存在\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc && touch /root/abc.txt || echo \"not exis\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：顺序错误\nis /tmp/logs && touch /tmp/logs/log.txt || /tmp/logs",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王涛": [
+        {
+            "content": [
+                {
+                    "text": "王涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data file.text",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出不存在，不道啊",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc && touch /root/abc/abc.txt || echo\"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：顺序错误\nls /tmp/logs && touch /tmp/logs/log.txt || mkdir /tmp/logs",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "章宗杰": [
+        {
+            "content": [
+                {
+                    "text": "章宗杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出没有文件和echo不存在，文件不存在&&不执行，然后是Ⅱ没运行输出echo不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc &&  touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls /tmp/logs && touch /tmp/logs/log.txt || /tmp/logs\nⅡ判断文件不存在会输出makdir /tmp/logs\n&&判断也执行输出touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "董佳旭": [
+        {
+            "content": [
+                {
+                    "text": "董佳旭的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[ -d /tmp/date ] && touch /tmp/date/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：会输出\"不存在\",因不存在触发||后的命令",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[ -d /root/abc ] && tuoch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：[ -d /tmp/logs ] || mkdir /tmp/logs && tuoch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "蒋贤炽": [
+        {
+            "content": [
+                {
+                    "text": "蒋贤炽的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：！/bin/bash\nTARGET-DIR=“/tmp/data”\nTARGET-FILE=“TARGET-DIR/file.txt\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：不存在。命令拼写错误管道符使用不当",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：使用[-d/roo/abc]",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：由于||和&&优先级问题不符合意图\nmkdir -p /tmp/logs && touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "诸葛萌萌": [
+        {
+            "content": [
+                {
+                    "text": "诸葛萌萌的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[-d /tmp/data] && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：输出不存在\n因为目录不存在 ls失败后就会跳过‘&&’ 直接执行‘||’的不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[-d /root/abc ] && touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：原命令的问题在于逻辑运算符&&和||的优先级和组合方式\n[ -d /tmp/logs ] || mkdir -p /rmp/logs && touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "谢作祥": [
+        {
+            "content": [
+                {
+                    "text": "谢作祥的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.txt\nmkdir /tmp/data\nls /tmmpm/data && touch /tmp/data/file.txt\nll /tmp/data",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈伟文": [
+        {
+            "content": [
+                {
+                    "text": "陈伟文的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：ls /tmp/data && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：会输出没有文件和echo\"不存在\"echo\"不存在\"\n因为没有文件，&&不执行，然后Ⅱ没有运行，\n所以echo\"不存在\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：ls /root/abc &&  touch /root/abc/abc.txt || echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ls /tmp/logs && touch /tmp/logs/log.txt || /tmp/logs\n命令是一个一个运行的，判断Ⅱ文件不存在，会输出makdir /tmp/logs ，后面&&就会输出，touch /tmp/logs/log.tⅹt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈玲玲": [
+        {
+            "content": [
+                {
+                    "text": "陈玲玲的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[ -d /tmp /data] && touch /tmp /data/file.txt ||true",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：先输出/nomexistent_dir 目录下的内容，若失败则不输存在，而是输出不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[-d /root/abc] &&touch /root /abc/abc.txt ||echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：在原始命令is /tmp/logs ||mkdir /tmp/logs &&touch /tmp/logs/log.txt里。逻辑运算符的优先级和结合性导致，从左到右的顺序",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄佳慧": [
+        {
+            "content": [
+                {
+                    "text": "黄佳慧的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：[ -d /tmp/data ] && touch /tmp/data/file.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：不存在",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：[ -d /root/abc ] && touch /root/abc/abc.txt | | echo \"not exist\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：优先级错误的执行顺序\n[ -d /tmp/logs ] || mkdir /tmp/logs; touch /tmp/logs/log.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ]
+}

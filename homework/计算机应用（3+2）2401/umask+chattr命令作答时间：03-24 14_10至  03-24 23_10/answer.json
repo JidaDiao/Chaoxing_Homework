@@ -1,0 +1,1516 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/projectll"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/65560f0ced68bc831bef8b1286317a3c"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/399494cc40cf102a9dcaeea75600e56a"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd - G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/90251c0f981cfd04ce66bed7f68f77c0"
+                ],
+                "text": [
+                    "// -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv//project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.cldisk.com/star3/origin/72aefb688c6aa71bf481ebc8e1d32c3b.jpg"
+                ],
+                "text": [
+                    "II-d /srv/project"
+                ]
+            }
+        },
+        "吴何莹": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -m dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup dev1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir -p /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b7fa30c61ac7250fc38ba8797cbedffb"
+                ],
+                "text": [
+                    "stat /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "charp -R devgroup -path-to-project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4532d5bf4c02958dd30c8362a0f5c341"
+                ],
+                "text": [
+                    "ll -d /srv/project/"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7175e3de9682c0527118034cf4a0719f"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "张俊楠": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4f4d90bcee919156d87015ad9fc9afc4"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b96452e8be15dba3f4c7dee66ac659f2"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgruop dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/85f7d933afebd5608d792776889b6046"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dc0a68db295a84269fad77f337a094b8"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4338068d899887fea985a20cb573fe08"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8d81ebe0462e55e4777aded5d9371d20"
+                ],
+                "text": [
+                    "ll -d srv/project"
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/57c5f99130aef7d0b0b7cfc8a37b043e"
+                ],
+                "text": [
+                    "ll-d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/57c5f99130aef7d0b0b7cfc8a37b043e"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -g devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -g devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李诗琪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c43a28d14f91ca8a38511609e03c5781"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/devgroup"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup  /srv/project\nchmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/81beae8a276e8ed4aa69f1d668fabbcb"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd  -G ddevgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/893ec4c07f0676d4988b3586482674f9"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "newgrp devgroup /srv/ahome"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770  /srv/ahome"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a042c7f1942523e7e94d080b575de55a"
+                ],
+                "text": [
+                    "ll -d /srv/anome"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fda1dfd220e9cb7a97a1487332e1b5d5"
+                ],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chown :devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ca845e094bf705ac8713f0a9f78e69aa"
+                ],
+                "text": []
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir -p /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/62f87cb32efab9271bcf146787004c1b"
+                ],
+                "text": [
+                    "ls -ld /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chown :devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/79dfbe50a8fae678dab9082cdf831871"
+                ],
+                "text": [
+                    "ls -ld /srv/project"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir -p /srv/rofect"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/98a9e3ebd136ad98484d80ff985a1dc5.jpg"
+                ],
+                "text": [
+                    "ls -ld /srv/projec"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chown :devgroup /srv/ project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/c8b9870b03722c4d7c3872c9553a9f27.jpg"
+                ],
+                "text": [
+                    "ls -ld /srv/project"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir/srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ll -d/srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "林贝贝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd  devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd  -G  devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir  /srv/project\nll  -d  /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "chgrp  devgroup  /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "王河": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/06d38b05cfcb7f0b3657ac7ddcccdd2f"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a8ed79c3fd466bcdca4b4e07674d4120"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/287a60b05a57d93bb2cac869ba4c2350"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chomd 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/31e67d3d490af90d23ccd0f45427daab"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/364d118c1cdcbc5828a1fa2d86363379.jpg"
+                ],
+                "text": [
+                    "ll-d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/ahome"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/33d623ca4e675d6adedb2273056a460a.jpg"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "董佳旭": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermod -aG devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo usermod -aG devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo mkdir -p /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "sudo chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "sudo chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "诸葛萌萌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir  /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8cac4807c44d90a751015b655e47897c"
+                ],
+                "text": [
+                    "ll -d /srv/prohect"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /svr/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9ac8fc47a7212545b0cab821c8f411c2"
+                ],
+                "text": []
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7cd7c0cfc7421ac97b1209f749688004"
+                ],
+                "text": [
+                    "ll -d /srv/project/"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project/"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c577a627c9565444f6d5fe9e989f5f0e"
+                ],
+                "text": [
+                    "ll -d /srv/project/"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir    /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ll -d  /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup   /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d75a6cd2b4aa87c6a34f4193aa5c7a6a"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "陈庆鑫": {
+            "题目1": {
+                "images": [],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo useradd dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo useradd dav2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            },
+            "题目8": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv /project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d39367b98225fcf5e3ea3905cd5e6530"
+                ],
+                "text": [
+                    "ls -ld /srv /project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup  /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv /project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cd0f179c611ee0dff2fae79064779135"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo useradd -m dev1\nsudo passwd dev1\nsudo usermod -a -G devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo useradd -m dev2\nsudo passwd dev2\nsudo usermod -a -G devgroup dev1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir -p /srv/project"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e82de515a27db5e6e3f8e78e7f7387ac"
+                ],
+                "text": [
+                    "ls -ld  /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /srv/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /srv/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1a2ad36176c66d4a6d6ca847ea281e40"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            }
+        },
+        "黄开桂": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "useradd -G  devgroup dev1"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "useradd -G devgroup dev2"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mkdir /srv/projec"
+                ]
+            },
+            "题目5": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/84440eff703b37591315b5ea9792c7f0.jpg"
+                ],
+                "text": [
+                    "ll -d /srv/project"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "chgrp devgroup /src/project"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "chmod 770 /src/project"
+                ]
+            },
+            "题目8": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/93e8c669525639506fdd27ed7e95b9c1.jpg"
+                ],
+                "text": [
+                    "ll —d /src/project"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ngroupadd devgroup",
+            "题干": {
+                "images": [],
+                "text": [
+                    "任务情境\n假设公司中有两个开发人员 dev1 和 dev2，他们属于同一个开发组 devgroup。要求在 /srv/project 目录下共同开发项目，且只有他们能访问和修改该目录的内容。\n-----------------------------------------------------------------------------------------------\n题目：\n创建组 devgroup。\n（提交命令）"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\nuseradd -G devgroup dev1",
+            "题干": {
+                "images": [],
+                "text": [
+                    "创建用户 dev1，并将其添加到 devgroup 组。\n（提交命令）"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\nuseradd -G devgroup dev2",
+            "题干": {
+                "images": [],
+                "text": [
+                    "创建用户 dev2，并将其添加到 devgroup 组。\n（提交命令）"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\nmkdir /srv/project",
+            "题干": {
+                "images": [],
+                "text": [
+                    "创建项目目录 /srv/project。\n（提交命令）"
+                ]
+            }
+        },
+        "题目5": {
+            "正确答案": "正确答案：\nll -d /srv/project",
+            "题干": {
+                "images": [],
+                "text": [
+                    "查看项目目录 /srv/project 的初始权限。\n（提交命令+截图权限）"
+                ]
+            }
+        },
+        "题目6": {
+            "正确答案": "正确答案：\nchgrp devgroup /srv/project",
+            "题干": {
+                "images": [],
+                "text": [
+                    "将项目目录的组更改为 devgroup。\n（提交命令）"
+                ]
+            }
+        },
+        "题目7": {
+            "正确答案": "正确答案：\nchmod 770 /srv/project",
+            "题干": {
+                "images": [],
+                "text": [
+                    "设置目录权限为，允许组内用户完全访问，而其他用户无权限。\n（提交命令）"
+                ]
+            }
+        },
+        "题目8": {
+            "正确答案": "正确答案：\nll -d  /srv/project",
+            "题干": {
+                "images": [],
+                "text": [
+                    "再次查看项目目录 /srv/project 的权限，确认修改是否成功。\n（提交命令+截图权限）"
+                ]
+            }
+        }
+    }
+}

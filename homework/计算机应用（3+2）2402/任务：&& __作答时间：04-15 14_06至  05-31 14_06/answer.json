@@ -1,0 +1,1134 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'user'  /etc/passwd | grep 'used'"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n '[^lo]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "倪博源": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "qrep -n 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "qrep -n 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "qrep -n 's' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "qrep -n '[0-9] [0-9]*' /etc/passwd"
+                ]
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'user[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9$]' /etc/passwd"
+                ]
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /ect/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "叶璐杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[er]d' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo grep 'us[er]d'/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "吴晓静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -E '1o([^g]|$)' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "吴语哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[er]d' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep -n '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9$]' /etc/passwd"
+                ]
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "张浩然": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[rd]'/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep'lo[^g]'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep'^s'/etx/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep'[0-9]$'/etc/passwd"
+                ]
+            }
+        },
+        "李奕哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[er]d' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "李斌浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep  -n  'u[rd]ser'  /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  -n  '[^g]lo'  /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep  -n  '^[s]'  /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep  -n  '[0-9]'  /etc/passwd"
+                ]
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[er]d'/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep'lo['^g]'/ect/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo grep'^s'/etcpasswd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo grep '[0-9]$'/ect/passwd"
+                ]
+            }
+        },
+        "杨子楚": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'user' /etc/passwd\ngrep -n 'used' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n '[^g]lo' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "杨海博": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep‘us[re]/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep'^s'/etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep'[0-9]$'/etc/passwdx"
+                ]
+            }
+        },
+        "林文静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n  'use[rd]'  /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]\\|$$'  /etp/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n  '^s'  /etp/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep -n '[0-9]$' /etp/passwd"
+                ]
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0~9]$' /etc/passwd"
+                ]
+            }
+        },
+        "汤宾豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[rd]/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]'/etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s'/etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "王可欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[rd]/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep ‘^s'/etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "王翔玮": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "王译浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "gred 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc.passwd"
+                ]
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0~9]$' /etc/passwd"
+                ]
+            }
+        },
+        "胡棋浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n '^[s]' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep -n '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -E 'user|used' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -E 'lo([^g]|$)' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "谢雨晨": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -E 'lo([^g]|$)' /etc/passswd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /eto/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n '^[s]' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep -n '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "郑鑫豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "gerp 'us[er]d' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/gasswd"
+                ]
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 't[ae]st' /etc/passwd\ngrep -n 'oo' /etc/passwd\ngrep -n '[^g]oo' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n '[^g]oo' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n '[^a-z]oo' /etc/passwd\ngrep -n '^the' /root/sample.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "cat -An /root/sample.txt | head -n 10 |tail"
+                ]
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[er]d' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "陈海宇": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep '^s' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "陈瑞易": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'u[rd]ser' .ect/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n '[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n '^[s]' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep -n '[0-9]' /ect/passwd"
+                ]
+            }
+        },
+        "马景欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep -n 'use[rd]' /etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -n 'lo[^g]$$' /etp/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -n '^s' /etp/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep -n'[0-9]$/etp/paswd"
+                ]
+            }
+        },
+        "麻仁俊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo grep 'us[er]d'/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo grep 'lo[^g]' /etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo grep '^' /etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "sudo grep '[0-9]$' /etc/passwd"
+                ]
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "grep 'us[rd]/etc/passwd"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep'lo[^g]etc/passwd"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep'^s'/etc/passwd"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "grep'[0-9]$' /etc/passwd"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ngrep -n 'use[rd]' /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep命令利用'[ ]'搜索/etc/passwd文件中所有包含'user'和'used'的行。"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ngrep -n 'lo[^g]' /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep命令利用'[^]'搜索/etc/passwd文件中所有\"lo\"后面没有“g”的行。举例：\nlog ×（lo后面接着g）\nlow √（lo后面没有接着g）"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ngrep -n '^s' /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep命令找出/etc/passwd文件中所有以“s”开头的行。"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\ngrep -n '[0-9]$' /etc/passwd",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用grep命令找出/etc/passwd文件中所有以数字结尾的行。"
+                ]
+            }
+        }
+    }
+}

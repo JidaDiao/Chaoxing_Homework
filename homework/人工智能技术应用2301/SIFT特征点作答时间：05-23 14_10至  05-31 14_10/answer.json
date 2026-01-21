@@ -1,0 +1,790 @@
+{
+    "学生回答": {
+        "倪旭玮": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f9a44b1a09cd30aa44af93dca798b31a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"nxw\",cv2.WINDOW_NORMAL)\ncv2.imshow('nxw', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/816801cc91bd27fc52568f9087ad221b.png"
+                ],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n0, 255, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('nxw', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "倪理浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8b003995de55ef0d569791152e9870a1.png"
+                ],
+                "text": [
+                    "import cv2\n\nimg1 = cv2.imread('img/bear.png', 0)\nimg2 = cv2.imread('img/bear_in_screen.png', 0)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\n\nbf = cv2.BFMatcher()\nmatches = bf.knnMatch(des1, des2, k=2)\n\ngood = [m for m,n in matches if m.distance < 0.75*n.distance]\n\nresult = cv2.drawMatches(img1, kp1, img2, kp2, good, None, flags=2)\ncv2.imshow('nlh', result)\ncv2.waitKey(0)"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1320fd4ce7386d16328d75617bce70e1.png"
+                ],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=6,\nkey_size=12,\nmulti_probe_level=1)\nsearch_params = dict(checks=50)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('nlh', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "冯帅": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/aa519aeb5939f51ff8677b0ef96c071a"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ac8f70369ace9d94540176edee7e28f8"
+                ],
+                "text": []
+            }
+        },
+        "华江辰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f7a40591d4fb85c8a78b839fd891ecc5.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\n\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"HJC\",cv2.WINDOW_NORMAL)\ncv2.imshow('HJC', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cc41c883ba14f903b7c2750bea8758ba.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\n\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\n\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\n                    table_number=12,    \n                    key_size=20,        \n                    multi_probe_level=2) \nsearch_params = dict(checks=100)     \n\nflann = cv2.FlannBasedMatcher(index_params, search_params)\n\nmatches = flann.knnMatch(des1, des2, k=2)\n\ngood = []\nfor match in matches:\n    if len(match) == 2: \n        m, n = match\n        if m.distance < 0.7 * n.distance:\n            good.append(m)\n\nmatchesMask = None\nif len(good) > 10:\n    src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)\n    dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)\n    H, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, H)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\n\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, good, None,\n                       matchColor=(0, 255, 0), matchesMask=matchesMask,\n                       flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.namedWindow(\"HJC\", cv2.WINDOW_NORMAL)\ncv2.imshow(\"HJC\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶挺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f05d065179d9cba2af984df27c5b1a32.png"
+                ],
+                "text": [
+                    "import  cv2\nimport numpy as np\n\nimg1=cv2.imread('resources/bear.png',cv2.IMREAD_GRAYSCALE)\ncv2.nameWindow('yt',cv2.WINDOW_NORMAL)\ncv2.inshow('yt',img1)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('resources/box.jpg', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('resources/box_in_scene.jpg', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)"
+                ]
+            }
+        },
+        "叶桉鸣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/54bd1a8150a8f4f1f132e1dc49622dd4.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\n\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\n    img3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n    cv2.namedWindow('YAM',cv2.WINDOW_NORMAL)\n    cv2.imshow('YAM', img3)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d12019980f6bf8fcead4b2ce8f7ddcf0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.knnMatch(des1, des2,k=2)\nms = []\nfor match in matches:\n    if len(match) == 2:\n        m, n = match\n        if m.distance < 0.7 * n.distance:\n            ms.append(m)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\n                        matchColor=(0, 255, 0), matchesMask=matchesMask,\n                        flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.imshow('yam', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吕鸿凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/eab8f80f0aeff865d4da368f3c3c4c4b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\nmatchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('findHomography',cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b57264fb1baea9d9b2fcd5dc470fcfe2.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\n                    table_number=12,     \n                    key_size=20,         \n                    multi_probe_level=2)\nsearch_params = dict(checks=100)          \nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.knnMatch(des1, des2, k=2)\ngood = []\nfor match in matches:\n    if len(match) == 2:  \n        m, n = match\n        if m.distance < 0.7 * n.distance:\n            good.append(m)\nmatchesMask = None\nif len(good) > 10:\n    src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)\n    dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)\n    H, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, H)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, good, None,\n                       matchColor=(0, 255, 0), matchesMask=matchesMask,\n                       flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"LHK\", cv2.WINDOW_NORMAL)\ncv2.imshow(\"LHK\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吴世杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0b1ef32d4d902735d16fb2af024734d5.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6919554ce80946d49dbda88f3cc536bd.png"
+                ],
+                "text": []
+            }
+        },
+        "吴争航": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8ad6a66aa7e34a30caa08e21f13c3709"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0),matchesMask=matchesMask,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.namedWindow('findHomography',cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/96fa39795d48b465b69ccea1fa1745a4"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('pyh',cv2.WINDOW_NORMAL)\ncv2.imshow('pyh', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "周泽鑫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b5e56bf4422f04af2e0b8da262694fc0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"zzx\",cv2.WINDOW_NORMAL)\ncv2.imshow(\"zzx\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/40751bef42b16c585c67ce51f6978227.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"zzx\",cv2.WINDOW_NORMAL)\ncv2.imshow(\"zzx\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()S"
+                ]
+            }
+        },
+        "夏宇浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/53578ed22e6bade88d94385dddf57be2"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c6e9ebdd2d4a41ba3e9f021f113c7cf4"
+                ],
+                "text": []
+            }
+        },
+        "夏忆豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/38c703cd46eea270e595ead1a01f0dfe.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/05334561fbd36e325fdd79046ed0565b.png"
+                ],
+                "text": []
+            }
+        },
+        "夏有德": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/14fc59d277232ac1fe90e0609ed0f248.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('xyd',cv2.WINDOW_NORMAL)\ncv2.imshow('xyd', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bd2c46912fbe0a0ba78f0ca93cb81674.png"
+                ],
+                "text": [
+                    "if len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('xyd',cv2.WINDOW_NORMAL)\ncv2.imshow('xyd', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "宋葛萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e17a634725a9880fad7c4132fe0bbac0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.namedWindow(\"sgp\",cv2.WINDOW_NORMAL)\ncv2.imshow('sgp', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0b1cb547898cd85e1d3acdbab8bac3e7.png"
+                ],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n0, 255, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('FlannBasedMatcher', img3)\ncv2.namedWindow(\"sgp\",cv2.WINDOW_NORMAL)\ncv2.imshow('sgp', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "庞志强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5298b8e77d6afcbc69364b2a7391d95e"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\n\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\n\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\nimg3=cv2.resize(img3,(1280,720))\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d8ab605f03a9f3c1f3703ae1af0051ac"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef main():\n    # 加载图像\n    img1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\n    img2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\n\n    # 配置增强版ORB参数\n    orb = cv2.ORB_create(\n        nfeatures=3000,\n        scaleFactor=1.2,\n        edgeThreshold=15\n    )\n\n    # 检测特征\n    kp1, des1 = orb.detectAndCompute(img1, None)\n    kp2, des2 = orb.detectAndCompute(img2, None)\n\n    # FLANN匹配器配置\n    flann = cv2.FlannBasedMatcher(\n        dict(algorithm=6, table_number=12, key_size=20),\n        dict(checks=100)\n    )\n\n    # 执行KNN匹配\n    matches = flann.knnMatch(des1, des2, k=2)\n\n    # 应用比率测试\n    good_matches = [m for m,n in matches if m.distance < 0.6*n.distance]\n\n    # 绘制匹配结果（显示全部有效匹配）\n    result_img = cv2.drawMatches(\n        img1, kp1, img2, kp2,\n        good_matches, None,\n        matchColor=(0,255,0),\n        flags=cv2.DRAW_MATCHES_FLAGS_NOT_DRAW_SINGLE_POINTS\n    )\n\n    cv2.imshow('Enhanced Matching', result_img)\n    cv2.waitKey(0)\n\nif __name__ == \"__main__\":\n    main()"
+                ]
+            }
+        },
+        "方烨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4bf20e3ee58a8aab94e66454a5ce80e9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.namedWindow(\"fy\",cv2.WINDOW_NORMAL)\ncv2.imshow('fy', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e7d98999efa7f645a9be759991f8bc38.png"
+                ],
+                "text": [
+                    "import cv2\n\n# 读取图像\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\n\n# 初始化ORB特征检测器\norb = cv2.ORB_create()\n\n# 检测关键点和计算描述符\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\n\n# 设置FLANN匹配器的参数\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\n                    table_number=12,  # 增加哈希表数量，提高匹配精度\n                    key_size=20,      # 增加键大小，提高特征描述子的区分度\n                    multi_probe_level=2)  # 增加多探针级别，提高搜索质量\nsearch_params = dict(checks=100)  # 增加搜索次数，提高匹配准确度\n\n# 创建FLANN匹配器\nflann = cv2.FlannBasedMatcher(index_params, search_params)\n\n# 执行knn匹配（k=2），确保每个描述符都能找到两个匹配\nmatches = flann.knnMatch(des1, des2, k=2)\n\n# 使用Lowe's ratio test筛选匹配\ngood_matches = []\nfor pair in matches:\n    if len(pair) == 2:  # 确保有两个匹配点\n        m, n = pair\n        if m.distance < 0.6 * n.distance:  # 阈值可以根据需要调整\n            good_matches.append(m)\ndraw_params = dict(matchColor=(0, 255, 0),  # 匹配线颜色为绿色\n                   singlePointColor=(0, 255, 0),\n                   matchesMask=None,\n                   flags=cv2.DrawMatchesFlags_DEFAULT)\n\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, good_matches[:20], None, **draw_params)\n\n# 显示结果\ncv2.imshow('FlannBasedMatcher', img3)\ncv2.namedWindow(\"fy\", cv2.WINDOW_NORMAL)\ncv2.imshow('fy', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方胜超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f4d08c8b316a3c376f560581f5d1e077.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\nmatchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('findHomography',cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6979c96142390355155860a2191144f2"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\n                   table_number=12,    \n                   key_size=20,        \n                   multi_probe_level=2)\nsearch_params = dict(checks=100)          \nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.knnMatch(des1, des2, k=2)\ngood = []\nfor match in matches:\n   if len(match) == 2:  \n       m, n = match\n       if m.distance < 0.7 * n.distance:\n           good.append(m)\nmatchesMask = None\nif len(good) > 10:\n   src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)\n   dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)\n   H, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, H)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, good, None,\n                      matchColor=(0, 255, 0), matchesMask=matchesMask,\n                      flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"FSC\", cv2.WINDOW_NORMAL)\ncv2.imshow(\"FSC\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李盛长": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3f4dc44912ec1d0f1854f8541bf7ae06.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg1 = cv2.imread('img/img/bear.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/bear_in_screen.png',cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1,None)\nkp2, des2 = sift.detectAndCompute(img2,None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1,des2)\nms = sorted(ms, key = lambda x:x.distance)\nimg3 = cv2.drawMatches(img1,kp1,img2,kp2,ms[:20],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('lsc',cv2.WINDOW_NORMAL)\ncv2.imshow('lsc',img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c17fb9937e3f8c1a184ce8b3d2f3ca60.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg1 = cv2.imread('img/img/box.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/box_in_scene.png',cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('lsc', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "杨峥荣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dcf57af7b0dd62076e42162d48edf9aa.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg1 = cv2.imread('img/bear.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png',cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1,None)\nkp2, des2 = sift.detectAndCompute(img2,None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1,des2)\nms = sorted(ms, key = lambda x:x.distance)\nimg3 = cv2.drawMatches(img1,kp1,img2,kp2,ms[:20],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\nscale_factor = 0.2\nimg3_resized = cv2.resize(img3, None, fx=scale_factor, fy=scale_factor, interpolation=cv2.INTER_LINEAR)\ncv2.imshow(' img3_resized ', img3_resized)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7273ec4935a8af9a4686ef1300ebd397.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg1 = cv2.imread('box.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('box_in_scene.png',cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1,None)\nkp2, des2 = sift.detectAndCompute(img2,None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1,des2)\nms = sorted(ms, key = lambda x:x.distance)\nimg3 = cv2.drawMatches(img1,kp1,img2,kp2,ms[:20],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\nscale_factor = 1\nimg3_resized = cv2.resize(img3, None, fx=scale_factor, fy=scale_factor, interpolation=cv2.INTER_LINEAR)\ncv2.imshow(' img3_resized ', img3_resized)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨雯杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cd044db61d5d8acaf7784295c29d4b70.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('ywj',cv2.WINDOW_NORMAL)\ncv2.imshow('ywj', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2781ea0e75c1da0dfd95a7f5a115039a.png"
+                ],
+                "text": [
+                    "import numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\n\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\n\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\n\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('ywj',cv2.WINDOW_NORMAL)\ncv2.imshow('ywj', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/05d23ca9efb350ea8d2fba49cc8d15ff"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            }
+        },
+        "林西面": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/53578ed22e6bade88d94385dddf57be2.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c6e9ebdd2d4a41ba3e9f021f113c7cf4.png"
+                ],
+                "text": []
+            }
+        },
+        "潘易函": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8ad6a66aa7e34a30caa08e21f13c3709.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0),matchesMask=matchesMask,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.namedWindow('findHomography',cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/96fa39795d48b465b69ccea1fa1745a4.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('pyh',cv2.WINDOW_NORMAL)\ncv2.imshow('pyh', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "王嘉鹏": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f05d065179d9cba2af984df27c5b1a32"
+                ],
+                "text": [
+                    "import  cv2\nimport numpy as np\nimg1=cv2.imread('resources/bear.png',cv2.IMREAD_GRAYSCALE)\ncv2.nameWindow('yt',cv2.WINDOW_NORMAL)\ncv2.inshow('yt',img1)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('resources/box.jpg', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('resources/box_in_scene.jpg', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12\nkey_size=20\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)"
+                ]
+            }
+        },
+        "王家翔": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9c23a3bb6b79fb5e81ffa16decb6ad92.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimg = cv2.imread('img/star.jpg')\ngray= cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)  #转换为灰度图像\nsift = cv2.SIFT_create()                      #创建SIFT检测器\nkp = sift.detect(gray,None)                        #检测关键点\nimg2 = cv2.drawKeypoints(img,kp,None,   flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)\ncv2.imshow('wjx',img2)                                      #显示检测结果\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7d7dad5f68544efa880aa5f901658603.png"
+                ],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n0, 255, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('wjx', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "王斌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7ce094cb8febbb8af43bd7fb5d1f4861.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d8c799206b88df435b52e6e044bd174a.png"
+                ],
+                "text": []
+            }
+        },
+        "王昱诺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fc8c5bc0712dbd5088eeeec7e6507cf0"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('findHomography',cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.ORB_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('findHomography',cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/14e0f93e9d0ddb95bc8ffdd326a0e942.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('wh',cv2.WINDOW_NORMAL)\ncv2.imshow('wh', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9d271b8619d90d37c8004f23e0cbc17d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.imshow('wh', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王钰洁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c5a8a20f86f67b3368029a3b1f3a5923.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\nimg1 = cv2.imread('img/bear.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png',cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1,None)\nkp2, des2 = sift.detectAndCompute(img2,None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1,des2)\nms = sorted(ms, key = lambda x:x.distance)\nimg3 = cv2.drawMatches(img1,kp1,img2,kp2,ms[:20],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"wyj\",cv2.WINDOW_NORMAL)\ncv2.imshow(\"wyj\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c27a23d67bf82c9953a37467b5925b27.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\n    matchColor=(0, 255, 0), matchesMask=matchesMask,\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.imshow('wyj', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "葛人欢": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0b4ee4d4be8b7ef4f3c807a8704dadce.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"grh\",cv2.WINDOW_NORMAL)\ncv2.imshow('grh', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ee05fc33d117e2283f7d986b336c94b3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\n\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.imshow('grh', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蒋子豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ac8775437ef78190a0adaf3d6ad0b907"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt                                 #显示检测结果\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\n\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\nimg3=cv2.resize(img3,(1200,720))\ncv2.imshow(' jzh ', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8c3b9d51cf52d061080fcebfd6b49253.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.imshow('jzh', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "蔡雨轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"grh\",cv2.WINDOW_NORMAL)\ncv2.imshow('cyx', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\n\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.imshow('cyx', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "薛凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8fde39e04beb7f40354ba2e49bc0609b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"lzh\",cv2.WINDOW_NORMAL)\ncv2.imshow(\"xk\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/beb610d6b5e5c405f87c15c2523ff5f3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"lzh\",cv2.WINDOW_NORMAL)\ncv2.imshow(\"xk\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "许贤明": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/49331284dd316479df0c1eaa0598c5e8.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\n\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('xxm',cv2.WINDOW_NORMAL)\ncv2.imshow('xxm', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4ec6c7c5cb72c79ff08f31312ade9497.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('xxm',cv2.WINDOW_NORMAL)\ncv2.imshow('xxm', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "赖志和": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6f48f3f4cb06263cc219a709ab3e4d14.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"lzh\",cv2.WINDOW_NORMAL)\ncv2.imshow(\"lzh\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c63490723056b3174a63335ce8ffc122.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"lzh\",cv2.WINDOW_NORMAL)\ncv2.imshow(\"lzh\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "邱伊琳": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6c77362c6aaa0940d145e1e8aa24161a"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"findHomography\", cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c8a511dac9c947eb84ff81108adebb57"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('box_in_scene.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郑光甫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0a08f536ee18aa9b4e70881681ab91f5.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg1 = cv2.imread('img/img/bear.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/bear_in_screen.png',cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1,None)\nkp2, des2 = sift.detectAndCompute(img2,None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1,des2)\nms = sorted(ms, key = lambda x:x.distance)\nimg3 = cv2.drawMatches(img1,kp1,img2,kp2,ms[:20],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('zgf',cv2.WINDOW_NORMAL)\ncv2.imshow('zgf',img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7e08b2ae0aa1ba0fe76b7936c976dfd6.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg1 = cv2.imread('img/img/box.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/box_in_scene.png',cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('zgf', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "郭捷瑞": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5d64775030ccd24b3fefc574e3510061.png"
+                ],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('bear.png', 0)\nimg2 = cv2.imread('bear_in_screen.png', 0)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher()\nmatches = bf.knnMatch(des1, des2, k=2)\ngood = [m for m,n in matches if m.distance < 0.75*n.distance]\nresult = cv2.drawMatches(img1, kp1, img2, kp2, good, None, flags=2)\ncv2.imshow('gjr', result)\ncv2.waitKey(0)"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b1e616b874c01effb019cafaa0bb784f.png"
+                ],
+                "text": [
+                    "import cv2\nimg1 = cv2.imread('box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=6,\nkey_size=12,\nmulti_probe_level=1)\nsearch_params = dict(checks=50)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('gjr', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "金孝华": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a5813749efcf6b105a168d2c5fcf83b3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"JXH\",cv2.WINDOW_NORMAL)\ncv2.imshow('JXH', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bfc72e28459edba2bf6f36ce2f3cd8f0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 读取图像\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\n\n\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\n\n\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\n                    table_number=12,     \n                    key_size=20,      \n                    multi_probe_level=2) \nsearch_params = dict(checks=100)       \n\n# 创建FLANN匹配器\nflann = cv2.FlannBasedMatcher(index_params, search_params)\n\n# 使用KNN匹配并应用比率测试\nmatches = flann.knnMatch(des1, des2, k=2)\n\n# 过滤掉不足两个匹配的情况\ngood = []\nfor match in matches:\n    if len(match) == 2:  # 确保有两个匹配结果\n        m, n = match\n        if m.distance < 0.7 * n.distance:\n            good.append(m)\n\n# 单应性矩阵计算和对象边界绘制\nmatchesMask = None\nif len(good) > 10:\n    src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)\n    dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)\n    H, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, H)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\n\n# 绘制匹配结果\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, good, None,\n                       matchColor=(0, 255, 0), matchesMask=matchesMask,\n                       flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\n# 显示结果\ncv2.namedWindow(\"JXH\", cv2.WINDOW_NORMAL)\ncv2.imshow(\"JXH\", img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈沈祺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2708fe1da0c6330c46007e801576a3f1.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c4ebff0f6782677a2ae1a612e70d5dd9.png"
+                ],
+                "text": []
+            }
+        },
+        "陈泽宇": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6c77362c6aaa0940d145e1e8aa24161a.PNG"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow(\"findHomography\", cv2.WINDOW_NORMAL)\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c8a511dac9c947eb84ff81108adebb57.PNG"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('box_in_scene.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n   querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n   trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n   retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n   matchesMask = mask.ravel().tolist()\n   h, w = img1.shape\n   pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n   dst = cv2.perspectiveTransform(pts, retv)\n   img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n   matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n   flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.imshow('findHomography', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2import numpy as npimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)img2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)sift = cv2.SIFT_create()kp1, des1 = sift.detectAndCompute(img1, None)kp2, des2 = sift.detectAndCompute(img2, None)bf = cv2.BFMatcher_create(crossCheck=True)ms = bf.match(des1, des2)ms = sorted(ms, key=lambda x: x.distance)matchesMask = Noneif len(ms) > 10:querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)matchesMask = mask.ravel().tolist()h, w = img1.shapepts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)dst = cv2.perspectiveTransform(pts, retv)img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)img3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\matchColor=(0, 255, 0), matchesMask=matchesMask, \\flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)cv2.namedWindow('xyd',cv2.WINDOW_NORMAL)cv2.imshow('ch', img3)cv2.waitKey(0)cv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "if len(ms) > 10:querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)matchesMask = mask.ravel().tolist()h, w = img1.shapepts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)dst = cv2.perspectiveTransform(pts, retv)img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)img3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\matchColor=(0, 255, 0), matchesMask=matchesMask, \\flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)cv2.namedWindow('xyd',cv2.WINDOW_NORMAL)cv2.imshow('ch', img3)cv2.waitKey(0)cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "高嘉泽": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ce52ff4593506058c00be3eb64a1c1c7.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\nimg3=cv2.resize(img3,(1200,700))\ncv2.imshow('GJZ', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/73ef643b0ec77098f2763a18810da535.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(\n255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\\\n    matchColor=(0, 255, 0), matchesMask=matchesMask, \\\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.imshow('GJZ', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "黄君健": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1ec1753560be0b22c8cadae81d9984bc.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg1 = cv2.imread('img/img/bear.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/bear_in_screen.png',cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1,None)\nkp2, des2 = sift.detectAndCompute(img2,None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1,des2)\nms = sorted(ms, key = lambda x:x.distance)\nimg3 = cv2.drawMatches(img1,kp1,img2,kp2,ms[:20],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.namedWindow('hjj',cv2.WINDOW_NORMAL)\ncv2.imshow('hjj',img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/af9b0edd5a852b8f2c15b908be8c6951.png"
+                ],
+                "text": [
+                    "import cv2\nimport matplotlib.pyplot as plt\n\nimg1 = cv2.imread('img/img/box.png',cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/img/box_in_scene.png',cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(255, 0, 0), matchesMask=None, flags=cv2.DrawMatchesFlags_DEFAULT)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:20], None, **draw_params)\ncv2.imshow('hjj', img3)\ncv2.waitKey(0)"
+                ]
+            }
+        },
+        "黄塨燚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/543a581573b9030d0e9b4437e5a7ffc4.png"
+                ],
+                "text": [
+                    "import cv2\nimport os\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nimg1 = cv2.resize(img1, None, fx=0.1, fy=0.1)\nimg2 = cv2.resize(img2, None, fx=0.1, fy=0.1)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms[:20], None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\ncv2.imshow('hgy', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/690dc0998b589a23c0bb83a4c280dfd5.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 读取图像\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=20,\nmulti_probe_level=2)\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\nmatches = flann.match(des1, des2)\nmatches = sorted(matches, key=lambda x: x.distance)\ngood_matches = matches[:10]\nquerypts = np.float32([kp1[m.queryIdx].pt for m in good_matches]).reshape(-1, 1, 2)\ntrainpts = np.float32([kp2[m.trainIdx].pt for m in good_matches]).reshape(-1, 1, 2)\nretv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC, 5.0)\nmatchesMask = mask.ravel().tolist()\nif retv is not None:\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\ndraw_params = dict(matchColor=(0, 255, 0), singlePointColor=(255, 0, 0), matchesMask=matchesMask, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, good_matches, None, **draw_params)\ncv2.imshow('hgy', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimg1 = cv2.imread('img/bear.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/bear_in_screen.png', cv2.IMREAD_GRAYSCALE)\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nbf = cv2.BFMatcher_create(crossCheck=True)\nms = bf.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\nimg3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,matchColor=(0, 255, 0), matchesMask=matchesMask,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n\ncv2.imshow('JXJ', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7f8fd6cbec1dcc333031fff8e40f9227.png"
+                ],
+                "text": [
+                    "下载附件并解压，读取img文件夹下的\"bear、bear_in_screen\"。\n- 利用SIFT特征点+暴力匹配实现对象查找。\n- 显示查找结果。\n截图参考："
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimg1 = cv2.imread('img/box.png', cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread('img/box_in_scene.png', cv2.IMREAD_GRAYSCALE)\norb = cv2.ORB_create()\nkp1, des1 = orb.detectAndCompute(img1, None)\nkp2, des2 = orb.detectAndCompute(img2, None)\n\nFLANN_INDEX_LSH = 6\nindex_params = dict(algorithm=FLANN_INDEX_LSH,\ntable_number=12,\nkey_size=24,\nmulti_probe_level=2)\n\nsearch_params = dict(checks=100)\nflann = cv2.FlannBasedMatcher(index_params, search_params)\n\nms = flann.match(des1, des2)\nms = sorted(ms, key=lambda x: x.distance)\nmatchesMask = None\nif len(ms) > 10:\n    querypts = np.float32([kp1[m.queryIdx].pt for m in ms]).reshape(-1, 1, 2)\n    trainpts = np.float32([kp2[m.trainIdx].pt for m in ms]).reshape(-1, 1, 2)\n    retv, mask = cv2.findHomography(querypts, trainpts, cv2.RANSAC)\n    matchesMask = mask.ravel().tolist()\n    h, w = img1.shape\n    pts = np.float32([[0, 0], [0, h-1], [w-1, h-1], [w-1, 0]]\n    ).reshape(-1, 1, 2)\n    dst = cv2.perspectiveTransform(pts, retv)\n    img2 = cv2.polylines(img2, [np.int32(dst)], True, (255, 255, 255), 5)\n    img3 = cv2.drawMatches(img1, kp1, img2, kp2, ms, None,\n    matchColor=(0, 255, 0), matchesMask=matchesMask,\n    flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)\n    \ncv2.imshow('JXJ', img3)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3e597f944fca791562278b81e4e137db.png"
+                ],
+                "text": [
+                    "读取img文件夹下的\"box、box_in_scene\"。\n- 利用ORB特征点+FLANN匹配实现对象查找。\n- FLANN匹配器参数按照下面的内容进行优化：\ntable_number=12：增加哈希表数量，提高匹配精度\nkey_size=20：增加键大小，提高特征描述子的区分度\nmulti_probe_level=2：增加多探针级别，提高搜索质量\nchecks=100：增加搜索次数，提高匹配准确度\n- 显示查找结果。\n截图参考："
+                ]
+            }
+        }
+    }
+}

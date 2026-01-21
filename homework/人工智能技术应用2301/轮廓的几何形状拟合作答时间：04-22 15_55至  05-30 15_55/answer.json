@@ -1,0 +1,1116 @@
+{
+    "学生回答": {
+        "倪旭玮": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/43b259d2f4bdf38c3934a36646e84173.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 255,0], 2)\ncv2.imshow('nxw', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/87efe67773f543e9ff52c5401da02637.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('nxw', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "倪理浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/acfb0bf3b79aa5d6af9b76b8f3c910cc.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\narea = cv2.contourArea(contour)\nif area > max_area:\nmax_area = area\nmax_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('nlh', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2cfd05ba0331a3b219d260ee18033581.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.line(img, start, end, (0, 0, 255), 2)\ncv2.circle(img, far, 5, (255, 0, 0), -1)\ncv2.imshow('nlh', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d474168ef33eb56410fbead024ca2bf3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\nglobal epslion\nepslion = value\nprint(f\"当前 epslion 值: {epslion}\")\nprocess_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nprint(f\"检测到的轮廓数量: {len(contours)}\")\nif not contours:\nprint(\"未检测到轮廓\")\nreturn\nmax_contour = max(contours, key=cv2.contourArea)\nprint(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\nepsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\napprox = cv2.approxPolyDP(max_contour, epsilon, True)\nprint(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\nresult = image.copy()\ncv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\nhull = cv2.convexHull(approx, returnPoints=False)\ndefects = cv2.convexityDefects(approx, hull)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(approx[s][0])\nend = tuple(approx[e][0])\nfar = tuple(approx[f][0])\ncv2.circle(result, far, 5, (255, 0, 0), -1)\nelse:\nprint(\"未检测到凸缺陷\")\ncv2.imshow('nlh', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "冯帅": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bf28279ed867b78da78f25c8d9894a38.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n  area = cv2.contourArea(contour)\n  if area > max_area:\n      max_area = area\n      max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('siman', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/edbf38e8374a4d884f363ac5e9a8b60e.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n  s, e, f, d = defects[i, 0]\n  start = tuple(max_contour[s][0])\n  end = tuple(max_contour[e][0])\n  far = tuple(max_contour[f][0])\n  cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n  cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('fs', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a9aef613f781a528c1f71eb1aee1b001.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n global epslion\n epslion = value\n print(f\"当前 epslion 值: {epslion}\")\n process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n print(f\"检测到的轮廓数量: {len(contours)}\")\n if not contours:\n     print(\"未检测到轮廓\")\n     return\n max_contour = max(contours, key=cv2.contourArea)\n print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n approx = cv2.approxPolyDP(max_contour, epsilon, True)\n print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n result = image.copy()\n cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n hull = cv2.convexHull(approx, returnPoints=False)\n defects = cv2.convexityDefects(approx, hull)\n if defects is not None:\n     for i in range(defects.shape[0]):\n         s, e, f, d = defects[i, 0]\n         start = tuple(approx[s][0])\n         end = tuple(approx[e][0])\n         far = tuple(approx[f][0])\n         cv2.circle(result, far, 5, (255, 0, 0), -1)\n else:\n     print(\"未检测到凸缺陷\")\n cv2.imshow('siman', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "华江辰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1e24b70a4ec1a9f688b5bfe7268935f4.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n    area = cv2.contourArea(contour)\n    if area > max_area:\n        max_area = area\n        max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('HJC', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dc3eb4e3a6bb83afdf333c9e85971d32.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n    area = cv2.contourArea(contour)\n    if area > max_area:\n        max_area = area\n        max_contour = contour\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n    s, e, f, d = defects[i, 0]\n    start = tuple(max_contour[s][0])\n    end = tuple(max_contour[e][0])\n    far = tuple(max_contour[f][0])\n    cv2.line(image, start, end, (0, 0, 255), 2)\n    cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('HJC', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1bf1f641e4ca70cafa8a69e4acee3250.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('sucai8/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n   global epslion\n   epslion = value\n   print(f\"当前 epslion 值: {epslion}\")\n   process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n   gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n   _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n   contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n   print(f\"检测到的轮廓数量: {len(contours)}\")\n   if not contours:\n       print(\"未检测到轮廓\")\n       return\n   max_contour = max(contours, key=cv2.contourArea)\n   print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n   epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n   approx = cv2.approxPolyDP(max_contour, epsilon, True)\n   print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n   result = image.copy()\n   cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n   hull = cv2.convexHull(approx, returnPoints=False)\n   defects = cv2.convexityDefects(approx, hull)\n   if defects is not None:\n       for i in range(defects.shape[0]):\n           s, e, f, d = defects[i, 0]\n           start = tuple(approx[s][0])\n           end = tuple(approx[e][0])\n           far = tuple(approx[f][0])\n           cv2.circle(result, far, 5, (255, 0, 0), -1)\n   else:\n       print(\"未检测到凸缺陷\")\n   cv2.imshow('HJC', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶挺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4258dede67aa1fcf975dddf354de12d9.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n  area = cv2.contourArea(contour)\n  if area > max_area:\n      max_area = area\n      max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('yt', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3d6d24888125e3d39c1b8854426481a6.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n s, e, f, d = defects[i, 0]\n start = tuple(max_contour[s][0])\n end = tuple(max_contour[e][0])\n far = tuple(max_contour[f][0])\n cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('yt', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/940167d5b4ff70dfcc69f2b2b2a590dd.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n global epslion\n epslion = value\n print(f\"当前 epslion 值: {epslion}\")\n process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n print(f\"检测到的轮廓数量: {len(contours)}\")\n if not contours:\n     print(\"未检测到轮廓\")\n     return\n max_contour = max(contours, key=cv2.contourArea)\n print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n approx = cv2.approxPolyDP(max_contour, epsilon, True)\n print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n result = image.copy()\n cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n hull = cv2.convexHull(approx, returnPoints=False)\n defects = cv2.convexityDefects(approx, hull)\n if defects is not None:\n     for i in range(defects.shape[0]):\n         s, e, f, d = defects[i, 0]\n         start = tuple(approx[s][0])\n         end = tuple(approx[e][0])\n         far = tuple(approx[f][0])\n         cv2.circle(result, far, 5, (255, 0, 0), -1)\n else:\n     print(\"未检测到凸缺陷\")\n cv2.imshow('yt', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶桉鸣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2d167699967cd8f6389a0a751e3fac51.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn = len(contours)\nmax_index = 0\nfor i in range(n):\n   if cv2.contourArea(contours[i]) > cv2.contourArea(contours[max_index]):\n       max_index = i\nhull = cv2.convexHull(contours[max_index])\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('yam', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d0de4261e56c241a56876b6aefc5b704.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn = len(contours)\nmax_index = 0\nfor i in range(n):\n   if cv2.contourArea(contours[i]) > cv2.contourArea(contours[max_index]):\n       max_index = i\ncnt = contours[max_index]\nhull = cv2.convexHull(cnt,returnPoints = False)\ndefects = cv2.convexityDefects(cnt,hull)\nfor i in range(defects.shape[0]):\n    s,e,f,d = defects[i,0]\n    start = tuple(cnt[s][0])\n    end = tuple(cnt[e][0])\n    far = tuple(cnt[f][0])\n    cv2.line(img, start, end, [0, 0, 255], 2)  \n    cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('yam', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9b4db865e6893e24749c0a227876144c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('sucai8/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n    global epslion\n    epslion = value\n    print(f\"当前 epslion 值: {epslion}\")\n    process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n    contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n    print(f\"检测到的轮廓数量: {len(contours)}\")\n    if not contours:\n        print(\"未检测到轮廓\")\n        return\n    max_contour = max(contours, key=cv2.contourArea)\n    print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n    epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n    approx = cv2.approxPolyDP(max_contour, epsilon, True)\n    print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n    result = image.copy()\n    cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n    hull = cv2.convexHull(approx, returnPoints=False)\n    defects = cv2.convexityDefects(approx, hull)\n    if defects is not None:\n        for i in range(defects.shape[0]):\n            s, e, f, d = defects[i, 0]\n            start = tuple(approx[s][0])\n            end = tuple(approx[e][0])\n            far = tuple(approx[f][0])\n            cv2.circle(result, far, 5, (255, 0, 0), -1)\n    else:\n        print(\"未检测到凸缺陷\")\n    cv2.imshow('yam', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吕鸿凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bdc4943d9e44b93410d8efdcf08bafde.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n    area = cv2.contourArea(contour)\n    if area > max_area:\n        max_area = area\n        max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('LHK', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/65fd12728089d079cd6cbee3e8f44680.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n    s, e, f, d = defects[i, 0]\n    start = tuple(max_contour[s][0])\n    end = tuple(max_contour[e][0])\n    far = tuple(max_contour[f][0])\n    cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n    cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('LHK', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a07f7a9ed1cec999b0e9e3200ffb7b01.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n   global epslion\n   epslion = value\n   print(f\"当前 epslion 值: {epslion}\")\n   process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n   gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n   _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n   contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n   print(f\"检测到的轮廓数量: {len(contours)}\")\n   if not contours:\n       print(\"未检测到轮廓\")\n       return\n   max_contour = max(contours, key=cv2.contourArea)\n   print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n   epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n   approx = cv2.approxPolyDP(max_contour, epsilon, True)\n   print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n   result = image.copy()\n   cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n   hull = cv2.convexHull(approx, returnPoints=False)\n   defects = cv2.convexityDefects(approx, hull)\n   if defects is not None:\n       for i in range(defects.shape[0]):\n           s, e, f, d = defects[i, 0]\n           start = tuple(approx[s][0])\n           end = tuple(approx[e][0])\n           far = tuple(approx[f][0])\n           cv2.circle(result, far, 5, (255, 0, 0), -1)\n   else:\n       print(\"未检测到凸缺陷\")\n   cv2.imshow('LHK', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吴世杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n  s, e, f, d = defects[i, 0]\n  start = tuple(max_contour[s][0])\n  end = tuple(max_contour[e][0])\n  far = tuple(max_contour[f][0])\n  cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('csq', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\n#创建 RGB 三通道直方图（直方图矩阵）\ndef create_rgb_hist(image):\n   h, w, c = image.shape\n   rgbhist = np.zeros([16 * 16 * 16, 1], np.float32)\n   bsize = 256 / 16\n   for row in range(h):\n       for col in range(w):#构建直方图矩阵的索引，该索引通过每一个像素点的三通道值进行构建\n           b = image[row, col, 0]\n           g = image[row, col, 1]\n           r = image[row, col, 2]\n           index = int(b / bsize) * 16 * 16 + int(g / bsize) * 16 + int(r / bsize)# 构建直方图矩阵\n           rgbhist[int(index), 0] += 1\n   return rgbhist\n#直方图比较函数\ndef hist_compare(image1, image2):\n   # 创建第一幅图像的RGB三通道直方图（直方图矩阵）\n   hist1 = create_rgb_hist(image1)\n   # 创建第二幅图像的RGB三通道直方图（直方图矩阵）\n   hist2 = create_rgb_hist(image2)\n   # 使用3种方式进行直方图比较\n   match1 = cv2.compareHist(hist1, hist2, cv2.HISTCMP_BHATTACHARYYA)\n   match2 = cv2.compareHist(hist1, hist2, cv2.HISTCMP_CORREL)\n   match3 = cv2.compareHist(hist1, hist2, cv2.HISTCMP_CHISQR)\n   print(\"巴氏距离：%s, 相关性：%s, 卡方：%s\" %(match1, match2, match3))\nimg1 = cv2.imread(\"tiger1.jpg\")\nimg1 = cv2.resize(img1, (400, 225))\nimg2 = cv2.imread(\"tiger2.jpg \")\nimg2 = cv2.resize(img2, (400, 225))\nimg3 = cv2.imread(\"tiger3.jpg \")\nimg3 = cv2.resize(img3, (400, 225))\nhist_compare(img1, img2)\nhist_compare(img1, img3)\nhist_compare(img2, img3)"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "吴争航": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1284644c4d73d67c16c4d3d46d936b7d"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n area = cv2.contourArea(contours[i])\n print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('pyh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fc877821934d44cf1c67196dfbcc3599"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('pyh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/069e57fca7d496d0d48d292af4f7f89d"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n  s, e, f, d = defects[i, 0]\n  start = tuple(max_contour[s][0])\n  end = tuple(max_contour[e][0])\n  far = tuple(max_contour[f][0])\n  cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('pyh', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "周泽鑫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/96953dad1bbf987e73c90d12f0478c41.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n area = cv2.contourArea(contours[i])\n print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('zzx', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e8e9b336273130981e894b0d1ddf42af.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('zzx', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "夏宇浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e0d960ebf957489a25b42922f15e667b.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n  area = cv2.contourArea(contour)\n  if area > max_area:\n      max_area = area\n      max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('xiayuhao', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cdfb7d5babfc6bf520688f56ff658ab5.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.line(img, start, end, (0, 0, 255), 2)\ncv2.circle(img, far, 5, (255, 0, 0), -1)\ncv2.imshow('fs', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/81f29bc5b28ef19becacdb7c174c24be.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n global epslion\n epslion = value\n print(f\"当前 epslion 值: {epslion}\")\n process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n print(f\"检测到的轮廓数量: {len(contours)}\")\n if not contours:\n     print(\"未检测到轮廓\")\n     return\n max_contour = max(contours, key=cv2.contourArea)\n print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n approx = cv2.approxPolyDP(max_contour, epsilon, True)\n print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n result = image.copy()\n cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n hull = cv2.convexHull(approx, returnPoints=False)\n defects = cv2.convexityDefects(approx, hull)\n if defects is not None:\n     for i in range(defects.shape[0]):\n         s, e, f, d = defects[i, 0]\n         start = tuple(approx[s][0])\n         end = tuple(approx[e][0])\n         far = tuple(approx[f][0])\n         cv2.circle(result, far, 5, (255, 0, 0), -1)\n else:\n     print(\"未检测到凸缺陷\")\n cv2.imshow('xiayuhao', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏忆豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/316a7015907c6f4fec8077daed6acbdf.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n  area = cv2.contourArea(contour)\n  if area > max_area:\n      max_area = area\n      max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('xyh', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e7160643658bb892d2267c09a669674f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n s, e, f, d = defects[i, 0]\n start = tuple(max_contour[s][0])\n end = tuple(max_contour[e][0])\n far = tuple(max_contour[f][0])\n cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('xyh', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b83f9143088bad6de7bd6850382b78f9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n global epslion\n epslion = value\n print(f\"当前 epslion 值: {epslion}\")\n process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n print(f\"检测到的轮廓数量: {len(contours)}\")\n if not contours:\n     print(\"未检测到轮廓\")\n     return\n max_contour = max(contours, key=cv2.contourArea)\n print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n approx = cv2.approxPolyDP(max_contour, epsilon, True)\n print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n result = image.copy()\n cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n hull = cv2.convexHull(approx, returnPoints=False)\n defects = cv2.convexityDefects(approx, hull)\n if defects is not None:\n     for i in range(defects.shape[0]):\n         s, e, f, d = defects[i, 0]\n         start = tuple(approx[s][0])\n         end = tuple(approx[e][0])\n         far = tuple(approx[f][0])\n         cv2.circle(result, far, 5, (255, 0, 0), -1)\n else:\n     print(\"未检测到凸缺陷\")\n cv2.imshow('xyh', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏有德": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/295ffa7ca134d4c83b702c90b1bdccd5.jpg"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[ ]\nfor i in range(n):\narea = cv2.contourArea(contours[i])\nprint(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('xyd', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d783970714d2c86cf3bd394daee68654.jpg"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.line(img, start, end, [0, 0, 255], 2)\ncv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('xyd', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/887d406a537413f19858eaa27a31e235.jpg"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('xyd', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "宋葛萍": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\narea = cv2.contourArea(contours[i])\nprint(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('sgp', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.line(img, start, end, [0, 0, 255], 2)\ncv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('sgp', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('sgp', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方烨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/cfb787d3a5bbfd77c036c322d714aaf5.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n area = cv2.contourArea(contours[i])\n print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('fy', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/015f129eb238a33a5d33ec2e21055347.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('fy', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e78b669d2bd508f34420c21f0038c94a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n  global epslion\n  epslion = value\n  print(f\"当前 epslion 值: {epslion}\")\n  process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n  gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n  _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n  contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n  print(f\"检测到的轮廓数量: {len(contours)}\")\n  if not contours:\n      print(\"未检测到轮廓\")\n      return\n  max_contour = max(contours, key=cv2.contourArea)\n  print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n  epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n  approx = cv2.approxPolyDP(max_contour, epsilon, True)\n  print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n  result = image.copy()\n  cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n  hull = cv2.convexHull(approx, returnPoints=False)\n  defects = cv2.convexityDefects(approx, hull)\n  if defects is not None:\n      for i in range(defects.shape[0]):\n          s, e, f, d = defects[i, 0]\n          start = tuple(approx[s][0])\n          end = tuple(approx[e][0])\n          far = tuple(approx[f][0])\n          cv2.circle(result, far, 5, (255, 0, 0), -1)\n  else:\n      print(\"未检测到凸缺陷\")\n  cv2.imshow('fy', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方胜超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/30104a0613803bd515b74476a074468c.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n   area = cv2.contourArea(contour)\n   if area > max_area:\n       max_area = area\n       max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('FSC', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/19be3473787fc4e0fc3b46716ee8faf7.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n   s, e, f, d = defects[i, 0]\n   start = tuple(max_contour[s][0])\n   end = tuple(max_contour[e][0])\n   far = tuple(max_contour[f][0])\n   cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n   cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('FSC', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/871939e1d0bcb0673e57ea2f1b341fa4.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n  global epslion\n  epslion = value\n  print(f\"当前 epslion 值: {epslion}\")\n  process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n  gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n  _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n  contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n  print(f\"检测到的轮廓数量: {len(contours)}\")\n  if not contours:\n      print(\"未检测到轮廓\")\n      return\n  max_contour = max(contours, key=cv2.contourArea)\n  print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n  epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n  approx = cv2.approxPolyDP(max_contour, epsilon, True)\n  print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n  result = image.copy()\n  cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n  hull = cv2.convexHull(approx, returnPoints=False)\n  defects = cv2.convexityDefects(approx, hull)\n  if defects is not None:\n      for i in range(defects.shape[0]):\n          s, e, f, d = defects[i, 0]\n          start = tuple(approx[s][0])\n          end = tuple(approx[e][0])\n          far = tuple(approx[f][0])\n          cv2.circle(result, far, 5, (255, 0, 0), -1)\n  else:\n      print(\"未检测到凸缺陷\")\n  cv2.imshow('FSC', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李盛长": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a933e2291d5b8e06e6714d59e0712759"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\narea = cv2.contourArea(contour)\nif area > max_area:\nmax_area = area\nmax_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('lsc', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6e66f14d7bf4c2606ef9420b0c92c71d"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\narea = cv2.contourArea(contour)\nif area > max_area:\nmax_area = area\nmax_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('lsc', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6e66f14d7bf4c2606ef9420b0c92c71d"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\nglobal epslion\nepslion = value\nprint(f\"当前 epslion 值: {epslion}\")\nprocess_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nprint(f\"检测到的轮廓数量: {len(contours)}\")\nif not contours:\nprint(\"未检测到轮廓\")\nreturn\nmax_contour = max(contours, key=cv2.contourArea)\nprint(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\nepsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\napprox = cv2.approxPolyDP(max_contour, epsilon, True)\nprint(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\nresult = image.copy()\ncv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\nhull = cv2.convexHull(approx, returnPoints=False)\ndefects = cv2.convexityDefects(approx, hull)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(approx[s][0])\nend = tuple(approx[e][0])\nfar = tuple(approx[f][0])\ncv2.circle(result, far, 5, (255, 0, 0), -1)\nelse:\nprint(\"未检测到凸缺陷\")\ncv2.imshow('lsc', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c9261d8a2f47fe0e70456480d791a313.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n  area = cv2.contourArea(contour)\n  if area > max_area:\n      max_area = area\n      max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('siman', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5b9cef004695bd61772580caee1b9c11.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/5b9cef004695bd61772580caee1b9c11.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n  s, e, f, d = defects[i, 0]\n  start = tuple(max_contour[s][0])\n  end = tuple(max_contour[e][0])\n  far = tuple(max_contour[f][0])\n  cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n  cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('siman', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4ee68b01cac65d9283fcc708a5575c81.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n global epslion\n epslion = value\n print(f\"当前 epslion 值: {epslion}\")\n process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n print(f\"检测到的轮廓数量: {len(contours)}\")\n if not contours:\n     print(\"未检测到轮廓\")\n     return\n max_contour = max(contours, key=cv2.contourArea)\n print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n approx = cv2.approxPolyDP(max_contour, epsilon, True)\n print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n result = image.copy()\n cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n hull = cv2.convexHull(approx, returnPoints=False)\n defects = cv2.convexityDefects(approx, hull)\n if defects is not None:\n     for i in range(defects.shape[0]):\n         s, e, f, d = defects[i, 0]\n         start = tuple(approx[s][0])\n         end = tuple(approx[e][0])\n         far = tuple(approx[f][0])\n         cv2.circle(result, far, 5, (255, 0, 0), -1)\n else:\n     print(\"未检测到凸缺陷\")\n cv2.imshow('siman', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨峥荣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c8f5d900694d0e659ee826a9b9957157.png"
+                ],
+                "text": [
+                    "import cv2\nimport os\nimage_path = os.path.join('img/hand.png')\nimage = cv2.imread(image_path)\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)\ncontours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\nmax_contour = max(contours, key=cv2.contourArea)\ncv2.drawContours(image, [max_contour], -1, (0, 255, 0), 2)\ncv2.imshow('Detected Hand Contour', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6dad30e7eefb07fee77a3ff207469eac.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport os\nimage_path = 'img/hand.png'\nimage = cv2.imread(image_path)\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)\ncontours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\nmax_contour = max(contours, key=cv2.contourArea)\nepsilon = 0.02 * cv2.arcLength(max_contour, True)\napprox = cv2.approxPolyDP(max_contour, epsilon, True)\ncv2.drawContours(image, [approx], -1, (0, 0, 255), 2)\nfor point in approx:\n    cv2.circle(image, tuple(point[0]), 3, (255, 0, 0), -1)\ncv2.putText(image, 'Your Name', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)\ncv2.imshow('Detected Hand Contour', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/81affae5c102750912dd4e8882825be1.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport os\nimage_path = 'img/hand.png'\nimage = cv2.imread(image_path)\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)\ncontours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\nmax_contour = max(contours, key=cv2.contourArea)\nepsilon = 0.02 * cv2.arcLength(max_contour, True)\napprox = cv2.approxPolyDP(max_contour, epsilon, True)\ncv2.drawContours(image, [approx], -1, (0, 0, 255), 2)\nfor point in approx:\n    cv2.circle(image, tuple(point[0]), 3, (255, 0, 0), -1)\ncv2.putText(image, 'Your Name', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)\ncv2.imshow('yangzhengrong', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨雯杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/620db1a25dcdc3c2505d004aaf0fd606.jpg"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[ ]\nfor i in range(n):\narea = cv2.contourArea(contours[i])\nprint(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('ywj', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/87ce6809db5c379a236249bcffe67922.jpg"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.line(img, start, end, [0, 0, 255], 2)\ncv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('ywj', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e8b043e9cdcdf4cb6aec43d56a4968f7.jpg"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('ywj', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林佳明": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8eba5b52d04e81c81730c8f77ecedca3.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('hull', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c96500f3bd014f7398a99ad3ab896679.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('ljm', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "林涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ffb25969d8ed9f19265ae32081a3c1a9.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n area = cv2.contourArea(contour)\n if area > max_area:\n     max_area = area\n     max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('lintao', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9dc4a12dfb913ddea6515e154d48255a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n s, e, f, d = defects[i, 0]\n start = tuple(max_contour[s][0])\n end = tuple(max_contour[e][0])\n far = tuple(max_contour[f][0])\n cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('lintao', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/56f96661332ec58dcb475c259dd5c9b6.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\nimage = cv2.imread('img/hand.png')\nif image is None:\n    print(\"无法加载图像，请检查路径\")\n    exit()\n\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\n\n\ndef update_epslion(value):\n    global epslion\n    epslion = value\n    print(f\"当前 epslion 值: {epslion}\")\n    process_image()\n\n\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\n\n\ndef process_image():\n    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n    contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n\n    if not contours:\n        print(\"未检测到轮廓\")\n        return\n\n    max_contour = max(contours, key=cv2.contourArea)\n    epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n    approx = cv2.approxPolyDP(max_contour, epsilon, True)\n\n    result = image.copy()\n    cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n\n    hull = cv2.convexHull(approx, returnPoints=False)\n    defects = cv2.convexityDefects(approx, hull)\n\n    if defects is not None:\n        for i in range(defects.shape[0]):\n            s, e, f, d = defects[i, 0]\n            far = tuple(approx[f][0])\n            cv2.circle(result, far, 5, (255, 0, 0), -1)\n\n    cv2.imshow('Result', result)\n\n\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林西面": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4307fd325914bfd6bec3bf66fc765eb9.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n   area = cv2.contourArea(contour)\n   if area > max_area:\n       max_area = area\n       max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('siman', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a889b018edae5520c5fb50e819338bc1.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n   s, e, f, d = defects[i, 0]\n   start = tuple(max_contour[s][0])\n   end = tuple(max_contour[e][0])\n   far = tuple(max_contour[f][0])\n   cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n   cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('siman', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6e14543d332759163932a1b417e92628.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n  global epslion\n  epslion = value\n  print(f\"当前 epslion 值: {epslion}\")\n  process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n  gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n  _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n  contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n  print(f\"检测到的轮廓数量: {len(contours)}\")\n  if not contours:\n      print(\"未检测到轮廓\")\n      return\n  max_contour = max(contours, key=cv2.contourArea)\n  print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n  epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n  approx = cv2.approxPolyDP(max_contour, epsilon, True)\n  print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n  result = image.copy()\n  cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n  hull = cv2.convexHull(approx, returnPoints=False)\n  defects = cv2.convexityDefects(approx, hull)\n  if defects is not None:\n      for i in range(defects.shape[0]):\n          s, e, f, d = defects[i, 0]\n          start = tuple(approx[s][0])\n          end = tuple(approx[e][0])\n          far = tuple(approx[f][0])\n          cv2.circle(result, far, 5, (255, 0, 0), -1)\n  else:\n      print(\"未检测到凸缺陷\")\n  cv2.imshow('siman', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "潘易函": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1284644c4d73d67c16c4d3d46d936b7d.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('pyh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fc877821934d44cf1c67196dfbcc3599.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('pyh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/069e57fca7d496d0d48d292af4f7f89d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n   s, e, f, d = defects[i, 0]\n   start = tuple(max_contour[s][0])\n   end = tuple(max_contour[e][0])\n   far = tuple(max_contour[f][0])\n   cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('pyh', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王嘉鹏": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3d6d24888125e3d39c1b8854426481a6"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\narea = cv2.contourArea(contour)\nif area > max_area:\nmax_area = area\nmax_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('yt', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4258dede67aa1fcf975dddf354de12d9"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.line(img, start, end, (0, 0, 255), 2)\ncv2.circle(img, far, 5, (255, 0, 0), -1)\ncv2.imshow('yt', img)\ncv2.waitKey(0)cv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/940167d5b4ff70dfcc69f2b2b2a590dd"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\nglobal epslion\nepslion = value\nprint(f\"当前 epslion 值: {epslion}\")\nprocess_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nprint(f\"检测到的轮廓数量: {len(contours)}\")\nif not contours:\nprint(\"未检测到轮廓\")\nreturn\nmax_contour = max(contours, key=cv2.contourArea)\nprint(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\nepsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\napprox = cv2.approxPolyDP(max_contour, epsilon, True)\nprint(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\nresult = image.copy()\ncv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\nhull = cv2.convexHull(approx, returnPoints=False)\ndefects = cv2.convexityDefects(approx, hull)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(approx[s][0])\nend = tuple(approx[e][0])\nfar = tuple(approx[f][0])\ncv2.circle(result, far, 5, (255, 0, 0), -1)\nelse:\nprint(\"未检测到凸缺陷\")\ncv2.imshow('yt', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王家翔": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0d0c54cf088105315915dd9826fa3ecc.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n  area = cv2.contourArea(contour)\n  if area > max_area:\n      max_area = area\n      max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('wjx', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/21d07cf3c2079b08045fdb94e5d2fb06.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n  s, e, f, d = defects[i, 0]\n  start = tuple(max_contour[s][0])\n  end = tuple(max_contour[e][0])\n  far = tuple(max_contour[f][0])\n  cv2.line(img, start, end, (0, 0, 255), 2)  # 绘制凸包\n  cv2.circle(img, far, 5, (255, 0, 0), -1)  # 绘制凸缺陷\ncv2.imshow('wjx', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f993122189af091799a6b70fbe54a6f3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n global epslion\n epslion = value\n print(f\"当前 epslion 值: {epslion}\")\n process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n print(f\"检测到的轮廓数量: {len(contours)}\")\n if not contours:\n     print(\"未检测到轮廓\")\n     return\n max_contour = max(contours, key=cv2.contourArea)\n print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n approx = cv2.approxPolyDP(max_contour, epsilon, True)\n print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n result = image.copy()\n cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n hull = cv2.convexHull(approx, returnPoints=False)\n defects = cv2.convexityDefects(approx, hull)\n if defects is not None:\n     for i in range(defects.shape[0]):\n         s, e, f, d = defects[i, 0]\n         start = tuple(approx[s][0])\n         end = tuple(approx[e][0])\n         far = tuple(approx[f][0])\n         cv2.circle(result, far, 5, (255, 0, 0), -1)\n else:\n     print(\"未检测到凸缺陷\")\n cv2.imshow('wjx', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王昱诺": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('hand_xray.jpg')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, binary = cv2.threshold(gray, 128, 255, cv2.THRESH_BINARY)\ncontours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\nlargest_contour = None\nmax_area = 0\nfor contour in contours:\narea = cv2.contourArea(contour)\nif area > max_area:\nmax_area = area\nlargest_contour = contour\nhull = cv2.convexHull(largest_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('wyn', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.line(img, start, end, [0, 0, 255], 2)\ncv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('wyn', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2d81971f881e03bb751581d5aefe7dc7.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('wyn', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/86f9b9e283ee380d7b4e0290c0f5e903.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('wh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b955ae6b2d885a5d76e73292ff026ee2.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('wh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/589503deaeb6ab55f6b82b5c1dfca078.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n   s, e, f, d = defects[i, 0]\n   start = tuple(max_contour[s][0])\n   end = tuple(max_contour[e][0])\n   far = tuple(max_contour[f][0])\n   cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('wh', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王钰洁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ed3447aa1fe83152d4ddfca18e3dee06.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('wyj', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/43754cd745cddc0b16c72eb4c2e2454b.png"
+                ],
+                "text": []
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a0301347e087428f6b14eee53a2ee340.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n   s, e, f, d = defects[i, 0]\n   start = tuple(max_contour[s][0])\n   end = tuple(max_contour[e][0])\n   far = tuple(max_contour[f][0])\n   cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('wyj', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "葛人欢": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f401a9511407f49f2837ee7d15e61fb0.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n area = cv2.contourArea(contours[i])\n print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('grh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/297b2ca188189b8941dcf4c24bc955b7.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('grh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/db45c8b92fb8c67a37417d7850177bd3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n   s, e, f, d = defects[i, 0]\n   start = tuple(max_contour[s][0])\n   end = tuple(max_contour[e][0])\n   far = tuple(max_contour[f][0])\n   cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('grh', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蒋子豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5b9cc61a908329ef262edd7a111e767e.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('jzh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e05cdb3198cefccd65a1fd418fcb3c26.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('jzh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "蔡雨轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n area = cv2.contourArea(contours[i])\n print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('cyx', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('cyx', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "薛凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e70120c68c34436aee4db9e11b62b88b.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n area = cv2.contourArea(contours[i])\n print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('xk', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6e106b3f21e59ca0361b62d4a67427f5.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('xk', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "许贤明": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ef3b455c4291323d1003f1a2ecb38682.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)  \ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('hull', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ef95bdf24d9e9d95f966ea73ca15c2da.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('xxm', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "赖志和": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/502eb11e0d920bc5029b20e176e01f5a.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('lzh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/17b513ccb2c0b5daf3b723543a8239b1.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('lzh', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "邱伊琳": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/81073162a2e47f50a2f7174bdf17e9f0"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('hull', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/62ff9746a8be226ac754e5dbcd3b1d71"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('qyl', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "郑光甫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a933e2291d5b8e06e6714d59e0712759"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\narea = cv2.contourArea(contour)\nif area > max_area:\nmax_area = area\nmax_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('lzgf', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6e66f14d7bf4c2606ef9420b0c92c71d"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\narea = cv2.contourArea(contour)\nif area > max_area:\nmax_area = area\nmax_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('zgf', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6e66f14d7bf4c2606ef9420b0c92c71d"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\nglobal epslion\nepslion = value\nprint(f\"当前 epslion 值: {epslion}\")\nprocess_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n_, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nprint(f\"检测到的轮廓数量: {len(contours)}\")\nif not contours:\nprint(\"未检测到轮廓\")\nreturn\nmax_contour = max(contours, key=cv2.contourArea)\nprint(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\nepsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\napprox = cv2.approxPolyDP(max_contour, epsilon, True)\nprint(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\nresult = image.copy()\ncv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\nhull = cv2.convexHull(approx, returnPoints=False)\ndefects = cv2.convexityDefects(approx, hull)\nif defects is not None:\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(approx[s][0])\nend = tuple(approx[e][0])\nfar = tuple(approx[f][0])\ncv2.circle(result, far, 5, (255, 0, 0), -1)\nelse:\nprint(\"未检测到凸缺陷\")\ncv2.imshow('zgf', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郭捷瑞": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d79cd667a5393191092013989cc3bec7.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n  area = cv2.contourArea(contour)\n  if area > max_area:\n      max_area = area\n      max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 65), 2)\ncv2.imshow('gjr', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ef075717d6f8b88213b7ec7ffe5fbb16.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n  s, e, f, d = defects[i, 0]\n  start = tuple(max_contour[s][0])\n  end = tuple(max_contour[e][0])\n  far = tuple(max_contour[f][0])\n  cv2.line(img, start, end, (0, 0, 255), 2)\n  cv2.circle(img, far, 5, (255, 0, 0), -1)\ncv2.imshow('gjr', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a07f899bf9579f9d31b7bdb8defca5f8.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n global epslion\n epslion = value\n print(f\"当前 epslion 值: {epslion}\")\n process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n print(f\"检测到的轮廓数量: {len(contours)}\")\n if not contours:\n     print(\"未检测到轮廓\")\n     return\n max_contour = max(contours, key=cv2.contourArea)\n print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n approx = cv2.approxPolyDP(max_contour, epsilon, True)\n print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n result = image.copy()\n cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n hull = cv2.convexHull(approx, returnPoints=False)\n defects = cv2.convexityDefects(approx, hull)\n if defects is not None:\n     for i in range(defects.shape[0]):\n         s, e, f, d = defects[i, 0]\n         start = tuple(approx[s][0])\n         end = tuple(approx[e][0])\n         far = tuple(approx[f][0])\n         cv2.circle(result, far, 5, (255, 0, 0), -1)\n else:\n     print(\"未检测到凸缺陷\")\n cv2.imshow('gjr', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "金孝华": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d1a167e9fcec461901af961ea10817b6.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n    area = cv2.contourArea(contour)\n    if area > max_area:\n        max_area = area\n        max_contour = contour\nhull = cv2.convexHull(max_contour)\ncv2.drawContours(image, [hull], -1, (0, 255, 0), 2)\ncv2.imshow('JXH', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/657754ab7bc1708d1e0b9021ae638587.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\nmax_area = 0\nmax_contour = None\nfor contour in contours:\n    area = cv2.contourArea(contour)\n    if area > max_area:\n        max_area = area\n        max_contour = contour\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nfor i in range(defects.shape[0]):\n    s, e, f, d = defects[i, 0]\n    start = tuple(max_contour[s][0])\n    end = tuple(max_contour[e][0])\n    far = tuple(max_contour[f][0])\n    cv2.line(image, start, end, (0, 0, 255), 2)\n    cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('JXH', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5cfa0550b538f25295890117083c2673.png"
+                ],
+                "text": [
+                    "import cv2\nimage = cv2.imread('sucai8/hand.png')\ncv2.namedWindow('Result')\nepslion = 1\nmax_epslion = 100\ndef update_epslion(value):\n   global epslion\n   epslion = value\n   print(f\"当前 epslion 值: {epslion}\")\n   process_image()\ncv2.createTrackbar('epslion', 'Result', epslion, max_epslion, update_epslion)\ndef process_image():\n   gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n   _, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)\n   contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)\n   print(f\"检测到的轮廓数量: {len(contours)}\")\n   if not contours:\n       print(\"未检测到轮廓\")\n       return\n   max_contour = max(contours, key=cv2.contourArea)\n   print(f\"最大轮廓的面积: {cv2.contourArea(max_contour)}\")\n   epsilon = (epslion / max_epslion) * 0.1 * cv2.arcLength(max_contour, True)\n   approx = cv2.approxPolyDP(max_contour, epsilon, True)\n   print(f\"当前 epsilon 值: {epsilon}，逼近后的点数: {len(approx)}\")\n   result = image.copy()\n   cv2.drawContours(result, [approx], -1, (0, 0, 255), 2)\n   hull = cv2.convexHull(approx, returnPoints=False)\n   defects = cv2.convexityDefects(approx, hull)\n   if defects is not None:\n       for i in range(defects.shape[0]):\n           s, e, f, d = defects[i, 0]\n           start = tuple(approx[s][0])\n           end = tuple(approx[e][0])\n           far = tuple(approx[f][0])\n           cv2.circle(result, far, 5, (255, 0, 0), -1)\n   else:\n       print(\"未检测到凸缺陷\")\n   cv2.imshow('jxh', result)\nprocess_image()\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈沈祺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/67cb943dce5567101502a0d795509359.png"
+                ],
+                "text": [
+                    "import cv2\n\n# 读取图像\nimg = cv2.imread('sucai8/hand.png')\nif img is None:\n    print(\"无法读取图像，请检查路径。\")\n    exit()\n\n# 转换为灰度图像\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\n# 二值化处理，使用合适的阈值（可以根据实际情况调整）\n_, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)\n\n# 查找所有轮廓\ncontours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n\n# 检查是否找到轮廓\nif len(contours) == 0:\n    print(\"没有找到轮廓。\")\n    exit()\n\n# 找到最大的轮廓（手掌轮廓）\nmax_contour = max(contours, key=cv2.contourArea)\n\n# 检测手掌轮廓的凸包\nhull = cv2.convexHull(max_contour)\n\n# 绘制凸包\ncv2.drawContours(img, [hull], -1, (0, 255, 0), 2)  # 使用绿色 (0, 255, 0) 绘制\n\n# 显示结果图像\ncv2.imshow('Hand Contour and Convex Hull', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5d01fa893763225960727619a4ac9b65.png"
+                ],
+                "text": [
+                    "import cv2\n\nimg = cv2.imread('sucai8/hand.png')\nif img is None:\n    print(\"无法读取图像，请检查路径。\")\n    exit()\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n_, binary = cv2.threshold(gray, 75, 255, cv2.THRESH_BINARY)\ncontours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n\n# 检查是否找到轮廓\nif len(contours) == 0:\n    print(\"没有找到轮廓。\")\n    exit()\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n\n        # 绘制线段和点\n        cv2.line(img, start, end, (0, 0, 255), 2)  # 红色线段\n        cv2.circle(img, far, 5, (255, 0, 0), -1)  # 蓝色点\ncv2.imshow('CSQ', img)\ncv2.imwrite('CSQ.png', img)\n\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/eac37eae05010acb0847a4ff460eb606.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n   s, e, f, d = defects[i, 0]\n   start = tuple(max_contour[s][0])\n   end = tuple(max_contour[e][0])\n   far = tuple(max_contour[f][0])\n   cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('csq', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈泽宇": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c69caafadc34e8b8772b0e9a23a0b5aa.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n area = cv2.contourArea(contours[i])\n print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('czy', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/855a3582dea5ad3f61dc79b16486a498.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n   for i in range(defects.shape[0]):\n       s, e, f, d = defects[i, 0]\n       start = tuple(max_contour[s][0])\n       end = tuple(max_contour[e][0])\n       far = tuple(max_contour[f][0])\n       cv2.line(img, start, end, [0, 0, 255], 2)\n       cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('czy', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/295ffa7ca134d4c83b702c90b1bdccd5"
+                ],
+                "text": [
+                    "import cv2img = cv2.imread('img/hand.png')gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)ret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作contours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)n=len(contours)contoursImg=[ ]for i in range(n):area = cv2.contourArea(contours[i])print(f\"轮廓{i}的面积：\\n{area}\")max_contour = max(contours, key=cv2.contourArea)area=cv2.contourArea(max_contour)hull = cv2.convexHull(max_contour)cv2.polylines(img,[hull],True,(0,255,0),2)cv2.imshow('ch', img)cv2.waitKey()cv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d783970714d2c86cf3bd394daee68654"
+                ],
+                "text": [
+                    "import cv2img = cv2.imread('img/hand.png')gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)ret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)contours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)max_contour = max(contours, key=cv2.contourArea)hull = cv2.convexHull(max_contour)cv2.polylines(img, [hull], True, (0, 255, 0), 2)hull_indices = cv2.convexHull(max_contour, returnPoints=False)defects = cv2.convexityDefects(max_contour, hull_indices)if defects is not None:for i in range(defects.shape[0]):s, e, f, d = defects[i, 0]start = tuple(max_contour[s][0])end = tuple(max_contour[e][0])far = tuple(max_contour[f][0])cv2.line(img, start, end, [0, 0, 255], 2)cv2.circle(img, far, 5, [255, 0, 0], -1)cv2.imshow('ch', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/887d406a537413f19858eaa27a31e235"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\ns, e, f, d = defects[i, 0]\nstart = tuple(max_contour[s][0])\nend = tuple(max_contour[e][0])\nfar = tuple(max_contour[f][0])\ncv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('ch', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "高嘉泽": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e8d70fcf29113e5d5172baecd559198b.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)# 二值化操作\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)\nn=len(contours)\ncontoursImg=[]\nfor i in range(n):\n  area = cv2.contourArea(contours[i])\n  print(f\"轮廓{i}的面积：\\n{area}\")\nmax_contour = max(contours, key=cv2.contourArea)\narea=cv2.contourArea(max_contour)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0,255,0),2)\ncv2.imshow('gjz', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3885e3c5d17fa76d2da3e13012c9a4bc.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('gjz', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": []
+            }
+        },
+        "黄塨燚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ec3b6dbe0d35eebb9cca388a0032d2d4.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimg = cv2.imread('sucai8/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img,[hull],True,(0, 255, 0),2)\ncv2.imshow('huanggongyi', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7045a00a099b235e600b6f5d6eee02c5.png"
+                ],
+                "text": [
+                    "import cv2\nimg = cv2.imread('img/img/hand.png')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\nhull_indices = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull_indices)\nif defects is not None:\n    for i in range(defects.shape[0]):\n        s, e, f, d = defects[i, 0]\n        start = tuple(max_contour[s][0])\n        end = tuple(max_contour[e][0])\n        far = tuple(max_contour[f][0])\n        cv2.line(img, start, end, [0, 0, 255], 2)\n        cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('haunggongyi', img)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目3": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/58f706eddd63a65ec845dae277590f57.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimage = cv2.imread('img/hand.png')\ngray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nimage = cv2.imread('img/hand.png')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)\ncontours, hierarchy= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)\nmax_contour = max(contours, key=cv2.contourArea)\nhull = cv2.convexHull(max_contour, returnPoints=False)\ndefects = cv2.convexityDefects(max_contour, hull)\ncv2.drawContours(image, [max_contour], -1, (0, 0, 255), 2)\nfor i in range(defects.shape[0]):\n    s, e, f, d = defects[i, 0]\n    start = tuple(max_contour[s][0])\n    end = tuple(max_contour[e][0])\n    far = tuple(max_contour[f][0])\n    cv2.circle(image, far, 5, (255, 0, 0), -1)\ncv2.imshow('hgy', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimg = cv2.imread('./img/hand.png')\nblur = cv2.medianBlur(img, 5)\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 60, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)\ntemp = 0\ncount = 0\n# 查找面积最大的轮廓\nfor i in range(len(contours)):\n    area = cv2.contourArea(contours[i])  # 获取轮廓面积\n    if temp < area:\n        temp = area\n        count = i\ncnt = contours[count]\n# 寻找凸包并绘制凸包（轮廓）\nhull = cv2.convexHull(cnt)\ncv2.polylines(img, [hull], True, (0, 255, 0), 2)\n# 显示图片\ncv2.imshow('JXJ', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ae8b50d5d3dfc6d474a0dc125ba3aef2.png"
+                ],
+                "text": [
+                    "下载附件并解压，读取img文件夹下的\"hand\"。\n- 图像转成灰度图，选择合适的阈值进行二值化处理。\n- 搜索二值化后图像的所有轮廓。\n- 用for循环找到最大的轮廓（即手掌轮廓）\n- 检测手掌轮廓凸包，颜色使用(0, 255, 0)。\n截图参考："
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimg = cv2.imread('./img/hand.png')  # 读取图像\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 转为灰度值图\nret, binary = cv2.threshold(gray, 60, 255, cv2.THRESH_BINARY)  # 转为二值图\ncontours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)  # 寻找轮廓\ntemp = 0\ncount = 0\n# 查找面积最大的轮廓\nfor i in range(len(contours)):\n    area = cv2.contourArea(contours[i])  # 获取轮廓面积\n    if temp < area:\n        temp = area\n        count = i\ncnt = contours[count]\nhull = cv2.convexHull(cnt, returnPoints=False)\ndefects = cv2.convexityDefects(cnt, hull)\nfor i in range(defects.shape[0]):\n    s, e, f, d = defects[i, 0]\n    start = tuple(cnt[s][0])           # 得到的是索引，要再轮廓中选出来\n    end = tuple(cnt[e][0])\n    far = tuple(cnt[f][0])\n    cv2.line(img, start, end, [0, 0, 255], 2)\n    cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('JXJ', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/608f07c72af5e18d13c7e9e1985df2b0.png"
+                ],
+                "text": [
+                    "下载附件并解压，读取img文件夹下的\"hand\"。\n- 图像转成灰度图，选择合适的阈值进行二值化处理。\n- 搜索二值化后图像的所有轮廓。\n- 用for循环找到最大的轮廓（即手掌轮廓）\n- 检测手掌轮廓的凸缺陷，并按照参考截图画线，线段颜色使用(0, 0, 255)，点的颜色使用(255, 0, 0)。\n- 截图，窗口用自己的名字。\n参考截图："
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\nimg = cv2.imread('./img/hand.png')\nblur = cv2.medianBlur(img, 5)\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nret, binary = cv2.threshold(gray, 60, 255, cv2.THRESH_BINARY)\ncontours, hierarchy = cv2.findContours(binary,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)\ntemp = 0\ncount = 0\n# 查找面积最大的轮廓\nfor i in range(len(contours)):\n    area = cv2.contourArea(contours[i])  # 获取轮廓面积\n        if temp < area:\n        temp = area\n        count = i\n\ncnt = contours[count]\nhull = cv2.convexHull(cnt, returnPoints=False)\ndefects = cv2.convexityDefects(cnt, hull)\nfor i in range(defects.shape[0]):\n    s, e, f, d = defects[i, 0]\n    start = tuple(cnt[s][0])           # 得到的是索引，要再轮廓中选出来\n    end = tuple(cnt[e][0])\n    far = tuple(cnt[f][0])\n    cv2.line(img, start, far, [0, 0, 255], 2)\n    cv2.line(img, far, end, [0, 0, 255], 2)\n    cv2.circle(img, far, 5, [255, 0, 0], -1)\ncv2.imshow('JXJ', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/39ba520876a12b3a5fbdc8f43f269756.png"
+                ],
+                "text": [
+                    "下载附件并解压，读取img文件夹下的\"hand\"。\n- 图像转成灰度图，选择合适的阈值进行二值化处理。\n- 搜索二值化后图像的所有轮廓。\n- 用for循环找到最大的轮廓（即手掌轮廓）\n- 检测手掌轮廓的凸缺陷，并按照参考截图画线，线段颜色使用(0, 0, 255)，点的颜色使用(255, 0, 0)。\n- 截图，窗口用自己的名字。\n截图参考："
+                ]
+            }
+        }
+    }
+}

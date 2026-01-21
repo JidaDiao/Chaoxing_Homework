@@ -1,0 +1,1056 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.address 192.168.50.111/ 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "倪博源": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifnameens160 autoconnect no type Ethernet ipv4 .addresses 192.168.50.111/25 ipv4.gateway 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modifyn zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manyal ifname ens160 autoconnect no type Etherrnet ipv4.addresses 192.168.50.111/24 gw4 255.255.255.0"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-nam zjdf  ipv4.method manual ifname ens160 autoconnect no tupe ethernet ipv4.addresses 192.168.10.100/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcliconnection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "叶璐杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcil connection add-name zjdf ipv4.method manual ifname ens 160cautoconnect no typr\nethernet ipv4,addressrs 192.168.50.111/27 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modyify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "namcli connection add con-name zjdf ifname ens160 type ethernet ipv4.addresses 192.168.50.111/24 ipv4.gateway 192.168.50.254 ipv4.menual connection.autoconnect no"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "吴语哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con_name zjdf ipv4.method manual manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.10.100/24 gw4 192.168.10.1"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no typ Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "应欣凌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv1.method manual ifname ens160 autconnect no type\nEthernet ipv4,add resses 192.168.50.11/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "bmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connecion modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "张浩然": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.manual ifnameens160 autoconnect no tupe Ethernet ipv4.addresses 190.168.10.100/24 gw4 192.168.10.1"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.10.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection modifty zjdf -ipv4.ddns 144.144.144.144"
+                ]
+            }
+        },
+        "李奕哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4. method manual ifname ens160 autoconnect no type Ethernet ipv4. addresses 192.168.50.111/22 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add-name zjdf ipv4.method manual ifname ens 160 autoconnect no type Ethernet ipv4.addersses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "杨子楚": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf type Ethernet ifname ens160"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv1.method manual ifname ens160 autconnect no type\nEthernet ipv4.add resses 192.168.50.11/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "bmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connecion modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "杨海博": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv1.method manual ifname ens160 autconnect no type\nEthernet ipv4 .add resses 192.168.50.11/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "bmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connecion modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "林文静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection show zjdf"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zidf ipv4. dns \"192.168.50.1\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "汤宾豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli conection add con-name zjdf ipv4.methodmanual ifname ens 160 autonnect no typeEthrnetipv4.addresses192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify  zjdify ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "王可欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnnect no type Ehternet ipv4.addresses 192.168.50.111/24 ipv4 192.168.50.254 connect"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli conection add con-name zjdf ipv4.methodmanual ifname ens 160 autonnect no\ntypeEthrnetipv4.addresses192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli cconnection modify zjdify ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "王翔玮": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens 160 autoconnect no type\nEthernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcil connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli donnection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "王译浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf type ethernet ifname ens160 ipv4.addresses 192.168.50.111/24 ipv4. jateway 192.168.50.254 ipv4.method manual"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcil connection add con-namne zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet  ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "胡棋浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4. method manual ifname ens160 autoconnect no type Ethernet ipv4. addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf type Ethernet ifname ens160 ip4 192.168.50.111 /24 gw4 192.168.50.254 autoconnect no"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4 .method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "郑鑫豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4. method manualifnamr ens160 autoconnect notype Ethernet ipv4. addresses192.168.50.111/24 gw4\n192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdfipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli add zjdf\nipv4 192.168.50.111\n255.255.255.0\nens 160\n192.168.50.254\nno"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "numcli connection up zjdf\nnumcli connection show zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "makedir zjdf dns 192.168.50.1\nnumcli connection show zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "makedir zjdf dns delete"
+                ]
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4. method manual ifname ens160 autoconnect no type Ethernet ipv4. addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "陈海宇": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add con-name zjdf ipv4.method manual ifname ens 160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "马景欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli conection add con-name zjdf\nipv4.methodmanual ifname ens 160 autonnet no\ntypeEthrnetip4.addresses 192.168.50.111/24 gw4\n192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify  ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "麻仁俊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "namcli connection add con-name zjdf tyoe ethernet ifname ens160 ipv4.method manuai ipv4.addresses 192.168.50.111/24 ipv4.gateway 192.168.50.254 connection.autoconnect no"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli connection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli connection modify zjdf ipv4.dns 192.168.50.1"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli connection delete zjdf"
+                ]
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "nmcli connection add-name zjdf ipv4.manual ifname ens 160 autoconnect no type Ethernet ipv4.addersses 192.168.50.111/24 gw4 192.168.50.254"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "nmcli vonnection up zjdf"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "nmcli vonnection modify zjdf"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "nmcli vonnection delete zjdf"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nnmcli connection add con-name zjdf ipv4.method manual ifname ens160 autoconnect no type Ethernet ipv4.addresses 192.168.50.111/24 gw4 192.169.50.254",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用nmcli创建一个叫zjdf的连接，要求手动设置ipv4地址为192.168.50.111，子网掩码为255.255.255.0，网卡设备为ens160，网关为192.168.50.254，自动连接设置为no，其他设置默认。"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\nnmcli connection up zjdf",
+            "题干": {
+                "images": [],
+                "text": [
+                    "启用连接zjdf"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\nnmcli connection modify zjdf ipv4.dns 192.168.50.1",
+            "题干": {
+                "images": [],
+                "text": [
+                    "修改链接zjdf的dns为192.168.50.1"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\nnmcli connection delete zjdf",
+            "题干": {
+                "images": [],
+                "text": [
+                    "删除连接zjdf"
+                ]
+            }
+        }
+    }
+}

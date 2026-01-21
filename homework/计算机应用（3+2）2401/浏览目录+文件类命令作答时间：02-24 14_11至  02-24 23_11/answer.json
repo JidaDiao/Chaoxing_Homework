@@ -1,0 +1,1329 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv text.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp-r dir2 dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir1"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir /dir1\nmkdir /dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd../dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd../~"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp-r/dir2/dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm-p dir1"
+                ]
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r /dir2 /dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -R dir1"
+                ]
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r dir2 dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir1"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /dir2/test.txt\nmv /dir2/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "mv /dir2/test2.txt\nmv /dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -rf dir1"
+                ]
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mkdir -p dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cd /dir1\ncp /dir2/test2.txt"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rmdir -p dir1"
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "mkdir -p dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt/text2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cd /dir1/dir2/text2.txt"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rmdir -p dir1"
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "#mkdir dir1\n#mkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "#cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "#mkdir test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "#"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "#cd"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李诗琪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "#mkdir dir1\n#mkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "#"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "#touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "#mv /test/test2"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "#cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "#cp ~/dir2/test2"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "#rmdir dir1"
+                ]
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd ~/dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /text.txt/test2.text"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd.."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cd/dir1/dir2"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -p dir1"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "makdir dir1\nmakdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv/rest.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd../～"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp–r/dir2/dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm–p dir1"
+                ]
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir  dir1 dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r dir2/* dir1/"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir1"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir -p dir2/subdir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r/ dir2 dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir1"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd.."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r dir2 dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir1"
+                ]
+            }
+        },
+        "王河": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp  -r dir2 dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir1"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r dir1 dir2"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd../dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cd/dir1/dir2"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -p dir1"
+                ]
+            }
+        },
+        "董佳旭": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1 dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt text2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r dir2 dir1/"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -f dir1"
+                ]
+            }
+        },
+        "蒋贤炽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv -i test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd.."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp-r dir2/*dir1/"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm-r dir1"
+                ]
+            }
+        },
+        "蔡进元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /dir2/test.txt\nmv /dir2/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "mv /dir2/test2.txt\nmv /dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -rf dir1"
+                ]
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd ~/dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv text.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd.."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cd/dir1/dir2"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -p dir1"
+                ]
+            }
+        },
+        "钱益乐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir /dir1\nmkdir /dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd../dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd../~"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r /dir2/dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -p dir"
+                ]
+            }
+        },
+        "陈中宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv test.txt test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp-r dir2/* dir1/"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm-r dir1"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd /dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "mkdir test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "cd\nmv /test.txt /dir2"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp ~/dir2/test.txt /dir1"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm-rf dir1"
+                ]
+            }
+        },
+        "陈庆鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1 //dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": []
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "mkdir tesx.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            },
+            "题目6": {
+                "images": [],
+                "text": []
+            },
+            "题目7": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdier dir1\nmakdir  dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "rmdir -p dir2/subdir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt /test2.txt/"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cd dir1\ncp dir2 /test2.txt"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -p dir1"
+                ]
+            }
+        },
+        "陈真": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dir1\nmkdir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd dir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt/test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r dir2 dir1/"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir1"
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "madir dir1\nmadir dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "rmdir -p dir2/subdir2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv/test.txt/test2.txt/"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd .."
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cd dir1\ncp dir2/test2.txt"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -p dir1"
+                ]
+            }
+        },
+        "黄开桂": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "mkdir dirl\nmkdir  dir2"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "cd../div2"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "touch test.txt"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "mv /test.txt/ test2.txt"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "cd../~"
+                ]
+            },
+            "题目6": {
+                "images": [],
+                "text": [
+                    "cp -r dir2/dirl/"
+                ]
+            },
+            "题目7": {
+                "images": [],
+                "text": [
+                    "rm -r dir"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nmkdir dir1\nmkdir dir2",
+            "题干": {
+                "images": [],
+                "text": [
+                    "在当前目录下创建文件夹dir1和dir2。\n提交代码（两行命令）"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ncd dir2",
+            "题干": {
+                "images": [],
+                "text": [
+                    "进入到刚才创建的dir2目录下。\n提交代码"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ntouch test.txt",
+            "题干": {
+                "images": [],
+                "text": [
+                    "创建文件名为test.txt的文件。\n提交代码"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\nmv test.txt text2txt",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用mv命令移动test.txt文件到当前位置并重命名为test2.txt。\n提交代码"
+                ]
+            }
+        },
+        "题目5": {
+            "正确答案": "正确答案：\ncd ..",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用cd命令回到父目录。\n提交代码"
+                ]
+            }
+        },
+        "题目6": {
+            "正确答案": "正确答案：\ncp -R dir2 dir1",
+            "题干": {
+                "images": [],
+                "text": [
+                    "拷贝dir2目录到dir1里面。（注意要把dir2里的test2.txt也复制过去）\n提交代码"
+                ]
+            }
+        },
+        "题目7": {
+            "正确答案": "正确答案：\nrm -r dir1",
+            "题干": {
+                "images": [],
+                "text": [
+                    "用rm命令删除dir1（注意要加参数才能删掉）\n提交代码"
+                ]
+            }
+        }
+    }
+}

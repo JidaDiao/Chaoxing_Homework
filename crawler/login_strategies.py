@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .interface import LoginStrategy
-from config.args import config
+from config._args import config
 import time
 import logging
 
@@ -14,6 +14,8 @@ class PasswordLoginStrategy(LoginStrategy):
     实现使用账号密码登录超星学习通的策略。
     通过提供账号和密码进行自动登录。
     """
+    def __init__(self,config) -> None:
+        self.config = config
 
     def login(self, driver: webdriver.Chrome, login_url: str) -> bool:
         """使用账号密码进行登录
@@ -43,8 +45,8 @@ class PasswordLoginStrategy(LoginStrategy):
             phone_input.clear()  # 清除可能的默认值
             pwd_input.clear()
             
-            phone_input.send_keys(config.phonenumber)
-            pwd_input.send_keys(config.password)
+            phone_input.send_keys(self.config.phonenumber)
+            pwd_input.send_keys(self.config.password)
             logging.info('已输入账号密码')
 
             # 点击登录按钮
@@ -77,6 +79,8 @@ class QRCodeLoginStrategy(LoginStrategy):
     实现使用二维码登录超星学习通的策略。
     需要用户手动扫描二维码完成登录。
     """
+    def __init__(self,config) -> None:
+        self.config = config
 
     def login(self, driver: webdriver.Chrome, login_url: str) -> bool:
         """使用二维码进行登录
@@ -135,7 +139,7 @@ class LoginStrategyFactory:
     """
     
     @staticmethod
-    def create_strategy(use_qr_code: bool = False) -> LoginStrategy:
+    def create_strategy(use_qr_code: bool = False,config = config) -> LoginStrategy:
         """创建登录策略
         
         Args:
@@ -146,7 +150,7 @@ class LoginStrategyFactory:
         """
         if use_qr_code:
             logging.info('使用二维码登录策略')
-            return QRCodeLoginStrategy()
+            return QRCodeLoginStrategy(config)
         else:
             logging.info('使用账号密码登录策略')
-            return PasswordLoginStrategy()
+            return PasswordLoginStrategy(config)

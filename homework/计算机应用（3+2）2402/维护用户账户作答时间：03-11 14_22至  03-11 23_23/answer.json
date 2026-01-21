@@ -1,0 +1,873 @@
+{
+    "学生回答": {
+        "余茴茴": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "倪博源": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "usermod -u -2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "gpasswd -d devgroup"
+                ]
+            }
+        },
+        "倪恩义": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgrop root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "刘奕豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "包先杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup"
+                ]
+            }
+        },
+        "叶璐杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "吕品欧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "吴晓静": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "usermod -u -2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A  root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "gpasswd - d devgroup"
+                ]
+            }
+        },
+        "吴语哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupde1 devgroup"
+                ]
+            }
+        },
+        "周磊": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupadd -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "夏家帆": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd-g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd-A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "应欣凌": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -ag devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "张政": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd  -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "张浩然": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupff -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "李奕哲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupde1 devgroup"
+                ]
+            }
+        },
+        "李斌浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpassdw -a root testgroup\ngpassdw -A root testgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel testgroup"
+                ]
+            }
+        },
+        "李艺斐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usemod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "杨子楚": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupmod -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "杨宏恩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel1 devgroup"
+                ]
+            }
+        },
+        "杨海博": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "林锦豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -r 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "汤宾豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd - g 2000 devgroug"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "userm -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdle devgroup"
+                ]
+            }
+        },
+        "王可欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupadd -g gid 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grouppadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "froupdel devggroup"
+                ]
+            }
+        },
+        "王启泽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "userm -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "王翔玮": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupmod-g2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpAAWD-A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "王译浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngroupadd -g gid 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grouppadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupde1 devgroup"
+                ]
+            }
+        },
+        "祝韩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo gpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "胡棋浩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup\ngpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "胡溯元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "苏文烁": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -a root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "蒋宇轩": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        },
+        "谢雨晨": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "usermod -u -2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "gpasswd -d devgroup"
+                ]
+            }
+        },
+        "邵慧鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "郑鑫豪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupde1 devgroup"
+                ]
+            }
+        },
+        "郑镕": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 sevgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd -a root devgroup\ngroupadd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupadd -d root devgroup"
+                ]
+            }
+        },
+        "陈智强": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd testgroup\ngpasswd -a user1 devegroup\ngpasswd -A user1 devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "陈柯洋": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermod -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupde1 devgroup"
+                ]
+            }
+        },
+        "陈海宇": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupdd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpasswd -a root devgroup\ngpasswd -A root devgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupdel devgroup"
+                ]
+            }
+        },
+        "陈瑞易": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd devgroup -g 2000"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "gpassdw -a root testgroup\ngpassdw -A root testgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grotpdel testgroup"
+                ]
+            }
+        },
+        "马景欣": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupsdd -g 2000 devgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "sudo usermd -a -G devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupde1 devgroup"
+                ]
+            }
+        },
+        "黄奔拓": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "groupadd -g 2000 sevgroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "groupadd-A root davgroup"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "groupadd -d root devgoup"
+                ]
+            }
+        },
+        "黄政杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "sudo groupadd -g 2000 devgeroup"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "userm -aG devgroup root"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "sudo groupdel devgroup"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\ngroupadd -g 2000 devgroup",
+            "题干": {
+                "images": [],
+                "text": [
+                    "创建一个新组 devgroup，并设置组ID（GID）为 2000。（输入命令）"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ngpasswd -A root devgroup",
+            "题干": {
+                "images": [],
+                "text": [
+                    "将root账户添加入到 devgroup 组中并设置为管理员。（输入命令）"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ngroupdel devgroup",
+            "题干": {
+                "images": [],
+                "text": [
+                    "删除组devgroup。（输入命令）"
+                ]
+            }
+        }
+    }
+}

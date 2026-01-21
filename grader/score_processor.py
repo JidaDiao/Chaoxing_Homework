@@ -29,7 +29,8 @@ class ScoreProcessor(IScoreProcessor):
                  prepare_model: str,
                  gen_model: str,
                  number_prepare_min: int = 3,
-                 number_gen_min: int = 2):
+                 number_gen_min: int = 2,
+                 score_callback=None):  # 新增回调参数
         """初始化分数处理器
 
         Args:
@@ -48,6 +49,7 @@ class ScoreProcessor(IScoreProcessor):
         self.number_prepare_min = number_prepare_min
         self.number_gen_min = number_gen_min
         self.lock = Lock()
+        self.score_callback = score_callback
 
     def set_student_answers(self, uncorrected: Dict[str, List[Dict[str, Any]]],
                             corrected: Optional[Dict[str,
@@ -202,6 +204,10 @@ class ScoreProcessor(IScoreProcessor):
         with self.lock:
             for _, (key, value) in enumerate(student_scores.items()):
                 self.student_score_final[key] = value
+            
+            # 调用回调函数
+            if self.score_callback:
+                self.score_callback(self.student_score_final.copy(), list(student_scores.keys()))
 
         for _, (key, value) in enumerate(selected_dict_uncorrected.items()):
             try:

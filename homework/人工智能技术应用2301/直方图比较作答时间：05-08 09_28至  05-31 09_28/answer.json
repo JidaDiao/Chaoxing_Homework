@@ -1,0 +1,467 @@
+{
+    "学生回答": {
+        "倪旭玮": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/33a692765f18748753751a5a073c79c2.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/c2f79b6290c0141e306874b25d5a8b02.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/57aed6a0287dd7e9bd85718a44ea40b7.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('nxw1', img)\n    cv2.imshow('nxw2', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('nxw3', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "倪理浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9105fb9ef760103981764a4845ae2f77.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread('img/img/mouse.jpg')\nif img is None:\n    raise FileNotFoundError(\"无法加载图片，请检查路径是否正确\")\n\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\nhist = cv2.calcHist([gray], [0], None, [256], [0, 256])\n\n_, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\n\nsegmented = cv2.bitwise_and(img, img, mask=thresh)\n\nplt.figure(figsize=(15, 8))\n\nplt.subplot(2, 2, 1)\nplt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))\nplt.title('Original Image')\nplt.axis('off')\n\nplt.subplot(2, 2, 2)\nplt.plot(hist, color='black')\nplt.title('Grayscale Histogram')\nplt.xlim([0, 256])\nplt.axvline(x=_, color='r', linestyle='--', label=f'Threshold: {int(_)}')\nplt.legend()\n\nplt.subplot(2, 2, 3)\nplt.imshow(thresh, cmap='gray')\nplt.title('Threshold Mask')\nplt.axis('off')\n\nplt.subplot(2, 2, 4)\nplt.imshow(cv2.cvtColor(segmented, cv2.COLOR_BGR2RGB))\nplt.title('Segmented Mouse')\nplt.axis('off')\n\nplt.suptitle('Mouse Segmentation - Created by [你的名字]', y=0.98)\n\nplt.savefig('mouse_segmentation.png')\nplt.show()"
+                ]
+            }
+        },
+        "华江辰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/31c826e91f971af6be67043491baba98.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/4b91cb8bb7f057b5d330a7a5769cae4a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    grayHist = np.zeros([256],np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram==np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256],np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k-firstPeak,2)*histogram[k]\n    maxLoc2 = np.where(measureDists==np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    thresh = 0\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh =firstPeak + minloc[0][0] + 1\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('HJC.src', img)\n    cv2.imshow('HJC.threshImage_out', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('HJC.re', re)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶挺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a19fcb6d459c6fca0ce86966b638e0b0"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"yt\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/mouse.jpg'\nimage = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\nhist = cv2.calcHist([image], [0], None, [256], [0, 256])\n_, thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\nplt.figure(figsize=(10, 5))\nplt.subplot(1, 2, 1)\nshow_image_with_name(image, 'Original Image', cmap='gray')\nplt.subplot(1, 2, 2)\nshow_image_with_name(thresh, 'Segmented Mouse', cmap='gray')\nplt.tight_layout()\nplt.savefig('mouse_segmentation_result.png')\nplt.show()"
+                ]
+            }
+        },
+        "叶桉鸣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9c1e92cd848fb524789f1746d4854c40.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/8a39c3c40ed683c740ace907b3f0ee45.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n#计算灰度直方图\ndef calcGrayHist(grayimage):\n    #计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    #存储灰度直方图\n    grayHist = np.zeros([256],np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    thresh = 0\n    if firstPeak > secondPeak:  #第一个峰值在第二个峰值的右侧\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:                  #第一个峰值在第二个峰值的左侧\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh =firstPeak + minloc[0][0] + 1 #找到阈值之后进行阈值处理，得到二值图\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('yam_src', img)\n    cv2.imshow('yam_threshImage_out', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('yam_re', re)\n   cv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吕鸿凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/20560336baf90afdd310df1c06de42ed.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/4e772d6f70be074a33d9740d7ec18681.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/39d90ed36ee14f3203c15fe2ced69d7e.png"
+                ],
+                "text": []
+            }
+        },
+        "吴世杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/78d5aaff4430beb69c47f646106139b9.png"
+                ],
+                "text": []
+            }
+        },
+        "吴争航": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9b8f582fa54a2b882d504ac56af79e0e",
+                    "https://p.ananas.chaoxing.com/star3/origin/2ebd425282792f50a66f3ba0992936b7"
+                ],
+                "text": []
+            }
+        },
+        "周愉越": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0032d0f86980d63025b88708c4fe44e2.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"\ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\nimage_path = 'img/mouse.jpg'\nimage = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\nhist = cv2.calcHist([image], [0], None, [256], [0, 256])\n_, thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\nplt.figure(figsize=(10, 5))\nplt.subplot(1, 2, 1)\nshow_image_with_name(image, 'Original Image', cmap='gray')\nplt.subplot(1, 2, 2)\nshow_image_with_name(thresh, 'Segmented Mouse', cmap='gray')\nplt.tight_layout()\nplt.savefig('mouse_segmentation_result.png')  # 保存结果\nplt.show()"
+                ]
+            }
+        },
+        "周泽鑫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d81de8320b0a2cc4718b41e516c22661.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n   # 计算灰度图像矩阵的高度、宽度\n   rows, cols = grayimage.shape\n   # 存储灰度直方图\n   grayHist = np.zeros([256], np.uint64)\n   for r in range(rows):\n       for c in range(cols):\n           grayHist[grayimage[r][c]] += 1\n   return grayHist\n\ndef threshTwoPeaks(image):\n   # 转换为灰度图\n   if len(image.shape) == 2:\n       gray = image\n   else:\n       gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n   # 计算灰度直方图\n   histogram = calcGrayHist(gray)\n   # 寻找灰度直方图的最大峰值对应的灰度值\n   maxLoc = np.where(histogram == np.max(histogram))\n   firstPeak = maxLoc[0][0]\n   # 寻找灰度直方图的第二个峰值对应的灰度值\n   measureDists = np.zeros([256], np.float32)\n   for k in range(256):\n       measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n   maxLoc2 = np.where(measureDists == np.max(measureDists))\n   secondPeak = maxLoc2[0][0]\n   # 确定两个峰值的顺序\n   if firstPeak > secondPeak:\n       peak1, peak2 = firstPeak, secondPeak\n   else:\n       peak1, peak2 = secondPeak, firstPeak\n   # 找到两个峰值之间的最小值对应的灰度值作为阈值\n   temp = histogram[int(peak2):int(peak1)]\n   minloc = np.where(temp == np.min(temp))\n   thresh = peak2 + minloc[0][0]\n   # 应用阈值分割\n   _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n   return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n   img = cv2.imread('mouse.jpg')\n   thresh, threshImage_out = threshTwoPeaks(img)\n   print(\"Calculated threshold:\", thresh)\n   cv2.imshow('zzx', img)\n   cv2.imshow('zzx1', threshImage_out)\n   re = cv2.bitwise_and(img, img, mask=threshImage_out)\n   cv2.imshow('zzx2', re)\n   cv2.waitKey(0)\n   cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏忆豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a19fcb6d459c6fca0ce86966b638e0b0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"\ndef show_image_with_name(image, title, cmap=None):\n    plt.imshow(image, cmap=cmap)\n    plt.title(title)\n    plt.text(image.shape[1]//2, 10, name,\n             color='red', fontsize=12,\n             alpha=0.5, ha='center', va='center')\n    plt.axis('off')\nimage_path = 'img/mouse.jpg'\nimage = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\nhist = cv2.calcHist([image], [0], None, [256], [0, 256])\n_, thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\nplt.figure(figsize=(10, 5))\nplt.subplot(1, 2, 1)\nshow_image_with_name(image, 'Original Image', cmap='gray')\nplt.subplot(1, 2, 2)\nshow_image_with_name(thresh, 'Segmented Mouse', cmap='gray')\nplt.tight_layout()\nplt.savefig('mouse_segmentation_result.png')  # 保存结果\nplt.show()"
+                ]
+            }
+        },
+        "夏有德": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a19fcb6d459c6fca0ce86966b638e0b0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyd\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/mouse.jpg'\nimage = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\nhist = cv2.calcHist([image], [0], None, [256], [0, 256])\n_, thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\nplt.figure(figsize=(10, 5))\nplt.subplot(1, 2, 1)\nshow_image_with_name(image, 'Original Image', cmap='gray')\nplt.subplot(1, 2, 2)\nshow_image_with_name(thresh, 'Segmented Mouse', cmap='gray')\nplt.tight_layout()\nplt.savefig('mouse_segmentation_result.png')  # 保存结果\nplt.show()"
+                ]
+            }
+        },
+        "宋葛萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d743b681a678a5f858540d7d6a11f94c.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e8c5cf4b0fe25b9d178c6bc8870c094d.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/a46136447d775489126e594f42d14afc.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('src', img)\n    cv2.imshow('songgeping', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('sgp', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "庞志强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d6686217baf13abaab124f765852663b"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    # 转换为灰度图\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    # 计算灰度直方图\n    histogram = calcGrayHist(gray)\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    # 确定两个峰值的顺序\n    if firstPeak > secondPeak:\n        peak1, peak2 = firstPeak, secondPeak\n    else:\n        peak1, peak2 = secondPeak, firstPeak\n    # 找到两个峰值之间的最小值对应的灰度值作为阈值\n    temp = histogram[int(peak2):int(peak1)]\n    minloc = np.where(temp == np.min(temp))\n    thresh = peak2 + minloc[0][0]\n    # 应用阈值分割\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(\"Calculated threshold:\", thresh)\n    #cv2.imshow('1', img)\n    #cv2.imshow('2', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    #cv2.imshow('3', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()\n    plt.figure(figsize=(12, 6))\n    plt.subplot(1, 3, 1), plt.imshow(cv2.cvtColor(img,cv2.COLOR_BGR2RGB)), plt.title('1')\n    plt.subplot(1, 3, 2), plt.imshow(cv2.cvtColor(threshImage_out, cv2.THRESH_BINARY_INV)), plt.title('2')\n    plt.subplot(1, 3, 3), plt.imshow(cv2.cvtColor(re, cv2.COLOR_BGR2RGB)), plt.title('3')\n    plt.tight_layout()\n    plt.show()"
+                ]
+            }
+        },
+        "方烨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3db65df5d201ee64cb80fd8668524d89.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e3d4cb625c2aef203f3b3238b263492a.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/ad5d9b6372ed99eabc511ef5201079b1.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('src', img)\n    cv2.imshow('fy', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('fangye', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李盛长": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d5f7a25b18ae4878fc76042ed0105d96"
+                ],
+                "text": []
+            }
+        },
+        "杨峥荣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/888d2bc144bafb7fc6570d9f0292cbc4.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/1135034a261bb3f2a8aef5b5261cc6fe.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\n\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n\n\n    thresh = 0\n    threshImage_out = None  \n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n        _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY_INV)\n    else:  \n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1  # 找到阈值之后进行阈值处理，得到二值图\n        _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY_INV)\n    return thresh, threshImage_out\n\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    if img is None:\n        print(\"Error: Unable to load image.\")\n        exit()\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('yzr1', img)\n    cv2.imshow('yzr2', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('yzr3', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨雯杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5dec7003c06026ba6403a66d767e4c44.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n# 计算灰度图像矩阵的高度、宽度\nrows, cols = grayimage.shape\n#print(grayimage.shape) # 注释掉这行，避免不必要的输出\n# 存储灰度直方图\ngrayHist = np.zeros([256], np.uint64)\nfor r in range(rows):\nfor c in range(cols):\ngrayHist[grayimage[r][c]] += 1\nreturn grayHist\ndef threshTwoPeaks(image):\nthreshImage_out = None  # 初始化 threshImage_out，避免 UnboundLocalError\nif len(image.shape) == 2:\ngray = image\nelse:\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nhistogram = calcGrayHist(gray)  # 确保 gray 已经定义\n# 寻找灰度直方图的最大峰值对应的灰度值\nmaxLoc = np.where(histogram == np.max(histogram))\nfirstPeak = maxLoc[0][0]\n# 寻找灰度直方图的第二个峰值对应的灰度值\nmeasureDists = np.zeros([256], np.float32)\nfor k in range(256):\nmeasureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\nmaxLoc2 = np.where(measureDists == np.max(measureDists))\nsecondPeak = maxLoc2[0][0]\n# 找到两个峰值之间的最小值对应的灰度值，并将其作为阈值\nthresh = 0\nif firstPeak > secondPeak:  # 第一个峰值在第二个峰值的右侧\ntemp = histogram[int(secondPeak):int(firstPeak)]\nminloc = np.where(temp == np.min(temp))\nthresh = secondPeak + minloc[0][0] + 1\n_, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\nelse:  # 第一个峰值在第二个峰值的左侧\ntemp = histogram[int(firstPeak):int(secondPeak)]\nminloc = np.where(temp == np.min(temp))\nthresh = firstPeak + minloc[0][0] + 1  # 找到阈值之后进行阈值处理，得到二值图\n_, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\nreturn thresh, threshImage_out\nif __name__ == \"__main__\":\nimg = cv2.imread('img/mouse.jpg')\nthresh, threshImage_out = threshTwoPeaks(img)\nprint(thresh)\n# 使用二值掩码提取鼠标\nre = cv2.bitwise_and(img, img, mask=threshImage_out)\n# 显示结果\ncv2.imshow('Original Image', img)\ncv2.imshow('Segmented Mouse', re) # 只显示提取的鼠标部分\ncv2.imshow('ywj', threshImage_out) # 显示二值图\n# 保存分割结果\ncv2.imwrite('segmented_mouse.png', re) # 将分割结果保存为图片\ncv2.imwrite('binary_mask.png', threshImage_out) # 保存二值图\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/238688e3d18c850d8e093624099e1167.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/06f90a89c9f364629e23abda98c88884.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/7a59a281963caf83502da371bbf594d3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n\n    thresh = 0\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY_INV)\n    return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    if img is None:\n        print(\"无法加载图像，请检查路径\")\n    else:\n        thresh, threshImage_out = threshTwoPeaks(img)\n        print(\"计算得到的最佳阈值:\", thresh)\n        cv2.imshow('lt', img)\n        cv2.imshow('lint', threshImage_out)\n        re = cv2.bitwise_and(img, img, mask=threshImage_out)\n        cv2.imshow('lintao', re)\n        cv2.waitKey(0)\n        cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林西面": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/dff58134009c6ff9d5f0a05b969e5e0f",
+                    "https://p.ananas.chaoxing.com/star3/origin/cc2292bc656d55a145d80a72f3b4c849",
+                    "https://p.ananas.chaoxing.com/star3/origin/4d0d73a55b15b70de9621f6bf3fd90c4"
+                ],
+                "text": []
+            }
+        },
+        "潘易函": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2ebd425282792f50a66f3ba0992936b7.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/9b8f582fa54a2b882d504ac56af79e0e.png"
+                ],
+                "text": []
+            }
+        },
+        "王嘉鹏": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c6c9e1024e1a70fd3e2eb8f325aa08ff",
+                    "https://p.ananas.chaoxing.com/star3/origin/f1361ac56dfb0addd02293ab186b3d7e.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"\ndef show_image_with_name(image, title, cmap=None):\n   plt.imshow(image, cmap=cmap)\n   plt.title(title)\n   plt.text(image.shape[1]//2, 10, name,\n            color='red', fontsize=12,\n            alpha=0.5, ha='center', va='center')\n   plt.axis('off')\nimage_path = 'img/mouse.jpg'\nimage = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\nhist = cv2.calcHist([image], [0], None, [256], [0, 256])\n_, thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\nplt.figure(figsize=(10, 5))\nplt.subplot(1, 2, 1)\nshow_image_with_name(image, 'Original Image', cmap='gray')\nplt.subplot(1, 2, 2)\nshow_image_with_name(thresh, 'Segmented Mouse', cmap='gray')\nplt.tight_layout()\nplt.savefig('mouse_segmentation_result.png')  # 保存结果\nplt.show()"
+                ]
+            }
+        },
+        "王家翔": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7e15cf74f2c7d798ac55c150ee764fde.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\n\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n\n    thresh = 0\n    if firstPeak > secondPeak:  # 第一个峰值在第二个峰值的右侧\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:  # 第一个峰值在第二个峰值的左侧\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n\n    # 找到阈值之后进行阈值处理，得到二值图\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY_INV)\n    return thresh, threshImage_out\n\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('wjx_src', img)\n    cv2.imshow('wjx_threshImage_out', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('wjx_re', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王斌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ad79fa8d1a0c693789bf091cdb5100c9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\n\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\n\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    if img is None:\n        print(\"Error: Image not found.\")\n    else:\n        thresh, threshImage_out = threshTwoPeaks(img)\n        print(\"Calculated threshold:\", thresh)\n        cv2.imshow('src', img)\n        cv2.imshow('threshImage_out', threshImage_out)\n        re = cv2.bitwise_and(img, img, mask=threshImage_out)\n        cv2.imshow('re', re)\n        cv2.waitKey(0)\n        cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王昱诺": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\nrows, cols = grayimage.shape\ngrayHist = np.zeros([256], np.uint64)\nfor r in range(rows):\nfor c in range(cols):\ngrayHist[grayimage[r][c]] += 1\nreturn grayHist\ndef threshTwoPeaks(image):\nif len(image.shape) == 2:\ngray = image\nelse:\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nhistogram = calcGrayHist(gray)\nmaxLoc = np.where(histogram == np.max(histogram))\nfirstPeak = maxLoc[0][0]\nmeasureDists = np.zeros([256], np.float32)\nfor k in range(256):\nmeasureDists[k] = pow(k - firstPeak, 2) * histogram[k]\nmaxLoc2 = np.where(measureDists == np.max(measureDists))\nsecondPeak = maxLoc2[0][0]\nif firstPeak > secondPeak:\npeak1, peak2 = firstPeak, secondPeak\nelse:\npeak1, peak2 = secondPeak, firstPeak\ntemp = histogram[int(peak2):int(peak1)]\nminloc = np.where(temp == np.min(temp))\nthresh = peak2 + minloc[0][0]\n_, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\nreturn thresh, threshImage_out\nif __name__ == \"__main__\":\nimg = cv2.imread('img/mouse.jpg')\nthresh, threshImage_out = threshTwoPeaks(img)\nprint(\"Calculated threshold:\", thresh)\ncv2.imshow('wyn', img)\ncv2.imshow('wyn', threshImage_out)\nre = cv2.bitwise_and(img, img, mask=threshImage_out)\ncv2.imshow('wyn', re)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a936f28233ff68e2f884bdd8a4781621.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    #print(grayimage.shape) # 注释掉这行，避免不必要的输出\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    threshImage_out = None  # 初始化 threshImage_out，避免 UnboundLocalError\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)  # 确保 gray 已经定义\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    # 找到两个峰值之间的最小值对应的灰度值，并将其作为阈值\n    thresh = 0\n    if firstPeak > secondPeak:  # 第一个峰值在第二个峰值的右侧\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n        _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n    else:  # 第一个峰值在第二个峰值的左侧\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1  # 找到阈值之后进行阈值处理，得到二值图\n        _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    # 使用二值掩码提取鼠标\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    # 显示结果\n    cv2.imshow('Original Image', img)\n    cv2.imshow('Segmented Mouse', re) # 只显示提取的鼠标部分\n    cv2.imshow('wh', threshImage_out) # 显示二值图\n    # 保存分割结果\n    cv2.imwrite('segmented_mouse.png', re) # 将分割结果保存为图片\n    cv2.imwrite('binary_mask.png', threshImage_out) # 保存二值图\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王钰洁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1862d790c8aacc2b5a55358c5dd9ebed.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/3844b524750d3fcb4a8ba4f339e01a8a.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/b6051b37502846369272f29c1acba9ca.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    # 转换为灰度图\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    # 计算灰度直方图\n    histogram = calcGrayHist(gray)\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    # 确定两个峰值的顺序\n    if firstPeak > secondPeak:\n        peak1, peak2 = firstPeak, secondPeak\n    else:\n        peak1, peak2 = secondPeak, firstPeak\n    # 找到两个峰值之间的最小值对应的灰度值作为阈值\n    temp = histogram[int(peak2):int(peak1)]\n    minloc = np.where(temp == np.min(temp))\n    thresh = peak2 + minloc[0][0]\n    # 应用阈值分割\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(\"Calculated threshold:\", thresh)\n    cv2.imshow('wyj', img)\n    cv2.imshow('wyj', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('wyj', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "葛人欢": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c7ffa92c8166e1ff36c2dae90b6f6c82.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n   # 计算灰度图像矩阵的高度、宽度\n   rows, cols = grayimage.shape\n   #print(grayimage.shape) # 注释掉这行，避免不必要的输出\n   # 存储灰度直方图\n   grayHist = np.zeros([256], np.uint64)\n   for r in range(rows):\n       for c in range(cols):\n           grayHist[grayimage[r][c]] += 1\n   return grayHist\ndef threshTwoPeaks(image):\n   threshImage_out = None  # 初始化 threshImage_out，避免 UnboundLocalError\n   if len(image.shape) == 2:\n       gray = image\n   else:\n       gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n   histogram = calcGrayHist(gray)  # 确保 gray 已经定义\n   # 寻找灰度直方图的最大峰值对应的灰度值\n   maxLoc = np.where(histogram == np.max(histogram))\n   firstPeak = maxLoc[0][0]\n   # 寻找灰度直方图的第二个峰值对应的灰度值\n   measureDists = np.zeros([256], np.float32)\n   for k in range(256):\n       measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\n   maxLoc2 = np.where(measureDists == np.max(measureDists))\n   secondPeak = maxLoc2[0][0]\n   # 找到两个峰值之间的最小值对应的灰度值，并将其作为阈值\n   thresh = 0\n   if firstPeak > secondPeak:  # 第一个峰值在第二个峰值的右侧\n       temp = histogram[int(secondPeak):int(firstPeak)]\n       minloc = np.where(temp == np.min(temp))\n       thresh = secondPeak + minloc[0][0] + 1\n       _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n   else:  # 第一个峰值在第二个峰值的左侧\n       temp = histogram[int(firstPeak):int(secondPeak)]\n       minloc = np.where(temp == np.min(temp))\n       thresh = firstPeak + minloc[0][0] + 1  # 找到阈值之后进行阈值处理，得到二值图\n       _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n   return thresh, threshImage_out\nif __name__ == \"__main__\":\n   img = cv2.imread('img/mouse.jpg')\n   thresh, threshImage_out = threshTwoPeaks(img)\n   print(thresh)\n   # 使用二值掩码提取鼠标\n   re = cv2.bitwise_and(img, img, mask=threshImage_out)\n   # 显示结果\n   cv2.imshow('Original Image', img)\n   cv2.imshow('Segmented Mouse', re) # 只显示提取的鼠标部分\n   cv2.imshow('grh', threshImage_out) # 显示二值图\n   # 保存分割结果\n   cv2.imwrite('segmented_mouse.png', re) # 将分割结果保存为图片\n   cv2.imwrite('binary_mask.png', threshImage_out) # 保存二值图\n   cv2.waitKey(0)\n   cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蒋子豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2ed1404412739d36dbf8c09f219fe235.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/39ddcb899a13affb089f89ce401daf52.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/53357a8ac05d3db9ab816047c38fd0cc.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\n\ndef threshTwoPeaks(image):\n    # 转换为灰度图\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n\n    # 计算灰度直方图\n    histogram = calcGrayHist(gray)\n\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n\n    # 确定两个峰值的顺序\n    if firstPeak > secondPeak:\n        peak1, peak2 = firstPeak, secondPeak\n    else:\n        peak1, peak2 = secondPeak, firstPeak\n\n    # 找到两个峰值之间的最小值对应的灰度值作为阈值\n    temp = histogram[int(peak2):int(peak1)]\n    minloc = np.where(temp == np.min(temp))\n    thresh = peak2 + minloc[0][0]\n\n    # 应用阈值分割\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n\n    return thresh, threshImage_out\n\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(\"Calculated threshold:\", thresh)\n    cv2.imshow('jzh', img)\n    cv2.imshow('jzh2', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('jzh3', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蔡雨轩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0d98dfb33f7ab4e5729350925fcdc69a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n  # 计算灰度图像矩阵的高度、宽度\n  rows, cols = grayimage.shape\n  #print(grayimage.shape) # 注释掉这行，避免不必要的输出\n  # 存储灰度直方图\n  grayHist = np.zeros([256], np.uint64)\n  for r in range(rows):\n      for c in range(cols):\n          grayHist[grayimage[r][c]] += 1\n  return grayHist\ndef threshTwoPeaks(image):\n  threshImage_out = None  # 初始化 threshImage_out，避免 UnboundLocalError\n  if len(image.shape) == 2:\n      gray = image\n  else:\n      gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n  histogram = calcGrayHist(gray)  # 确保 gray 已经定义\n  # 寻找灰度直方图的最大峰值对应的灰度值\n  maxLoc = np.where(histogram == np.max(histogram))\n  firstPeak = maxLoc[0][0]\n  # 寻找灰度直方图的第二个峰值对应的灰度值\n  measureDists = np.zeros([256], np.float32)\n  for k in range(256):\n      measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\n  maxLoc2 = np.where(measureDists == np.max(measureDists))\n  secondPeak = maxLoc2[0][0]\n  # 找到两个峰值之间的最小值对应的灰度值，并将其作为阈值\n  thresh = 0\n  if firstPeak > secondPeak:  # 第一个峰值在第二个峰值的右侧\n      temp = histogram[int(secondPeak):int(firstPeak)]\n      minloc = np.where(temp == np.min(temp))\n      thresh = secondPeak + minloc[0][0] + 1\n      _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n  else:  # 第一个峰值在第二个峰值的左侧\n      temp = histogram[int(firstPeak):int(secondPeak)]\n      minloc = np.where(temp == np.min(temp))\n      thresh = firstPeak + minloc[0][0] + 1  # 找到阈值之后进行阈值处理，得到二值图\n      _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n  return thresh, threshImage_out\nif __name__ == \"__main__\":\n  img = cv2.imread('img/mouse.jpg')\n  thresh, threshImage_out = threshTwoPeaks(img)\n  print(thresh)\n  # 使用二值掩码提取鼠标\n  re = cv2.bitwise_and(img, img, mask=threshImage_out)\n  # 显示结果\n  cv2.imshow('Original Image', img)\n  cv2.imshow('Segmented Mouse', re) # 只显示提取的鼠标部分\n  cv2.imshow('cyx', threshImage_out) # 显示二值图\n  # 保存分割结果\n  cv2.imwrite('segmented_mouse.png', re) # 将分割结果保存为图片\n  cv2.imwrite('binary_mask.png', threshImage_out) # 保存二值图\n  cv2.waitKey(0)\n  cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "薛凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5c0eca8d9fd9ba7286435c0a78ca46d8.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/31dad60857702aed47c2153c51ce85b6.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/97092cb0c7e9b9d230603c6b9352d03c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n   # 计算灰度图像矩阵的高度、宽度\n   rows, cols = grayimage.shape\n   # 存储灰度直方图\n   grayHist = np.zeros([256], np.uint64)\n   for r in range(rows):\n       for c in range(cols):\n           grayHist[grayimage[r][c]] += 1\n   return grayHist\n\ndef threshTwoPeaks(image):\n   # 转换为灰度图\n   if len(image.shape) == 2:\n       gray = image\n   else:\n       gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n   # 计算灰度直方图\n   histogram = calcGrayHist(gray)\n   # 寻找灰度直方图的最大峰值对应的灰度值\n   maxLoc = np.where(histogram == np.max(histogram))\n   firstPeak = maxLoc[0][0]\n   # 寻找灰度直方图的第二个峰值对应的灰度值\n   measureDists = np.zeros([256], np.float32)\n   for k in range(256):\n       measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n   maxLoc2 = np.where(measureDists == np.max(measureDists))\n   secondPeak = maxLoc2[0][0]\n   # 确定两个峰值的顺序\n   if firstPeak > secondPeak:\n       peak1, peak2 = firstPeak, secondPeak\n   else:\n       peak1, peak2 = secondPeak, firstPeak\n   # 找到两个峰值之间的最小值对应的灰度值作为阈值\n   temp = histogram[int(peak2):int(peak1)]\n   minloc = np.where(temp == np.min(temp))\n   thresh = peak2 + minloc[0][0]\n   # 应用阈值分割\n   _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n   return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n   img = cv2.imread('img/mouse.jpg')\n   thresh, threshImage_out = threshTwoPeaks(img)\n   print(\"Calculated threshold:\", thresh)\n   cv2.imshow('xk', img)\n   cv2.imshow('xk2', threshImage_out)\n   re = cv2.bitwise_and(img, img, mask=threshImage_out)\n   cv2.imshow('xk3', re)\n   cv2.waitKey(0)\n   cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "许贤明": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/def9322f343a71315cd73ece64c20e22.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    grayHist = np.zeros([256],np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n        histogram = calcGrayHist(gray)\n\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    \n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  \n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    thresh = 0\n    if firstPeak > secondPeak:  \n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:                 \n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh =firstPeak + minloc[0][0] + 1 \n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY_INV)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('src', img)\n    cv2.imshow('xxm', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('14', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "赖志和": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3a8ebe60b82dd77bb860d0b45411eb9b.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/788b64d952b64a32d401068baecf64d5.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/4b039cf211530e0b15f0305a56797bab.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    # 转换为灰度图\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    # 计算灰度直方图\n    histogram = calcGrayHist(gray)\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    # 确定两个峰值的顺序\n    if firstPeak > secondPeak:\n        peak1, peak2 = firstPeak, secondPeak\n    else:\n        peak1, peak2 = secondPeak, firstPeak\n    # 找到两个峰值之间的最小值对应的灰度值作为阈值\n    temp = histogram[int(peak2):int(peak1)]\n    minloc = np.where(temp == np.min(temp))\n    thresh = peak2 + minloc[0][0]\n    # 应用阈值分割\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(\"Calculated threshold:\", thresh)\n    cv2.imshow('lzh', img)\n    cv2.imshow('lzh2', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('lzh3', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "邱伊琳": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/083aa4c3ef590bb75e85bf91ad0e3e2d"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    # 转换为灰度图\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    # 计算灰度直方图\n    histogram = calcGrayHist(gray)\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    # 确定两个峰值的顺序\n    if firstPeak > secondPeak:\n        peak1, peak2 = firstPeak, secondPeak\n    else:\n        peak1, peak2 = secondPeak, firstPeak\n    # 找到两个峰值之间的最小值对应的灰度值作为阈值\n    temp = histogram[int(peak2):int(peak1)]\n    minloc = np.where(temp == np.min(temp))\n    thresh = peak2 + minloc[0][0]\n    # 应用阈值分割\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(\"Calculated threshold:\", thresh)\n    cv2.imshow('qyl', img)\n    cv2.imshow('qyl2', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('qyl3', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郑光甫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    grayHist = np.zeros([256],np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n        histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram==np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256],np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k-firstPeak,2)*histogram[k]    # pow(k-firstPeak,2)距离差的平方\n    maxLoc2 = np.where(measureDists==np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    thresh = 0\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh =firstPeak + minloc[0][0] + 1\n        _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY_INV)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n img = cv2.imread('img/img/mouse.jpg')\n thresh, threshImage_out = threshTwoPeaks(img)\n print(thresh)\n cv2.imshow('src', img)\n cv2.imshow('threshImage_out', threshImage_out)\n re = cv2.bitwise_and(img, img, mask=threshImage_out)\n cv2.imshow('re', re)\n cv2.waitKey(0)\n cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郭捷瑞": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4b326bf9e07438fdcc155cf089d9f342.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimage_path = \"mouse.jpg\"\nimage = cv2.imread(image_path)\nif image is None:\n    print(\"无法加载图像，请检查路径\")\n    exit()\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nhist = cv2.calcHist([gray], [0], None, [256], [0, 256])\nplt.figure()\nplt.title(\"Grayscale Histogram\")\nplt.xlabel(\"Bins\")\nplt.ylabel(\"# of Pixels\")\nplt.plot(hist)\nplt.xlim([0, 256])\nplt.show()\n_, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)\nsegmented = cv2.bitwise_and(image, image, mask=thresh)\nkernel = np.ones((3,3), np.uint8)\nopening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=2)\ncv2.imshow(\"Original Image\", image)\ncv2.imshow(\"Thresholded Image\", thresh)\ncv2.imshow(\"Segmented Mouse\", segmented)\ncv2.imshow(\"After Morphology\", opening)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "金孝华": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/f33751d4ea65dae18079f26d1790ff1b.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/ff9c7a30458f2f3d2ed2f6c522243813.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/5dbff4f730b93ca1f4f5d6953df37d40.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    print(grayimage.shape)\n    grayHist = np.zeros([256],np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n        histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram==np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256],np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k-firstPeak,2)*histogram[k]    \n    maxLoc2 = np.where(measureDists==np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n\n    thresh = 0\n    if firstPeak > secondPeak:  \n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:                 \n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh =firstPeak + minloc[0][0] + 1 \n    _, threshImage_out = cv2.threshold(gray, thresh, 255,cv2.THRESH_BINARY)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('src', img)\n    cv2.imshow('threshImage_out', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('re', re)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈沈祺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d5f7a25b18ae4878fc76042ed0105d96.png"
+                ],
+                "text": []
+            }
+        },
+        "陈泽宇": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e55572dbe78c694b0b95d05ccee5737c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n   # 计算灰度图像矩阵的高度、宽度\n   rows, cols = grayimage.shape\n   #print(grayimage.shape) # 注释掉这行，避免不必要的输出\n   # 存储灰度直方图\n   grayHist = np.zeros([256], np.uint64)\n   for r in range(rows):\n       for c in range(cols):\n           grayHist[grayimage[r][c]] += 1\n   return grayHist\n\ndef threshTwoPeaks(image):\n   threshImage_out = None  # 初始化 threshImage_out，避免 UnboundLocalError\n   if len(image.shape) == 2:\n       gray = image\n   else:\n       gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n   histogram = calcGrayHist(gray)  # 确保 gray 已经定义\n   # 寻找灰度直方图的最大峰值对应的灰度值\n   maxLoc = np.where(histogram == np.max(histogram))\n   firstPeak = maxLoc[0][0]\n   # 寻找灰度直方图的第二个峰值对应的灰度值\n   measureDists = np.zeros([256], np.float32)\n   for k in range(256):\n       measureDists[k] = pow(k - firstPeak, 2) * histogram[k]  # pow(k-firstPeak,2)距离差的平方\n   maxLoc2 = np.where(measureDists == np.max(measureDists))\n   secondPeak = maxLoc2[0][0]\n   # 找到两个峰值之间的最小值对应的灰度值，并将其作为阈值\n   thresh = 0\n   if firstPeak > secondPeak:  # 第一个峰值在第二个峰值的右侧\n       temp = histogram[int(secondPeak):int(firstPeak)]\n       minloc = np.where(temp == np.min(temp))\n       thresh = secondPeak + minloc[0][0] + 1\n       _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n   else:  # 第一个峰值在第二个峰值的左侧\n       temp = histogram[int(firstPeak):int(secondPeak)]\n       minloc = np.where(temp == np.min(temp))\n       thresh = firstPeak + minloc[0][0] + 1  # 找到阈值之后进行阈值处理，得到二值图\n       _, threshImage_out = cv2.threshold(gray, int(thresh), 255, cv2.THRESH_BINARY)  # 使用cv2.THRESH_BINARY\n   return thresh, threshImage_out\nif __name__ == \"__main__\":\n   img = cv2.imread('img/mouse.jpg')\n   thresh, threshImage_out = threshTwoPeaks(img)\n   print(thresh)\n   # 使用二值掩码提取鼠标\n   re = cv2.bitwise_and(img, img, mask=threshImage_out)\n   # 显示结果\n   cv2.imshow('Original Image', img)\n   cv2.imshow('Segmented Mouse', re) # 只显示提取的鼠标部分\n   cv2.imshow('czy', threshImage_out) # 显示二值图\n   # 保存分割结果\n   cv2.imwrite('segmented_mouse.png', re) # 将分割结果保存为图片\n   cv2.imwrite('binary_mask.png', threshImage_out) # 保存二值图\n   cv2.waitKey(0)\n   cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a19fcb6d459c6fca0ce86966b638e0b0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"CH\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/mouse.jpg'\nimage = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\nhist = cv2.calcHist([image], [0], None, [256], [0, 256])\n_, thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\nplt.figure(figsize=(10, 5))\nplt.subplot(1, 2, 1)\nshow_image_with_name(image, 'Original Image', cmap='gray')\nplt.subplot(1, 2, 2)\nshow_image_with_name(thresh, 'Segmented Mouse', cmap='gray')\nplt.tight_layout()\nplt.savefig('mouse_segmentation_result.png')  # 保存结果\nplt.show()"
+                ]
+            }
+        },
+        "韩哲涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nname = \"xyh\"\ndef show_image_with_name(image, title, cmap=None):\nplt.imshow(image, cmap=cmap)\nplt.title(title)\nplt.text(image.shape[1]//2, 10, name,\ncolor='red', fontsize=12,\nalpha=0.5, ha='center', va='center')\nplt.axis('off')\nimage_path = 'img/mouse.jpg'\nimage = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)\nhist = cv2.calcHist([image], [0], None, [256], [0, 256])\n_, thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)\nplt.figure(figsize=(10, 5))\nplt.subplot(1, 2, 1)\nshow_image_with_name(image, 'Original Image', cmap='gray')\nplt.subplot(1, 2, 2)\nshow_image_with_name(thresh, 'Segmented Mouse', cmap='gray')\nplt.tight_layout()\nplt.savefig('mouse_segmentation_result.png')  # 保存结果\nplt.show()"
+                ]
+            }
+        },
+        "高嘉泽": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/631bb88898096d2bdad53be0d526efe4.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/a27600472a63ed1af1d2b1a5c962a19a.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/e5796e8f8a2e75ad0312b33acf317486.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 计算灰度直方图\ndef calcGrayHist(grayimage):\n    # 计算灰度图像矩阵的高度、宽度\n    rows, cols = grayimage.shape\n    # 存储灰度直方图\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    # 转换为灰度图\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    # 计算灰度直方图\n    histogram = calcGrayHist(gray)\n    # 寻找灰度直方图的最大峰值对应的灰度值\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    # 寻找灰度直方图的第二个峰值对应的灰度值\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    # 确定两个峰值的顺序\n    if firstPeak > secondPeak:\n        peak1, peak2 = firstPeak, secondPeak\n    else:\n        peak1, peak2 = secondPeak, firstPeak\n    # 找到两个峰值之间的最小值对应的灰度值作为阈值\n    temp = histogram[int(peak2):int(peak1)]\n    minloc = np.where(temp == np.min(temp))\n    thresh = peak2 + minloc[0][0]\n    # 应用阈值分割\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n    img = cv2.imread('img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(\"Calculated threshold:\", thresh)\n    cv2.imshow('gjz', img)\n    cv2.imshow('gjz2', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('gjz3', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "黄君健": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d5f7a25b18ae4878fc76042ed0105d96"
+                ],
+                "text": []
+            }
+        },
+        "黄塨燚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b49a69209b1632f45b8355e4f523ce46.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/8d4c34235f59a98334149697c5fab680.png",
+                    "https://p.ananas.chaoxing.com/star3/origin/597d33fb12e4d9ce7a8aea073f901d79.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k - firstPeak, 2) * histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\nif __name__ == \"__main__\":\n    img = cv2.imread('img/img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    print(thresh)\n    cv2.imshow('src', img)\n    cv2.imshow('hgy', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('huanggongyi', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nimport cv2\nimport numpy as np\n\ndef calcGrayHist(grayimage):\n    rows, cols = grayimage.shape\n    grayHist = np.zeros([256], np.uint64)\n    for r in range(rows):\n        for c in range(cols):\n            grayHist[grayimage[r][c]] += 1\n    return grayHist\n\ndef threshTwoPeaks(image):\n    if len(image.shape) == 2:\n        gray = image\n    else:\n        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n    histogram = calcGrayHist(gray)\n    maxLoc = np.where(histogram == np.max(histogram))\n    firstPeak = maxLoc[0][0]\n    measureDists = np.zeros([256], np.float32)\n    for k in range(256):\n        measureDists[k] = pow(k-firstPeak, 2)*histogram[k]\n    maxLoc2 = np.where(measureDists == np.max(measureDists))\n    secondPeak = maxLoc2[0][0]\n    \n    thresh = 0\n    if firstPeak > secondPeak:\n        temp = histogram[int(secondPeak):int(firstPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = secondPeak + minloc[0][0] + 1\n    else:\n        temp = histogram[int(firstPeak):int(secondPeak)]\n        minloc = np.where(temp == np.min(temp))\n        thresh = firstPeak + minloc[0][0] + 1\n    _, threshImage_out = cv2.threshold(gray, thresh, 255, cv2.THRESH_BINARY)\n    return thresh, threshImage_out\n\nif __name__ == \"__main__\":\n    img = cv2.imread('./img/mouse.jpg')\n    thresh, threshImage_out = threshTwoPeaks(img)\n    cv2.imshow('JXJ_src', img)\n    cv2.imshow('JXJ_threshImage_out', threshImage_out)\n    re = cv2.bitwise_and(img, img, mask=threshImage_out)\n    cv2.imshow('JXJ_re', re)\n    cv2.waitKey(0)\n    cv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5c25a8b96442a878b1ff915a7615ae31.png"
+                ],
+                "text": [
+                    "下载附件并解压，读取img文件夹下的\"mouse\"。\n- 使用直方图直方图阈值法分割提取鼠标\n- 显示并截图。\n提交完整代码和截图（窗口加自己名字）。"
+                ]
+            }
+        }
+    }
+}

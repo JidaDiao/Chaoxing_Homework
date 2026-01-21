@@ -1,0 +1,997 @@
+{
+    "学生回答": {
+        "上官宗恒": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var.log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep error /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v error /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps -aux | grep sssd"
+                ]
+            }
+        },
+        "上官瀚涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log-name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"^error$ \" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep error /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps-aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps - aux | grep sssd"
+                ]
+            }
+        },
+        "吴何莹": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -a\nps -u\nps -x"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep \"sssd\""
+                ]
+            }
+        },
+        "吴登灿": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep error /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v error /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps -aux | grep sssd"
+                ]
+            }
+        },
+        "施昌州": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep error /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v error /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps -aux | grep sssd"
+                ]
+            }
+        },
+        "施昌建": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "fing /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"^error$\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v\"^error$\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -a\nps -u\nps -x"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "朱彤彤": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  \"^error$\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"^error\" /var/log/messages |grep -v \"^$\""
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "朱明杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep error /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v error /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "李檀": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "# find/var/log -name\".log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "#grep \"^root$\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "# grep -v error var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "李诗琪": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log-type.log"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v/var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux"
+                ]
+            }
+        },
+        "杨守波": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.conf\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"^error$\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messageas"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps -aux | grep sssd"
+                ]
+            }
+        },
+        "林上宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log-name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep”erro\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep-v\"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps-t$(tty)-forest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sp-t(tty)-forst | grep-name sssd"
+                ]
+            }
+        },
+        "林晓微": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -t $(tty) -forest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "sp -t $(tty) -forest | grep -name sssd"
+                ]
+            }
+        },
+        "林梦萍": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -type f -name"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  \"error\" /var/loge/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/massages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -t$(tty)-forest"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps | grep -name sssd"
+                ]
+            }
+        },
+        "林经纬": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find/var/log-name\"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep error/var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v error /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps -aux | grep sssd"
+                ]
+            }
+        },
+        "林贝贝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find  /var/log  -name  \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep  \"^error$\"  /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep  -v \"^error#\"  /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps  -a\nps  -u\nps  -x"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "| grep"
+                ]
+            }
+        },
+        "王涛": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep error /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v error /bar/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps -aux | grep sssd"
+                ]
+            }
+        },
+        "章宗杰": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find/var/log -name \"*.conf\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep\"error$\"/var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps- aus"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "董佳旭": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -type f -name \"*. log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep 'error' /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps  -t\npts /0"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "蒋贤炽": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -type f -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -T -o user, start_time,cmd"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grap\"sssd\""
+                ]
+            }
+        },
+        "蔡进元": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "fing /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"^error$\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v\"^error$\"/var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -a\nps -u\nps -x"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "谢作祥": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep -2 error /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps -aux | grep sssd"
+                ]
+            }
+        },
+        "钱益乐": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/lowwwg -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"^error$\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -a\nps -u\nps -x"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "陈中宝": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -type f -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -t pts/0"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "陈伟文": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\"/var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep-v\"error\"/var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps - t pts/0"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "陈庆鑫": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "#find /var -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "#grep error/var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "#grep"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": []
+            },
+            "题目5": {
+                "images": [],
+                "text": []
+            }
+        },
+        "陈玲玲": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -type  f-name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep-i “error”/var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep-v  \"error\"/var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "陈真": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps -t pts/0"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "黄佳慧": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var/log -type f -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep -v \"error\"/var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps aux"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "ps aux | grep sssd"
+                ]
+            }
+        },
+        "黄开桂": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "find /var /log -type f -name \"*.log\""
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目3": {
+                "images": [],
+                "text": [
+                    "grep \"error\" /var/log/messages"
+                ]
+            },
+            "题目4": {
+                "images": [],
+                "text": [
+                    "ps  aux\nps  -t  pts/0\ntty"
+                ]
+            },
+            "题目5": {
+                "images": [],
+                "text": [
+                    "pa -ef  |  grep  java"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nfind /var/log -name \"*.log\"",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用find命令搜索 /var/log 目录以及其所有子目录中所有“.log”结尾的文件。\n输入命令"
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\ngrep error /var/log/messages",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用grep命令从系统日志文件 /var/log/messages 中查找包含error的所有行。\n输入命令"
+                ]
+            }
+        },
+        "题目3": {
+            "正确答案": "正确答案：\ngrep -v error \n/var/log/messages",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用grep命令从系统日志文件 /var/log/messages 中查找不包含error的所有行。\n输入命令"
+                ]
+            }
+        },
+        "题目4": {
+            "正确答案": "正确答案：\nps -aux",
+            "题干": {
+                "images": [],
+                "text": [
+                    "查看系统进程，要求：\n- 显示当前控制终端的进程\n- 显示进程的用户名和启动时间等信息\n- 显示没有控制终端的进程\n输入命令"
+                ]
+            }
+        },
+        "题目5": {
+            "正确答案": "正确答案：\nps -aux | grep \"sssd\"",
+            "题干": {
+                "images": [],
+                "text": [
+                    "使用 “ | ”符号和grep命令筛选上一道题中输出的系统进程信息中带有 “sssd” 的行。\n输入命令"
+                ]
+            }
+        }
+    }
+}

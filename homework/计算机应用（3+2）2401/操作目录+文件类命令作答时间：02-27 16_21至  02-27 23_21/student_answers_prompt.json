@@ -1,0 +1,1532 @@
+{
+    "上官宗恒": [
+        {
+            "content": [
+                {
+                    "text": "上官宗恒的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var.log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps -aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "上官瀚涛": [
+        {
+            "content": [
+                {
+                    "text": "上官瀚涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log-name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"^error$ \" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps-aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps - aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴何莹": [
+        {
+            "content": [
+                {
+                    "text": "吴何莹的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -a\nps -u\nps -x",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep \"sssd\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴登灿": [
+        {
+            "content": [
+                {
+                    "text": "吴登灿的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps -aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌州": [
+        {
+            "content": [
+                {
+                    "text": "施昌州的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps -aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌建": [
+        {
+            "content": [
+                {
+                    "text": "施昌建的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：fing /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"^error$\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v\"^error$\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -a\nps -u\nps -x",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱彤彤": [
+        {
+            "content": [
+                {
+                    "text": "朱彤彤的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep  \"^error$\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"^error\" /var/log/messages |grep -v \"^$\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱明杰": [
+        {
+            "content": [
+                {
+                    "text": "朱明杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李檀": [
+        {
+            "content": [
+                {
+                    "text": "李檀的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：# find/var/log -name\".log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：#grep \"^root$\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：# grep -v error var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李诗琪": [
+        {
+            "content": [
+                {
+                    "text": "李诗琪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log-type.log",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "杨守波": [
+        {
+            "content": [
+                {
+                    "text": "杨守波的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.conf\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"^error$\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messageas",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps -aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林上宝": [
+        {
+            "content": [
+                {
+                    "text": "林上宝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log-name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep”erro\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep-v\"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps-t$(tty)-forest",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：sp-t(tty)-forst | grep-name sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林晓微": [
+        {
+            "content": [
+                {
+                    "text": "林晓微的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -t $(tty) -forest",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：sp -t $(tty) -forest | grep -name sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林梦萍": [
+        {
+            "content": [
+                {
+                    "text": "林梦萍的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -type f -name",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep  \"error\" /var/loge/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/massages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -t$(tty)-forest",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps | grep -name sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林经纬": [
+        {
+            "content": [
+                {
+                    "text": "林经纬的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find/var/log-name\"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep error/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps -aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林贝贝": [
+        {
+            "content": [
+                {
+                    "text": "林贝贝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find  /var/log  -name  \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep  \"^error$\"  /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep  -v \"^error#\"  /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps  -a\nps  -u\nps  -x",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：| grep",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王涛": [
+        {
+            "content": [
+                {
+                    "text": "王涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v error /bar/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps -aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "章宗杰": [
+        {
+            "content": [
+                {
+                    "text": "章宗杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find/var/log -name \"*.conf\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep\"error$\"/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps- aus",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "董佳旭": [
+        {
+            "content": [
+                {
+                    "text": "董佳旭的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -type f -name \"*. log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep 'error' /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps  -t\npts /0",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "蒋贤炽": [
+        {
+            "content": [
+                {
+                    "text": "蒋贤炽的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -type f -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -T -o user, start_time,cmd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grap\"sssd\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "蔡进元": [
+        {
+            "content": [
+                {
+                    "text": "蔡进元的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：fing /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"^error$\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v\"^error$\"/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -a\nps -u\nps -x",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "谢作祥": [
+        {
+            "content": [
+                {
+                    "text": "谢作祥的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep -2 error /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps -aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "钱益乐": [
+        {
+            "content": [
+                {
+                    "text": "钱益乐的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/lowwwg -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"^error$\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -a\nps -u\nps -x",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈中宝": [
+        {
+            "content": [
+                {
+                    "text": "陈中宝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -type f -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -t pts/0",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈伟文": [
+        {
+            "content": [
+                {
+                    "text": "陈伟文的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\"/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep-v\"error\"/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps - t pts/0",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈庆鑫": [
+        {
+            "content": [
+                {
+                    "text": "陈庆鑫的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：#find /var -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：#grep error/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：#grep",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈玲玲": [
+        {
+            "content": [
+                {
+                    "text": "陈玲玲的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -type  f-name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep-i “error”/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep-v  \"error\"/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈真": [
+        {
+            "content": [
+                {
+                    "text": "陈真的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps -t pts/0",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄佳慧": [
+        {
+            "content": [
+                {
+                    "text": "黄佳慧的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var/log -type f -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep -v \"error\"/var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps aux",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：ps aux | grep sssd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄开桂": [
+        {
+            "content": [
+                {
+                    "text": "黄开桂的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：find /var /log -type f -name \"*.log\"",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：grep \"error\" /var/log/messages",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：ps  aux\nps  -t  pts/0\ntty",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：pa -ef  |  grep  java",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ]
+}

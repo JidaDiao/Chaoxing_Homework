@@ -1,0 +1,844 @@
+{
+    "学生回答": {
+        "倪旭玮": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7b6bafbd4fe89f83fe4bbcf5633c459b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"nxw\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2b73c64cd003660e1a03bf2d64ab456c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"nxw\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b, g, r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "倪理浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/493945fb9620d9786d58558ec1500d6c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n#定义一个回调函数，此程序无须回调\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)#读取图像\n#定义窗口名称对象，方便后续调用\nwindowName = \"NLH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n#创建用于颜色变换的滑动条\ncv2.createTrackbar('Type',windowName,0,4,nothing)      #5种基本阈值类型\ncv2.createTrackbar('Value',windowName,0,255,nothing)    #阈值范围为0～255\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    #阈值处理函数\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    #显示图像\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5cf0abac5962b252e5a8540fa3440829.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"NLH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R', windowName)\n    g = cv2.getTrackbarPos('G', windowName)\n    b = cv2.getTrackbarPos('B', windowName)\n    img[:, :, ] = [b, g, r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()\\"
+                ]
+            }
+        },
+        "冯帅": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/146c32f29a48f6a646323aeeef1f718f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"fs\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9c304b1831686b1e207670dc256d3e9c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"fs\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "华江辰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c8889417fa7e36c9ea995ca0833ecb21.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"HJC\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1f6a9e3c2d940f0d15d997ff3cb8471a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((256,256, 3), np.uint8)\nwindowName = \"HJC\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile (1):\n        if cv2.waitKey(1) & 0xFF == 27:\n            break\n        r = cv2.getTrackbarPos('R',windowName)\n        g = cv2.getTrackbarPos('G',windowName)\n        b = cv2.getTrackbarPos('B',windowName)\n        img[:,:,] = [b,g,r]\n        cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶挺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/078cfb49e179ca3a469c9fb09569e32f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"yt\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/95762d46a92a0f0152a9294bb08759bd.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"yt\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "叶桉鸣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/713a3fd8a529a1dea2a60efa075cae61.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)#读取图像\nwindowName = \"yam\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)   \ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3b0b89b65346d0e12fb082d4d98dbbf2.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((256, 256, 3), np.uint8)\nwindowName = \"yam\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n          break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吕鸿凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9c9821a8dffc7babd99519fc48a53e7e.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/img/jp.jpg',0)\nwindowName = \"LHK\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/47012ccc92f67a4219d84c3a8474d1fd.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"LHK\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "吴世杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6cd1ca03dbcff01c0d8978738e999f1c.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/3913368790ec16548e3a07ebd3c105e7.png"
+                ],
+                "text": []
+            }
+        },
+        "周愉越": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5475f85cf0ffe28f0dcc7e885d8001c4.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"z\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/fd991ccaccfdb4add1bb2d88c79f9ec5.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"z\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b, g, r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏宇浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/84294c684771e6198dbd11d073fbbeca.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"dcz_xiayuhao\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d7b5113a985f1ef4bee36a43e77e7f99.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((256,256,3),np.uint8)\nwindowName = \"dcz_xiayuhao\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,]=[b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏忆豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b56fa7e5d9add063367e854ccb29b692.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"xyh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5518b0c69238e4a745fa7adfa1fa6c46.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"xyh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "夏有德": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/eba706e78b8f9def6aab88f1712e6366.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"xyd\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nType = cv2.getTrackbarPos('Type',windowName)\nValue = cv2.getTrackbarPos('Value',windowName)\nret, dst = cv2.threshold(img, Value, 255, Type)\ncv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b54a5c7456015e176604fc25a11b1799.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"xyd\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nr = cv2.getTrackbarPos('R',windowName)\ng = cv2.getTrackbarPos('G',windowName)\nb = cv2.getTrackbarPos('B',windowName)\nimg[:,:,] = [b,g,r]\ncv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "宋葛萍": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e5e09908161855cd550c9e816d4c48f3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"dcz_Thresholding\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/171c9e406bd555a3d07aaf5f4abfb643.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"RGB Color Map\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos(\"R\", windowName)\n    g = cv2.getTrackbarPos(\"G\",windowName)\n    b = cv2.getTrackbarPos(\"B\",windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "庞志强": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8f20d70528874879cfd7eb71890f4353"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"dcz_Thresholding\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0e2ca257b9d796805b214d59ec806d84"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"RGB Color Map\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方烨": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/61e1d70122a0d48db19f5af82f891d59.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"fangye\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/561ea6b80f21f2fd9123d51069082999.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((256,256, 3), np.uint8)\nwindowName = \"fangye\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "方胜超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1a75edb8c4b85c31acd810744acebf4a.PNG"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"fsc\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5dcb52c254ae5e6107dcaf11063e4657.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"FSC\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李盛长": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/41df862f6a198c613ecc56d9c873a0d0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\n\nwindowName = \"lishengchang\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\n\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/0ac5e6885f35eb902c8ee47cd92bb39c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg =np.ones((512,512,3),np.uint8)\n\nwindowName = (\"lishengchang\")\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\n\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r=cv2.getTrackbarPos(\"R\",windowName)\n    g=cv2.getTrackbarPos(\"G\",windowName)\n    b=cv2.getTrackbarPos(\"B\",windowName)\n    img[:,:,]=[b,g,r]\n\n    cv2.imshow(windowName,img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "李超": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a5a6528ed6bdf82914fb20e2b0affd89.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"lc\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/8fd72a34affbec3a3fbd629686f057e2.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"lc\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨峥荣": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/6063e4ec3b02c2c14aec208b5452459a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\n\n\nwindowName = \"yangzhengrong\"\ncv2.namedWindow(windowName)\n\ncv2.createTrackbar('Type', windowName, 0, 3, nothing)\ncv2.createTrackbar('Value', windowName, 127, 255, nothing)\n\nimg = cv2.imread('img/jp.jpg', cv2.IMREAD_GRAYSCALE)\n\nif img is None:\n    print(\"Error: Image not found.\")\n    exit()\n\n\nwhile True:\n\n    Type = cv2.getTrackbarPos('Type', windowName)\n    Value = cv2.getTrackbarPos('Value', windowName)\n\n\n    if Type == 0:\n        ret, dst = cv2.threshold(img, Value, 255, cv2.THRESH_BINARY)\n    elif Type == 1:\n        ret, dst = cv2.threshold(img, Value, 255, cv2.THRESH_BINARY_INV)\n    elif Type == 2:\n        ret, dst = cv2.threshold(img, Value, 255, cv2.THRESH_TRUNC)\n    elif Type == 3:\n        ret, dst = cv2.threshold(img, Value, 255, cv2.THRESH_TOZERO)\n    else:\n        ret, dst = cv2.threshold(img, Value, 255, cv2.THRESH_TOZERO_INV)\n\n\n    cv2.imshow(windowName, dst)\n\n\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n\n\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/eb4d9372358958099c8652eb049fa83c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\n\nwindowName = \"yangzhengrong\"\ncv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('R', windowName, 0, 255, nothing)\ncv2.createTrackbar('G', windowName, 0, 255, nothing)\ncv2.createTrackbar('B', windowName, 0, 255, nothing)\n\nimg = np.ones((256, 256, 3), np.uint8) * 255\n\nwhile True:\n\n    r = cv2.getTrackbarPos('R', windowName)\n    g = cv2.getTrackbarPos('G', windowName)\n    b = cv2.getTrackbarPos('B', windowName)\n\n \n    img[:] = [b, g, r]\n\n    cv2.imshow(windowName, img)\n\n\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "杨雯杰": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4dff1a948681ff1b860317261d45b9dd.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"ywj\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2f8969af8a004057c2e67b41f7286fbb.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"ywj\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b, g, r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林佳明": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c93ad35574b63371f1b1b8eb9da58f8b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('jp.jpg',0)\nwindowName = \"dcz_Thresholding\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5bd750834a84f50a7353fa8df54e3436.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"ljm\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G', windowName)\n    b = cv2.getTrackbarPos('B', windowName)\n    img[:, :, ] = [b, g, r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林涛": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e39dd6ae80b1a9b0b474ffff39edbc4c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 定义一个回调函数，此程序无须回调\ndef nothing(x):\n    pass\n\nimg = cv2.imread('img/jp.jpg', 0)  # 读取图像\n\n# 定义窗口名称对象，方便后续调用\nwindowName = \"lintao\"\ncv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)\n\n# 创建用于颜色变换的滑动条\ncv2.createTrackbar('Type', windowName, 0, 4, nothing)  # 5种基本阈值类型\ncv2.createTrackbar('Value', windowName, 0, 255, nothing)  # 阈值范围为0 ~ 255\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:  # 用于保持窗口及按Esc键退出\n        break\n    # 获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type', windowName)\n    Value = cv2.getTrackbarPos('Value', windowName)\n    # 阈值处理函数\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    # 显示图像\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/670e4aa1359e060729f526ba9cc5cd77.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\n# 定义一个回调函数，此程序无需回调\ndef nothing(x):\n    pass\n\n# 创建一个空白图像\nimg = np.ones((512, 512, 3), np.uint8)\n\n# 定义窗口名称对象，方便后续调用\nwindowName = \"lintao\"\n\ncv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)\n\n# 创建用于颜色变换的滑动条\ncv2.createTrackbar('R', windowName, 0, 255, nothing)\ncv2.createTrackbar('G', windowName, 0, 255, nothing)\ncv2.createTrackbar('B', windowName, 0, 255, nothing)\n\n# 循环显示颜色变换\nwhile(1):\n    # 用于保持窗口及按ESC退出\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n\n    # 获取当前滑动条指示的值\n    r = cv2.getTrackbarPos('R', windowName)\n    g = cv2.getTrackbarPos('G', windowName)\n    b = cv2.getTrackbarPos('B', windowName)\n\n    # 将当前滑动条的值应用到图像上\n    img[:, :] = [b, g, r]\n\n    cv2.imshow(windowName, img)\n\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "林西面": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c64c66749ad861696b12d4f7b8fdf977.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = cv2.imread('jp.jpg',0)\n\nwindowName = \"linximian\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ffa09eaf5c70884bf04af9fbd478394c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = np.ones((256, 256, 3), np.uint8)\n\nwindowName = \"linximian\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    R = cv2.getTrackbarPos('R',windowName)\n    G = cv2.getTrackbarPos('G',windowName)\n    B = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [B,G,R]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "潘易函": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b36571c6cfa5b5fd652f70e546e8de7e.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n#定义一个回调函数，此程序无须回调\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)#读取图像\n#定义窗口名称对象，方便后续调用\nwindowName = \"PYH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n#创建用于颜色变换的滑动条\ncv2.createTrackbar('Type',windowName,0,4,nothing)      #5种基本阈值类型\ncv2.createTrackbar('Value',windowName,0,255,nothing)    #阈值范围为0～255\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    #阈值处理函数\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    #显示图像\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/de7decd0b34a09c6f21361a7df75f794.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n#定义一个回调函数，此程序无需回调\ndef nothing(x):\n      pass\n#创建一个空白图像\nimg = np.ones((512, 512, 3), np.uint8)\n#定义窗口名称对象，方便后续调用\nwindowName = \"PYH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n#创建用于颜色变换的滑动条\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\n#循环显示颜色变换\nwhile(1): #用于保持窗口及按ESC退出\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n        #获取当前滑动条指示的值\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王嘉鹏": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/d30c7cd3d1fa5592c4ab10a690731828.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"wangjiapeng\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nType = cv2.getTrackbarPos('Type',windowName)\nValue = cv2.getTrackbarPos('Value',windowName)\nret, dst = cv2.threshold(img, Value, 255, Type)\ncv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4964bc1b013404c0667567c773af4c45.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = np.ones((256,256,3),np.uint8)\nwindowName = \"wangjiapeng\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nr = cv2.getTrackbarPos('R',windowName)\ng = cv2.getTrackbarPos('G',windowName)\nb = cv2.getTrackbarPos('B',windowName)\nimg[:,:,]=[b,g,r]\ncv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王家翔": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/adb3b54de0482a67de647440070eadb5"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"WJX\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7c8f2cf808f5eb28b34abfe3e14634f8"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"WJX\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R', windowName)\n    g = cv2.getTrackbarPos('G', windowName)\n    b = cv2.getTrackbarPos('B', windowName)\n    img[:, :, ] = [b, g, r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王斌": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ef38af2eb45d39df3f92a6e322bc9963.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"jp_Thresholding\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)     \ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: \n        break\n\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    \n    ret, dst = cv2.threshold(img, Value, 255, Type)\n\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5589be2509273381483fc934c1eb673e.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"RGB Color Map\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)       #5种基本阈值类型\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    r = cv2.getTrackbarPos('R', windowName)\n    g = cv2.getTrackbarPos('G', windowName)\n    b = cv2.getTrackbarPos('B', windowName)\n    img[:, :, ] = [b, g, r]\n\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王昱诺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/a64e914c38a88c07fff6f65c2b10184c.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg=cv2.imread('img/jp.jpg',0)\nwindowName=\"wangyunuo\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1)& 0xFF==27:\n        break\n    Type=cv2.getTrackbarPos('Type',windowName)\n    value=cv2.getTrackbarPos('value',windowName)\n    ret,dst=cv2.threshold(img,value,255,Type)\n    cv2.imshow(windowName,dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2e51825f5747c1eea1cee5b482ccc188.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\n    image = np.ones((256, 256, 3), np.uint8)\n    windowName1 = \"WANGYUNUO\"\n    cv2.namedWindow(windowName1,cv2.WINDOW_AUTOSIZE)\n    cv2.createTrackbar('R',windowName1,0,255,nothing)\n    cv2.createTrackbar('G',windowName1,0,255,nothing)\n    cv2.createTrackbar('B',windowName1,0,255,nothing)\n    while(1):\n        if cv2.waitKey(1) & 0xFF == 27:\n            break\n        r = cv2.getTrackbarPos('R',windowName1)\n        g = cv2.getTrackbarPos('G',windowName1)\n        b = cv2.getTrackbarPos('B',windowName1)\n        image[:,:,] = [b,g,r]\n        cv2.imshow(windowName1, image)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王浩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c6e059d5b32c49821fff328729a93e2d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)#读取图像\nwindowName = \"wanghao\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/46a6f71a0fa5f8d57dedc741d109f8cf.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"RGB Color Map\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos(\"R\",windowName)\n    g = cv2.getTrackbarPos(\"G\",windowName)\n    b = cv2.getTrackbarPos(\"B\",windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "王钰洁": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ec776d51a0bc096fa7f80c5997dab04a.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg=cv2.imread('sucai4/jp.jpg',0)\nwindowName='wyj'\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF ==27:\n       break\n   Type=cv2.getTrackbarPos('Type',windowName)\n   Value=cv2.getTrackbarPos('Value',windowName)\n   ret,dst=cv2.threshold(img,Value,255,Type)\n   cv2.imshow(windowName,dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7b77335a003a00a8a7bc76b3202d7706.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg=np.ones((512,512, 3), np.uint8)\nwindowName = \"RGB Color Map\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r=cv2.getTrackbarPos('R',windowName)\n    g=cv2.getTrackbarPos('G', windowName)\n    b=cv2.getTrackbarPos('B', windowName)\n    img[:,:,]=[b,g,r]\n    cv2.imshow(windowName,img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "胡智渊": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/74227024427b73701bfdc4255012d1f5.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"hzy\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c03d29a0bbe8daf16f8e422fc14c6a89.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"hzy\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "葛人欢": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/af655b024d12c6f0fdfc0adb9aafdda6.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n   pass\nimg = cv2.imread('sucai4/jp.jpg',0)\n\nwindowName = \"grh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n   if cv2.waitKey(1) & 0xFF == 27:\n       break\n   Type = cv2.getTrackbarPos('Type',windowName)\n   Value = cv2.getTrackbarPos('Value',windowName)\n   ret, dst = cv2.threshold(img, Value, 255, Type)\n   cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/bcac830e628d988b373a4e60514bf141.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"GRH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n       break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蒋子豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2635db880bac99cb7717b4b45e2a9ed6.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = cv2.imread('jp.jpg',0)\n\nwindowName = \"jzh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\n\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1be10aa226904f7bbd6476a9c707857d.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"jzh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)#创建用于颜色变换的滑动条\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos(\"R\",windowName)\n    g = cv2.getTrackbarPos(\"G\",windowName)\n    b = cv2.getTrackbarPos(\"B\",windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "蔡雨轩": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e3b38f37068a3371af995bc4187eceb7.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"xyd\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nType = cv2.getTrackbarPos('Type',windowName)\nValue = cv2.getTrackbarPos('Value',windowName)\nret, dst = cv2.threshold(img, Value, 255, Type)\ncv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1833ae0a99e2277e917a9f5189bac0a0.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"xyd\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nr = cv2.getTrackbarPos('R',windowName)\ng = cv2.getTrackbarPos('G',windowName)\nb = cv2.getTrackbarPos('B',windowName)\nimg[:,:,] = [b,g,r]\ncv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "薛凯": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/36fa505b6641a570814f7c28ccb1cbc3.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\n\nwindowName = \"xk\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/ac7d187aabee3cea9d280be0bd71a8a9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = (\"xk\")\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n       break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "许贤明": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/5ce6eecbe1d0bda08be138d06fb68acb.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = cv2.imread('jp.jpg',0)\n\nwindowName = \"xxm14\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/91330b8d50a07bac37d4f8a1945a0c32.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"xxm14\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n  if cv2.waitKey(1) & 0xFF == 27:\n      break\n  r = cv2.getTrackbarPos('R',windowName)\n  g = cv2.getTrackbarPos('G',windowName)\n  b = cv2.getTrackbarPos('B',windowName)\n  img[:,:,] = [b,g,r]\n  cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "赖志和": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/7bc5f7b5441e3621cc51675a9fb525f9.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"LZH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2afe7842058f6f1bb060d383e6eff436.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"LZH\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "邱伊琳": {
+            "题目1": {
+                "images": [],
+                "text": [
+                    "import cv2\n\nType=0\nValue=0\ndef Callback(a):\n    Type = cv2.getTrackbarPos( tType, windowName)\n    Value = cv2.getTrackbarPos( tValue, windowName)\n    ret,dst=cv2.threshold(img,Value,255,Type)\n    cv2.imshow( windowName, dst)\n\nimg = cv2.imread(\"/img/img/jp.jpg\",0)\nwindowName = \"Threshold\"\ncv2.namedWindow(windowName)\ncv2.imshow( windowName, img)\n\ntType = \"Type\"\ntValue = \"Value\"\ncv2.createTrackbar(tType, windowName, 0, 4, Callback)\ncv2.createTrackbar(tValue, windowName, 0, 4, Callback)\ncv2.waitKey()\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimage = np.ones((256, 256, 3), np.uint8)\nwindowName1 = \"QIUYILIN\"\ncv2.namedWindow(windowName1,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName1,0,255,nothing)\ncv2.createTrackbar('G',windowName1,0,255,nothing)\ncv2.createTrackbar('B',windowName1,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nr = cv2.getTrackbarPos('R',windowName1)\ng = cv2.getTrackbarPos('G',windowName1)\nb = cv2.getTrackbarPos('B',windowName1)\nimage[:,:,] = [b,g,r]\ncv2.imshow(windowName1, image)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郑光甫": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/68133f7fee608a4c447da98dc7df0933.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\n\nwindowName = \"Zhengguangfu\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\n\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/9d82528fdea8093bebf824d11652ad48.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\n\ndef nothing(x):\n    pass\nimg =np.ones((512,512,3),np.uint8)\n\nwindowName = \"Zhengguangfu\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\n\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\n\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r=cv2.getTrackbarPos(\"R\",windowName)\n    g=cv2.getTrackbarPos(\"G\",windowName)\n    b=cv2.getTrackbarPos(\"B\",windowName)\n    img[:,:,]=[b,g,r]\n\n    cv2.imshow(windowName,img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "郭捷瑞": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/13e11b8e050d0a5175ad5a37e2632eba.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('jp.jpg',0)\nwindowName = \"guojierui\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/1363803eb1e306703dbbaec4c15a494e.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"guojierui\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b ,g ,r ]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "金孝华": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/b38f0be11978c7e4306a0951e3646b60.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('sucai4/jp.jpg',0)\nwindowName = \"jxh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)      \ncv2.createTrackbar('Value',windowName,0,255,nothing)    \nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e8e46fe26dfbaa707c6e43f28191df2f.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"RGB Color Map\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "陈沈祺": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/90fc3a6d3f069cf53eb6a592ed2f952a.png"
+                ],
+                "text": []
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/e7efbc4c592b2406577ddbe264c0bb37.png"
+                ],
+                "text": []
+            }
+        },
+        "陈豪": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/3d761198d0186927363a7aef948b5a75.jpg"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"xyh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nType = cv2.getTrackbarPos('Type',windowName)\nValue = cv2.getTrackbarPos('Value',windowName)\nret, dst = cv2.threshold(img, Value, 255, Type)\ncv2.imshow(windowName, dst)\ncv2.des\ntroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/750_1024/28ec04b8b7dda27fe21564572b2b350c.jpg"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"xyh\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nr = cv2.getTrackbarPos('R',windowName)\ng = cv2.getTrackbarPos('G',windowName)\nb = cv2.getTrackbarPos('B',windowName)\nimg[:,:,] = [b,g,r]\ncv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "高嘉泽": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/4c55b36995cea4c27233970bf672caa7.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg=cv2.imread('sucai4/jp.jpg',0)\nwindowName=\"GJZ\"\n\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)      #5种基本阈值类型\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    #获取当前滑动条指示的值\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    #阈值处理函数\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    #显示图像\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/952ad38426525924ecc6c8cea9cb4020.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512,512,3 ), np.uint8)\nwindowName = \"GJZ\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "黄君健": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/2957973a098f81b9f8a87d6deae1ed82"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"z\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\nbreak\n#获取当前滑动条指示的值\nType = cv2.getTrackbarPos('Type',windowName)\nValue = cv2.getTrackbarPos('Value',windowName)\nret, dst = cv2.threshold(img, Value, 255, Type)\ncv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/30862a8bc8b7fc3e7d2e9f38f5eb8af5"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\npass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"z\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\nif cv2.waitKey(1) & 0xFF == 27:\nbreak\nr = cv2.getTrackbarPos('R',windowName)\ng = cv2.getTrackbarPos('G',windowName)\nb = cv2.getTrackbarPos('B',windowName)\nimg[:,:,] = [b, g, r]\ncv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        },
+        "黄塨燚": {
+            "题目1": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/208886f14bd36ce328fad09ef9a08140.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = cv2.imread('img/jp.jpg',0)\nwindowName = \"huanggongyi\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('Type',windowName,0,4,nothing)\ncv2.createTrackbar('Value',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27: #用于保持窗口及按Esc键退出\n        break\n    Type = cv2.getTrackbarPos('Type',windowName)\n    Value = cv2.getTrackbarPos('Value',windowName)\n    ret, dst = cv2.threshold(img, Value, 255, Type)\n    cv2.imshow(windowName, dst)\ncv2.destroyAllWindows()"
+                ]
+            },
+            "题目2": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/c0ef56633b21db81787d9129309a787b.png"
+                ],
+                "text": [
+                    "import cv2\nimport numpy as np\ndef nothing(x):\n    pass\nimg = np.ones((512, 512, 3), np.uint8)\nwindowName = \"huanggongyi\"\ncv2.namedWindow(windowName,cv2.WINDOW_AUTOSIZE)\ncv2.createTrackbar('R',windowName,0,255,nothing)\ncv2.createTrackbar('G',windowName,0,255,nothing)\ncv2.createTrackbar('B',windowName,0,255,nothing)\nwhile(1):\n    if cv2.waitKey(1) & 0xFF == 27:\n        break\n    r = cv2.getTrackbarPos('R',windowName)\n    g = cv2.getTrackbarPos('G',windowName)\n    b = cv2.getTrackbarPos('B',windowName)\n    img[:,:,] = [b,g,r]\n    cv2.imshow(windowName, img)\ncv2.destroyAllWindows()"
+                ]
+            }
+        }
+    },
+    "题目": {
+        "题目1": {
+            "正确答案": "正确答案：\nimport cv2# 定义一个回调函数，此程序无须回调def nothing(x):    passimg = cv2.imread('./sucai4/jp.jpg', 0)  # 读取图像# 定义窗口名称对象，方便后续调用windowName = \"JXJ\"cv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)# 创建用于颜色变换的滑动条cv2.createTrackbar('Type', windowName, 0, 4, nothing)  # 5种基本阈值类型cv2.createTrackbar('Value', windowName, 0, 255, nothing)  # 阈值范围为0～255# 循环显示阈值处理结果while (1):    if cv2.waitKey(1) & 0xFF == 27:  # 用于保持窗口及按Esc键退出        break    # 获取当前滑动条指示的值    Type = cv2.getTrackbarPos('Type', windowName)    Value = cv2.getTrackbarPos('Value', windowName)    # 阈值处理函数    ret, dst = cv2.threshold(img, Value, 255, Type)    # 显示图像    cv2.imshow(windowName, dst)cv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/66403cc9ec48c9b97b0825b912fa1739.png"
+                ],
+                "text": [
+                    "下载附件并解压，读取img文件夹下的\"jp.jpg\"，使用滑动条来调整阈值和阈值分割方法，从而实现阈值分割。显示运行的效果并截图，窗口用你的拼音来命名。\n提交完整代码和截图。\n截图参考如下："
+                ]
+            }
+        },
+        "题目2": {
+            "正确答案": "正确答案：\n﻿\nimport cv2\nimport numpy as np# 定义一个回调函数，此程序无需回调def nothing(x):    pass# 创建一个空白图像img = np.zeros((512, 512, 3), np.uint8)# 定义窗口名称对象，方便后续调用windowName = \"JXJ\"cv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)# 创建用于颜色变换的滑动条cv2.createTrackbar('R', windowName, 0, 255, nothing)cv2.createTrackbar('G', windowName, 0, 255, nothing)cv2.createTrackbar('B', windowName, 0, 255, nothing)# 循环显示颜色变换while (1):    # 用于保持窗口及按ESC退出    if cv2.waitKey(1) & 0xFF == 27:        break    # 获取当前滑动条指示的值    r = cv2.getTrackbarPos('R', windowName)    g = cv2.getTrackbarPos('G', windowName)    b = cv2.getTrackbarPos('B', windowName)    img[:,:,] = [b,g,r]    cv2.imshow(windowName, img)cv2.destroyAllWindows()",
+            "题干": {
+                "images": [
+                    "https://p.ananas.chaoxing.com/star3/origin/95f885d84f22da39faf0c5ad4dea56d1.png"
+                ],
+                "text": [
+                    "用滑动条创建一个RGB颜色表，分辨率为256*256，通过移动RGB三个分量的滑块来改变颜色。显示运行的效果并截图，窗口用你的拼音来命名。\n提交完整代码和截图。\n截图参考如下："
+                ]
+            }
+        }
+    }
+}

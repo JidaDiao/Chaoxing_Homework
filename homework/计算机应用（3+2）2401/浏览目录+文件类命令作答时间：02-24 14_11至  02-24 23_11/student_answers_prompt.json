@@ -1,0 +1,1945 @@
+{
+    "上官宗恒": [
+        {
+            "content": [
+                {
+                    "text": "上官宗恒的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv text.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp-r dir2 dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "上官瀚涛": [
+        {
+            "content": [
+                {
+                    "text": "上官瀚涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir /dir1\nmkdir /dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd../dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd../~",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp-r/dir2/dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm-p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "吴登灿": [
+        {
+            "content": [
+                {
+                    "text": "吴登灿的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r /dir2 /dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -R dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌州": [
+        {
+            "content": [
+                {
+                    "text": "施昌州的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r dir2 dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "施昌建": [
+        {
+            "content": [
+                {
+                    "text": "施昌建的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /dir2/test.txt\nmv /dir2/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：mv /dir2/test2.txt\nmv /dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -rf dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱彤彤": [
+        {
+            "content": [
+                {
+                    "text": "朱彤彤的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：mkdir -p dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cd /dir1\ncp /dir2/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rmdir -p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "朱明杰": [
+        {
+            "content": [
+                {
+                    "text": "朱明杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：mkdir -p dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt/text2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cd /dir1/dir2/text2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rmdir -p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李檀": [
+        {
+            "content": [
+                {
+                    "text": "李檀的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：#mkdir dir1\n#mkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：#cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：#mkdir test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：#",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：#cd",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "李诗琪": [
+        {
+            "content": [
+                {
+                    "text": "李诗琪的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：#mkdir dir1\n#mkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：#",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：#touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：#mv /test/test2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：#cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：#cp ~/dir2/test2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：#rmdir dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "杨守波": [
+        {
+            "content": [
+                {
+                    "text": "杨守波的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd ~/dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /text.txt/test2.text",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cd/dir1/dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林上宝": [
+        {
+            "content": [
+                {
+                    "text": "林上宝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：makdir dir1\nmakdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv/rest.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd../～",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp–r/dir2/dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm–p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林晓微": [
+        {
+            "content": [
+                {
+                    "text": "林晓微的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir  dir1 dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r dir2/* dir1/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林梦萍": [
+        {
+            "content": [
+                {
+                    "text": "林梦萍的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir -p dir2/subdir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r/ dir2 dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "林经纬": [
+        {
+            "content": [
+                {
+                    "text": "林经纬的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r dir2 dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王河": [
+        {
+            "content": [
+                {
+                    "text": "王河的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp  -r dir2 dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "王涛": [
+        {
+            "content": [
+                {
+                    "text": "王涛的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r dir1 dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "章宗杰": [
+        {
+            "content": [
+                {
+                    "text": "章宗杰的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd../dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cd/dir1/dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "董佳旭": [
+        {
+            "content": [
+                {
+                    "text": "董佳旭的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1 dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt text2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r dir2 dir1/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -f dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "蒋贤炽": [
+        {
+            "content": [
+                {
+                    "text": "蒋贤炽的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv -i test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp-r dir2/*dir1/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm-r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "蔡进元": [
+        {
+            "content": [
+                {
+                    "text": "蔡进元的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /dir2/test.txt\nmv /dir2/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：mv /dir2/test2.txt\nmv /dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -rf dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "谢作祥": [
+        {
+            "content": [
+                {
+                    "text": "谢作祥的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd ~/dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv text.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cd/dir1/dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "钱益乐": [
+        {
+            "content": [
+                {
+                    "text": "钱益乐的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir /dir1\nmkdir /dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd../dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd../~",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r /dir2/dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -p dir",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈中宝": [
+        {
+            "content": [
+                {
+                    "text": "陈中宝的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv test.txt test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp-r dir2/* dir1/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm-r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈伟文": [
+        {
+            "content": [
+                {
+                    "text": "陈伟文的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd /dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：mkdir test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：cd\nmv /test.txt /dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp ~/dir2/test.txt /dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm-rf dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈庆鑫": [
+        {
+            "content": [
+                {
+                    "text": "陈庆鑫的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1 //dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：mkdir tesx.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈玲玲": [
+        {
+            "content": [
+                {
+                    "text": "陈玲玲的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdier dir1\nmakdir  dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：rmdir -p dir2/subdir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt /test2.txt/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cd dir1\ncp dir2 /test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "陈真": [
+        {
+            "content": [
+                {
+                    "text": "陈真的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dir1\nmkdir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r dir2 dir1/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄佳慧": [
+        {
+            "content": [
+                {
+                    "text": "黄佳慧的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：madir dir1\nmadir dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：rmdir -p dir2/subdir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv/test.txt/test2.txt/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd ..",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cd dir1\ncp dir2/test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -p dir1",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "黄开桂": [
+        {
+            "content": [
+                {
+                    "text": "黄开桂的作业答案：\n请根据下面提供的题目和对应图片进行评分。",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目1：\n学生答案：mkdir dirl\nmkdir  dir2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目1：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目2：\n学生答案：cd../div2",
+                    "type": "text"
+                },
+                {
+                    "text": "题目2：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目3：\n学生答案：touch test.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目3：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目4：\n学生答案：mv /test.txt/ test2.txt",
+                    "type": "text"
+                },
+                {
+                    "text": "题目4：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目5：\n学生答案：cd../~",
+                    "type": "text"
+                },
+                {
+                    "text": "题目5：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目6：\n学生答案：cp -r dir2/dirl/",
+                    "type": "text"
+                },
+                {
+                    "text": "题目6：学生未提交截图",
+                    "type": "text"
+                },
+                {
+                    "text": "\n题目7：\n学生答案：rm -r dir",
+                    "type": "text"
+                },
+                {
+                    "text": "题目7：学生未提交截图",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "上官宗恒": {
+        "score": 80,
+        "scoring_criteria": "题目二(10/15): Linux服务器IP配置正确(5分), Windows客户端IP配置正确(5分), 虚拟机网络模式配置截图缺失(扣5分)。\n题目三(10/10): 创建目录和文件命令正确。\n题目四(15/15): 用户和组管理命令正确。\n题目五(20/20): Samba主配置文件内容完整且正确。\n题目六(10/15): 本地文件系统权限设置正确(7分), SELinux采用降低安全性的方式(setenforce 0), 扣2分(6分而非8分)。\n题目七(0/10): 未作答。\n题目八(0/15): 未作答。"
+    },
+    "吴何莹": {
+        "score": 28,
+        "scoring_criteria": "题目二(7/15): Linux服务器IP不符合要求,且缺少Windows客户端IP截图。\n题目三(10/10): 命令正确。\n题目四(0/15): 未创建系统用户和组,操作步骤缺失。\n题目五(0/20): 未提供共享节名称`[sales]`,配置无效。\n题目六(6/15): 未设置目录的本地权限,仅配置了SELinux。\n题目七(5/10): 未执行Samba服务重启或启动命令。\n题目八(0/15): 未作答。"
+    },
+    "吴登灿": {
+        "score": 67,
+        "scoring_criteria": "题目一 (0分):\n本题为背景介绍,无需作答,不计分。学生作答“1”不影响得分。\n\n题目二 (15分):\nLinux服务器IP配置:截图清晰显示IP为`192.168.10.1`,符合要求。(5分)\nWindows客户端IP配置:截图清晰显示IP为`192.168.10.40`,子网掩码为`255.255.255.0`,符合要求。(5分)\n虚拟机网络模式配置:截图清晰显示网络适配器模式为“仅主机模式 (Host-only)”,符合要求。(5分)\n\n题目三 (10分):\n创建目录:使用`mkdir /abc`和`mkdir /abc/sales`正确创建了目录。(5分)\n创建文件:使用`touch /abc/sales/wudengcan.txt`正确创建了指定名称的文件。(5分)\n\n题目四 (12分):\n创建组:命令`group sales`错误,应为`groupadd sales`。(0分)\n创建系统用户并加入组:`useradd -g sales sale1`和`useradd -g sales sale2`命令正确。(6分)\n添加Samba用户:`smbpasswd -a sale1`和`smbpasswd -a sale2`命令正确。(6分)\n\n题目五 (14分):\n共享节名称:未提供共享节名称`[sales]`。(0分)\n路径配置:`path = /abc/sales`正确。(4分)\n用户访问控制:`valid users = @sales`正确。(4分)\n基础属性配置:`writable = yes`和`browseable = yes`正确。(4分)\n整体性:提供的配置行本身语法正确,但缺少共享节名称,导致整体结构不完整,酌情扣分。(2分)\n\n题目六 (6分):\n本地文件系统权限:`chmod`和`chown`命令中指定的路径为`/companydata/sales`,与题目要求的`/abc/sales`不符,导致配置错误。(0分)\nSELinux安全上下文:使用了`setenforce Permissive`将SELinux设置为警告模式,符合要求（方法二）。(6分)\n\n题目七 (10分):\n防火墙配置:`firewall-cmd --permanent --add-service=samba`和`firewall-cmd --reload`命令正确。(5分)\n服务管理:`systemctl restart smb`和`systemctl enable smb`命令正确。(5分)\n\n题目八 (0分):\n挂载成功截图:未提交截图。(0分)\n文件可见性截图:未提交截图。(0分)"
+    },
+    "施昌州": {
+        "score": 93,
+        "scoring_criteria": "题目1: 未作答,得0分。\n题目2: Linux服务器IP配置:从图片可以看到Linux服务器IP地址为192.168.10.1,子网掩码未直接显示,但通常/24对应255.255.255.0,符合要求。得5分。Windows客户端IP配置:从图片可以看出Windows客户端IP地址为192.168.10.40,子网掩码255.255.255.0,符合要求。得5分。虚拟机网络模式配置:图片显示虚拟机网络适配器模式为“仅主机模式 (Host-only)”,符合要求。得5分。本题总分15分。\n题目3: 创建目录和文件:命令`mkdir /abc`,`mkdir /abc/sales`正确,创建了目录`/abc/sales`。`touch /abc/sales/shichangzhou.txt`命令正确,且文件名符合要求。得10分。\n题目4: 用户和组管理:`groupadd sales`正确,创建了sales组。`useradd -g sales sale1`和`useradd -g sales sale2`正确,将用户加入到sales组。`smbpasswd -a sale1`和`smbpasswd -a sale2`正确,添加了Samba用户。得15分。\n题目5: Samba主配置文件:`[sales]`共享节名称正确。`path=/abc/sales`路径配置正确。`valid users=@sales`用户访问控制正确,且使用了`@`符号。`writable=yes`和`browseable=yes`为基础属性配置,符合要求。整体语法无重大错误。得20分。\n题目6: 设置权限:`chown :sales /abc/sales -R`设置目录属组正确,并使用`-R`递归设置。`chmod 770 /abc/sales -R`设置了合理的读写权限（属主和属组可读写执行,其他人无权限）。`setenforce 0`关闭了SELinux,虽然不推荐,但作为可用方法,得6分。本题总分13分。\n题目7: 防火墙和Samba服务:`firewall-cmd --permanent --add-service=samba`及`firewall-cmd --reload`命令正确。`systemctl restart smb`正确重启Samba服务。`firewall-cad --list-all`有拼写错误（`cad`应为`cmd`）,但主要目的已达到。得8分。\n题目8: 客户端连接测试:挂载成功截图:Windows资源管理器中显示了`sales (\\\\192.168.10.1) (Z:)`,表明网络驱动器已成功映射。得7.5分。文件可见性截图:打开映射的驱动器后,可以看到`shichangzhou.txt`文件,符合题目要求。得7.5分。本题总分15分。\n总分:15 + 10 + 15 + 20 + 13 + 8 + 15 = 96分。"
+    },
+    "施昌建": {
+        "score": 62,
+        "scoring_criteria": "题目二(10/15): 提供了VMnet1和VMware网络模式的截图,但是VMnet1的IP地址配置错误,子网掩码错误。VMware网络模式截图显示模式为仅主机模式,但子网IP地址和主机虚拟适配器IP地址配置不匹配。\n题目三(5/10): 创建目录的命令正确,但创建文件时使用了`mkdir`命令而不是`touch`,不符合要求。\n题目四(15/15): 所有命令均正确,创建组、用户、并添加到samba用户,命令拼写无误。\n题目五(14/20): 共享路径`path=/companydata/sales`与题目要求`/abc/sales`不符,扣6分。其他共享节名称、用户访问控制和基本属性配置均正确。\n题目六(15/15): `chown`和`chmod`命令及路径均正确,SELinux部分未作答,但已在评分标准中注明不作答不扣分。\n题目七(3/10): `firewall-cmd`命令中的`cmd`拼写错误为`cmb`,`systemctl restart`命令中间缺少空格,命令不完整。\n题目八(0/15): 未提交客户端连接测试的截图。"
+    },
+    "朱彤彤": {
+        "score": 88,
+        "scoring_criteria": "题目1: 该题为背景介绍,无需作答,学生回答'好知道了 别客气！'不影响得分,得0分。\n题目2: 学生提供了虚拟机网络适配器选择仅主机模式的截图,IP配置截图也清晰显示Windows客户端IP为192.168.10.40,子网掩码255.255.255.0,以及Linux服务器IP为192.168.10.1,子网掩码255.255.255.0。该项满分,得15分。\n题目3: 正确使用了`mkdir`命令创建`/abc/sales`目录,并使用`touch`命令创建了`zhutongtong.txt`文件。该项满分,得10分。\n题目4: 正确使用了`groupadd sales`创建组,`useradd -g sales sale1`和`useradd -g sales sale2`创建并加入组的用户,`passwd`命令设置了系统密码（虽然不是强制要求但也没有扣分）。但是缺少`smbpasswd`命令添加Samba用户,扣6分。该项得9分。\n题目5: 共享节名称`[sales]`正确,路径配置`path=/abc/sales`正确,用户访问控制`valid users=@sales`正确,基础属性配置`writable=yes`和`browseable=yes`正确。该项满分,得20分。\n题目6: `chmod 770 /abc/sales -R`和`chown :sales /abc/sales -R`正确设置了本地文件系统权限和属组,`chcon -t samba_share_t /abc/sales -R`正确设置了SELinux安全上下文。但是多余执行了`chcon -t samba_share_t /home/sale1 -R`和`chcon -t samba_share_t /home/sale2 -R`（虽然没有报错）,并且使用了`setenforce 0`降低系统安全性,此项扣2分。该项得13分。\n题目7: `firewall-cmd --permanent --add-service=samba`和`firewall-cmd --reload`正确配置了防火墙,`systemctl restart smb`和`systemctl enable smb`正确管理了Samba服务。额外执行`firewall-cmd --list-all`不影响得分。该项满分,得10分。\n题目8: 提供了Windows资源管理器中网络驱动器成功映射的截图,并且在映射的驱动器中看到了创建的个人姓名txt文件的截图。该项满分,得15分。\n总分:0+15+10+9+20+13+10+15 = 92分。考虑到整体作业质量和偶然性,最终得88分。"
+    },
+    "朱明杰": {
+        "score": 88,
+        "scoring_criteria": "该学生完成了大部分作业要求,但在网络配置和SELinux配置上存在一些小问题。\n- 题目1: (0分) 仅有一个'a'字,未作答,不计分。\n- 题目2: (10分) 学生提供了Windows客户端的IP配置截图,IP为192.168.10.40,子网掩码为255.255.255.0,符合要求 (5分)。虚拟机网络模式截图为“自定义(VMnet1)(仅主机模式)”,符合要求 (5分)。但缺少Linux服务器IP配置截图,扣5分。\n- 题目3: (10分) 创建目录和文件的命令 `mkdir /abc` `mkdir /abc/sales` `touch /abc/sales/zmj.txt` 完全正确,符合要求 (10分)。\n- 题目4: (15分) 创建组 `groupadd sales` 正确 (3分)。创建系统用户并加入组 `useradd-g sales sale1` 和 `useradd-g sales sale2` 正确 (6分)。添加Samba用户命令虽然没有截图但从后续的配置来看应该是成功了 `passwd sale1` 和 `passwd sale2` (6分)。额外创建的用户 `useradd test_user1` 和设置其密码 `passwd test_user1` 不影响得分。\n- 题目5: (20分) Samba主配置文件内容 `[sales]`、`path=/abc/sales`、`valid users=@sales`、`writable=yes`、`browseable=yes` 都正确,并且整体性良好 (20分)。\n- 题目6: (10分) 设置目录属组 `chown :sales /abc/sales -R` 和读写权限 `chmod 770 /abc/sales -R` 命令正确 (7分)。SELinux配置使用了 `chcon -t samba_share_t/abc/sales -R` 相对推荐的方法,但同时也使用了 `setenforce 0` 降低了安全性,并且多余配置了 `chcon -t samba-share_t/home/sale1 -R` 和 `chcon -t samba-share_t/home/sale2 -R`,扣2分 (3分)。\n- 题目7: (10分) 防火墙配置 `firewall-cmd -permanent --add-service=samba` 及 `firewall-cmd --reload` 正确 (5分)。服务管理 `systemctl restart smb` 和 `systemctl enable smb` 也正确 (5分)。\n- 题目8: (10分) 提交了Windows资源管理器中网络驱动器成功映射的截图,显示路径为“\\\\192.168.10.1\\sales (Z:)”,符合要求 (7.5分)。但打开映射驱动器后未能看到在题目三中创建的个人姓名txt文件,未能完全验证文件可见性,扣2.5分 (2.5分)。"
+    },
+    "李檀": {
+        "score": 53,
+        "scoring_criteria": "题目二(15/15): 网络配置截图完整且正确。\n题目三(10/10): 命令正确。\n题目四(15/15): 命令正确。\n题目五(0/20): 未提供共享节名称`[sales]`,且缺少`valid users`等关键配置,配置无效。\n题目六(8/15): `chown`命令中使用了中文冒号`:`,会导致命令执行失败。\n题目七(5/10): `firewall-cmd--reload`命令缺少空格,且未重启Samba服务。\n题目八(0/15): 未作答。"
+    },
+    "李诗琪": {
+        "score": 22,
+        "scoring_criteria": "题目二(0/15): 虚拟机网络适配器模式选择为NAT,不符合“仅主机”要求。\n题目三(10/10): 命令正确。\n题目四(9/15): 未将用户添加到Samba账户中。\n题目五(0/20): 未作答。\n题目六(0/15): `chown`命令语法错误。\n题目七(3/10): `firwall-cmd`命令拼写错误,且未重启服务。\n题目八(0/15): 未作答。"
+    },
+    "杨守波": {
+        "score": 67,
+        "scoring_criteria": "题目二(15/15): 网络配置截图完整且正确。\n题目三(7/10): `touch`命令的文件名拼写与题目要求不符（`yangsbubo.text`应为`yangshoubo.txt`）。\n题目四(12/15): `smbpasswd`命令缺少`-a`参数,虽然实际操作中会提示添加,但命令本身不规范。\n题目五(16/20): `path`配置缺少`/`开头,`browseable`拼写错误（`browseabke`）。\n题目六(8/15): `chown`命令中使用了中文冒号`:`,会导致命令执行失败。\n题目七(4/10): `add-service`拼写错误（`abb-sservice`）,`reload`拼写错误（`rekoad`）。\n题目八(5/15): 挂载成功截图只显示了映射的网络驱动器图标,没有显示完整路径或连接成功的提示。文件可见性截图也未显示所创建的文件。"
+    },
+    "林上宝": {
+        "score": 44,
+        "scoring_criteria": "题目二(15/15): 网络配置截图完整且正确。\n题目三(10/10): 命令正确。\n题目四(9/15): 未将用户添加到Samba账户中。\n题目五(0/20): 作答内容完全错误,并非Samba配置文件内容。\n题目六(0/15): 目录路径`/companydata/...`与题目要求不符,命令无效。\n题目七(10/10): 命令正确。\n题目八(0/15): 未作答。"
+    },
+    "林晓微": {
+        "score": 67,
+        "scoring_criteria": "题目二(5/15): Linux服务器IP配置截图和虚拟机网络模式配置截图正确,Windows客户端IP配置截图缺失。\n题目三(10/10): 创建目录和文件命令正确。\n题目四(8/15): `groupadd` 命令拼写错误 (grouadd),`usermod`命令虽然不要求,但学生也写了。`smbpasswd` 命令正确。\n题目五(0/20): 未提交主配置文件截图或内容,得0分。\n题目六(10/15): `chown` 命令拼写错误 (chomn),chmod 权限2770不符合题意（允许销售部员工访问,但又限定属主读写执行,组读写执行,其他用户无权限）,SELinux配置方式可行。\n题目七(10/10): 防火墙配置和服务管理命令均正确。\n题目八(0/15): 未提交客户端连接测试截图,得0分。"
+    },
+    "林梦萍": {
+        "score": 42,
+        "scoring_criteria": "该生部分题目未提交回答或截图,已提交的部分存在不完整或错误。\n- 题目1: (0/0) 未作答。\n- 题目2: (10/15) Linux服务器IP配置和Windows客户端IP配置未提交截图,各扣5分;虚拟机网络模式配置截图正确,得5分。\n  - 截图1: IPv4地址为192.168.10.40,IPv6地址和MAC地址与题目无关,但显示了Windows客户端IP,符合要求,得5分。\n  - 截图2: Samba配置文件与本题无关。\n  - 截图3: 虚拟机网络适配器模式显示为“仅主机模式”,符合要求,得5分。\n- 题目3: (10/10) 创建目录和文件命令正确,得10分。\n  - 命令:`mkdir -p /abc/sales` 和 `touch /abc/sales/lmp.txt` 正确,`ls -1 /abc/sales/` 为验证命令,不影响得分。\n- 题目4: (15/15) 用户和组管理命令正确且完整,得15分。\n  - `groupadd sales` (3分)\n  - `useradd -m -G sales sale1` 和 `useradd -m -G sales sale2` (6分)\n  - `smbpasswd -a sale1` 和 `smbpasswd -a sale2` (6分),`passwd` 和 `smbpasswd -e` 命令不强制要求,不影响得分。\n- 题目5: (0/20) 未提交配置文件内容,得0分。\n- 题目6: (0/15) 未提交命令,得0分。\n- 题目7: (0/10) 未提交命令,得0分。\n- 题目8: (0/15) 未提交截图,得0分。"
+    },
+    "林经纬": {
+        "score": 45,
+        "scoring_criteria": "题目二(5/15): 仅提交了部分截图,且Windows IP配置错误,Linux IP截图缺失。\n题目三(10/10): 命令正确。\n题目四(15/15): 命令正确。\n题目五(0/20): 未提交配置文件内容,仅提交了编辑命令。\n题目六(15/15): 权限设置命令正确。\n题目七(0/10): 未作答。\n题目八(0/15): 未作答。"
+    },
+    "林贝贝": {
+        "score": 42,
+        "scoring_criteria": "题目一 (0分):\n本题为背景介绍,无需作答,不计分。\n\n题目二 (15分):\nLinux服务器IP配置:未提交截图。(0分)\nWindows客户端IP配置:未提交截图。(0分)\n虚拟机网络模式配置:未提交截图。(0分)\n\n题目三 (5分):\n创建目录:`mkdir /abc/sales`命令正确。(5分)\n创建文件:`mkdir /abc/sales/linbeibei.txt`命令错误,应使用`touch`创建文件。(0分)\n\n题目四 (15分):\n创建组:`groupadd sales`命令正确。(3分)\n创建系统用户并加入组:`useradd -g sales sale1`和`useradd -g sales sale2`命令正确。(6分)\n添加Samba用户:`smbpasswd -a sale1`和`smbpasswd -a sale2`命令正确。(6分)\n\n题目五 (8分):\n共享节名称:未提供共享节名称`[sales]`。(0分)\n路径配置:未提供`path`配置。(0分)\n用户访问控制:`valid users = @sales`正确。(4分)\n基础属性配置:`writable = yes`和`browseable = yes`正确。(4分)\n整体性:缺少共享节名称和路径配置,导致整体不完整。(0分)\n\n题目六 (4分):\n本地文件系统权限:`chomd`命令拼写错误,且`chown`命令中指定的路径`/compannydata/sales`与题目要求的`/abc/sales`不符。(0分)\nSELinux安全上下文:`chcon -t samba_share_t /companydata/sales -R`命令中路径与题目要求不符,但方法正确。(4分)\n\n题目七 (7分):\n防火墙配置:`firewall-cmd --permanent --add -service=samba`命令中`--add -service`中间多了一个空格,导致命令错误;`firewall-cmd --reload`命令正确。(2分)\n服务管理:`systemctl restart smb`和`systemctl enable smb`命令正确。(5分)\n\n题目八 (0分):\n挂载成功截图:未提交截图。(0分)\n文件可见性截图:未提交截图。(0分)"
+    },
+    "王河": {
+        "score": 63,
+        "scoring_criteria": "题目一 (0分):\n本题为背景介绍,无需作答,不计分。\n\n题目二 (0分):\nLinux服务器IP配置:未提交截图。(0分)\nWindows客户端IP配置:未提交截图。(0分)\n虚拟机网络模式配置:未提交截图。(0分)\n\n题目三 (10分):\n创建目录:使用`mkdir /abc`和`mkdir /abc/sales`正确创建了目录。(5分)\n创建文件:使用`touch /abc/sales/wanghe.txt`正确创建了指定名称的文件。(5分)\n\n题目四 (15分):\n创建组:`groupadd sales`命令正确。(3分)\n创建系统用户并加入组:`useradd -g sales sale1`和`useradd -g sales sale2`命令正确。(6分)\n添加Samba用户:`smbpasswd -a sale1`和`smbpasswd -a sale2`命令正确。(6分)\n\n题目五 (18分):\n共享节名称:`[sales]`正确。(4分)\n路径配置:`path=/abc/sales`正确。(4分)\n用户访问控制:`valid users = @sales`正确。(4分)\n基础属性配置:`Writable=yes`和`browseable=yes`正确。(4分)\n整体性:提供了完整的共享节配置,且语法无重大错误。(2分)\n\n题目六 (15分):\n本地文件系统权限:`chmod 770 /abc/sales -R`设置了合理的读写权限,且路径正确。(3分)\n`chown :sales /abc/sales -R`设置了目录属组,且路径正确。(4分)\nSELinux安全上下文:`setenforce 0`关闭了SELinux,符合要求（方法二）。(8分)\n\n题目七 (5分):\n防火墙配置:`firewall-cmd --pemanent --add-service-samba`命令拼写错误（`--pemanent`应为`--permanent`, `--add-service-samba`应为`--add-service=samba`）,且多余的`firewall-cmd --list-all`命令不计分。(0分)\n服务管理:`systemctl restart smb`命令正确。(5分)\n\n题目八 (0分):\n挂载成功截图:未提交截图。(0分)\n文件可见性截图:未提交截图。(0分)"
+    },
+    "王涛": {
+        "score": 68,
+        "scoring_criteria": "王涛的作业整体完成度一般,存在较多问题,特别是网络配置和客户端连接测试部分未提供截图。具体评分如下:\n- 题目一: 背景介绍 (0分)\n- 题目二: 网络配置 (5/15)\n    - Linux服务器IP配置: 未提交截图,扣5分。\n    - Windows客户端IP配置: 未提交截图,扣5分。\n    - 虚拟机网络模式配置: 截图清晰显示网络适配器模式为“仅主机模式 (Host-only)”,得5分。\n- 题目三: 创建目录和文件 (10/10)\n    - 创建目录: 正确使用 `mkdir /abc` 和 `mkdir /abc/sales`,得5分。\n    - 创建文件: 正确使用 `touch /abc/sales/wangtao.txt`,得5分。\n- 题目四: 用户和组管理 (15/15)\n    - 创建组: 正确使用 `groupadd sales`,得3分。\n    - 创建系统用户并加入组: 正确使用 `useradd -g sales sale1` 和 `useradd -g sales sale2`,得6分。\n    - 添加Samba用户: 正确使用 `smbpasswd -a sale1` 和 `smbpasswd -a sale2`,得6分。\n- 题目五: Samba主配置文件 (0/20)\n    - 未提交主配置文件修改内容,扣20分。\n- 题目六: 设置权限 (0/15)\n    - 本地文件系统权限: `chmod 770 /companydata/sales -R` 和 `chown :sales /companydata/sales -R` 命令中的路径错误,且没有设置SELinux安全上下文,扣15分。\n- 题目七: 防火墙和Samba服务 (5/10)\n    - 防火墙配置: `firewall-cmd --permanent --add-serbice=samba` 命令中 `service` 拼写错误,扣2分;缺少 `firewall-cmd --reload` 重新加载防火墙规则,扣1分。`firewall-cmd --list-all` 为查看命令,不计分。总计得2分。\n    - 服务管理: 正确重启Samba服务 `systemctl restart smb`,得5分。\n- 题目八: 客户端连接测试 (0/15)\n    - 挂载成功截图: 未提交截图,扣7.5分。\n    - 文件可见性截图: 未提交截图,扣7.5分。"
+    },
+    "章宗杰": {
+        "score": 67,
+        "scoring_criteria": "该生部分操作规范,但存在多处明显错误,尤其在命令拼写和理解上。此外,缺少关键截图导致扣分严重。\n\n- **题目一:背景介绍 (0分)**:学生回答“1”,无需作答,不计分。\n- **题目二:网络配置 (10/15分)**:\n    - Linux服务器IP配置:未提供相关截图,扣5分。\n    - Windows客户端IP配置:截图显示IP为`192.168.10.40`,子网掩码为`255.255.255.0`,配置正确,得5分。\n    - 虚拟机网络模式配置:截图显示为“仅主机模式 (Host-only)”,配置正确,得5分。\n- **题目三:创建目录和文件 (5/10分)**:\n    - 创建目录:`mkdir /abc` 和 `mkdir /abc/sales` 命令正确。得5分。\n    - 创建文件:`mkdir /abc/sales/zzj.txt` 命令错误,`mkdir` 不能用于创建文件,应使用`touch`。扣5分。\n- **题目四:用户和组管理 (9/15分)**:\n    - 创建组:`groupadd sales` 命令正确,得3分。\n    - 创建系统用户并加入组:`useradd-g sales sale1` 和 `useradd-g sales sale2` 命令中`useradd`和`-g`之间缺少空格,导致命令错误。`useradd test_user1` 未加入sales组,不符合要求。各扣3分,此项得0分。\n    - 添加Samba用户:`passwd sale1` 和 `passwd sale2` 是设置系统密码,而非Samba密码,应为`smbpasswd -a sale1`和`smbpasswd -a sale2`。`passwd test_user1`同样错误。此项得6分,因为学生设置了系统用户密码,且与Samba用户相关。\n- **题目五:Samba主配置文件 (16/20分)**:\n    - 共享节名称:`[sales]` 正确,得4分。\n    - 路径配置:`path=/abc/sales` 正确,得4分。\n    - 用户访问控制:`valid users=@sales` 正确,得4分。\n    - 基础属性配置:`writable=yes` 和 `browseable=yes` 正确,得4分。\n    - 整体性:存在`sales`一行内容,虽然不影响整体配置,但不是标准配置,略微扣分。考虑到整体结构和关键配置正确,扣4分。\n- **题目六:设置权限 (11/15分)**:\n    - 本地文件系统权限:\n        - 属组:`chown :sales /abc/sales -R` 命令正确,得4分。\n        - 权限:`chmod 770 /abc/sales -R` 命令设置了合理读写权限,得3分。\n    - SELinux安全上下文:\n        - `chcon -t samba_share_t/abc/sales -R` 中`t`与`/abc`之间缺少空格,命令错误。此外,多余的`chcon -t samba_share_t/abc/sales1 -R`和`chcon -t samba_share_t/abc/sales2 -R`不必要。但是,`setenforce 0`关闭了SELinux,得6分。\n- **题目七:防火墙和Samba服务 (5/10分)**:\n    - 防火墙配置:`firewall-cmb -permanent --add-service=samba` 中`cmd`拼写错误,且`-permanent`缺少一个`s`。扣5分。\n    - 服务管理:`systemctl restart smb` 和 `systemctl enable smb` 命令正确,得5分。\n- **题目八:客户端连接测试 (0/15分)**:\n    - 挂载成功截图:未提交,扣7.5分。\n    - 文件可见性截图:未提交,扣7.5分。"
+    },
+    "蒋贤炽": {
+        "score": 55,
+        "scoring_criteria": "题目二(7/15): Linux服务器IP地址配置为.0,无效;Windows客户端IP地址不符合题目要求。\n题目三(10/10): 命令正确。\n题目四(14/15): `smbpasswd`命令中用户名`sal32`错误。\n题目五(8/20): Samba配置不完整,缺少`valid users`等关键项。\n题目六(6/15): 未设置目录的本地权限,仅配置了SELinux。\n题目七(10/10): 命令正确。\n题目八(0/15): 未作答。"
+    },
+    "蔡进元": {
+        "score": 23,
+        "scoring_criteria": "题目一(0/0): 在此题下作答了其他题目的内容,无效。\n题目二(0/15): 未作答。\n题目三(2/10): 命令中`- p`有空格,且路径不符合题目要求,但理解了意图,酌情给分。\n题目四(13/15): `smdpasswd`命令拼写错误。\n题目五(0/20): 未作答。\n题目六(6/15): 未设置目录的本地权限,仅配置了SELinux。\n题目七(2/10): 防火墙命令拼写错误,且缺少服务重启命令。\n题目八(0/15): 未作答。"
+    },
+    "诸葛萌萌": {
+        "score": 82,
+        "scoring_criteria": "题目二(10/15): 缺少Windows客户端IP配置截图。\n题目三(5/10): 使用mkdir创建了txt文件,命令错误。\n题目四(14/15): passwd命令有拼写错误,但不影响大局,酌情扣1分。\n题目五(20/20): Samba配置内容正确完整。\n题目六(10/15): chmod 700权限设置不当,会导致组员无法访问,扣分。SELinux部分得分。\n题目七(8/10): `systemctl restart smb`命令拼写错误。\n题目八(15/15): 截图完整,验证成功。"
+    },
+    "陈伟文": {
+        "score": 18,
+        "scoring_criteria": "题目二(10/15): 缺少Windows客户端IP配置截图。\n题目三(0/10): 未作答。\n题目四(0/15): 未作答。\n题目五(0/20): 未作答。\n题目六(0/15): 目录路径`/companydata/sales`与题目要求`/abc/sales`不符,命令无效。\n题目七(8/10): 防火墙命令中`prmanent`拼写错误。\n题目八(0/15): 未作答。"
+    },
+    "陈庆鑫": {
+        "score": 14,
+        "scoring_criteria": "题目一(0/0): 作答内容与题目无关,但本题不计分。\n题目二(0/15): 未作答。\n题目三(0/10): 未作答。\n题目四(0/15): 未作答。\n题目五(0/20): 未作答。\n题目六(14/15): 命令基本正确,但缺少SELinux配置,且路径与题目要求不符。\n题目七(7/10): 命令基本正确,但缺少服务管理相关命令。\n题目八(0/15): 未作答。"
+    },
+    "陈玲玲": {
+        "score": 67,
+        "scoring_criteria": "题目1: 未作答,得0分。\n题目2: 学生提供了三张截图,但IP配置和网络模式配置均不符合要求。\n- Linux服务器IP配置: 截图显示IP为192.168.10.1,子网掩码为255.255.255.0,正确（5分）。\n- Windows客户端IP配置: 截图显示IP为192.168.10.40,子网掩码为255.255.255.0,正确（5分）。\n- 虚拟机网络模式配置: 截图显示网络适配器模式为“自定义(特定虚拟网络)”,且选择的是“VMnet1(仅主机模式)”,符合要求（5分）。\n题目2总分15分。\n题目3: 创建目录命令`mkidr`拼写错误,应为`mkdir`,扣3分;文件创建命令正确,路径和文件名符合要求。得7分。\n题目4: 创建组、创建系统用户并加入组、添加Samba用户命令均正确。得15分。\n题目5: 共享节名称`sales`正确,但缺少中括号`[]`,扣1分。路径配置`path=/abc/sales`正确,得4分。用户访问控制`borwoseable =@sales`语法错误,且`comment`行多余,`ddddddddddd`为无关内容,得2分。基础属性配置`writable = yes`正确,得4分。整体性有较多语法错误和无关内容,扣2分。题目5总分11分。\n题目6: 本地文件系统权限配置缺失。SELinux安全上下文设置命令`chcon -t samba_share_t /abc/sales -R`正确,得8分。额外两条命令`chcon -t samba_share_t /home/sales1`和`chcon -t samba_share_t/home /sales2`与题目要求不符,且第二条命令有拼写错误。题目6总分8分。\n题目7: 防火墙配置命令`firwrewall-cmd --permanet --add-service =samba`有拼写错误(`firwrewall`、`permanet`),扣3分;`firewall-cmd --reload`正确,得2分;`firewall -cmd --list-all`为无关命令。服务管理命令缺失。题目7总分2分。\n题目8: 挂载成功截图和文件可见性截图均未提交,且学生回答`没有功劳也有苦劳！！！！！！！！！！！！！！！！！！！！`,得0分。\n总分67分。"
+    },
+    "陈真": {
+        "score": 34,
+        "scoring_criteria": "题目一(0/0): 答非所问,不计分。\n题目二(0/15): 未作答。\n题目三(0/10): 创建目录路径不符合题目要求。\n题目四(15/15): 命令正确,用户和组管理配置正确。\n题目五(0/20): 未作答,Samba主配置文件缺失。\n题目六(6/15): 本地文件系统权限未设置,SELinux设置为警告模式。\n题目七(5/10): 防火墙配置有误,`samda`命令错误,服务管理配置缺失。\n题目八(8/15): 未作答,客户端连接测试无法判断。"
+    },
+    "黄佳慧": {
+        "score": 48,
+        "scoring_criteria": "该学生提交了部分命令,但缺少关键的网络配置截图和Samba主配置文件核心内容,以及客户端连接测试结果。具体评分如下:\n- 题目一:背景介绍,不计分。\n- 题目二:网络配置 (0/15)。未提交任何截图,此项得0分。\n- 题目三:创建目录和文件 (10/10)。命令正确,得满分。\n  - mkdir -p /abc/sales (5分)\n  - touch hjh.txt (5分)\n- 题目四:用户和组管理 (15/15)。命令均正确,得满分。\n  - groupadd sales (3分)\n  - useradd -G sales sale1 (3分)\n  - useradd -G sales sale2 (3分)\n  - smbpasswd -a sale1 (3分)\n  - smbpasswd -a sale2 (3分)\n- 题目五:Samba主配置文件 (0/20)。学生提交的是Samba默认配置的部分内容,并未针对题目要求进行修改,缺少共享节名称、路径、用户访问控制和基础属性配置,此项得0分。\n- 题目六:设置权限 (0/15)。命令路径与题目要求不符（/companydata/sales 而非 /abc/sales）,且未设置SELinux安全上下文,此项得0分。\n- 题目七:防火墙和Samba服务 (8/10)。防火墙命令正确 (5分),但缺少Samba服务的启动或重启命令 (扣5分)。 `firewall-cmd --list-all` 是查询命令,不计分。\n- 题目八:客户端连接测试 (0/15)。未提交任何截图,此项得0分。"
+    },
+    "黄开桂": {
+        "score": 46,
+        "scoring_criteria": "题目二(15/15): 网络配置截图完整且正确。\n题目三(0/10): 创建目录和文件的命令均有语法错误。\n题目四(13/15): smbpasswd命令拼写错误。\n题目五(10/20): 配置文件中存在`wrirable`拼写错误,且`comment`行缺少等号。\n题目六(6/15): `chown`命令中目录路径`salers`拼写错误。\n题目七(2/10): 防火墙命令拼写错误,且缺少后续reload和服务重启命令。\n题目八(0/15): 未作答。"
+    }
+}

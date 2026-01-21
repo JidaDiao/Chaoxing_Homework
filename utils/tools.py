@@ -232,8 +232,9 @@ def convert_url(original_url, page_number=1):
     query_params = parse_qs(parsed_url.query)
 
     courseid = query_params.get("courseid", [""])[0]
-    clazzid = query_params.get("clazzid", [""])[0]
+    clazzid = query_params.get("clazzid", ["0"])[0]  # 默认为0
     cpi = query_params.get("cpi", [""])[0]
+    selectClassid = query_params.get("selectClassid", ["0"])[0]  # 从原URL提取
 
     new_params = {
         "courseid": courseid,
@@ -244,7 +245,7 @@ def convert_url(original_url, page_number=1):
         "status": "-1",
         "pages": str(page_number),
         "size": "12",
-        "selectClassid": "0",
+        "selectClassid": selectClassid,  # 使用从原URL提取的值
         "search": "",
         "v": "0",
         "topicid": "0",

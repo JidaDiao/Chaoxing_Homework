@@ -52,16 +52,19 @@ class HomeworkGrader(IHomeworkGrader):
             prepare_system_prompt=config.prepare_system_prompt,
             few_shot_learning_system_prompt=config.few_shot_learning_system_prompt
         )
+
+        # 初始化 ScoreProcessor 并传入回调函数
         self.score_processor = ScoreProcessor(
             ai_client=self.ai_client,
-            prepare_model=config.prepare_model,
-            gen_model=config.gen_model,
-            number_prepare_min=config.number_prepare_min,
-            number_gen_min=config.number_gen_min
+            prepare_model=self.config.prepare_model,
+            gen_model=self.config.gen_model,
+            number_prepare_min=self.config.number_prepare_min,
+            number_gen_min=self.config.number_gen_min,
+            score_callback=self._save_score_callback
         )
-        self.homework_processor = HomeworkProcessor(
-            max_workers=config.max_workers
-        )
+
+        # 初始化 HomeworkProcessor
+        self.homework_processor = HomeworkProcessor()
 
     def run(self) -> None:
         """运行作业批改流程
@@ -139,6 +142,23 @@ class HomeworkGrader(IHomeworkGrader):
             logging.error(f"作业批改过程中发生错误: {str(e)}")
             # 可以添加适当的清理代码
 
+
+    def _save_score_callback(self, current_scores: Dict[str, Any], updated_students: List[str]) -> None:
+            """分数保存回调函数
+
+            Args:
+                current_scores: 当前所有学生分数
+                updated_students: 本次更新的学生列表
+            """
+            try:
+                self.file_manager.save_json_file(
+                    current_scores,
+                    "original_student_score.json"
+                )
+                logging.info(f"已保存学生 {updated_students} 的分数到文件")
+            except Exception as e:
+                logging.error(f"保存分数文件时出错: {str(e)}")
+
     def _grade_remaining_homework(self, homework_data: Dict[str, Any],
                                   grading_standard: str, number_gen: int) -> None:
         """批改剩余的作业
@@ -155,16 +175,10 @@ class HomeworkGrader(IHomeworkGrader):
         few_shot_learning_system_prompt = self.message_builder.gen_few_shot_learning_system_prompt(
                     homework_data, grading_standard
                 )
-        # for _, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items()):                
-        #     selected_dict_uncorrected = {student_name: student_answer}
-        #     self.score_processor.gen_score(
-        #                 number_gen,
-        #                 selected_dict_uncorrected,
-        #                 few_shot_learning_system_prompt,)
 
         # 使用线程池并行批改作业
         with ThreadPoolExecutor(max_workers=self.config.max_workers) as executor:
-            for _, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items()):                
+            for _, (student_name, student_answer) in enumerate(student_answers_prompt_uncorrected.items()):
                 selected_dict_uncorrected = {student_name: student_answer}
                 executor.submit(
                     self.score_processor.gen_score,
@@ -172,12 +186,13 @@ class HomeworkGrader(IHomeworkGrader):
                     selected_dict_uncorrected,
                     few_shot_learning_system_prompt,
                 )
+        
+        # 注意：现在不需要在这里保存，因为回调函数会实时保存
+        # self.file_manager.save_json_file(
+        #     self.score_processor.get_final_scores(),
+        #     "original_student_score.json"
+        # )
 
-                # 保存原始评分结果
-        self.file_manager.save_json_file(
-            self.score_processor.get_final_scores(),
-            "original_student_score.json"
-        )
 
     def _save_results(self) -> None:
         """保存批改结果

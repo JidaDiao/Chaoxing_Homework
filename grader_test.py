@@ -3,12 +3,15 @@ from config.args import config
 import logging
 
 
-# config.api_key = "sk-1234567"
-# config.base_url = "http://127.0.0.1:8126/v1"
-# config.prepare_model = "grok-3"
-config.number_prepare_max = 5
-# config.gen_model = "grok-3"
+config.api_key = "sk-7xg4nuFTWoLsWNsUbAMnwTclY4pubU9AiJ0DWsXUVubxiAkl"
+config.base_url = "https://a1.aizex.me/v1"
+config.prepare_model = "gemini-2.5-pro"
+config.number_prepare_max = 10
+config.number_gen_max = 1
+# config.gen_model = "gemini-2.5-pro"
+config.gen_model = "gemini-2.5-flash"
 # config.max_workers = 1
+
 
 def main():
     """
