@@ -121,6 +121,24 @@ class FileManager(IFileManager):
         except IOError as e:
             logging.error(f"保存JSON文件时出错: {str(e)}")
             raise
+
+    @staticmethod
+    def save_score_results(scores: Dict[str, Any], file_path: str = "original_student_score.json") -> None:
+        """保存评分结果，保持兼容的字段结构"""
+        normalized_scores: Dict[str, Dict[str, Any]] = {}
+        for name, value in scores.items():
+            if isinstance(value, dict):
+                score = value.get("score", 0)
+                criteria = value.get("scoring_criteria", value.get("criteria", ""))
+            else:
+                score = value
+                criteria = ""
+            normalized_scores[name] = {
+                "score": score,
+                "scoring_criteria": criteria,
+            }
+
+        FileManager.save_json_file(normalized_scores, file_path)
     
     @staticmethod
     def read_grading_standard(file_path: str = "./评分标准.md") -> str:

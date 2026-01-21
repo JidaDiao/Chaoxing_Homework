@@ -158,6 +158,40 @@ class IScoreProcessor(ABC):
         pass
 
 
+class IScoreSessionProcessor(ABC):
+    """Score processor interface for session-based grading."""
+
+    @abstractmethod
+    def initialize_context(self, homework_data: Dict[str, Any], homework_id: str) -> Any:
+        """Initialize grading context for a homework session."""
+        pass
+
+    @abstractmethod
+    def attach_grading_standard(self, grading_standard: str) -> str:
+        """Attach an existing grading standard to the session."""
+        pass
+
+    @abstractmethod
+    def generate_grading_standard(self, sample_students: Dict[str, Any], number: int) -> str:
+        """Generate grading standard and sample scores."""
+        pass
+
+    @abstractmethod
+    def grade_students_batch(self, students: Dict[str, Any]) -> Any:
+        """Grade a batch of students in a session."""
+        pass
+
+    @abstractmethod
+    def get_all_scores(self) -> Dict[str, Dict[str, Any]]:
+        """Return scores in legacy schema."""
+        pass
+
+    @abstractmethod
+    def get_grading_standard(self) -> str:
+        """Return grading standard text."""
+        pass
+
+
 class IFileManager(ABC):
     """文件管理器接口，负责文件操作，包括读写JSON、Excel等"""
     
