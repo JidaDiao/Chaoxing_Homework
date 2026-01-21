@@ -1,20 +1,45 @@
-from grader.homework_grader import HomeworkGrader
-from config._args import config
+import argparse
+import asyncio
 import logging
-from crawler.homework_crawler import ChaoxingHomeworkCrawler
+
+from config._args import config
+from crawler.crawler import ChaoxingCrawler
+from grader.homework_grader import HomeworkGrader
 
 
-def main():
-    ChaoxingHomeworkCrawler.create(config, headless=False).run()
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-    # 创建作业批改器实例，直接传入config对象
+
+async def run_crawler() -> list:
+    crawler = ChaoxingCrawler(config)
+    return await crawler.run()
+
+
+def run_grader() -> None:
     grader = HomeworkGrader(config=config)
-
-    # 运行作业批改流程
-    logging.info("开始运行作业批改流程...")
+    logging.info("Starting grading flow...")
     grader.run()
-    logging.info("作业批改流程完成")
+    logging.info("Grading flow finished")
+
+
+async def main() -> None:
+    parser = argparse.ArgumentParser(description="超星作业自动批改系统")
+    parser.add_argument(
+        "--mode",
+        choices=["crawl", "grade", "all"],
+        default="all",
+        help="运行模式: crawl=仅爬取, grade=仅批改, all=全部",
+    )
+    args = parser.parse_args()
+
+    if args.mode in ["crawl", "all"]:
+        logging.info("Starting crawl flow...")
+        saved_dirs = await run_crawler()
+        logging.info("Crawl finished, saved %s homework folders", len(saved_dirs))
+
+    if args.mode in ["grade", "all"]:
+        run_grader()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
