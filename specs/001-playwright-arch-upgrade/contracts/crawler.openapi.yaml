@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Chaoxing Crawler Contracts (Logical)
+  version: 1.0.0
+  description: |
+    Logical data contracts for crawler inputs/outputs to preserve grader compatibility.
+paths:
+  /crawl:
+    post:
+      summary: Start crawl for configured courses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CrawlRequest"
+      responses:
+        "200":
+          description: Crawl completed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CrawlResponse"
+  /answers/{answerId}:
+    get:
+      summary: Fetch a single answer result
+      parameters:
+        - in: path
+          name: answerId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Answer result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnswerResult"
+components:
+  schemas:
+    CrawlRequest:
+      type: object
+      required:
+        - course_urls
+      properties:
+        course_urls:
+          type: array
+          items:
+            type: string
+        class_list:
+          type: array
+          items:
+            type: string
+        homework_name_list:
+          type: array
+          items:
+            type: string
+        min_ungraded_students:
+          type: integer
+          minimum: 0
+    CrawlResponse:
+      type: object
+      properties:
+        success_count:
+          type: integer
+          minimum: 0
+        failure_count:
+          type: integer
+          minimum: 0
+        saved_paths:
+          type: array
+          items:
+            type: string
+    AnswerResult:
+      type: object
+      properties:
+        题目:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/Question"
+        学生回答:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/StudentAnswers"
+    Question:
+      type: object
+      properties:
+        题干:
+          $ref: "#/components/schemas/ContentBlock"
+        正确答案:
+          type: string
+    StudentAnswers:
+      type: object
+      additionalProperties:
+        $ref: "#/components/schemas/ContentBlock"
+    ContentBlock:
+      type: object
+      properties:
+        text:
+          type: array
+          items:
+            type: string
+        images:
+          type: array
+          items:
+            type: string
