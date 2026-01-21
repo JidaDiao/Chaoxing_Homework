@@ -31,14 +31,17 @@ class BrowserManager:
         if self._playwright or self._browser:
             return
         self._playwright = await async_playwright().start()
-        self._browser = await self._playwright.chromium.launch(
-            headless=self.headless,
-            args=[
+        launch_options: Dict[str, object] = {
+            "headless": self.headless,
+            "args": [
                 "--disable-blink-features=AutomationControlled",
                 "--no-sandbox",
                 "--disable-dev-shm-usage",
             ],
-        )
+        }
+        if self.download_path:
+            launch_options["downloads_path"] = self.download_path
+        self._browser = await self._playwright.chromium.launch(**launch_options)
         logging.info("Playwright browser started (headless=%s)", self.headless)
 
     async def stop(self) -> None:
@@ -94,7 +97,6 @@ class BrowserManager:
         }
         if self.download_path:
             options["accept_downloads"] = True
-            options["downloads_path"] = self.download_path
         context = await self._browser.new_context(**options)
         context.set_default_timeout(30000)
         return context
