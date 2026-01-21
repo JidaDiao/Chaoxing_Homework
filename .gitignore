@@ -43,6 +43,7 @@ env/
 .DS_Store
 .AppleDouble
 .LSOverride
+Thumbs.db
 
 # Private & Archive
 _private_backup/

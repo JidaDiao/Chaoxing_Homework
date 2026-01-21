@@ -18,12 +18,17 @@ Chaoxing_Homework/
 │
 ├── main.py                  # 项目主入口
 ├── config/
-│   └── args.py              # 配置参数与命令行解析
+│   └── _args.py             # 配置参数与命令行解析
+├── core/
+│   └── browser.py           # Playwright 浏览器管理
 ├── crawler/                 # 作业爬取相关代码
-│   ├── homework_crawler.py
-│   ├── homework_processor_impl.py
-│   ├── webdriver_factory.py
-│   ├── login_strategies.py
+│   ├── client.py
+│   ├── crawler.py
+│   ├── processor.py
+│   ├── auth/
+│   │   ├── base.py
+│   │   ├── password.py
+│   │   └── qrcode.py
 │   └── interface.py
 ├── grader/                  # 作业批改相关代码
 │   ├── homework_grader.py
@@ -51,13 +56,14 @@ Chaoxing_Homework/
 pip install -r requirements.txt
 ```
 
-如未提供 `requirements.txt`，请根据实际代码补充依赖（如 selenium、requests、openai、tqdm、loguru 等）。
+如未提供 `requirements.txt`，请根据实际代码补充依赖（如 playwright、beautifulsoup4、requests、openai 等）。
+迁移到 Playwright 后，请额外执行 `playwright install chromium`。
 
 ---
 
 ## 配置说明
 
-所有参数均可通过 `config/args.py` 配置，支持命令行传参。
+所有参数均可通过 `config/_args.py` 配置，支持命令行传参。
 
 常用参数说明：
 
@@ -68,7 +74,7 @@ pip install -r requirements.txt
 - `--course_urls`：要爬取的课程URL列表
 - `--class_list`：要爬取的班级列表
 - `--homework_name_list`：要爬取的作业名列表
-- 其他参数详见 `config/args.py` 注释
+- 其他参数详见 `config/_args.py` 注释
 
 **示例：**
 
@@ -81,7 +87,7 @@ python main.py --api_key=你的APIKEY --phonenumber=手机号 --password=密码
 ## 使用方法
 
 1. **配置参数**  
-   修改 `config/args.py` 或通过命令行传参，填写你的API密钥、超星账号等信息。
+   修改 `config/_args.py` 或通过命令行传参，填写你的API密钥、超星账号等信息。
 
 2. **运行主程序**
 
