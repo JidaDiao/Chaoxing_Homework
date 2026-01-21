@@ -1,8 +1,5 @@
 from abc import ABC, abstractmethod
-from selenium import webdriver
-from typing import Dict, List, Any, Optional, Union
-from queue import Queue
-import threading
+from typing import Dict, List, Any, Optional
 
 # 登录策略模式接口
 
@@ -15,11 +12,11 @@ class LoginStrategy(ABC):
     """
 
     @abstractmethod
-    def login(self, driver: webdriver.Chrome, login_url: str) -> bool:
+    def login(self, driver: Any, login_url: str) -> bool:
         """执行登录操作
 
         Args:
-            driver: Chrome浏览器驱动实例
+            driver: 浏览器驱动实例
             login_url: 登录页面URL
 
         Returns:
@@ -38,11 +35,11 @@ class WebDriverFactory(ABC):
     """
 
     @abstractmethod
-    def create_driver(self) -> webdriver.Chrome:
+    def create_driver(self) -> Any:
         """创建WebDriver实例
 
         Returns:
-            webdriver.Chrome: 浏览器驱动实例
+            Any: 浏览器驱动实例
         """
         pass
 
