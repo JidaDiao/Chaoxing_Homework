@@ -26,4 +26,4 @@ python main.py --mode grade
 
 ## Validation Results
 
-- 2026-01-21: Playwright 验证作业列表与两班 Review 页面可达；评分流程未执行
+- 2026-01-21: 运行爬取流程，生成 2 个作业目录（2401/2402）；Playwright 列表页显示提交数 26/32，与 `answer.json` 学生数一致；评分流程未执行
